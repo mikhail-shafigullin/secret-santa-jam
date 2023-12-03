@@ -16,3 +16,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0239868, 0.00979453, 0.0390
 shape = SubResource("BoxShape3D_legpl")
 
 [connection signal="body_entered" from="E_UseAreaEvent" to="." method="_on_e_use_area_event_body_entered"]
+[connection signal="body_exited" from="E_UseAreaEvent" to="." method="_on_e_use_area_event_body_exited"]

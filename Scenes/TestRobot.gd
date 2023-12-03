@@ -12,4 +12,4 @@ func _process(delta):
 
 
 func _on_usable_object_on_object_use():
-	pass # Replace with function body.
+	print('Test Robot used')
