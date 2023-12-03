@@ -13,7 +13,7 @@ var speed : float
 
 const ANIMATION_BLEND : float = 7.0
 
-@onready var player_mesh : Node3D = $Mesh
+@onready var player_mesh : Node3D = $tim
 @onready var spring_arm_pivot : Node3D = $SpringArmPivot
 @onready var animator : AnimationTree = $AnimationTree
 
