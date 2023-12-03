@@ -15,7 +15,11 @@ sky_material = SubResource("PanoramaSkyMaterial_6c4vd")
 
 [sub_resource type="Environment" id="Environment_ctwiv"]
 background_mode = 2
+background_color = Color(0.466667, 0.388235, 0.639216, 1)
 sky = SubResource("Sky_5ngqa")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+reflected_light_source = 1
 tonemap_mode = 2
 glow_enabled = true
 

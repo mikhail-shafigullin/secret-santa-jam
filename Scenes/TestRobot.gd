@@ -12,4 +12,5 @@ func _process(delta):
 
 
 func _on_usable_object_on_object_use():
+	queue_free();
 	print('Test Robot used')

@@ -18,10 +18,13 @@ func _input(event):
 		useObject()
 
 func hoverUsableObject(useableObject: UseableObject):
+	Global.playerLayout.setTextOnUseMessage(useableObject.useObjectMessage);
 	hoveredUsableObject = useableObject;
 	
 func unhoverUsableObject():
+	Global.playerLayout.clearTextOnUseMessage();
 	hoveredUsableObject = null;
 	
 func useObject():
-	hoveredUsableObject.useObject()
+	if(hoveredUsableObject): 
+		hoveredUsableObject.useObject()

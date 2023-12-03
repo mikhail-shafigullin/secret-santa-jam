@@ -11,6 +11,7 @@ size = Vector3(0.538025, 0.979279, 0.435547)
 script = ExtResource("1_7kmin")
 
 [node name="UsableObject" parent="." instance=ExtResource("1_8frie")]
+useObjectMessage = "Kick a Robot"
 
 [node name="MeshAndCollision" type="Node3D" parent="."]
 

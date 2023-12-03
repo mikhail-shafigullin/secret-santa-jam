@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd2inb7t5lo73"]
+
+[ext_resource type="Script" path="res://Scripts/UI/PlayerLayout.gd" id="1_u0c6x"]
+
+[node name="PlayerLayout" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u0c6x")
+
+[node name="UseMessage" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -414.0
+offset_top = -198.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="UseMessageText" type="RichTextLabel" parent="UseMessage"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -378.0
+offset_top = -110.0
+offset_right = -38.0
+offset_bottom = -44.0
+grow_horizontal = 0
+grow_vertical = 0
+bbcode_enabled = true
+text = "[center]"
