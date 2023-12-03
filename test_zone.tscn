@@ -43,7 +43,7 @@ sky = SubResource("Sky_5enfk")
 ambient_light_source = 2
 ambient_light_color = Color(0.0666667, 0.14902, 0.294118, 1)
 
-[sub_resource type="Animation" id="Animation_8eb6c"]
+[sub_resource type="Animation" id="Animation_kwu10"]
 resource_name = "Action"
 length = 0.0333333
 loop_mode = 1
@@ -307,7 +307,7 @@ tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = PackedFloat32Array(0, 1, 0.366555, 7.37953e-08, -6.29707e-08, 0.930396)
 
-[sub_resource type="Animation" id="Animation_fum5d"]
+[sub_resource type="Animation" id="Animation_lcm13"]
 resource_name = "Air"
 length = 0.7
 loop_mode = 1
@@ -571,7 +571,7 @@ tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = PackedFloat32Array(0, 1, 0.343689, 3.3737e-07, 3.2335e-08, 0.939084, 0.133333, 1, 0.345317, -1.1187e-07, 5.99564e-07, 0.938486, 0.2, 1, 0.347045, -3.42385e-07, 5.68758e-07, 0.937849, 0.266667, 1, 0.34865, -9.48356e-08, 3.72439e-08, 0.937253, 0.366667, 1, 0.349624, 2.54196e-08, -2.26294e-07, 0.93689, 0.466667, 1, 0.348432, -7.64976e-09, 4.59565e-07, 0.937334, 0.533333, 1, 0.346988, -3.14074e-07, 4.69594e-07, 0.93787, 0.6, 1, 0.345438, 1.04313e-07, 4.24557e-07, 0.938442, 0.666667, 1, 0.344136, 5.11631e-08, -7.14369e-08, 0.93892, 0.7, 1, 0.343689, 3.3737e-07, 3.2335e-08, 0.939084)
 
-[sub_resource type="Animation" id="Animation_yjrkp"]
+[sub_resource type="Animation" id="Animation_pe04b"]
 resource_name = "Idle"
 length = 1.96667
 loop_mode = 1
@@ -835,7 +835,7 @@ tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = PackedFloat32Array(0, 1, 0.381033, 0.00387223, -0.00183804, 0.924552)
 
-[sub_resource type="Animation" id="Animation_r27wq"]
+[sub_resource type="Animation" id="Animation_1jigx"]
 resource_name = "Run"
 length = 0.6
 loop_mode = 1
@@ -1099,7 +1099,7 @@ tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = PackedFloat32Array(0, 1, 0.412521, 1.02144e-07, -5.77018e-08, 0.910948, 0.0333333, 1, 0.46135, -0.00242338, -0.00125076, 0.887214, 0.0666667, 1, 0.583423, 0.0119546, 0.0082493, 0.812039, 0.1, 1, 0.635282, 0.0224589, 0.0133665, 0.771838, 0.133333, 1, 0.509736, 5.86352e-08, -7.41637e-08, 0.860331, 0.166667, 1, 0.43047, 6.75704e-08, -6.04822e-08, 0.902605, 0.2, 1, 0.369955, 2.47863e-08, -6.84436e-08, 0.92905, 0.233333, 1, 0.324243, 3.17164e-08, -8.32592e-08, 0.945974, 0.266667, 1, 0.357337, 4.84181e-08, -7.24798e-08, 0.933976, 0.3, 1, 0.402396, 6.75355e-08, -3.058e-08, 0.915466, 0.333333, 1, 0.378577, 8.4223e-08, -7.91354e-08, 0.92557, 0.366667, 1, 0.357663, 6.65666e-08, -3.7318e-08, 0.933851, 0.4, 1, 0.395965, 6.66598e-08, -6.14097e-08, 0.918266, 0.433333, 1, 0.415934, 1.38693e-07, -5.59366e-08, 0.909395, 0.466667, 1, 0.435276, 6.66022e-08, -7.02219e-08, 0.900297, 0.5, 1, 0.436039, 3.80507e-08, -6.29342e-08, 0.899928, 0.533333, 1, 0.333633, 9.23865e-08, -9.04267e-08, 0.942703, 0.566667, 1, 0.362516, 7.73701e-08, -7.61137e-08, 0.931977, 0.6, 1, 0.412545, 6.3193e-08, -5.55097e-08, 0.910937)
 
-[sub_resource type="Animation" id="Animation_2ppfg"]
+[sub_resource type="Animation" id="Animation_mymso"]
 resource_name = "Tpose"
 length = 0.0333333
 loop_mode = 1
@@ -1363,7 +1363,7 @@ tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = PackedFloat32Array(0, 1, 0.366555, 7.37953e-08, -6.29707e-08, 0.930396)
 
-[sub_resource type="Animation" id="Animation_1i1f2"]
+[sub_resource type="Animation" id="Animation_hc2nw"]
 resource_name = "Walk"
 length = 1.03333
 loop_mode = 1
@@ -1627,14 +1627,14 @@ tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = PackedFloat32Array(0, 1, 0.405961, 0.0070208, -0.00325426, 0.913858, 0.0333333, 1, 0.407939, 0.00677724, -0.0034871, 0.912977, 0.0666667, 1, 0.408769, 0.00572012, -0.00422495, 0.91261, 0.1, 1, 0.414113, 0.00708993, -0.00510839, 0.910183, 0.133333, 1, 0.434782, 0.00784822, -0.00784365, 0.900467, 0.166667, 1, 0.465193, 0.00728606, -0.0110591, 0.88511, 0.2, 1, 0.496423, 0.00536133, -0.0130976, 0.867966, 0.233333, 1, 0.534564, 0.00659586, -0.016434, 0.844942, 0.266667, 1, 0.560572, 0.0158483, -0.0147098, 0.827824, 0.3, 1, 0.62699, 0.0224169, -0.00945699, 0.778648, 0.333333, 1, 0.685639, 0.0215293, -0.000433186, 0.727623, 0.366667, 1, 0.68078, 0.0387823, 0.0353804, 0.730604, 0.4, 1, 0.55846, 0.0275931, 0.0189097, 0.828857, 0.433333, 1, 0.466311, 0.0215056, -0.0136445, 0.884254, 0.466667, 1, 0.442414, 0.019899, -0.0153594, 0.896459, 0.5, 1, 0.420685, 0.0402283, -0.0192661, 0.90611, 0.533333, 1, 0.419517, 0.0351057, -0.0143636, 0.906955, 0.566667, 1, 0.427543, 0.0263578, -0.0150076, 0.903486, 0.6, 1, 0.447054, 0.0269884, -0.0114542, 0.894027, 0.633333, 1, 0.446744, 0.0192187, -0.00520262, 0.89444, 0.666667, 1, 0.462438, 0.0148253, -0.0107606, 0.886463, 0.7, 1, 0.479461, 0.019442, -0.00546934, 0.87733, 0.733333, 1, 0.463551, 0.00665405, -0.000631694, 0.886045, 0.766667, 1, 0.493897, -0.00292516, 0.000109987, 0.869515, 0.8, 1, 0.535511, 0.00265485, -0.00253894, 0.84452, 0.866667, 1, 0.385648, 0.00746863, -0.00253146, 0.922612, 0.9, 1, 0.413123, 0.00576576, -0.00306598, 0.910652, 0.933333, 1, 0.410562, 0.00649694, -0.00331358, 0.911804, 0.966667, 1, 0.404993, 0.00723016, -0.00338869, 0.914285, 1, 1, 0.40505, 0.00721307, -0.00336091, 0.91426, 1.03333, 1, 0.405961, 0.0070208, -0.00325425, 0.913858)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_gxbkr"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nw66a"]
 _data = {
-"Action": SubResource("Animation_8eb6c"),
-"Air": SubResource("Animation_fum5d"),
-"Idle": SubResource("Animation_yjrkp"),
-"Run": SubResource("Animation_r27wq"),
-"Tpose": SubResource("Animation_2ppfg"),
-"Walk": SubResource("Animation_1i1f2")
+"Action": SubResource("Animation_kwu10"),
+"Air": SubResource("Animation_lcm13"),
+"Idle": SubResource("Animation_pe04b"),
+"Run": SubResource("Animation_1jigx"),
+"Tpose": SubResource("Animation_mymso"),
+"Walk": SubResource("Animation_hc2nw")
 }
 
 [node name="TestZone" type="Node3D"]
@@ -1686,38 +1686,45 @@ shadow_enabled = true
 [node name="Player" parent="." instance=ExtResource("1_4isx2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.483628, 0)
 
-[node name="AnimationTree" parent="Player" index="2"]
-libraries = {
-"": SubResource("AnimationLibrary_gxbkr")
-}
-
 [node name="Skeleton3D" parent="Player/tim/Armature" index="0"]
-bones/0/position = Vector3(-0.810007, 41.7441, 1.63617)
-bones/0/rotation = Quaternion(-0.0301132, -0.367648, -0.0123163, 0.929396)
-bones/1/rotation = Quaternion(-0.0299175, 0.0411787, -0.00439662, 0.998694)
-bones/2/rotation = Quaternion(0.10047, 0.0827625, -0.00638425, 0.991471)
-bones/3/rotation = Quaternion(0.113237, 0.0826733, -0.00745014, 0.990094)
-bones/4/rotation = Quaternion(0.0190844, -0.0112979, 0.000112928, 0.999754)
-bones/5/rotation = Quaternion(-0.0791631, 0.177184, 0.00420237, 0.98098)
-bones/6/rotation = Quaternion(-0.544046, -0.485775, 0.590616, -0.345267)
-bones/7/rotation = Quaternion(0.573178, 0.0908029, 0.0631847, 0.81193)
-bones/8/rotation = Quaternion(-0.0627122, -0.00558178, 0.44309, 0.894264)
-bones/9/rotation = Quaternion(-0.160153, 0.123695, 0.0494123, 0.978064)
-bones/10/rotation = Quaternion(0.31905, -0.00348937, 0.250952, 0.913903)
-bones/11/rotation = Quaternion(0.0331255, -0.00589614, 0.0609831, 0.997572)
-bones/12/rotation = Quaternion(0.606536, -0.448603, 0.54103, 0.371694)
-bones/13/rotation = Quaternion(0.498799, -0.105038, 0.166075, 0.844148)
-bones/14/rotation = Quaternion(-0.0189443, 0.181519, -0.40803, 0.894541)
-bones/15/rotation = Quaternion(0.12268, -0.165776, -0.125337, 0.970443)
-bones/16/rotation = Quaternion(0.192743, 0.0303855, -0.347223, 0.917259)
-bones/17/rotation = Quaternion(0.0389751, 0.00962597, 0.0101657, 0.999142)
-bones/18/rotation = Quaternion(0.075634, 0.194582, 0.972391, -0.104278)
-bones/19/rotation = Quaternion(-0.295436, 0.119004, -0.0301216, 0.947443)
-bones/20/rotation = Quaternion(0.443433, -0.0319408, -0.0551794, 0.894037)
-bones/21/rotation = Quaternion(0.3852, 0.0175441, -0.0231079, 0.922377)
-bones/23/rotation = Quaternion(-0.121314, 0.010616, 0.984516, 0.126087)
-bones/24/rotation = Quaternion(-0.291929, 0.0767837, -0.021607, 0.953108)
-bones/25/rotation = Quaternion(0.553263, 0.0725353, 0.124911, 0.820388)
+bones/0/position = Vector3(-0.756762, 41.877, 1.80351)
+bones/0/rotation = Quaternion(-0.0316973, -0.366544, -0.013136, 0.929768)
+bones/1/rotation = Quaternion(-0.0309247, 0.0407861, -0.00402018, 0.998681)
+bones/2/rotation = Quaternion(0.0984439, 0.0819436, -0.00582196, 0.991746)
+bones/3/rotation = Quaternion(0.111215, 0.0818617, -0.00687735, 0.990395)
+bones/4/rotation = Quaternion(0.0297377, -0.0110463, -0.000301442, 0.999497)
+bones/5/rotation = Quaternion(-0.0660815, 0.175861, 0.0102794, 0.982141)
+bones/6/rotation = Quaternion(-0.53672, -0.493738, 0.589093, -0.34803)
+bones/7/position = Vector3(-3.8381e-06, 11.0439, -3.00375e-06)
+bones/7/rotation = Quaternion(0.576753, 0.0936684, 0.0620679, 0.809154)
+bones/8/position = Vector3(-4.1978e-07, 15.879, 3.76767e-06)
+bones/8/rotation = Quaternion(-0.0614457, -0.00402696, 0.446778, 0.892523)
+bones/9/rotation = Quaternion(-0.1455, 0.122696, 0.0485864, 0.980518)
+bones/10/rotation = Quaternion(0.318569, -0.00183792, 0.247497, 0.915017)
+bones/11/rotation = Quaternion(0.0355074, -0.00567798, 0.0612446, 0.997475)
+bones/12/rotation = Quaternion(0.598471, -0.457465, 0.540368, 0.374914)
+bones/13/position = Vector3(-1.7847e-06, 12.638, -4.81428e-06)
+bones/13/rotation = Quaternion(0.505907, -0.111941, 0.166758, 0.83888)
+bones/14/rotation = Quaternion(-0.0125129, 0.169655, -0.412524, 0.894922)
+bones/15/position = Vector3(-0.0794082, 16.6516, 0.212)
+bones/15/rotation = Quaternion(0.114113, -0.15805, -0.120886, 0.973337)
+bones/16/position = Vector3(4.31366, 3.72637, -0.686604)
+bones/16/rotation = Quaternion(0.191881, 0.0293672, -0.342043, 0.919416)
+bones/17/position = Vector3(0.00597358, 8.17948, 0.13427)
+bones/17/rotation = Quaternion(0.0367279, 0.00942075, 0.0101912, 0.999229)
+bones/18/rotation = Quaternion(0.0760136, 0.191124, 0.973131, -0.103486)
+bones/19/rotation = Quaternion(-0.292964, 0.120248, -0.0300947, 0.948054)
+bones/20/rotation = Quaternion(0.442924, -0.0314336, -0.0543799, 0.894356)
+bones/21/rotation = Quaternion(0.384906, 0.0181846, -0.02296, 0.922491)
+bones/23/rotation = Quaternion(-0.121518, 0.0051091, 0.984485, 0.12648)
+bones/24/rotation = Quaternion(-0.286071, 0.0781794, -0.021151, 0.95478)
+bones/25/rotation = Quaternion(0.550849, 0.0727831, 0.125403, 0.821914)
+bones/26/rotation = Quaternion(0.381033, 0.00387223, -0.00183804, 0.924552)
+
+[node name="AnimationTree" parent="Player" index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_nw66a")
+}
 
 [editable path="Player"]
 [editable path="Player/tim"]
