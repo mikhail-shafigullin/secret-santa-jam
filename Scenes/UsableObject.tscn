@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://bo1tr0fadvf6l"]
+[gd_scene load_steps=3 format=3 uid="uid://bo1tr0fadvf6l"]
+
+[ext_resource type="Script" path="res://Scripts/UsableObject.gd" id="1_d5jhj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_legpl"]
+size = Vector3(1.34827, 0.987061, 1.44913)
 
 [node name="UsableObject" type="Node3D"]
+script = ExtResource("1_d5jhj")
+
+[node name="E_UseAreaEvent" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37135, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="E_UseAreaEvent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0239868, 0.00979453, 0.0390778)
+shape = SubResource("BoxShape3D_legpl")
+
+[connection signal="body_entered" from="E_UseAreaEvent" to="." method="_on_e_use_area_event_body_entered"]

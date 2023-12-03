@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://blpmbdnbbe5c"]
+
+[ext_resource type="Script" path="res://Scripts/Controllers/UseObjectsController.gd" id="1_lu2gm"]
+
+[node name="UseObjectsController" type="Node3D"]
+script = ExtResource("1_lu2gm")
