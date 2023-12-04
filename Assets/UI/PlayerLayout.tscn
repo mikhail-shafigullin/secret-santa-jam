@@ -13,15 +13,17 @@ script = ExtResource("1_u0c6x")
 
 [node name="UseMessage" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -414.0
-offset_top = -198.0
-grow_horizontal = 0
-grow_vertical = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -207.0
+offset_top = -99.0
+offset_right = 207.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="UseMessageText" type="RichTextLabel" parent="UseMessage"]
 unique_name_in_owner = true
@@ -39,3 +41,4 @@ grow_horizontal = 0
 grow_vertical = 0
 bbcode_enabled = true
 text = "[center]"
+fit_content = true

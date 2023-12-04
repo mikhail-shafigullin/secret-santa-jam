@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://hd06iu5g1ddy"]
+
+[ext_resource type="PackedScene" uid="uid://5u7qxg6184ef" path="res://Assets/Models/Characters/fisherman.glb" id="1_mvymt"]
+[ext_resource type="Script" path="res://Scenes/Characters/fisherman.gd" id="2_jedh1"]
+[ext_resource type="Material" uid="uid://78p2e1omip1d" path="res://Assets/Models/Characters/fishermanMaterial.tres" id="2_sada8"]
+[ext_resource type="PackedScene" uid="uid://bo1tr0fadvf6l" path="res://Scenes/UsableObject.tscn" id="3_d1ahl"]
+[ext_resource type="Resource" uid="uid://8hwj06gp4jpl" path="res://Scenes/Characters/test.dialogue" id="3_k0rh4"]
+
+[node name="fisherman2" instance=ExtResource("1_mvymt")]
+script = ExtResource("2_jedh1")
+dialoge = ExtResource("3_k0rh4")
+
+[node name="Skeleton3D" parent="fisherman" index="0"]
+bones/0/position = Vector3(0.00577198, 1.0099, -0.0552)
+bones/1/position = Vector3(1.84427e-09, 0.265264, 0.00602333)
+bones/1/rotation = Quaternion(0.297851, 0.03282, 0.0329504, 0.953479)
+bones/2/rotation = Quaternion(-0.153819, -0.00676576, -0.00289193, 0.988072)
+bones/3/position = Vector3(0.144948, 0.218855, 0.0102311)
+bones/3/rotation = Quaternion(-0.106402, -0.15267, -0.968748, 0.164005)
+bones/4/rotation = Quaternion(0.434788, 0.148354, -0.0320347, 0.887651)
+bones/5/rotation = Quaternion(0.0599631, -0.227183, -0.298678, 0.924978)
+bones/6/position = Vector3(-0.185238, 0.259061, 0.0184133)
+bones/6/rotation = Quaternion(-0.0697191, 0.107733, 0.980021, 0.151958)
+bones/7/rotation = Quaternion(0.181159, 0.0340109, 0.0349144, 0.982245)
+bones/8/rotation = Quaternion(0.241105, 0.0412785, 0.0625286, 0.967602)
+bones/9/position = Vector3(0.0987246, -0.0100809, 0.0458219)
+bones/9/rotation = Quaternion(0.98521, 0.0629412, -0.158519, -0.0164988)
+bones/10/rotation = Quaternion(0.0680091, -0.00296107, 0.0504183, 0.996406)
+bones/11/rotation = Quaternion(-0.57149, -0.0300596, 0.0562366, 0.818128)
+bones/12/position = Vector3(-0.115555, -0.0166398, 0.0451435)
+bones/12/rotation = Quaternion(0.96946, -0.103736, 0.208992, -0.075551)
+bones/13/rotation = Quaternion(0.0666442, 0.00315579, -0.0488699, 0.996574)
+bones/14/rotation = Quaternion(-0.614211, -0.0137754, 0.0113128, 0.78894)
+bones/15/position = Vector3(0.320093, 0.96148, 0.230663)
+bones/15/rotation = Quaternion(0.472483, 0.0776879, 0.0256819, 0.877533)
+
+[node name="fishermanMesh" parent="fisherman/Skeleton3D" index="0"]
+material_override = ExtResource("2_sada8")
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "FishingIdle"
+
+[node name="UsableObject" parent="." index="2" instance=ExtResource("3_d1ahl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.248449, 0)
+useObjectMessage = "fisherman, take me by the hand"
+
+[node name="CollisionShape3D" parent="UsableObject/E_UseAreaEvent" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0239868, 0.371367, 0.294532)
+
+[connection signal="on_object_use" from="UsableObject" to="." method="_on_usable_object_on_object_use"]
+
+[editable path="UsableObject"]
