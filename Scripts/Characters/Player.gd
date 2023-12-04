@@ -4,6 +4,7 @@ const LERP_VALUE : float = 0.15
 
 var snap_vector : Vector3 = Vector3.DOWN
 var speed : float
+var busy : bool = false
 
 @export_group("Movement variables")
 @export var walk_speed : float = 2.0
@@ -26,6 +27,9 @@ func _physics_process(delta):
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
+	if busy:
+		return
 	
 	var move_direction : Vector3 = Vector3.ZERO
 	move_direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")

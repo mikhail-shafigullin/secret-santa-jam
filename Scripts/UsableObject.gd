@@ -27,6 +27,6 @@ func _on_e_use_area_event_body_entered(body):
 
 
 func _on_e_use_area_event_body_exited(body):
-	if body.is_in_group('Player'): 
+	if body.is_in_group('Player') and not Global.player.busy: 
 		if Global.useObjectController:
 			Global.useObjectController.unhoverUsableObject();

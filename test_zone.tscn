@@ -1,13 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://rvke6627yycx"]
+[gd_scene load_steps=22 format=3 uid="uid://rvke6627yycx"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="1_4isx2"]
+[ext_resource type="Script" path="res://SubViewScale.gd" id="1_xjaku"]
 [ext_resource type="Texture2D" uid="uid://3jauchyvj37w" path="res://Assets/Models/Characters/tim_tim.png" id="2_uo3hr"]
-[ext_resource type="PackedScene" uid="uid://5u7qxg6184ef" path="res://Assets/Models/Characters/fisherman.glb" id="3_wsdbi"]
-[ext_resource type="Material" uid="uid://78p2e1omip1d" path="res://Assets/Models/Characters/fishermanMaterial.tres" id="4_ahh1g"]
+[ext_resource type="PackedScene" uid="uid://hd06iu5g1ddy" path="res://Scenes/Characters/fisherman.tscn" id="3_k0mhd"]
 [ext_resource type="PackedScene" uid="uid://covjltvwg2htp" path="res://Scenes/TestRobot.tscn" id="5_thu8e"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_m2rbi"]
-viewport_path = NodePath("SubViewportContainer/SubViewport")
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qbbba"]
 friction = 0.65
@@ -53,7 +50,7 @@ volumetric_fog_emission_energy = 28.05
 volumetric_fog_sky_affect = 0.725
 adjustment_saturation = 0.01
 
-[sub_resource type="Animation" id="Animation_b3ojm"]
+[sub_resource type="Animation" id="Animation_kwu10"]
 resource_name = "Action"
 length = 0.0333333
 loop_mode = 1
@@ -317,7 +314,7 @@ tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = PackedFloat32Array(0, 1, 0.366555, 7.37953e-08, -6.29707e-08, 0.930396)
 
-[sub_resource type="Animation" id="Animation_7bb1k"]
+[sub_resource type="Animation" id="Animation_lcm13"]
 resource_name = "Air"
 length = 0.7
 loop_mode = 1
@@ -581,7 +578,7 @@ tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = PackedFloat32Array(0, 1, 0.343689, 3.3737e-07, 3.2335e-08, 0.939084, 0.133333, 1, 0.345317, -1.1187e-07, 5.99564e-07, 0.938486, 0.2, 1, 0.347045, -3.42385e-07, 5.68758e-07, 0.937849, 0.266667, 1, 0.34865, -9.48356e-08, 3.72439e-08, 0.937253, 0.366667, 1, 0.349624, 2.54196e-08, -2.26294e-07, 0.93689, 0.466667, 1, 0.348432, -7.64976e-09, 4.59565e-07, 0.937334, 0.533333, 1, 0.346988, -3.14074e-07, 4.69594e-07, 0.93787, 0.6, 1, 0.345438, 1.04313e-07, 4.24557e-07, 0.938442, 0.666667, 1, 0.344136, 5.11631e-08, -7.14369e-08, 0.93892, 0.7, 1, 0.343689, 3.3737e-07, 3.2335e-08, 0.939084)
 
-[sub_resource type="Animation" id="Animation_g3i48"]
+[sub_resource type="Animation" id="Animation_pe04b"]
 resource_name = "Idle"
 length = 1.96667
 loop_mode = 1
@@ -845,7 +842,7 @@ tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = PackedFloat32Array(0, 1, 0.381033, 0.00387223, -0.00183804, 0.924552)
 
-[sub_resource type="Animation" id="Animation_30aei"]
+[sub_resource type="Animation" id="Animation_1jigx"]
 resource_name = "Run"
 length = 0.6
 loop_mode = 1
@@ -1109,7 +1106,7 @@ tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = PackedFloat32Array(0, 1, 0.412521, 1.02144e-07, -5.77018e-08, 0.910948, 0.0333333, 1, 0.46135, -0.00242338, -0.00125076, 0.887214, 0.0666667, 1, 0.583423, 0.0119546, 0.0082493, 0.812039, 0.1, 1, 0.635282, 0.0224589, 0.0133665, 0.771838, 0.133333, 1, 0.509736, 5.86352e-08, -7.41637e-08, 0.860331, 0.166667, 1, 0.43047, 6.75704e-08, -6.04822e-08, 0.902605, 0.2, 1, 0.369955, 2.47863e-08, -6.84436e-08, 0.92905, 0.233333, 1, 0.324243, 3.17164e-08, -8.32592e-08, 0.945974, 0.266667, 1, 0.357337, 4.84181e-08, -7.24798e-08, 0.933976, 0.3, 1, 0.402396, 6.75355e-08, -3.058e-08, 0.915466, 0.333333, 1, 0.378577, 8.4223e-08, -7.91354e-08, 0.92557, 0.366667, 1, 0.357663, 6.65666e-08, -3.7318e-08, 0.933851, 0.4, 1, 0.395965, 6.66598e-08, -6.14097e-08, 0.918266, 0.433333, 1, 0.415934, 1.38693e-07, -5.59366e-08, 0.909395, 0.466667, 1, 0.435276, 6.66022e-08, -7.02219e-08, 0.900297, 0.5, 1, 0.436039, 3.80507e-08, -6.29342e-08, 0.899928, 0.533333, 1, 0.333633, 9.23865e-08, -9.04267e-08, 0.942703, 0.566667, 1, 0.362516, 7.73701e-08, -7.61137e-08, 0.931977, 0.6, 1, 0.412545, 6.3193e-08, -5.55097e-08, 0.910937)
 
-[sub_resource type="Animation" id="Animation_g00k3"]
+[sub_resource type="Animation" id="Animation_mymso"]
 resource_name = "Tpose"
 length = 0.0333333
 loop_mode = 1
@@ -1373,7 +1370,7 @@ tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = PackedFloat32Array(0, 1, 0.366555, 7.37953e-08, -6.29707e-08, 0.930396)
 
-[sub_resource type="Animation" id="Animation_snbfx"]
+[sub_resource type="Animation" id="Animation_hc2nw"]
 resource_name = "Walk"
 length = 1.03333
 loop_mode = 1
@@ -1637,14 +1634,14 @@ tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = PackedFloat32Array(0, 1, 0.405961, 0.0070208, -0.00325426, 0.913858, 0.0333333, 1, 0.407939, 0.00677724, -0.0034871, 0.912977, 0.0666667, 1, 0.408769, 0.00572012, -0.00422495, 0.91261, 0.1, 1, 0.414113, 0.00708993, -0.00510839, 0.910183, 0.133333, 1, 0.434782, 0.00784822, -0.00784365, 0.900467, 0.166667, 1, 0.465193, 0.00728606, -0.0110591, 0.88511, 0.2, 1, 0.496423, 0.00536133, -0.0130976, 0.867966, 0.233333, 1, 0.534564, 0.00659586, -0.016434, 0.844942, 0.266667, 1, 0.560572, 0.0158483, -0.0147098, 0.827824, 0.3, 1, 0.62699, 0.0224169, -0.00945699, 0.778648, 0.333333, 1, 0.685639, 0.0215293, -0.000433186, 0.727623, 0.366667, 1, 0.68078, 0.0387823, 0.0353804, 0.730604, 0.4, 1, 0.55846, 0.0275931, 0.0189097, 0.828857, 0.433333, 1, 0.466311, 0.0215056, -0.0136445, 0.884254, 0.466667, 1, 0.442414, 0.019899, -0.0153594, 0.896459, 0.5, 1, 0.420685, 0.0402283, -0.0192661, 0.90611, 0.533333, 1, 0.419517, 0.0351057, -0.0143636, 0.906955, 0.566667, 1, 0.427543, 0.0263578, -0.0150076, 0.903486, 0.6, 1, 0.447054, 0.0269884, -0.0114542, 0.894027, 0.633333, 1, 0.446744, 0.0192187, -0.00520262, 0.89444, 0.666667, 1, 0.462438, 0.0148253, -0.0107606, 0.886463, 0.7, 1, 0.479461, 0.019442, -0.00546934, 0.87733, 0.733333, 1, 0.463551, 0.00665405, -0.000631694, 0.886045, 0.766667, 1, 0.493897, -0.00292516, 0.000109987, 0.869515, 0.8, 1, 0.535511, 0.00265485, -0.00253894, 0.84452, 0.866667, 1, 0.385648, 0.00746863, -0.00253146, 0.922612, 0.9, 1, 0.413123, 0.00576576, -0.00306598, 0.910652, 0.933333, 1, 0.410562, 0.00649694, -0.00331358, 0.911804, 0.966667, 1, 0.404993, 0.00723016, -0.00338869, 0.914285, 1, 1, 0.40505, 0.00721307, -0.00336091, 0.91426, 1.03333, 1, 0.405961, 0.0070208, -0.00325425, 0.913858)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_sppju"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nw66a"]
 _data = {
-"Action": SubResource("Animation_b3ojm"),
-"Air": SubResource("Animation_7bb1k"),
-"Idle": SubResource("Animation_g3i48"),
-"Run": SubResource("Animation_30aei"),
-"Tpose": SubResource("Animation_g00k3"),
-"Walk": SubResource("Animation_snbfx")
+"Action": SubResource("Animation_kwu10"),
+"Air": SubResource("Animation_lcm13"),
+"Idle": SubResource("Animation_pe04b"),
+"Run": SubResource("Animation_1jigx"),
+"Tpose": SubResource("Animation_mymso"),
+"Walk": SubResource("Animation_hc2nw")
 }
 
 [node name="TestZone" type="Node3D"]
@@ -1655,196 +1652,163 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="SubViewScale" type="SubViewportContainer" parent="Control"]
+top_level = true
 texture_filter = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -120.0
+offset_right = 160.0
+offset_bottom = 120.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("ViewportTexture_m2rbi")
-expand_mode = 3
-stretch_mode = 5
+pivot_offset = Vector2(160, 120)
+focus_mode = 2
+script = ExtResource("1_xjaku")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-self_modulate = Color(1, 1, 1, 0)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="Control/SubViewScale"]
 handle_input_locally = false
 scaling_3d_mode = 1
 canvas_item_default_texture_filter = 0
 size = Vector2i(320, 240)
 render_target_update_mode = 4
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Control/SubViewScale/SubViewport"]
 physics_material_override = SubResource("PhysicsMaterial_qbbba")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Control/SubViewScale/SubViewport/StaticBody3D"]
 transform = Transform3D(44.9331, 8.74228e-08, 0, -3.92818e-06, 1, 0, 0, 0, -48.6587, 0, 0, 0)
 mesh = SubResource("BoxMesh_g4inm")
 skeleton = NodePath("../CollisionShape3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control/SubViewScale/SubViewport/StaticBody3D"]
 shape = SubResource("BoxShape3D_2ytm8")
 
-[node name="box2" type="Node3D" parent="SubViewportContainer/SubViewport"]
+[node name="box2" type="Node3D" parent="Control/SubViewScale/SubViewport"]
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="SubViewportContainer/SubViewport/box2"]
+[node name="StaticBody3D2" type="StaticBody3D" parent="Control/SubViewScale/SubViewport/box2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.384293, 0.92038, 2.90095)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/box2/StaticBody3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control/SubViewScale/SubViewport/box2/StaticBody3D2"]
 shape = SubResource("BoxShape3D_xn270")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/box2/StaticBody3D2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Control/SubViewScale/SubViewport/box2/StaticBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00840068, 0)
 material_override = SubResource("StandardMaterial3D_i26q6")
 mesh = SubResource("BoxMesh_p6yo4")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/SubViewport/box2/StaticBody3D2"]
+[node name="OmniLight3D" type="OmniLight3D" parent="Control/SubViewScale/SubViewport/box2/StaticBody3D2"]
 light_color = Color(0.945098, 0.972549, 0.341176, 1)
 omni_range = 3.176
 
-[node name="box" type="Node3D" parent="SubViewportContainer/SubViewport"]
+[node name="box" type="Node3D" parent="Control/SubViewScale/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.89508, 4.76837e-07, 3.98673)
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="SubViewportContainer/SubViewport/box"]
+[node name="StaticBody3D2" type="StaticBody3D" parent="Control/SubViewScale/SubViewport/box"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.97393, 0.92038, 1.00881)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/box/StaticBody3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control/SubViewScale/SubViewport/box/StaticBody3D2"]
 shape = SubResource("BoxShape3D_xn270")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/box/StaticBody3D2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Control/SubViewScale/SubViewport/box/StaticBody3D2"]
 mesh = SubResource("BoxMesh_p6yo4")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Control/SubViewScale/SubViewport"]
 environment = SubResource("Environment_i0ne8")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport/WorldEnvironment"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Control/SubViewScale/SubViewport/WorldEnvironment"]
 transform = Transform3D(0.641048, -0.654773, -0.400413, 0, -0.52171, 0.853123, -0.767501, -0.546893, -0.334441, 0, 2.45456, 0)
 visible = false
 light_energy = 1.26
 shadow_enabled = true
 
-[node name="Player" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_4isx2")]
+[node name="Player" parent="Control/SubViewScale/SubViewport" instance=ExtResource("1_4isx2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.483628, 0)
 
-[node name="GPUParticles3D" parent="SubViewportContainer/SubViewport/Player" index="0"]
+[node name="GPUParticles3D" parent="Control/SubViewScale/SubViewport/Player" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.0823, 0)
 lifetime = 5.01
 
-[node name="Skeleton3D" parent="SubViewportContainer/SubViewport/Player/tim/Armature" index="0"]
-bones/0/position = Vector3(-0.719846, 42.2256, 2.59389)
-bones/0/rotation = Quaternion(-0.0331924, -0.36646, -0.0141255, 0.929734)
-bones/1/rotation = Quaternion(-0.0333259, 0.0407007, -0.00319432, 0.99861)
-bones/2/rotation = Quaternion(0.0933547, 0.0819357, -0.00462966, 0.992245)
-bones/3/rotation = Quaternion(0.105755, 0.0818799, -0.00563402, 0.990999)
-bones/4/rotation = Quaternion(0.0406288, -0.0107013, -0.00026707, 0.999117)
-bones/5/rotation = Quaternion(-0.0919689, 0.177149, 0.0158944, 0.979749)
+[node name="Skeleton3D" parent="Control/SubViewScale/SubViewport/Player/tim/Armature" index="0"]
+bones/0/position = Vector3(-0.7603, 42.1213, 2.38832)
+bones/0/rotation = Quaternion(-0.0326815, -0.366509, -0.0139051, 0.929737)
+bones/1/rotation = Quaternion(-0.0326837, 0.0407714, -0.00337829, 0.998628)
+bones/2/rotation = Quaternion(0.0949432, 0.082095, -0.00504358, 0.992079)
+bones/3/rotation = Quaternion(0.107752, 0.0819609, -0.00608422, 0.990775)
+bones/4/rotation = Quaternion(0.0362045, -0.0107491, -0.000146483, 0.999287)
+bones/5/rotation = Quaternion(-0.0962279, 0.177074, 0.0148572, 0.979369)
 bones/5/scale = Vector3(1, 1, 1)
-bones/6/rotation = Quaternion(-0.518196, -0.512855, 0.586599, -0.352639)
+bones/6/rotation = Quaternion(-0.528098, -0.502867, 0.587968, -0.350045)
 bones/6/scale = Vector3(1, 1, 1)
-bones/7/position = Vector3(-3.8381e-06, 11.0439, -3.00375e-06)
-bones/7/rotation = Quaternion(0.58746, 0.102435, 0.0604387, 0.800466)
+bones/7/rotation = Quaternion(0.584372, 0.100531, 0.0621847, 0.80283)
 bones/7/scale = Vector3(1, 1, 1)
-bones/8/position = Vector3(-4.1978e-07, 15.879, 3.76767e-06)
-bones/8/rotation = Quaternion(-0.0570658, 0.0035181, 0.458177, 0.88702)
+bones/8/rotation = Quaternion(-0.0580426, 0.00200899, 0.456178, 0.887991)
 bones/8/scale = Vector3(1, 1, 1)
-bones/9/rotation = Quaternion(-0.0973665, 0.121545, 0.0462852, 0.986714)
-bones/10/rotation = Quaternion(0.315426, -0.00116902, 0.239868, 0.918133)
+bones/9/rotation = Quaternion(-0.105168, 0.121585, 0.0472662, 0.985861)
+bones/10/rotation = Quaternion(0.31455, -0.00332014, 0.246303, 0.916724)
 bones/10/scale = Vector3(1, 1, 1)
-bones/11/rotation = Quaternion(0.0562886, -0.00543715, 0.0631867, 0.996398)
-bones/12/rotation = Quaternion(0.579694, -0.47673, 0.538827, 0.382556)
+bones/11/rotation = Quaternion(0.0742463, -0.00372122, 0.0655732, 0.995075)
+bones/12/rotation = Quaternion(0.588796, -0.467526, 0.539702, 0.378762)
 bones/12/scale = Vector3(1, 1, 1)
-bones/13/position = Vector3(-1.7847e-06, 12.638, -4.81428e-06)
-bones/13/rotation = Quaternion(0.524176, -0.129369, 0.168258, 0.824738)
-bones/14/rotation = Quaternion(-0.00220926, 0.148898, -0.416572, 0.896823)
-bones/15/position = Vector3(-0.0794082, 16.6516, 0.212)
-bones/15/rotation = Quaternion(0.131415, -0.148274, -0.114527, 0.973462)
-bones/16/position = Vector3(4.31366, 3.72637, -0.686604)
-bones/16/rotation = Quaternion(0.194443, 0.0287667, -0.349524, 0.916077)
+bones/13/rotation = Quaternion(0.519964, -0.12539, 0.168565, 0.82795)
+bones/14/rotation = Quaternion(-0.00614792, 0.154599, -0.416005, 0.896103)
+bones/15/rotation = Quaternion(0.132357, -0.151924, -0.119497, 0.972174)
+bones/16/rotation = Quaternion(0.195641, 0.0273649, -0.35059, 0.915457)
 bones/16/scale = Vector3(1, 1, 1)
-bones/17/rotation = Quaternion(0.0384511, 0.00974842, 0.00919256, 0.999171)
-bones/18/rotation = Quaternion(0.0769215, 0.183864, 0.974708, -0.101097)
+bones/17/rotation = Quaternion(0.0416369, 0.0103069, 0.0070404, 0.999055)
+bones/18/rotation = Quaternion(0.0769151, 0.185743, 0.974263, -0.101956)
 bones/18/scale = Vector3(1, 1, 1)
-bones/19/rotation = Quaternion(-0.289559, 0.120217, -0.0296546, 0.949117)
-bones/20/rotation = Quaternion(0.443651, -0.0300732, -0.051996, 0.894185)
-bones/21/rotation = Quaternion(0.38524, 0.0176145, -0.0234153, 0.922351)
+bones/19/rotation = Quaternion(-0.29111, 0.120687, -0.0300922, 0.948569)
+bones/20/rotation = Quaternion(0.443694, -0.0303966, -0.0526044, 0.894116)
+bones/21/rotation = Quaternion(0.385278, 0.0175138, -0.0233599, 0.922338)
 bones/22/rotation = Quaternion(0.0318705, -0.0118632, -0.000378312, 0.999422)
-bones/23/rotation = Quaternion(-0.122226, -0.00798448, 0.984149, 0.128251)
+bones/23/rotation = Quaternion(-0.122129, -0.00558767, 0.984249, 0.127703)
 bones/23/scale = Vector3(1, 1, 1)
-bones/24/rotation = Quaternion(-0.26729, 0.0788577, -0.0197195, 0.960182)
-bones/25/rotation = Quaternion(0.544101, 0.0738931, 0.1273, 0.826008)
-bones/26/rotation = Quaternion(0.381033, 0.00387223, -0.00183804, 0.924552)
+bones/24/rotation = Quaternion(-0.272285, 0.0786877, -0.0196737, 0.958792)
+bones/25/rotation = Quaternion(0.545696, 0.0735576, 0.126669, 0.825082)
 bones/26/scale = Vector3(1, 1, 1)
 bones/27/rotation = Quaternion(0.0318705, -0.0118633, -0.000378294, 0.999422)
 
-[node name="Camera3D" parent="SubViewportContainer/SubViewport/Player/SpringArmPivot/SpringArm3D" index="0"]
+[node name="Camera3D" parent="Control/SubViewScale/SubViewport/Player/SpringArmPivot/SpringArm3D" index="0"]
 current = true
 
-[node name="AnimationTree" parent="SubViewportContainer/SubViewport/Player" index="4"]
+[node name="AnimationTree" parent="Control/SubViewScale/SubViewport/Player" index="4"]
 libraries = {
-"": SubResource("AnimationLibrary_sppju")
+"": SubResource("AnimationLibrary_nw66a")
 }
 
-[node name="CSGBox3D" type="CSGBox3D" parent="SubViewportContainer/SubViewport"]
+[node name="TestRobot" parent="Control/SubViewScale/SubViewport" instance=ExtResource("5_thu8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.31123, 0.5, 5.51678)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Control/SubViewScale/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.61495, 1.44253, 2.92703)
 use_collision = true
 size = Vector3(8.30609, 2.38391, 3.24078)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="SubViewportContainer/SubViewport/CSGBox3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Control/SubViewScale/SubViewport/CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.33619, 0.764276, 0.809301)
 operation = 2
 size = Vector3(8.26019, 0.981583, 3.24078)
 
-[node name="fisherman2" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_wsdbi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1122, 2.63886, 1.9488)
+[node name="fisherman2" parent="Control/SubViewScale/SubViewport/CSGBox3D" instance=ExtResource("3_k0mhd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.28633, 1.17902, -1.33574)
 
-[node name="Skeleton3D" parent="SubViewportContainer/SubViewport/fisherman2/fisherman" index="0"]
-bones/0/position = Vector3(0.0229703, 1.0099, -0.0552)
-bones/1/position = Vector3(-5.60631e-09, 0.288039, 0.000982539)
-bones/1/rotation = Quaternion(0.272895, 0.0692003, 0.042085, 0.958628)
-bones/2/rotation = Quaternion(-0.0623927, -0.073035, 0.00785806, 0.995345)
-bones/3/position = Vector3(0.165281, 0.234652, 0.00269656)
-bones/3/rotation = Quaternion(-0.106402, -0.15267, -0.968748, 0.164005)
-bones/4/rotation = Quaternion(0.496499, 0.20601, -0.0430646, 0.842137)
-bones/5/rotation = Quaternion(0.0599631, -0.227183, -0.298678, 0.924978)
-bones/5/scale = Vector3(1, 1, 1)
-bones/6/position = Vector3(-0.185238, 0.259061, 0.0184132)
-bones/6/rotation = Quaternion(-0.0767755, 0.0138638, 0.984165, 0.159164)
-bones/7/rotation = Quaternion(0.320652, 0.0457586, 0.0287736, 0.945654)
-bones/8/rotation = Quaternion(0.241105, 0.0412785, 0.0625286, 0.967602)
-bones/9/position = Vector3(0.084563, -0.010081, 0.0458219)
-bones/9/rotation = Quaternion(0.98521, 0.0629412, -0.158519, -0.0164988)
-bones/9/scale = Vector3(1, 1, 1.00001)
-bones/10/rotation = Quaternion(0.0680091, -0.00296107, 0.0504183, 0.996406)
-bones/10/scale = Vector3(1, 1, 1)
-bones/11/rotation = Quaternion(-0.57149, -0.0300596, 0.0562366, 0.818128)
-bones/11/scale = Vector3(1, 1, 1)
-bones/12/position = Vector3(-0.134031, -0.0166397, 0.0451435)
-bones/12/rotation = Quaternion(0.96946, -0.103736, 0.208992, -0.075551)
-bones/12/scale = Vector3(1, 1, 1.00001)
-bones/13/rotation = Quaternion(0.119733, 0.00781513, -0.060334, 0.99094)
-bones/13/scale = Vector3(1, 1, 1)
-bones/14/rotation = Quaternion(-0.598832, -0.0211682, 0.0250068, 0.800204)
-bones/14/scale = Vector3(1, 1, 1)
-bones/15/position = Vector3(0.338839, 1.05377, 0.242862)
-bones/15/rotation = Quaternion(0.409716, 0.0417558, 0.0652177, 0.90892)
-
-[node name="fishermanMesh" parent="SubViewportContainer/SubViewport/fisherman2/fisherman/Skeleton3D" index="0"]
-material_override = ExtResource("4_ahh1g")
-
-[node name="AnimationPlayer" parent="SubViewportContainer/SubViewport/fisherman2" index="1"]
-autoplay = "FishingIdle"
-
-[node name="TestRobot" parent="." instance=ExtResource("5_thu8e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.31123, 0.5, 5.51678)
-
-[editable path="SubViewportContainer/SubViewport/Player"]
-[editable path="SubViewportContainer/SubViewport/Player/tim"]
+[editable path="Control/SubViewScale/SubViewport/Player"]
+[editable path="Control/SubViewScale/SubViewport/Player/tim"]

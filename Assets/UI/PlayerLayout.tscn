@@ -24,6 +24,7 @@ offset_right = 207.0
 offset_bottom = 99.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="UseMessageText" type="RichTextLabel" parent="UseMessage"]
 unique_name_in_owner = true
@@ -39,6 +40,7 @@ offset_right = -38.0
 offset_bottom = -44.0
 grow_horizontal = 0
 grow_vertical = 0
+mouse_filter = 2
 bbcode_enabled = true
 text = "[center]"
 fit_content = true
