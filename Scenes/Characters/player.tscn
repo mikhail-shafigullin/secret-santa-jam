@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cr2ersq7g6q6f"]
+[gd_scene load_steps=25 format=3 uid="uid://cr2ersq7g6q6f"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Player.gd" id="1_hn6di"]
 [ext_resource type="Script" path="res://Scripts/Characters/SpringArmPivot.gd" id="2_f8ihf"]
@@ -6,6 +6,26 @@
 [ext_resource type="Material" uid="uid://cbbtjnwpyd5m" path="res://Assets/Models/Characters/timMaterial.tres" id="3_s2c06"]
 [ext_resource type="PackedScene" uid="uid://bd2inb7t5lo73" path="res://Assets/UI/PlayerLayout.tscn" id="5_mjq4u"]
 [ext_resource type="PackedScene" uid="uid://ddjjbwbp384iw" path="res://Assets/Models/Characters/tim.glb" id="5_n0c6b"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1jtf8"]
+lifetime_randomness = 1.0
+emission_shape_offset = Vector3(0, 3, 0)
+emission_shape_scale = Vector3(1, 2, 1)
+emission_shape = 3
+emission_box_extents = Vector3(14, 0, 14)
+direction = Vector3(0, -2, 0)
+spread = 0.0
+initial_velocity_min = 4.0
+initial_velocity_max = 6.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_goykj"]
+shading_mode = 0
+disable_fog = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_7yxox"]
+material = SubResource("StandardMaterial3D_goykj")
+size = Vector2(0.1, 0.1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k6p7c"]
 radius = 0.283343
@@ -1647,6 +1667,18 @@ node_connections = [&"ground_air_transition", 0, &"iwr_blend", &"ground_air_tran
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_hn6di")
 
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.3371, 0)
+cast_shadow = 0
+amount = 2048
+lifetime = 2.66
+randomness = 1.0
+fixed_fps = 24
+visibility_aabb = AABB(-7.06344, -4.73569, -6.25936, 14.1269, 9.47139, 12.6271)
+transform_align = 1
+process_material = SubResource("ParticleProcessMaterial_1jtf8")
+draw_pass_1 = SubResource("QuadMesh_7yxox")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.664337, 0)
 shape = SubResource("CapsuleShape3D_k6p7c")
@@ -1655,19 +1687,38 @@ shape = SubResource("CapsuleShape3D_k6p7c")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0402328, 0)
 
 [node name="Skeleton3D" parent="tim/Armature" index="0"]
-bones/1/rotation = Quaternion(-0.0801557, 1.52291e-13, -2.48068e-07, 0.996782)
-bones/6/rotation = Quaternion(-0.502458, -0.515951, 0.573989, -0.389701)
-bones/8/rotation = Quaternion(-0.0182469, -0.0767121, 0.0455034, 0.995847)
-bones/10/rotation = Quaternion(0.267545, -0.0620434, 0.315258, 0.908396)
-bones/12/rotation = Quaternion(0.515151, -0.521484, 0.555959, 0.391898)
-bones/13/rotation = Quaternion(0.0428259, -0.15898, -0.116878, 0.979403)
-bones/14/rotation = Quaternion(-0.00430333, 0.168525, -0.0497154, 0.984433)
-bones/15/position = Vector3(-0.0794079, 16.6516, 0.212003)
-bones/17/position = Vector3(0.00597382, 8.17948, 0.13426)
-bones/19/rotation = Quaternion(-0.0072476, -6.15095e-07, 1.64183e-08, 0.999974)
-bones/20/rotation = Quaternion(0.400802, 3.14806e-07, -2.78847e-07, 0.916165)
-bones/24/rotation = Quaternion(-0.0072476, -6.34531e-07, -2.6408e-08, 0.999974)
-bones/26/rotation = Quaternion(0.366555, 7.37953e-08, -6.29706e-08, 0.930396)
+bones/0/position = Vector3(-0.737735, 42.1728, 2.53304)
+bones/0/rotation = Quaternion(-0.0329795, -0.366578, -0.0140983, 0.929696)
+bones/1/rotation = Quaternion(-0.032986, 0.0407381, -0.0032917, 0.99862)
+bones/2/rotation = Quaternion(0.0937775, 0.0820145, -0.00478762, 0.992198)
+bones/3/rotation = Quaternion(0.106208, 0.0820173, -0.00582035, 0.990938)
+bones/4/rotation = Quaternion(0.0385775, -0.0107396, -0.000213311, 0.999198)
+bones/5/rotation = Quaternion(-0.0975637, 0.176488, 0.0165616, 0.979316)
+bones/6/rotation = Quaternion(-0.523857, -0.507177, 0.586999, -0.351821)
+bones/7/position = Vector3(-3.8381e-06, 11.0439, -3.00375e-06)
+bones/7/rotation = Quaternion(0.585537, 0.101989, 0.0604847, 0.801926)
+bones/8/position = Vector3(-4.1978e-07, 15.879, 3.76767e-06)
+bones/8/rotation = Quaternion(-0.0572726, 0.00304496, 0.457149, 0.887539)
+bones/9/rotation = Quaternion(-0.0988019, 0.121537, 0.046899, 0.986543)
+bones/10/rotation = Quaternion(0.315344, -0.00122245, 0.242186, 0.917553)
+bones/11/rotation = Quaternion(0.0793625, -0.00394464, 0.0658193, 0.994663)
+bones/12/rotation = Quaternion(0.58427, -0.47213, 0.539089, 0.380927)
+bones/13/position = Vector3(-1.7847e-06, 12.638, -4.81428e-06)
+bones/13/rotation = Quaternion(0.523224, -0.128287, 0.168102, 0.825543)
+bones/14/rotation = Quaternion(-0.00355309, 0.150593, -0.416619, 0.896514)
+bones/15/position = Vector3(-0.0794082, 16.6516, 0.212)
+bones/15/rotation = Quaternion(0.132613, -0.149472, -0.117427, 0.972771)
+bones/16/position = Vector3(4.31366, 3.72637, -0.686604)
+bones/16/rotation = Quaternion(0.195226, 0.0283151, -0.350636, 0.9155)
+bones/17/rotation = Quaternion(0.0427392, 0.0104787, 0.00644514, 0.999011)
+bones/18/rotation = Quaternion(0.0770584, 0.184381, 0.974571, -0.101374)
+bones/19/rotation = Quaternion(-0.289853, 0.120288, -0.0299501, 0.949009)
+bones/20/rotation = Quaternion(0.443674, -0.0302444, -0.052318, 0.894149)
+bones/21/rotation = Quaternion(0.385264, 0.0175565, -0.0233938, 0.922343)
+bones/23/rotation = Quaternion(-0.12227, -0.00719706, 0.984145, 0.128281)
+bones/24/rotation = Quaternion(-0.269069, 0.0784687, -0.0195294, 0.95972)
+bones/25/rotation = Quaternion(0.544816, 0.073764, 0.127086, 0.825581)
+bones/26/rotation = Quaternion(0.381033, 0.00387223, -0.00183804, 0.924552)
 
 [node name="Plane_001" parent="tim/Armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("3_s2c06")
@@ -1681,6 +1732,7 @@ spring_length = 2.0
 margin = 0.2
 
 [node name="Camera3D" type="Camera3D" parent="SpringArmPivot/SpringArm3D"]
+far = 30.0
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../tim")

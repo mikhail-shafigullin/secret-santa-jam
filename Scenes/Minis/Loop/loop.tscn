@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://dblj48i6xbmj1"]
+
+[ext_resource type="Texture2D" uid="uid://wy2x6b4asf8n" path="res://Scenes/Minis/Loop/ground.png" id="1_cqqbb"]
+[ext_resource type="SpriteFrames" uid="uid://b3mpeh62t5b7p" path="res://Scenes/Minis/Loop/LoopPlayer.tres" id="2_xas7k"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3fdj4"]
+texture = ExtResource("1_cqqbb")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qa7cw"]
+sources/0 = SubResource("TileSetAtlasSource_3fdj4")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hrg2u"]
+radius = 29.0
+height = 122.0
+
+[node name="Loop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="loop" type="Node2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="loop"]
+texture_filter = 1
+scale = Vector2(4, 4)
+tile_set = SubResource("TileSet_qa7cw")
+format = 2
+layer_0/tile_data = PackedInt32Array(196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0, 196625, 0, 0, 262143, 0, 0, 262142, 0, 0, 262141, 0, 0, 262140, 0, 0, 262139, 0, 0, 262138, 0, 0, 262137, 0, 0, 262136, 0, 0, 262135, 0, 0, 262134, 0, 0, 262133, 0, 0, 262132, 0, 0, 262131, 0, 0, 196626, 0, 0, 196627, 0, 0, 196628, 0, 0, 196629, 0, 0, 196630, 0, 0, 196631, 0, 0, 196632, 0, 0, 196633, 0, 0, 196634, 0, 0, 196635, 0, 0, 196636, 0, 0, 196637, 0, 0, 196638, 0, 0, 196639, 0, 0, 196640, 0, 0, 196641, 0, 0)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="loop"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="loop/CharacterBody2D"]
+texture_filter = 1
+sprite_frames = ExtResource("2_xas7k")
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.13986
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="loop/CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_hrg2u")
+
+[node name="Camera2D" type="Camera2D" parent="loop/CharacterBody2D"]
+texture_filter = 1
