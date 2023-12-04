@@ -31,7 +31,7 @@ size = Vector2(0.1, 0.1)
 radius = 0.283343
 height = 1.31526
 
-[sub_resource type="Animation" id="Animation_kwu10"]
+[sub_resource type="Animation" id="Animation_b3ojm"]
 resource_name = "Action"
 length = 0.0333333
 loop_mode = 1
@@ -295,7 +295,7 @@ tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = PackedFloat32Array(0, 1, 0.366555, 7.37953e-08, -6.29707e-08, 0.930396)
 
-[sub_resource type="Animation" id="Animation_lcm13"]
+[sub_resource type="Animation" id="Animation_7bb1k"]
 resource_name = "Air"
 length = 0.7
 loop_mode = 1
@@ -559,7 +559,7 @@ tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = PackedFloat32Array(0, 1, 0.343689, 3.3737e-07, 3.2335e-08, 0.939084, 0.133333, 1, 0.345317, -1.1187e-07, 5.99564e-07, 0.938486, 0.2, 1, 0.347045, -3.42385e-07, 5.68758e-07, 0.937849, 0.266667, 1, 0.34865, -9.48356e-08, 3.72439e-08, 0.937253, 0.366667, 1, 0.349624, 2.54196e-08, -2.26294e-07, 0.93689, 0.466667, 1, 0.348432, -7.64976e-09, 4.59565e-07, 0.937334, 0.533333, 1, 0.346988, -3.14074e-07, 4.69594e-07, 0.93787, 0.6, 1, 0.345438, 1.04313e-07, 4.24557e-07, 0.938442, 0.666667, 1, 0.344136, 5.11631e-08, -7.14369e-08, 0.93892, 0.7, 1, 0.343689, 3.3737e-07, 3.2335e-08, 0.939084)
 
-[sub_resource type="Animation" id="Animation_pe04b"]
+[sub_resource type="Animation" id="Animation_g3i48"]
 resource_name = "Idle"
 length = 1.96667
 loop_mode = 1
@@ -823,7 +823,7 @@ tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = PackedFloat32Array(0, 1, 0.381033, 0.00387223, -0.00183804, 0.924552)
 
-[sub_resource type="Animation" id="Animation_1jigx"]
+[sub_resource type="Animation" id="Animation_30aei"]
 resource_name = "Run"
 length = 0.6
 loop_mode = 1
@@ -1087,7 +1087,7 @@ tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = PackedFloat32Array(0, 1, 0.412521, 1.02144e-07, -5.77018e-08, 0.910948, 0.0333333, 1, 0.46135, -0.00242338, -0.00125076, 0.887214, 0.0666667, 1, 0.583423, 0.0119546, 0.0082493, 0.812039, 0.1, 1, 0.635282, 0.0224589, 0.0133665, 0.771838, 0.133333, 1, 0.509736, 5.86352e-08, -7.41637e-08, 0.860331, 0.166667, 1, 0.43047, 6.75704e-08, -6.04822e-08, 0.902605, 0.2, 1, 0.369955, 2.47863e-08, -6.84436e-08, 0.92905, 0.233333, 1, 0.324243, 3.17164e-08, -8.32592e-08, 0.945974, 0.266667, 1, 0.357337, 4.84181e-08, -7.24798e-08, 0.933976, 0.3, 1, 0.402396, 6.75355e-08, -3.058e-08, 0.915466, 0.333333, 1, 0.378577, 8.4223e-08, -7.91354e-08, 0.92557, 0.366667, 1, 0.357663, 6.65666e-08, -3.7318e-08, 0.933851, 0.4, 1, 0.395965, 6.66598e-08, -6.14097e-08, 0.918266, 0.433333, 1, 0.415934, 1.38693e-07, -5.59366e-08, 0.909395, 0.466667, 1, 0.435276, 6.66022e-08, -7.02219e-08, 0.900297, 0.5, 1, 0.436039, 3.80507e-08, -6.29342e-08, 0.899928, 0.533333, 1, 0.333633, 9.23865e-08, -9.04267e-08, 0.942703, 0.566667, 1, 0.362516, 7.73701e-08, -7.61137e-08, 0.931977, 0.6, 1, 0.412545, 6.3193e-08, -5.55097e-08, 0.910937)
 
-[sub_resource type="Animation" id="Animation_mymso"]
+[sub_resource type="Animation" id="Animation_g00k3"]
 resource_name = "Tpose"
 length = 0.0333333
 loop_mode = 1
@@ -1351,7 +1351,7 @@ tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = PackedFloat32Array(0, 1, 0.366555, 7.37953e-08, -6.29707e-08, 0.930396)
 
-[sub_resource type="Animation" id="Animation_hc2nw"]
+[sub_resource type="Animation" id="Animation_snbfx"]
 resource_name = "Walk"
 length = 1.03333
 loop_mode = 1
@@ -1615,14 +1615,14 @@ tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = PackedFloat32Array(0, 1, 0.405961, 0.0070208, -0.00325426, 0.913858, 0.0333333, 1, 0.407939, 0.00677724, -0.0034871, 0.912977, 0.0666667, 1, 0.408769, 0.00572012, -0.00422495, 0.91261, 0.1, 1, 0.414113, 0.00708993, -0.00510839, 0.910183, 0.133333, 1, 0.434782, 0.00784822, -0.00784365, 0.900467, 0.166667, 1, 0.465193, 0.00728606, -0.0110591, 0.88511, 0.2, 1, 0.496423, 0.00536133, -0.0130976, 0.867966, 0.233333, 1, 0.534564, 0.00659586, -0.016434, 0.844942, 0.266667, 1, 0.560572, 0.0158483, -0.0147098, 0.827824, 0.3, 1, 0.62699, 0.0224169, -0.00945699, 0.778648, 0.333333, 1, 0.685639, 0.0215293, -0.000433186, 0.727623, 0.366667, 1, 0.68078, 0.0387823, 0.0353804, 0.730604, 0.4, 1, 0.55846, 0.0275931, 0.0189097, 0.828857, 0.433333, 1, 0.466311, 0.0215056, -0.0136445, 0.884254, 0.466667, 1, 0.442414, 0.019899, -0.0153594, 0.896459, 0.5, 1, 0.420685, 0.0402283, -0.0192661, 0.90611, 0.533333, 1, 0.419517, 0.0351057, -0.0143636, 0.906955, 0.566667, 1, 0.427543, 0.0263578, -0.0150076, 0.903486, 0.6, 1, 0.447054, 0.0269884, -0.0114542, 0.894027, 0.633333, 1, 0.446744, 0.0192187, -0.00520262, 0.89444, 0.666667, 1, 0.462438, 0.0148253, -0.0107606, 0.886463, 0.7, 1, 0.479461, 0.019442, -0.00546934, 0.87733, 0.733333, 1, 0.463551, 0.00665405, -0.000631694, 0.886045, 0.766667, 1, 0.493897, -0.00292516, 0.000109987, 0.869515, 0.8, 1, 0.535511, 0.00265485, -0.00253894, 0.84452, 0.866667, 1, 0.385648, 0.00746863, -0.00253146, 0.922612, 0.9, 1, 0.413123, 0.00576576, -0.00306598, 0.910652, 0.933333, 1, 0.410562, 0.00649694, -0.00331358, 0.911804, 0.966667, 1, 0.404993, 0.00723016, -0.00338869, 0.914285, 1, 1, 0.40505, 0.00721307, -0.00336091, 0.91426, 1.03333, 1, 0.405961, 0.0070208, -0.00325425, 0.913858)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_nw66a"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sppju"]
 _data = {
-"Action": SubResource("Animation_kwu10"),
-"Air": SubResource("Animation_lcm13"),
-"Idle": SubResource("Animation_pe04b"),
-"Run": SubResource("Animation_1jigx"),
-"Tpose": SubResource("Animation_mymso"),
-"Walk": SubResource("Animation_hc2nw")
+"Action": SubResource("Animation_b3ojm"),
+"Air": SubResource("Animation_7bb1k"),
+"Idle": SubResource("Animation_g3i48"),
+"Run": SubResource("Animation_30aei"),
+"Tpose": SubResource("Animation_g00k3"),
+"Walk": SubResource("Animation_snbfx")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dfvqk"]
@@ -1739,7 +1739,7 @@ far = 30.0
 root_node = NodePath("../tim")
 callback_mode_process = 0
 libraries = {
-"": SubResource("AnimationLibrary_nw66a")
+"": SubResource("AnimationLibrary_sppju")
 }
 tree_root = SubResource("AnimationNodeBlendTree_rsvoc")
 anim_player = NodePath("../tim/AnimationPlayer")
