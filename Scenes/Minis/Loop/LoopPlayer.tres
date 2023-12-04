@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://b3mpeh62t5b7p"]
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://b3mpeh62t5b7p"]
 
 [ext_resource type="Texture2D" uid="uid://ig2wouelr5cb" path="res://Scenes/Minis/Loop/nTr0OH.png" id="1_8gjtx"]
 
@@ -6,17 +6,9 @@
 atlas = ExtResource("1_8gjtx")
 region = Rect2(0, 125, 62, 125)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5w34y"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8buf"]
 atlas = ExtResource("1_8gjtx")
-region = Rect2(62, 125, 62, 125)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ltyg6"]
-atlas = ExtResource("1_8gjtx")
-region = Rect2(124, 125, 62, 125)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vcbj1"]
-atlas = ExtResource("1_8gjtx")
-region = Rect2(186, 125, 62, 125)
+region = Rect2(0, 0, 62, 125)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t4cd1"]
 atlas = ExtResource("1_8gjtx")
@@ -37,13 +29,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_sjldn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5w34y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ltyg6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vcbj1")
+"texture": SubResource("AtlasTexture_b8buf")
 }],
 "loop": true,
 "name": &"idle",
