@@ -28,13 +28,19 @@ func _physics_process(delta):
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
-	if busy:
-		return
-	
 	var move_direction : Vector3 = Vector3.ZERO
-	move_direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-	move_direction.z = Input.get_action_strength("move_backwards") - Input.get_action_strength("move_forwards")
-	move_direction = move_direction.rotated(Vector3.UP, spring_arm_pivot.rotation.y)
+	if not busy:
+		move_direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+		move_direction.z = Input.get_action_strength("move_backwards") - Input.get_action_strength("move_forwards")
+		move_direction = move_direction.rotated(Vector3.UP, spring_arm_pivot.rotation.y)
+
+		var just_landed := is_on_floor() and snap_vector == Vector3.ZERO
+		var is_jumping := is_on_floor() and Input.is_action_just_pressed("jump")
+		if is_jumping:
+			velocity.y = jump_strength
+			snap_vector = Vector3.ZERO
+		elif just_landed:
+			snap_vector = Vector3.DOWN
 	
 	velocity.y -= gravity * delta
 	
@@ -49,13 +55,6 @@ func _physics_process(delta):
 	if move_direction:
 		player_mesh.rotation.y = lerp_angle(player_mesh.rotation.y, atan2(velocity.x, velocity.z), LERP_VALUE)
 	
-	var just_landed := is_on_floor() and snap_vector == Vector3.ZERO
-	var is_jumping := is_on_floor() and Input.is_action_just_pressed("jump")
-	if is_jumping:
-		velocity.y = jump_strength
-		snap_vector = Vector3.ZERO
-	elif just_landed:
-		snap_vector = Vector3.DOWN
 	
 	apply_floor_snap()
 	move_and_slide()

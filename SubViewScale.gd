@@ -8,6 +8,10 @@ func on_resize():
 	fit()
 
 func fit():
-	var scaler = get_viewport().size.y / size.y
+	var scaler = Vector2(get_viewport().size) / size
 	pivot_offset = size/2
-	scale = Vector2(scaler, scaler)
+	if scaler.y < scaler.x:
+		scale = Vector2(scaler.y, scaler.y)
+	else:
+		scale = Vector2(scaler.x, scaler.x)
+		
