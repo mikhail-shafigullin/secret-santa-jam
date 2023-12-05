@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://botbo4ls1i0qm"]
+
+[ext_resource type="Texture2D" uid="uid://dx6wvcdr0smai" path="res://Assets/Models/Objects/Rvier/IceWater_ice.png" id="1_oir3d"]
+
+[resource]
+resource_name = "ice"
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_oir3d")
+texture_filter = 2

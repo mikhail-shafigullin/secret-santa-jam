@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://c1b8gx18o2deo"]
+
+[ext_resource type="Shader" path="res://Assets/Models/Objects/Rvier/riverIce.gdshader" id="1_ahmsl"]
+[ext_resource type="Texture2D" uid="uid://lyq1nxgwudti" path="res://Assets/Models/Objects/Rvier/IceWater_water.png" id="2_pqn1t"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ahmsl")
+shader_parameter/colorTexture = ExtResource("2_pqn1t")
