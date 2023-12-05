@@ -1,0 +1,296 @@
+[gd_scene load_steps=18 format=3 uid="uid://dqq5k5oslpbm0"]
+
+[ext_resource type="Texture2D" uid="uid://3jauchyvj37w" path="res://Assets/Models/Characters/tim_tim.png" id="1_i4l2i"]
+[ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="2_3okkh"]
+[ext_resource type="PackedScene" uid="uid://covjltvwg2htp" path="res://Scenes/TestRobot.tscn" id="3_hs1wi"]
+[ext_resource type="PackedScene" uid="uid://hd06iu5g1ddy" path="res://Scenes/Characters/fisherman.tscn" id="4_nf8l7"]
+[ext_resource type="PackedScene" uid="uid://bmo3dnmo8nkx1" path="res://Scenes/Controller/Cutscener.tscn" id="5_6em04"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_o26vf"]
+friction = 0.65
+bounce = 0.7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xrsgj"]
+shading_mode = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_y5j4i"]
+material = SubResource("StandardMaterial3D_xrsgj")
+size = Vector3(3, 1, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dhjwv"]
+size = Vector3(129.211, 1, 144.876)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ubn07"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nejs2"]
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(0.929412, 0.780392, 0.384314, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rq34q"]
+shading_mode = 0
+albedo_texture = ExtResource("1_i4l2i")
+
+[sub_resource type="BoxMesh" id="BoxMesh_fek20"]
+material = SubResource("StandardMaterial3D_rq34q")
+
+[sub_resource type="Environment" id="Environment_aex3l"]
+background_mode = 1
+background_color = Color(0.176471, 0.2, 0.321569, 1)
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+tonemap_mode = 3
+fog_enabled = true
+fog_light_color = Color(0.207843, 0.223529, 0.309804, 1)
+fog_sun_scatter = 1.0
+fog_density = 0.14
+fog_height_density = 16.0
+volumetric_fog_density = 1.166
+volumetric_fog_emission = Color(0.329412, 0.917647, 0.945098, 1)
+volumetric_fog_emission_energy = 28.05
+volumetric_fog_sky_affect = 0.725
+adjustment_saturation = 0.01
+
+[sub_resource type="Animation" id="Animation_07u4m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cutscener/Camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.27489, 3.69539, 5.82178)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cutscener/Camera:fov")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [27.6855]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.329102, 1.52691, 2.87322)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player/tim:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player/tim:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.0402329, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vvllj"]
+resource_name = "test"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cutscener/Camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2.27489, 3.69539, 5.82178), Vector3(2.27489, 3.69539, 3.6259)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cutscener/Camera:fov")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [27.6855, 70.6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(3.15207, 2.60197, 1.84715)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qummu"]
+_data = {
+"RESET": SubResource("Animation_07u4m"),
+"test": SubResource("Animation_vvllj")
+}
+
+[node name="World" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_o26vf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(44.9331, 8.74228e-08, 0, -3.92818e-06, 1, 0, 0, 0, -48.6587, 0, 0, 0)
+mesh = SubResource("BoxMesh_y5j4i")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_dhjwv")
+
+[node name="box2" type="Node3D" parent="."]
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="box2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.384293, 0.92038, 2.90095)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="box2/StaticBody3D2"]
+shape = SubResource("BoxShape3D_ubn07")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="box2/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00840068, 0)
+material_override = SubResource("StandardMaterial3D_nejs2")
+mesh = SubResource("BoxMesh_fek20")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="box2/StaticBody3D2"]
+light_color = Color(0.945098, 0.972549, 0.341176, 1)
+omni_range = 2.38268
+
+[node name="box" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.89508, 4.76837e-07, 3.98673)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.97393, 0.92038, 1.00881)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="box/StaticBody3D2"]
+shape = SubResource("BoxShape3D_ubn07")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="box/StaticBody3D2"]
+mesh = SubResource("BoxMesh_fek20")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_aex3l")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.641048, -0.654773, -0.400413, 0, -0.52171, 0.853123, -0.767501, -0.546893, -0.334441, 0, 2.45456, 0)
+visible = false
+light_energy = 1.26
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("2_3okkh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.329102, 1.52691, 2.87322)
+
+[node name="GPUParticles3D" parent="Player" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.0823, 0)
+lifetime = 5.01
+
+[node name="tim" parent="Player" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0402329, 0)
+
+[node name="Skeleton3D" parent="Player/tim/Armature" index="0"]
+bones/0/position = Vector3(3.81937, 47.5222, 3.01529)
+bones/0/rotation = Quaternion(0.0173883, 0.0149574, -0.00950857, 0.999692)
+bones/1/rotation = Quaternion(-0.0787445, -0.000567166, -0.00390905, 0.996887)
+bones/2/rotation = Quaternion(0.00283543, -0.00133916, -0.00374962, 0.999988)
+bones/3/rotation = Quaternion(0.0157208, -0.00138736, -0.00373209, 0.999869)
+bones/4/rotation = Quaternion(0.0837815, 0.00227172, 0.0036363, 0.996475)
+bones/5/rotation = Quaternion(-0.0136367, 0.00207091, 0.0300217, 0.999454)
+bones/6/rotation = Quaternion(-0.649896, -0.380882, 0.54944, -0.361496)
+bones/7/rotation = Quaternion(0.479207, 0.185552, -0.0647595, 0.855416)
+bones/8/rotation = Quaternion(0.000310021, 0.0863973, 0.323463, 0.942288)
+bones/9/rotation = Quaternion(0.00713133, 0.150574, 0.0266943, 0.988213)
+bones/11/rotation = Quaternion(0.319458, 0.00873583, 0.0553869, 0.94594)
+bones/12/rotation = Quaternion(0.621705, -0.430523, 0.577431, 0.307744)
+bones/13/rotation = Quaternion(0.532331, -0.196381, 0.0571452, 0.821458)
+bones/14/rotation = Quaternion(-0.0683261, 0.0406657, -0.256602, 0.963241)
+bones/15/rotation = Quaternion(-0.117542, -0.190974, -0.194762, 0.954872)
+bones/16/rotation = Quaternion(0.175995, 0.0576178, -0.347698, 0.919136)
+bones/17/rotation = Quaternion(0.444052, 0.0265755, -0.0071896, 0.895578)
+bones/18/rotation = Quaternion(0.08195, 0.049636, 0.9954, 5.02345e-05)
+bones/19/rotation = Quaternion(-0.167036, 0.109506, -0.00574074, 0.979834)
+bones/20/rotation = Quaternion(0.480006, 0.0130618, 0.0335239, 0.876527)
+bones/21/rotation = Quaternion(0.41103, -0.0506147, 0.0132855, 0.910119)
+bones/23/rotation = Quaternion(-0.059333, 0.17749, 0.982242, 0.0133269)
+bones/24/rotation = Quaternion(-0.426422, 0.0308913, -0.00778973, 0.903963)
+bones/25/rotation = Quaternion(0.394437, -0.0521895, -0.0704192, 0.914733)
+bones/26/rotation = Quaternion(0.423538, 0.0307323, -0.0146859, 0.905238)
+
+[node name="Plane_001" parent="Player/tim/Armature/Skeleton3D" index="0"]
+material_override = null
+
+[node name="Camera3D" parent="Player/SpringArmPivot/SpringArm3D" index="0"]
+current = true
+
+[node name="TestRobot" parent="." instance=ExtResource("3_hs1wi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.31123, 0.5, 5.51678)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.61495, 1.44253, 2.92703)
+use_collision = true
+size = Vector3(8.30609, 2.38391, 3.24078)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.33619, 0.764276, 0.809301)
+operation = 2
+size = Vector3(8.26019, 0.981583, 3.24078)
+
+[node name="fisherman2" parent="CSGBox3D" instance=ExtResource("4_nf8l7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.28633, 1.17902, -1.33574)
+
+[node name="Cutscener" parent="." instance=ExtResource("5_6em04")]
+libraries = {
+"": SubResource("AnimationLibrary_qummu")
+}
+autoplay = "RESET"
+
+[node name="Camera" parent="Cutscener" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27489, 3.69539, 5.82178)
+fov = 27.6855
+
+[editable path="Player"]
+[editable path="Cutscener"]

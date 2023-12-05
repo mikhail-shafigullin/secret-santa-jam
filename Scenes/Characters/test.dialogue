@@ -1,5 +1,5 @@
 ~ this_is_a_node_title
-
+do Global.cutscener.start("test")
 Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
 Nathan: Here are some choices.
 - First one
@@ -7,7 +7,10 @@ Nathan: Here are some choices.
 - Second one
 	Nathan: You picked the second one.
 - Start again => this_is_a_node_title
-- End the conversation => END
+- End the conversation => end
 Nathan: For more information see the online documentation.
 
+
+~ end
+do Global.cutscener.end()
 => END

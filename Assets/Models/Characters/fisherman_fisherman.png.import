@@ -2,13 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y7dpwc0uqdes"
+uid="uid://go55ljipe731"
 path.s3tc="res://.godot/imported/fisherman_fisherman.png-eca51af97776d6d0f3b689371b2f9ce1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 

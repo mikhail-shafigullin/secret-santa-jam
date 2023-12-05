@@ -6,6 +6,7 @@ var snap_vector : Vector3 = Vector3.DOWN
 var speed : float
 var busy : bool = false
 
+
 @export_group("Movement variables")
 @export var walk_speed : float = 2.0
 @export var run_speed : float = 5.0
@@ -17,6 +18,7 @@ const ANIMATION_BLEND : float = 7.0
 @onready var player_mesh : Node3D = $tim
 @onready var spring_arm_pivot : Node3D = $SpringArmPivot
 @onready var animator : AnimationTree = $AnimationTree
+@onready var camera : Camera3D = $SpringArmPivot/SpringArm3D/Camera3D
 
 func _ready():
 	Global.player = self
@@ -73,3 +75,5 @@ func animate(delta):
 			animator.set("parameters/iwr_blend/blend_amount", lerp(animator.get("parameters/iwr_blend/blend_amount"), -1.0, delta * ANIMATION_BLEND))
 	else:
 		animator.set("parameters/ground_air_transition/transition_request", "air")
+
+

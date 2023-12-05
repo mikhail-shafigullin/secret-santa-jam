@@ -11,3 +11,4 @@ func _on_usable_object_on_object_use():
 	var balloon: Node = Balloon.instantiate()
 	Global.player.add_child(balloon)
 	balloon.start(dialoge, "")
+	

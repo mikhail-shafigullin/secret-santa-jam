@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="secret-santa-jam"
-run/main_scene="res://test_zone.tscn"
+run/main_scene="res://Scenes/Screens/MainScreen.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
+boot_splash/bg_color=Color(0.0470588, 0.0470588, 0.0470588, 1)
 config/icon="res://icon.svg"
 
 [autoload]
