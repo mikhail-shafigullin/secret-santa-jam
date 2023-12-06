@@ -62,12 +62,6 @@ render_target_update_mode = 4
 
 [node name="World" parent="Control/SubViewScale/SubViewport" instance=ExtResource("2_kc36r")]
 
-[node name="CaptureMouse" type="Button" parent="."]
-layout_mode = 0
-offset_right = 83.0
-offset_bottom = 62.0
-text = "capture mouse"
-
 [node name="FullScreen" type="Button" parent="."]
 layout_mode = 0
 offset_top = 62.0
@@ -76,5 +70,4 @@ offset_bottom = 124.0
 text = "full screen
 "
 
-[connection signal="pressed" from="CaptureMouse" to="." method="_on_capture_mouse_pressed"]
 [connection signal="pressed" from="FullScreen" to="." method="_on_full_screen_pressed"]

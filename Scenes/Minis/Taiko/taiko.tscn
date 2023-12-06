@@ -1,0 +1,188 @@
+[gd_scene load_steps=13 format=3 uid="uid://c5ilmrssvix5k"]
+
+[ext_resource type="Texture2D" uid="uid://c11f0ruhywo6l" path="res://Scenes/Minis/Taiko/Texture/taiko.png" id="1_73q0b"]
+[ext_resource type="Script" path="res://Scenes/Minis/Taiko/Taiko.gd" id="1_ei6s2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0soy"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pr2hx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wum5v"]
+atlas = ExtResource("1_73q0b")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8tsj"]
+atlas = ExtResource("1_73q0b")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7e8w4"]
+atlas = ExtResource("1_73q0b")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_raq1l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wum5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8tsj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7e8w4")
+}],
+"loop": true,
+"name": &"tap",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuuuh"]
+atlas = ExtResource("1_73q0b")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7mob"]
+atlas = ExtResource("1_73q0b")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dists"]
+atlas = ExtResource("1_73q0b")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xvt3o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuuuh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7mob")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dists")
+}],
+"loop": true,
+"name": &"tap",
+"speed": 5.0
+}]
+
+[node name="Taiko" type="CanvasLayer"]
+layer = 71
+script = ExtResource("1_ei6s2")
+
+[node name="TaikoScreen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TaikoLine" type="Control" parent="TaikoScreen"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 25.0
+offset_bottom = 175.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="TaikoScreen/TaikoLine"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e0soy")
+
+[node name="Panel" type="Panel" parent="TaikoScreen/TaikoLine/Panel"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pr2hx")
+
+[node name="TextureRect" type="TextureRect" parent="TaikoScreen/TaikoLine/Panel/Panel"]
+modulate = Color(1, 1, 1, 0.501961)
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 16.0
+offset_top = -32.0
+offset_right = 48.0
+scale = Vector2(2, 2)
+mouse_filter = 2
+texture = ExtResource("1_73q0b")
+expand_mode = 2
+stretch_mode = 1
+
+[node name="blue" type="AnimatedSprite2D" parent="TaikoScreen/TaikoLine"]
+texture_filter = 3
+position = Vector2(127, 38)
+sprite_frames = SubResource("SpriteFrames_raq1l")
+autoplay = "default"
+frame_progress = 0.865235
+
+[node name="blue3" type="AnimatedSprite2D" parent="TaikoScreen/TaikoLine"]
+texture_filter = 3
+position = Vector2(97, 38)
+sprite_frames = SubResource("SpriteFrames_xvt3o")
+autoplay = "default"
+frame_progress = 0.53229
+
+[node name="blue2" type="AnimatedSprite2D" parent="TaikoScreen/TaikoLine"]
+texture_filter = 3
+position = Vector2(157, 37)
+sprite_frames = SubResource("SpriteFrames_xvt3o")
+autoplay = "default"
+frame_progress = 0.211129
+
+[node name="Exit" type="Button" parent="TaikoScreen"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 16)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -22.0
+offset_right = 32.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "exit"
+
+[node name="Label" type="Label" parent="TaikoScreen"]
+texture_filter = 3
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_right = 24.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Score:
+"
