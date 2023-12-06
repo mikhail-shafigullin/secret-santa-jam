@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7a6iylrksc7m"
-path.s3tc="res://.godot/imported/IceWater_snow.png-24f978c888cb806806b788c4c111fe28.s3tc.ctex"
+uid="uid://dtvv0wlgtf82t"
+path.s3tc="res://.godot/imported/road_lamps.png-9b9f7fc4a600094e0685e5a202d84ceb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://Assets/Models/Objects/Rvier/IceWater_snow.png"
-dest_files=["res://.godot/imported/IceWater_snow.png-24f978c888cb806806b788c4c111fe28.s3tc.ctex"]
+source_file="res://Assets/Models/Objects/Road/road_lamps.png"
+dest_files=["res://.godot/imported/road_lamps.png-9b9f7fc4a600094e0685e5a202d84ceb.s3tc.ctex"]
 
 [params]
 

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://fm4l8uq8r28m"]
+
+[ext_resource type="Texture2D" uid="uid://q57e1uxq1l30" path="res://Assets/Models/Objects/Road/road_car.png" id="1_1uat3"]
+
+[resource]
+resource_name = "car"
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_1uat3")
+texture_filter = 2

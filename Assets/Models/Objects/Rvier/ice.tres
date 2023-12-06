@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dklen2voa5hvf"]
 
-[ext_resource type="Texture2D" uid="uid://bt1j5t3g7it8a" path="res://Assets/Models/Objects/Rvier/IceWater_snow.png" id="1_6amyw"]
+[ext_resource type="Texture2D" uid="uid://b7a6iylrksc7m" path="res://Assets/Models/Objects/Rvier/IceWater_snow.png" id="1_6amyw"]
 
 [resource]
 resource_name = "snow"
