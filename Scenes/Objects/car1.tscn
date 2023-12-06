@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyf3kvgftllj3"]
+
+[ext_resource type="ArrayMesh" uid="uid://bperk1yi14od" path="res://Assets/Models/Objects/Road/car1.res" id="1_a675j"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_e4p3t"]
+points = PackedVector3Array(-1.5675, 0.0166616, -0.967681, -1.5675, 0.0166616, 0.663011, -1.5675, 0.690278, -0.967681, 2.44141, 0.0166616, -0.967681, -1.5675, 0.690278, 0.663011, 2.44141, 0.0166616, 0.663011, -1.10204, 1.35975, 0.538346, -1.07897, 1.33316, -0.886434, 2.49671, 0.80934, -0.928414, 2.43624, 0.774997, 0.636833, 0.198459, 1.35975, 0.469549, 0.16902, 1.38167, -0.816999, 1.57852, 0.97143, 0.599641)
+
+[node name="car1" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.600145, 0, 0.186438)
+mesh = ExtResource("1_a675j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.600145, 0, 0.186438)
+shape = SubResource("ConvexPolygonShape3D_e4p3t")

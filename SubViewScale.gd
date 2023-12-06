@@ -15,3 +15,8 @@ func fit():
 	else:
 		scale = Vector2(scaler.x, scaler.x)
 		
+
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.pressed:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

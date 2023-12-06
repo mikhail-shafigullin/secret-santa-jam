@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://e8detksnipld"]
+
+[ext_resource type="ArrayMesh" uid="uid://dwqfpaftpjw6h" path="res://Assets/Models/Objects/Road/roadBlock.res" id="1_io5a0"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_uxyt6"]
+points = PackedVector3Array(0.121301, 0.6496, 0.121301, -0.195976, -0.198925, -0.195976, 0.195668, -0.195383, -0.194316, -0.194316, -0.195383, 0.195668, -0.124624, 0.621718, -0.124624, 0.195668, -0.195383, 0.195668, -0.124396, 0.608368, 0.125785, 0.125785, 0.608368, -0.124396, -0.124624, 0.621718, 0.113461, 0.113461, 0.621718, -0.124624, -0.18664, -0.0915444, 0.175487, 0.175487, -0.0915444, -0.18664, 0.125785, 0.608368, 0.125785)
+
+[node name="roadBlock" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000443399, 0.0529606, 0.00424793)
+mesh = ExtResource("1_io5a0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000443399, 0.0529606, 0.00424793)
+shape = SubResource("ConvexPolygonShape3D_uxyt6")

@@ -131,4 +131,11 @@ func animate(delta):
 	else:
 		animator.set("parameters/ground_air_transition/transition_request", "air")
 
-
+func set_busy(state: bool) -> void:
+	
+	busy = state
+	$PlayerLayout/UseMessage/UseMessageText.visible = !busy
+	if !busy:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	else:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

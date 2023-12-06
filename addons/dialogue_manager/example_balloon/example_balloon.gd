@@ -26,8 +26,7 @@ var dialogue_line: DialogueLine:
 		# The dialogue has finished so close the balloon
 		if not next_dialogue_line:
 			if Global.player:
-				Global.player.busy = false
-				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+				Global.player.set_busy(false)
 			queue_free()
 			return
 
@@ -84,8 +83,7 @@ func start(dialogue_resource: DialogueResource, title: String, extra_game_states
 	resource = dialogue_resource
 	self.dialogue_line = await resource.get_next_dialogue_line(title, temporary_game_states)
 	if Global.player:
-		Global.player.busy = true
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		Global.player.set_busy(true)
 
 ## Go to the next line
 func next(next_id: String) -> void:
