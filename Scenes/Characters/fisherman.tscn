@@ -9,6 +9,7 @@
 [node name="fisherman2" instance=ExtResource("1_mvymt")]
 script = ExtResource("2_jedh1")
 dialoge = ExtResource("3_k0rh4")
+metadata/_edit_group_ = true
 
 [node name="Skeleton3D" parent="fisherman" index="0"]
 bones/1/position = Vector3(0.000955047, 0.274609, 0.000315459)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b8dgvt8kowg8b"]
+[gd_scene load_steps=21 format=3 uid="uid://b8dgvt8kowg8b"]
 
 [ext_resource type="ArrayMesh" uid="uid://b3b2ecden8fv2" path="res://Assets/Models/Objects/Rvier/ice1.res" id="1_0j00v"]
 [ext_resource type="PackedScene" uid="uid://den4wllpprpa5" path="res://Scenes/Objects/lamp.tscn" id="1_q6yeg"]
@@ -24,9 +24,6 @@ size = Vector2(5, 5)
 [sub_resource type="PlaneMesh" id="PlaneMesh_db8rm"]
 material = ExtResource("3_ctc07")
 size = Vector2(15, 15)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5ghdp"]
-points = PackedVector3Array(-2, 0, -2, -2, 0, 2, 2, 0, -2, 2, 0, 2)
 
 [sub_resource type="Animation" id="Animation_yo7w8"]
 length = 0.001
@@ -151,19 +148,7 @@ mesh = ExtResource("1_0j00v")
 shape = SubResource("ConcavePolygonShape3D_terxc")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00717926, 0.0419025, -3.3912)
-mesh = SubResource("PlaneMesh_07nuo")
-skeleton = NodePath("../test")
-surface_material_override/0 = ExtResource("2_b522b")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00717926, 0.0419025, -8.02713)
-mesh = SubResource("PlaneMesh_07nuo")
-skeleton = NodePath("../test")
-surface_material_override/0 = ExtResource("2_b522b")
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00717926, 0.0419025, -12.5479)
+transform = Transform3D(9.11897, 0, 0, 0, 9.11897, 0, 0, 0, 9.11897, 2.42249, 0.0419025, -13.0828)
 mesh = SubResource("PlaneMesh_07nuo")
 skeleton = NodePath("../test")
 surface_material_override/0 = ExtResource("2_b522b")
@@ -174,10 +159,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.244048, -0.225893, -1.0924
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.848, 0.94177, -7.19669)
 mesh = SubResource("PlaneMesh_db8rm")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.277003, 0)
-shape = SubResource("ConvexPolygonShape3D_5ghdp")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../test/MeshInstance3D")

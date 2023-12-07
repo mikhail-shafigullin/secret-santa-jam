@@ -132,13 +132,3 @@ shape = SubResource("ConvexPolygonShape3D_g8eno")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_i3ilk")
-
-[node name="OmniLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.71402, 7.15894, 3.50273)
-light_color = Color(1, 1, 0.0941176, 1)
-light_energy = 6.885
-light_size = 1.0
-spot_range = 5.46233
-spot_attenuation = 0.757858
-spot_angle = 76.809
-spot_angle_attenuation = 0.87055

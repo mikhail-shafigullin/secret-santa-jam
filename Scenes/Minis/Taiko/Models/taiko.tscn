@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://degfp10g6rn1y"]
+
+[ext_resource type="PackedScene" path="res://Scenes/Minis/Taiko/Models/taiko.glb" id="1_8pcu5"]
+[ext_resource type="PackedScene" uid="uid://bo1tr0fadvf6l" path="res://Scenes/UsableObject.tscn" id="2_mg465"]
+[ext_resource type="Script" path="res://Scenes/Minis/Taiko/taikoModel.gd" id="2_nj1bv"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_eqn74"]
+points = PackedVector3Array(0.141318, 0.973149, -0.397343, 0.142206, 0.746844, 0.457127, -0.143466, 0.746845, 0.45713, -0.311982, -0.00920594, -0.262668, 0.310799, -0.00908005, 0.360052, 0.330896, -0.00908005, -0.262668, -0.33335, 1.05089, 0.0380244, 0.282003, 1.10092, 0.311093, -0.291961, -0.00920594, 0.380052, -0.257005, 0.860612, -0.360747, 0.366664, 0.914966, 0.000433581, -0.143392, 1.22298, 0.266466, -0.27902, 0.882375, 0.402829, 0.183362, 1.19495, -0.0198322, -0.184695, 1.19495, -0.0198322, -0.367775, 0.914964, 0.000361911, 0.272768, 0.858654, -0.339079, -0.142326, 0.972514, -0.39659, 0.277738, 0.882232, 0.402883, 0.142132, 1.22297, 0.266464, -0.282251, 1.09905, 0.310081, 0.324753, 1.02263, -0.0550477, -0.307639, 0.669384, 0.372741, -0.29346, 0.878138, -0.283129, 0.308103, 0.632172, 0.355968, 0.332769, 1.05181, 0.0379578, -0.325398, 1.02195, -0.0549083, 0.142743, 1.22558, 0.191014, -0.283919, -0.011597, 0.311749, 0.292778, 0.878475, -0.28375, 0.256261, 0.860919, -0.361503, 0.140695, 0.990584, -0.376546)
+
+[node name="taiko" instance=ExtResource("1_8pcu5")]
+script = ExtResource("2_nj1bv")
+metadata/_edit_group_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_eqn74")
+
+[node name="UsableObject" parent="." index="2" instance=ExtResource("2_mg465")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.296126, 0)
+useObjectMessage = "Use Taiko"
+
+[node name="CollisionShape3D" parent="UsableObject/E_UseAreaEvent" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0239868, -0.183107, 0.466805)
+
+[connection signal="on_object_use" from="UsableObject" to="." method="_on_usable_object_on_object_use"]
+
+[editable path="UsableObject"]

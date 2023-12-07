@@ -77,7 +77,7 @@ animations = [{
 }]
 
 [node name="Taiko" type="CanvasLayer"]
-layer = 71
+layer = 128
 script = ExtResource("1_ei6s2")
 
 [node name="TaikoScreen" type="Control" parent="."]
@@ -87,7 +87,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 
 [node name="TaikoLine" type="Control" parent="TaikoScreen"]
 custom_minimum_size = Vector2(0, 150)
@@ -171,6 +170,7 @@ offset_top = -22.0
 offset_right = 32.0
 grow_horizontal = 2
 grow_vertical = 0
+focus_mode = 0
 theme_override_font_sizes/font_size = 16
 text = "exit"
 
@@ -186,3 +186,5 @@ offset_bottom = 23.0
 grow_horizontal = 2
 text = "Score:
 "
+
+[connection signal="pressed" from="TaikoScreen/Exit" to="." method="_on_exit_pressed"]
