@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5ilmrssvix5k"]
+[gd_scene load_steps=17 format=3 uid="uid://c5ilmrssvix5k"]
 
 [ext_resource type="Texture2D" uid="uid://c11f0ruhywo6l" path="res://Scenes/Minis/Taiko/Texture/taiko.png" id="1_73q0b"]
 [ext_resource type="Script" path="res://Scenes/Minis/Taiko/Taiko.gd" id="1_ei6s2"]
@@ -7,6 +7,22 @@
 bg_color = Color(0, 0, 0, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pr2hx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxt0v"]
+atlas = ExtResource("1_73q0b")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uths4"]
+atlas = ExtResource("1_73q0b")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7tfb"]
+atlas = ExtResource("1_73q0b")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_penf1"]
+atlas = ExtResource("1_73q0b")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wum5v"]
 atlas = ExtResource("1_73q0b")
@@ -121,19 +137,49 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pr2hx")
 
-[node name="TextureRect" type="TextureRect" parent="TaikoScreen/TaikoLine/Panel/Panel"]
-modulate = Color(1, 1, 1, 0.501961)
-texture_filter = 1
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 0
-offset_left = 16.0
-offset_top = -32.0
-offset_right = 48.0
+[node name="HitGold" type="Sprite2D" parent="TaikoScreen/TaikoLine/Panel/Panel"]
+visible = false
+modulate = Color(1, 1, 1, 0.498039)
+position = Vector2(49.28, -0.220001)
+scale = Vector2(2.33, 2.33)
+texture = SubResource("AtlasTexture_wxt0v")
+
+[node name="HitOk" type="Sprite2D" parent="TaikoScreen/TaikoLine/Panel/Panel"]
+visible = false
+modulate = Color(0.882353, 0.92549, 0.992157, 0.305882)
+position = Vector2(49.28, -0.220001)
+scale = Vector2(2.33, 2.33)
+texture = SubResource("AtlasTexture_uths4")
+
+[node name="HitFail" type="Sprite2D" parent="TaikoScreen/TaikoLine/Panel/Panel"]
+visible = false
+modulate = Color(0.882353, 0.92549, 0.992157, 0.623529)
+position = Vector2(49.28, -0.220001)
+scale = Vector2(2.33, 2.33)
+texture = SubResource("AtlasTexture_u7tfb")
+
+[node name="HitMarker" type="Sprite2D" parent="TaikoScreen/TaikoLine/Panel/Panel"]
+modulate = Color(1, 1, 1, 0.384314)
+position = Vector2(16, -32)
 scale = Vector2(2, 2)
-mouse_filter = 2
-texture = ExtResource("1_73q0b")
-expand_mode = 2
-stretch_mode = 1
+texture = SubResource("AtlasTexture_penf1")
+offset = Vector2(16, 16)
+
+[node name="Combo" type="Label" parent="TaikoScreen/TaikoLine/Panel/Panel"]
+texture_filter = 3
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 30.0
+offset_right = 158.0
+offset_bottom = 53.0
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+text = "combo: 5"
+vertical_alignment = 1
 
 [node name="blue" type="AnimatedSprite2D" parent="TaikoScreen/TaikoLine"]
 texture_filter = 3
@@ -174,17 +220,58 @@ focus_mode = 0
 theme_override_font_sizes/font_size = 16
 text = "exit"
 
-[node name="Label" type="Label" parent="TaikoScreen"]
+[node name="Score" type="Label" parent="TaikoScreen"]
 texture_filter = 3
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -24.0
-offset_right = 24.0
-offset_bottom = 23.0
+offset_left = -44.0
+offset_top = 8.0
+offset_right = 44.0
+offset_bottom = 31.0
 grow_horizontal = 2
-text = "Score:
-"
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+text = "Score: 9001"
+
+[node name="hint" type="Control" parent="TaikoScreen"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -51.0
+grow_horizontal = 0
+grow_vertical = 0
+metadata/_edit_group_ = true
+
+[node name="blue" type="AnimatedSprite2D" parent="TaikoScreen/hint"]
+modulate = Color(0.545098, 0.545098, 0.545098, 1)
+texture_filter = 3
+position = Vector2(-13, 38)
+sprite_frames = SubResource("SpriteFrames_raq1l")
+frame_progress = 0.865235
+
+[node name="orange" type="AnimatedSprite2D" parent="TaikoScreen/hint"]
+modulate = Color(0.545098, 0.545098, 0.545098, 1)
+texture_filter = 3
+position = Vector2(-13, 12)
+sprite_frames = SubResource("SpriteFrames_xvt3o")
+frame_progress = 0.53229
+
+[node name="keymap" type="Label" parent="TaikoScreen/hint"]
+texture_filter = 3
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "F,  J
+D, K"
 
 [connection signal="pressed" from="TaikoScreen/Exit" to="." method="_on_exit_pressed"]

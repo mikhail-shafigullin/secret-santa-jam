@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://boit6xug1wpm4"]
+[gd_scene load_steps=6 format=3 uid="uid://boit6xug1wpm4"]
 
 [ext_resource type="Script" path="res://SubViewScale.gd" id="1_5n7o5"]
 [ext_resource type="Script" path="res://Scenes/Screens/MainScreen.gd" id="1_pyol8"]
 [ext_resource type="PackedScene" uid="uid://dqq5k5oslpbm0" path="res://Scenes/Levels/world.tscn" id="2_kc36r"]
-[ext_resource type="PackedScene" uid="uid://c5ilmrssvix5k" path="res://Scenes/Minis/Taiko/taiko.tscn" id="4_pfw46"]
+[ext_resource type="Texture2D" uid="uid://daxe2mb8ywsvx" path="res://Assets/Textures/fullscreen-svgrepo-com.svg" id="4_hjjw2"]
+[ext_resource type="Texture2D" uid="uid://ddajpt0ew2bm" path="res://Assets/Textures/volume-min-svgrepo-com.svg" id="5_nr1bp"]
 
 [node name="MainScreen" type="Control"]
 layout_mode = 3
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_pyol8")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -63,14 +65,50 @@ render_target_update_mode = 4
 
 [node name="World" parent="Control/SubViewScale/SubViewport" instance=ExtResource("2_kc36r")]
 
-[node name="Taiko" parent="Control/SubViewScale/SubViewport" instance=ExtResource("4_pfw46")]
+[node name="FullScreen" type="Button" parent="Control"]
+top_level = true
+z_as_relative = false
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 40.0
+offset_bottom = 40.0
+tooltip_text = "fullscreen"
+focus_mode = 1
+icon = ExtResource("4_hjjw2")
+flat = true
+icon_alignment = 1
 
-[node name="FullScreen" type="Button" parent="."]
+[node name="Volume" type="Button" parent="Control"]
+top_level = true
+z_as_relative = false
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+offset_left = 48.0
+offset_top = 16.0
+offset_right = 80.0
+offset_bottom = 48.0
+tooltip_text = "fullscreen"
+focus_mode = 1
+toggle_mode = true
+icon = ExtResource("5_nr1bp")
+flat = true
+icon_alignment = 1
+
+[node name="VSlider" type="VSlider" parent="Control/Volume"]
+texture_filter = 1
 layout_mode = 0
-offset_top = 62.0
-offset_right = 125.0
-offset_bottom = 124.0
-text = "full screen
-"
+offset_left = 8.0
+offset_top = 37.0
+offset_right = 24.0
+offset_bottom = 165.0
+max_value = 1.0
+step = 0.01
+value = 0.7
 
-[connection signal="pressed" from="FullScreen" to="." method="_on_full_screen_pressed"]
+[connection signal="pressed" from="Control/FullScreen" to="." method="_on_full_screen_pressed"]
+[connection signal="focus_exited" from="Control/Volume" to="." method="_on_volume_focus_exited"]
+[connection signal="toggled" from="Control/Volume" to="." method="_on_volume_toggled"]
+[connection signal="focus_exited" from="Control/Volume/VSlider" to="." method="_on_v_slider_focus_exited"]
+[connection signal="value_changed" from="Control/Volume/VSlider" to="." method="_on_v_slider_value_changed"]

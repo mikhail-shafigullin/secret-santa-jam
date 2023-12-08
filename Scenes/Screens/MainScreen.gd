@@ -1,12 +1,14 @@
 class_name MainScreen
 extends Control
 
-const world_res = preload("res://Scenes/Levels/world.tscn");
+const world_res = preload ("res://Scenes/Levels/world.tscn");
 
 var primary_screen: Node
 var mini_game: MiniGame
 
-@onready var root= $Control/SubViewScale/SubViewport
+@onready var root = $Control/SubViewScale/SubViewport
+@onready var volume_slider = $Control/Volume/VSlider
+@onready var volume_button = $Control/Volume
 
 func _on_full_screen_pressed():
 	var vpw = get_viewport().get_window()
@@ -17,6 +19,7 @@ func _on_full_screen_pressed():
 
 func _ready():
 	Global.main_screen = self;
+	volume_slider.visible = false;
 
 	for node: Node in root.get_children():
 		node.queue_free()
@@ -24,16 +27,20 @@ func _ready():
 	primary_screen = world_res.instantiate()
 	root.add_child(primary_screen)
 	
-func play_mini(mini_res: Resource) -> bool:
-	var game = mini_res.instantiate()
-	if not game is MiniGame:
-		return false 
-	
+func play_mini(mini: MiniGame) -> bool:
 	if mini_game != null:
 		mini_game.queue_free()
 	
-	mini_game = game
-	root.add_child(game)
-	game.start()
-	
-	return true
+	mini_game = mini
+	root.add_child(mini)
+	return mini.start()
+
+func _on_volume_toggled(toggled_on: bool):
+	volume_slider.visible = toggled_on
+
+func _on_v_slider_value_changed(value: float):
+	AudioServer.set_bus_volume_db(0, lerp(-80, 16, value))
+
+func _on_v_slider_focus_exited():
+	volume_button.button_pressed = false
+	volume_slider.visible = false

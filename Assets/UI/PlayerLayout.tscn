@@ -28,6 +28,7 @@ mouse_filter = 2
 
 [node name="UseMessageText" type="RichTextLabel" parent="UseMessage"]
 unique_name_in_owner = true
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -41,6 +42,8 @@ offset_bottom = 41.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 bbcode_enabled = true
 text = "[center]"
 fit_content = true
