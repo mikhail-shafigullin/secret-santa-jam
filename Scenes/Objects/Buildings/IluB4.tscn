@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpai5ahxvfdmu"]
+
+[ext_resource type="ArrayMesh" uid="uid://cvd8e68c8f1c2" path="res://Assets/Models/Objects/Buildings/Ilub4.res" id="1_quh1g"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kk88i"]
+points = PackedVector3Array(1.6834, 4.21705, 0.860077, -1.7987, 0.0124234, -1.37917, -1.82066, 3.63108, 1.4438, 1.75859, 0.0497194, 1.3872, 1.7986, 0.00230041, -1.38581, -1.76724, 0.0497194, 1.3872, 1.82652, 3.6434, -1.42241, -1.84419, 4.24248, -0.837902, 1.81202, 3.63149, 1.4438, 1.8358, 4.24235, -0.838016, -1.82195, 4.21705, 0.860077, -1.83566, 3.6434, -1.4228, 1.81355, 4.21692, 0.86019)
+
+[node name="IluB4" type="StaticBody3D"]
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_quh1g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_kk88i")

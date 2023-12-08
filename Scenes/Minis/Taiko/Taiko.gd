@@ -51,11 +51,12 @@ func start() -> bool:
 	
 	Global.player.set_busy(true)
 	Global.player.visible = false
+	c.start("taiko_start", false)
 	
 	return true
 
 func end() -> void:
-	c.start("taiko_rest")
+	c.start("taiko_rest", false)
 
 	Global.player.visible = true
 	Global.player.set_busy(false)

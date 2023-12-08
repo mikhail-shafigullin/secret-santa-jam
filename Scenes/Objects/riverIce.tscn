@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b8dgvt8kowg8b"]
+[gd_scene load_steps=26 format=3 uid="uid://b8dgvt8kowg8b"]
 
 [ext_resource type="ArrayMesh" uid="uid://b3b2ecden8fv2" path="res://Assets/Models/Objects/Rvier/ice1.res" id="1_0j00v"]
 [ext_resource type="PackedScene" uid="uid://den4wllpprpa5" path="res://Scenes/Objects/lamp.tscn" id="1_q6yeg"]
@@ -14,6 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://beaqf64ckpnsl" path="res://Scenes/Objects/roadSignNoFish.tscn" id="12_4dgkr"]
 [ext_resource type="PackedScene" uid="uid://bobhnmq2sugkc" path="res://Scenes/Objects/roadSign5.tscn" id="13_j8oq1"]
 [ext_resource type="PackedScene" uid="uid://7nir4w6ooi2" path="res://Scenes/Objects/instaBuild.tscn" id="14_hg3qw"]
+[ext_resource type="PackedScene" uid="uid://d1vq6ws0k880f" path="res://Scenes/Objects/Buildings/IluB1.tscn" id="15_xsfov"]
+[ext_resource type="PackedScene" uid="uid://bx5stucv35aub" path="res://Scenes/Objects/Buildings/IluB2.tscn" id="16_qj3ot"]
+[ext_resource type="PackedScene" uid="uid://bc8oy15gk7jy2" path="res://Scenes/Objects/Buildings/IluB3.tscn" id="17_5m8if"]
+[ext_resource type="PackedScene" uid="uid://dpai5ahxvfdmu" path="res://Scenes/Objects/Buildings/IluB4.tscn" id="18_1a7g0"]
+[ext_resource type="PackedScene" uid="uid://dey4nk18x0x4v" path="res://Scenes/Objects/Buildings/IluB5.tscn" id="19_2c6i4"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_terxc"]
 data = PackedVector3Array(0.4545, 0.185, 1.0083, 0.6936, -0.4865, 0.4573, 0.4545, -0.4865, 1.0083, 0.4545, 0.185, 1.0083, 0.6936, 0.3135, 0.4573, 0.6936, -0.4865, 0.4573, -1.1819, 0.3135, -0.8629, 1.3086, 0.185, -1.008, 1.3658, 0.3135, -0.1525, -1.1819, 0.3135, -0.8629, -0.0821, 0.185, -1.3824, 1.3086, 0.185, -1.008, -1.6147, 0.3135, 0.051, -1.2467, -0.4865, 0.9282, -1.6147, -0.4865, 0.051, -1.6147, 0.3135, 0.051, -1.2467, 0.185, 0.9282, -1.2467, -0.4865, 0.9282, -0.0821, 0.185, -1.3824, -1.1819, -0.4865, -0.8629, -0.0821, -0.4865, -1.3824, -0.0821, 0.185, -1.3824, -1.1819, 0.3135, -0.8629, -1.1819, -0.4865, -0.8629, 0.6936, 0.3135, 0.4573, 1.3658, -0.4865, -0.1525, 0.6936, -0.4865, 0.4573, 0.6936, 0.3135, 0.4573, 1.3658, 0.3135, -0.1525, 1.3658, -0.4865, -0.1525, -1.2467, 0.185, 0.9282, -0.4352, -0.4865, 1.4045, -1.2467, -0.4865, 0.9282, -1.2467, 0.185, 0.9282, -0.4352, 0.185, 1.4045, -0.4352, -0.4865, 1.4045, -1.1819, 0.3135, -0.8629, -1.6147, -0.4865, 0.051, -1.1819, -0.4865, -0.8629, -1.1819, 0.3135, -0.8629, -1.6147, 0.3135, 0.051, -1.6147, -0.4865, 0.051, 1.3658, 0.3135, -0.1525, 1.3086, -0.4865, -1.008, 1.3658, -0.4865, -0.1525, 1.3658, 0.3135, -0.1525, 1.3086, 0.185, -1.008, 1.3086, -0.4865, -1.008, -0.4352, 0.185, 1.4045, 0.4545, -0.4865, 1.0083, -0.4352, -0.4865, 1.4045, -0.4352, 0.185, 1.4045, 0.4545, 0.185, 1.0083, 0.4545, -0.4865, 1.0083, 1.3086, 0.185, -1.008, -0.0821, -0.4865, -1.3824, 1.3086, -0.4865, -1.008, 1.3086, 0.185, -1.008, -0.0821, 0.185, -1.3824, -0.0821, -0.4865, -1.3824, -1.2467, 0.185, 0.9282, 0.6936, 0.3135, 0.4573, 0.4545, 0.185, 1.0083, -1.2467, 0.185, 0.9282, -1.6147, 0.3135, 0.051, 0.6936, 0.3135, 0.4573, -1.6147, 0.3135, 0.051, 1.3658, 0.3135, -0.1525, 0.6936, 0.3135, 0.4573, -1.6147, 0.3135, 0.051, -1.1819, 0.3135, -0.8629, 1.3658, 0.3135, -0.1525, -0.4352, 0.185, 1.4045, -1.2467, 0.185, 0.9282, 0.4545, 0.185, 1.0083)
@@ -171,7 +176,7 @@ autoplay = "flow"
 transform = Transform3D(0.0923185, 0, -0.99573, 0, 1, 0, 0.99573, 0, 0.0923185, 5.43231, 0.563309, -21.0653)
 
 [node name="car2" parent="." instance=ExtResource("6_pp0fl")]
-transform = Transform3D(-0.0430963, 0, -0.999071, 0, 1, 0, 0.999071, 0, -0.0430963, 9.7525, 0.511984, -26.0388)
+transform = Transform3D(-0.0430963, 0, -0.999071, 0, 1, 0, 0.999071, 0, -0.0430963, 10.3812, 0.511984, -7.74154)
 
 [node name="car3" parent="." instance=ExtResource("7_04o16")]
 transform = Transform3D(-0.0375681, 0, -0.999294, 0, 1, 0, 0.999294, 0, -0.0375681, 6.19397, 0.519752, -16.372)
@@ -220,3 +225,18 @@ transform = Transform3D(-0.151709, 0, -0.988425, 0, 1, 0, 0.988425, 0, -0.151709
 
 [node name="InstaBuild" parent="." instance=ExtResource("14_hg3qw")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.4433, 0.608108, -18.2123)
+
+[node name="IluB1" parent="." instance=ExtResource("15_xsfov")]
+transform = Transform3D(-0.0760925, 0, -1.61115, 0, 1.61294, 0, 1.61115, 0, -0.0760925, 16.3427, 0.522807, -2.29233)
+
+[node name="IluB2" parent="." instance=ExtResource("16_qj3ot")]
+transform = Transform3D(-6.43965e-08, 0, -1.47322, 0, 1.47322, 0, 1.47322, 0, -6.43965e-08, 15.7064, 0.504294, 3.83853)
+
+[node name="IluB3" parent="." instance=ExtResource("17_5m8if")]
+transform = Transform3D(-0.138497, 0, -1.71462, 0, 1.7202, 0, 1.71462, 0, -0.138497, 16.4393, 0.139938, 11.632)
+
+[node name="IluB4" parent="." instance=ExtResource("18_1a7g0")]
+transform = Transform3D(0.0474531, 0, -1.79184, 0, 1.79247, 0, 1.79184, 0, 0.0474531, 15.3559, 0, 19.2118)
+
+[node name="IluB5" parent="." instance=ExtResource("19_2c6i4")]
+transform = Transform3D(-0.0947008, 0, -1.80279, 0, 1.80527, 0, 1.80279, 0, -0.0947008, 15.0923, -0.00781918, 26.4935)

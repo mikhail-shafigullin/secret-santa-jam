@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bc8oy15gk7jy2"]
+
+[ext_resource type="ArrayMesh" uid="uid://bs5jl15wc2rb8" path="res://Assets/Models/Objects/Buildings/Ilub3.res" id="1_di0ln"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r3qjr"]
+points = PackedVector3Array(0.237244, 6.35167, 2.21825, -2.59691, 5.53453, -2.2755, -2.2514, 5.34376, -1.93526, 2.61413, 5.62875, -2.32716, 2.2514, 5.33274, 1.96639, -2.60222, 5.5337, 2.2755, -1.39376, 6.5068, -1.28065, 1.447, 6.5068, 1.18084, 1.447, 6.5068, -1.28065, 2.61413, 5.62875, 2.32248, -1.39376, 6.5068, 1.18084, 2.24739, 5.33381, -1.9676, -2.2514, 5.34376, 1.93058, -2.65546, 5.62875, -2.32716, -2.65546, 5.62875, 2.32248, -0.278058, 6.35167, 2.21825, 2.56089, 5.5337, 2.2755, 2.55558, 5.53453, -2.2755)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c46l2"]
+size = Vector3(4.07227, 1.78131, 3.51001)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yqpub"]
+size = Vector3(4.37671, 3.46378, 3.81738)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mf0mu"]
+size = Vector3(5.1377, 0.281239, 4.47559)
+
+[node name="IluB3" type="StaticBody3D"]
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_di0ln")
+
+[node name="@CollisionShape3D@41989" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_r3qjr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.936432, 0)
+shape = SubResource("BoxShape3D_c46l2")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.63571, 0)
+shape = SubResource("BoxShape3D_yqpub")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.54733, 0)
+shape = SubResource("BoxShape3D_mf0mu")
