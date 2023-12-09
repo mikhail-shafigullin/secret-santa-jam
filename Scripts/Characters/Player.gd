@@ -89,6 +89,15 @@ func physics_process_new(delta):
 		move_direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 		move_direction.z = Input.get_action_strength("move_backwards") - Input.get_action_strength("move_forwards")
 		move_direction = move_direction.rotated(Vector3.UP, spring_arm_pivot.rotation.y)
+		
+		if not move_direction.is_zero_approx():
+			var angle = player_mesh.global_rotation.signed_angle_to(spring_arm_pivot.global_rotation, Vector3.UP);
+			
+			print(camera.global_rotation.y - player_mesh.global_rotation.y)
+			if abs(sin(camera.global_rotation.y - player_mesh.global_rotation.y)) > 0.1:
+				var global_quat = spring_arm_pivot.quaternion.slerp(Quaternion.from_euler(player_mesh.global_rotation), -0.5*delta);
+				spring_arm_pivot.rotation = global_quat.get_euler();
+				#spring_arm_pivot.rotate(Vector3.UP, move_direction.angle_to(spring_arm_pivot.position)*delta)
 	
 	velocity.x = move_direction.x * speed
 	velocity.z = move_direction.z * speed
@@ -117,7 +126,6 @@ func gravity_evaluate():
 	
 func handle_input_standing(input: InputEvent):
 	if input.is_action_pressed("jump") and is_on_floor():
-		#print('standing jump', is_double_jump_available)
 		changeState(PlayerState.STATE_IN_AIR)
 		jump();
 		jump_buffer_timer.start();
@@ -137,15 +145,12 @@ func update_standing(delta):
 	coyote_time_ended = false;
 	velocity_from_other_sources = Vector3.ZERO;
 	if !jump_buffer_timer.is_stopped():
-		print('jump_buffered is activated')
 		jump();
 	if !is_on_floor(): 
 		changeState(PlayerState.STATE_IN_AIR)
 	
 func update_in_air(delta):
 	time_in_air += delta;
-
-	print(velocity_from_other_sources)
 	velocity_from_other_sources -= velocity_viscosity * delta * velocity_from_other_sources;
 	velocity += velocity_from_other_sources * 0.8
 	if time_in_air > time_block_jump_after_jumping:
