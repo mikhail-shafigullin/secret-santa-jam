@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bpsjadbtpaxa0"]
+
+[ext_resource type="Texture2D" uid="uid://cfow6mi62lko" path="res://Assets/Models/Characters/Tolik/tolik_tolik.png" id="1_80tbb"]
+
+[resource]
+resource_name = "Tolik"
+shading_mode = 0
+disable_ambient_light = true
+albedo_texture = ExtResource("1_80tbb")
+texture_filter = 0

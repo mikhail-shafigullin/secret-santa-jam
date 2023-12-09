@@ -1,11 +1,12 @@
-[gd_scene load_steps=23 format=3 uid="uid://dqq5k5oslpbm0"]
+[gd_scene load_steps=24 format=3 uid="uid://cogc0jr2nft03"]
 
 [ext_resource type="Texture2D" uid="uid://3jauchyvj37w" path="res://Assets/Models/Characters/tim_tim.png" id="1_i4l2i"]
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="2_3okkh"]
 [ext_resource type="PackedScene" uid="uid://covjltvwg2htp" path="res://Scenes/TestRobot.tscn" id="3_hs1wi"]
 [ext_resource type="PackedScene" uid="uid://hd06iu5g1ddy" path="res://Scenes/Characters/fisherman.tscn" id="4_nf8l7"]
 [ext_resource type="PackedScene" uid="uid://bmo3dnmo8nkx1" path="res://Scenes/Controller/Cutscener.tscn" id="5_6em04"]
-[ext_resource type="PackedScene" uid="uid://b8dgvt8kowg8b" path="res://Scenes/Objects/riverIce.tscn" id="6_sm1io"]
+[ext_resource type="PackedScene" uid="uid://do6hbchvfi3xr" path="res://Scenes/Objects/randomTolik.tscn" id="5_vg0pf"]
+[ext_resource type="PackedScene" uid="uid://b8dgvt8kowg8b" path="res://Scenes/Objects/Road/riverIce.tscn" id="6_sm1io"]
 [ext_resource type="PackedScene" uid="uid://degfp10g6rn1y" path="res://Scenes/Minis/Taiko/Models/taiko.tscn" id="7_wp63y"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_o26vf"]
@@ -341,32 +342,34 @@ lifetime = 5.01
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0402329, 0)
 
 [node name="Skeleton3D" parent="Player/tim/TimMixemoRig" index="0"]
-bones/0/position = Vector3(1.47011, 41.0437, 3.10313)
-bones/0/rotation = Quaternion(0.0339005, 0.0638488, -0.017558, 0.997229)
-bones/1/rotation = Quaternion(-0.082782, -0.0121946, 0.00778576, 0.996463)
-bones/2/rotation = Quaternion(-0.00532283, -0.0236594, 0.00977853, 0.999658)
-bones/3/rotation = Quaternion(0.00755895, -0.0235315, 0.0100826, 0.999644)
-bones/4/rotation = Quaternion(0.0471806, 0.00938294, -0.0169444, 0.998699)
-bones/5/rotation = Quaternion(-0.00898524, -0.00520765, 0.0173633, 0.999795)
-bones/6/rotation = Quaternion(-0.651841, -0.378264, 0.545027, -0.367376)
-bones/7/rotation = Quaternion(0.427373, 0.134835, 0.0709034, 0.891148)
-bones/8/rotation = Quaternion(0.0156275, 0.0731589, 0.454318, 0.887693)
-bones/9/rotation = Quaternion(-0.148395, 0.0744713, 0.127766, 0.977808)
-bones/11/rotation = Quaternion(0.323677, 0.00400656, 0.0448265, 0.945097)
-bones/12/rotation = Quaternion(0.6217, -0.427384, 0.592396, 0.282662)
-bones/13/rotation = Quaternion(0.450222, -0.252547, 0.217006, 0.82851)
-bones/14/rotation = Quaternion(-0.0151588, -0.0247959, -0.263194, 0.964305)
-bones/15/rotation = Quaternion(0.0174885, -0.207182, 0.0179314, 0.977982)
-bones/16/rotation = Quaternion(0.209375, 0.0407741, -0.361006, 0.90784)
-bones/17/rotation = Quaternion(0.318098, 0.0219733, 0.00720932, 0.947776)
-bones/18/rotation = Quaternion(0.078097, -0.0245373, 0.994211, -0.06959)
-bones/19/rotation = Quaternion(-0.464627, 0.0697706, 0.0101687, 0.882695)
-bones/20/rotation = Quaternion(0.298221, 0.0299474, 0.0467004, 0.952883)
-bones/21/rotation = Quaternion(0.452461, -0.0252727, -0.0114908, 0.891352)
-bones/23/rotation = Quaternion(-0.0480337, 0.301253, 0.952263, -0.0116173)
-bones/24/rotation = Quaternion(-0.264225, -0.000646933, -0.00158039, 0.96446)
-bones/25/rotation = Quaternion(0.36685, -0.00837924, -0.00858628, 0.930203)
-bones/26/rotation = Quaternion(0.400277, 0.00656544, -0.00281551, 0.916366)
+bones/0/position = Vector3(3.6697, 46.9018, 3.52547)
+bones/0/rotation = Quaternion(0.0148105, -0.0008359, -0.0104537, 0.999835)
+bones/1/rotation = Quaternion(-0.0790939, 0.00359278, -0.00373281, 0.996854)
+bones/2/rotation = Quaternion(0.0021231, 0.00711582, -0.00434655, 0.999963)
+bones/3/rotation = Quaternion(0.0150082, 0.00705926, -0.00443792, 0.999853)
+bones/4/rotation = Quaternion(0.0821345, -1.17864e-05, 0.00494609, 0.996609)
+bones/5/rotation = Quaternion(-0.0102062, -0.00079319, 0.0276808, 0.999564)
+bones/6/rotation = Quaternion(-0.651542, -0.378819, 0.553116, -0.355038)
+bones/7/rotation = Quaternion(0.482521, 0.182714, -0.0897362, 0.851902)
+bones/8/position = Vector3(-3.21789e-06, 15.879, 1.98056e-06)
+bones/8/rotation = Quaternion(-0.00470373, 0.0838071, 0.286029, 0.954538)
+bones/9/rotation = Quaternion(0.00500499, 0.171375, 0.0176042, 0.985036)
+bones/10/rotation = Quaternion(0.326881, -0.131561, 0.244954, 0.903238)
+bones/11/rotation = Quaternion(0.323717, 0.00863198, 0.0554077, 0.944491)
+bones/12/rotation = Quaternion(0.622174, -0.431107, 0.569839, 0.31989)
+bones/13/rotation = Quaternion(0.538679, -0.205039, 0.0495181, 0.815679)
+bones/14/rotation = Quaternion(-0.0919504, 0.040434, -0.316211, 0.943356)
+bones/15/rotation = Quaternion(-0.132534, -0.197109, -0.18665, 0.953281)
+bones/16/rotation = Quaternion(0.195315, 0.0470817, -0.347744, 0.915811)
+bones/17/rotation = Quaternion(0.451615, 0.0267553, -0.0080814, 0.891775)
+bones/18/rotation = Quaternion(0.075163, 0.0947213, 0.992662, 0.0010396)
+bones/19/rotation = Quaternion(-0.204105, 0.0877066, -0.00475452, 0.975001)
+bones/20/rotation = Quaternion(0.477689, 0.0120299, 0.0308681, 0.877904)
+bones/21/rotation = Quaternion(0.403882, -0.0534415, 0.0141088, 0.91314)
+bones/23/rotation = Quaternion(-0.0639287, 0.129389, 0.989406, 0.0157317)
+bones/24/rotation = Quaternion(-0.465979, 0.0213788, -0.010062, 0.88448)
+bones/25/rotation = Quaternion(0.349335, -0.0577533, -0.0749633, 0.932207)
+bones/26/rotation = Quaternion(0.420057, 0.0374616, -0.0166182, 0.906572)
 
 [node name="Camera3D" parent="Player/SpringArmPivot/SpringArm3D" index="0"]
 current = true
@@ -381,8 +384,383 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.31123, 0.5, 5.51678)
 [node name="fisherman2" parent="." instance=ExtResource("4_nf8l7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.55778, 0.486214, 9.40335)
 
+[node name="Toliks" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65807, 0.486594, -0.802616)
+
+[node name="RandomTolik" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.248221, 0, 0)
+
+[node name="RandomTolik2" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11671, 0, 0)
+
+[node name="RandomTolik3" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25134, 0, 0)
+
+[node name="RandomTolik4" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.32921, 0, 0)
+
+[node name="RandomTolik5" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.97215, 0, 0)
+
+[node name="RandomTolik6" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.64253, 0, 0)
+
+[node name="RandomTolik7" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.90249, 0, 0)
+
+[node name="RandomTolik8" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.10844, 0, 0)
+
+[node name="RandomTolik9" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.30721, 0, 0)
+
+[node name="RandomTolik10" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.657669, 0, -0.64803)
+
+[node name="RandomTolik11" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.707261, 0, -0.64803)
+
+[node name="RandomTolik12" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.84189, 0, -0.64803)
+
+[node name="RandomTolik13" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.91976, 0, -0.64803)
+
+[node name="RandomTolik14" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5627, 0, -0.64803)
+
+[node name="RandomTolik15" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.23308, 0, -0.64803)
+
+[node name="RandomTolik16" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.49304, 0, -0.64803)
+
+[node name="RandomTolik17" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.699, 0, -0.64803)
+
+[node name="RandomTolik18" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.89776, 0, -0.64803)
+
+[node name="RandomTolik19" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.583926, 0, -1.86861)
+
+[node name="RandomTolik20" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.781004, 0, -1.86861)
+
+[node name="RandomTolik21" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91563, 0, -1.86861)
+
+[node name="RandomTolik22" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99351, 0, -1.86861)
+
+[node name="RandomTolik23" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.63644, 0, -1.86861)
+
+[node name="RandomTolik24" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.30682, 0, -1.86861)
+
+[node name="RandomTolik25" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56678, 0, -1.86861)
+
+[node name="RandomTolik26" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.77274, 0, -1.86861)
+
+[node name="RandomTolik27" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9715, 0, -1.86861)
+
+[node name="RandomTolik28" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.76949, 0, -3.24259)
+
+[node name="RandomTolik29" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.13442, 0, -3.24259)
+
+[node name="RandomTolik30" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.26905, 0, -3.24259)
+
+[node name="RandomTolik31" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3075, 0, -0.310656)
+
+[node name="RandomTolik32" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.02956, 0, -1.41406)
+
+[node name="RandomTolik33" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.66023, 0, -3.24259)
+
+[node name="RandomTolik34" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9202, 0, -3.24259)
+
+[node name="RandomTolik35" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.12615, 0, -3.24259)
+
+[node name="RandomTolik36" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3249, 0, -3.24259)
+
+[node name="RandomTolik37" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49733, 0, -4.35667)
+
+[node name="RandomTolik38" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.132404, 0, -4.35667)
+
+[node name="RandomTolik39" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00223, 0, -4.35667)
+
+[node name="RandomTolik40" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0801, 0, -4.35667)
+
+[node name="RandomTolik41" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.72303, 0, -4.35667)
+
+[node name="RandomTolik42" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.39341, 0, -4.35667)
+
+[node name="RandomTolik43" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65337, 0, -4.35667)
+
+[node name="RandomTolik44" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.85933, 0, -4.35667)
+
+[node name="RandomTolik45" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0581, 0, -4.35667)
+
+[node name="RandomTolik46" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.18965, 0, -5.72411)
+
+[node name="RandomTolik47" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.55458, 0, -5.72411)
+
+[node name="RandomTolik48" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.68921, 0, -5.72411)
+
+[node name="RandomTolik49" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76708, 0, -5.72411)
+
+[node name="RandomTolik50" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.41001, 0, -5.72411)
+
+[node name="RandomTolik51" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.08039, 0, -5.72411)
+
+[node name="RandomTolik52" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.34035, 0, -5.72411)
+
+[node name="RandomTolik53" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.54631, 0, -5.72411)
+
+[node name="RandomTolik54" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.74508, 0, -5.72411)
+
+[node name="RandomTolik55" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2356, 0, -6.94721)
+
+[node name="RandomTolik56" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.870672, 0, -6.94721)
+
+[node name="RandomTolik57" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.263958, 0, -6.94721)
+
+[node name="RandomTolik58" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.34183, 0, -6.94721)
+
+[node name="RandomTolik59" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.12449, 0, -7.11788)
+
+[node name="RandomTolik60" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.9734, 0, -6.99265)
+
+[node name="RandomTolik61" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.51313, 0, -2.83175)
+
+[node name="RandomTolik62" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.12106, 0, -6.94721)
+
+[node name="RandomTolik63" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.31983, 0, -6.94721)
+
+[node name="RandomTolik64" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.52321, 0, -8.52486)
+
+[node name="RandomTolik65" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.88814, 0, -8.52486)
+
+[node name="RandomTolik66" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02277, 0, -8.52486)
+
+[node name="RandomTolik67" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.10064, 0, -8.52486)
+
+[node name="RandomTolik68" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.74358, 0, -8.52486)
+
+[node name="RandomTolik69" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.41396, 0, -8.52486)
+
+[node name="RandomTolik70" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.67392, 0, -8.52486)
+
+[node name="RandomTolik71" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.87988, 0, -8.52486)
+
+[node name="RandomTolik72" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0786, 0, -8.52486)
+
+[node name="RandomTolik73" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.01101, 0, -10.2911)
+
+[node name="RandomTolik74" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64608, 0, -10.2911)
+
+[node name="RandomTolik75" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51145, 0, -10.2911)
+
+[node name="RandomTolik76" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.42626, 0, -0.62532)
+
+[node name="RandomTolik77" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8994, 0, -1.84564)
+
+[node name="RandomTolik78" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5698, 0, -1.84564)
+
+[node name="RandomTolik79" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8297, 0, -1.84564)
+
+[node name="RandomTolik80" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0357, 0, -1.84564)
+
+[node name="RandomTolik81" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2345, 0, -1.84564)
+
+[node name="RandomTolik82" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6229, 0, -3.513)
+
+[node name="RandomTolik83" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9878, 0, -3.513)
+
+[node name="RandomTolik84" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1225, 0, -3.513)
+
+[node name="RandomTolik85" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2003, 0, -3.513)
+
+[node name="RandomTolik86" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8433, 0, -3.513)
+
+[node name="RandomTolik87" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.82359, 0, -11.9584)
+
+[node name="RandomTolik100" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2755, 9.53674e-07, 0.51737)
+
+[node name="RandomTolik101" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4815, 9.53674e-07, 0.51737)
+
+[node name="RandomTolik102" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6802, 9.53674e-07, 0.51737)
+
+[node name="RandomTolik103" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4739, 9.53674e-07, 0.14348)
+
+[node name="RandomTolik104" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1875, 9.53674e-07, 0.0932626)
+
+[node name="RandomTolik105" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9778, 9.53674e-07, -0.856613)
+
+[node name="RandomTolik106" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2564, 9.53674e-07, 0.547763)
+
+[node name="RandomTolik107" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6986, 9.53674e-07, -0.856613)
+
+[node name="RandomTolik108" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.255, 9.53674e-07, -3.33813)
+
+[node name="RandomTolik109" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.4538, 9.53674e-07, -3.33813)
+
+[node name="RandomTolik110" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.47313, 9.53674e-07, -4.56123)
+
+[node name="RandomTolik111" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.83806, 9.53674e-07, -4.56123)
+
+[node name="RandomTolik112" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6551, 9.53674e-07, -5.92002)
+
+[node name="RandomTolik113" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.0506, 9.53674e-07, -4.56123)
+
+[node name="RandomTolik114" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5355, 9.53674e-07, -3.17932)
+
+[node name="RandomTolik115" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3639, 9.53674e-07, -4.56123)
+
+[node name="RandomTolik116" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6238, 9.53674e-07, -4.56123)
+
+[node name="RandomTolik117" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0544, 9.53674e-07, -7.90509)
+
+[node name="RandomTolik118" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2531, 9.53674e-07, -7.90509)
+
+[node name="RandomTolik119" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6416, 9.53674e-07, -9.57244)
+
+[node name="RandomTolik120" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0065, 9.53674e-07, -9.57244)
+
+[node name="RandomTolik121" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1411, 9.53674e-07, -9.57244)
+
+[node name="RandomTolik122" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.219, 9.53674e-07, -9.57244)
+
+[node name="RandomTolik123" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8619, 9.53674e-07, -9.57244)
+
+[node name="RandomTolik124" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5323, 9.53674e-07, -9.57244)
+
+[node name="RandomTolik88" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.08355, 0, -11.9584)
+
+[node name="RandomTolik89" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.28951, 0, -11.9584)
+
+[node name="RandomTolik90" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4883, 0, -11.9584)
+
+[node name="RandomTolik91" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9655, 0, -2.60444)
+
+[node name="RandomTolik92" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0813695, 0, -3.2458)
+
+[node name="RandomTolik93" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.07935, 0, -8.50881)
+
+[node name="RandomTolik94" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83897, -4.76837e-07, -5.57909)
+
+[node name="RandomTolik95" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.35855, 0, -8.50881)
+
+[node name="RandomTolik96" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.634693, 0, -5.52554)
+
+[node name="RandomTolik97" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.42821, 0, -8.50881)
+
+[node name="RandomTolik98" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.222248, 0, -8.50881)
+
+[node name="RandomTolik99" parent="Toliks" instance=ExtResource("5_vg0pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.976515, 0, -8.50881)
+
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.61495, 1.44253, 2.92703)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.41759, 1.44253, 3.25776)
 use_collision = true
 size = Vector3(8.30609, 2.38391, 3.24078)
 material = SubResource("StandardMaterial3D_8uhun")
