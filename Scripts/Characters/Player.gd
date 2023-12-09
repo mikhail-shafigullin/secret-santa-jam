@@ -20,12 +20,12 @@ var busy : bool = false
 @export var walk_speed_new : float = 2.0
 @export var run_speed_new : float = 5.0
 @export var is_double_jump_available : bool = true;
-@export var time_block_jump_after_jumping: float = 0.1
+@export var time_block_jump_after_jumping: float = 0.05
 
 var time_in_air: float = 0
 
-var start_jump_velocity = (2 * planned_jump_height) / planned_time_in_air
-var gravity_counted = (-2 * planned_jump_height) / (planned_time_in_air * planned_time_in_air)
+var start_jump_velocity:float = (2 * planned_jump_height) / planned_time_in_air
+var gravity_counted:float = (-2 * planned_jump_height) / (planned_time_in_air * planned_time_in_air)
 
 enum PlayerState{
 	STATE_ON_GROUND,
@@ -87,26 +87,11 @@ func physics_process_new(delta):
 		move_direction.z = Input.get_action_strength("move_backwards") - Input.get_action_strength("move_forwards")
 		move_direction = move_direction.rotated(Vector3.UP, spring_arm_pivot.rotation.y)
 		
-		#var just_landed := is_on_floor() and snap_vector == Vector3.ZERO
-		#var is_jumping := (is_on_floor() and Input.is_action_just_pressed("jump"))
-		#var is_double_jump_used := (!is_on_floor() and 
-									#is_double_jump_available and 
-									#Input.is_action_just_pressed("jump"))
-		#
-		#
-		#if is_jumping or is_double_jump_used:
-			#velocity.y = start_jump_velocity
-			#snap_vector = Vector3.ZERO
-			#if is_double_jump_used:
-				#is_double_jump_available = false
-		#elif just_landed:
-			#snap_vector = Vector3.DOWN
-			#is_double_jump_available = false
 	
 	velocity.x = move_direction.x * speed
 	velocity.z = move_direction.z * speed
 	
-	gravity = gravity_counted
+	gravity = gravity_evaluate(velocity)
 	velocity.y += gravity * delta
 		
 	if move_direction:
@@ -118,35 +103,40 @@ func physics_process_new(delta):
 
 func gravity_evaluate(velocity : Vector3):
 	if velocity.y <= 0: 
-		gravity = gravity_counted * 2;
+		return gravity_counted * 0.5;
 	else: 
-		gravity = gravity_counted;
+		return gravity_counted;
 		
 	
 func handle_input_standing(input: InputEvent):
 	if input.is_action_pressed("jump") and is_on_floor():
-		print('standing jump', is_double_jump_available)
+		#print('standing jump', is_double_jump_available)
 		velocity.y = start_jump_velocity
-		currentState = PlayerState.STATE_IN_AIR;
+		changeState(PlayerState.STATE_IN_AIR)
 		is_double_jump_available = true
 	
 	
 func handle_input_jumping(input: InputEvent):
 	if input.is_action_pressed("jump") and is_double_jump_available and time_in_air > time_block_jump_after_jumping:
-		print('jumping jump', is_double_jump_available)
+		#print('jumping jump', is_double_jump_available)
 		is_double_jump_available = false;
 		velocity.y = start_jump_velocity
 		
 func update_standing(delta):
 	time_in_air = 0;
-	pass;
+	is_double_jump_available = true;
+	if !is_on_floor(): 
+		changeState(PlayerState.STATE_IN_AIR)
 	
 func update_in_air(delta):
 	time_in_air += delta;
 	if time_in_air > time_block_jump_after_jumping:
 		if is_on_floor(): 
-			currentState = PlayerState.STATE_ON_GROUND
-	
+			changeState(PlayerState.STATE_ON_GROUND)
+			
+func changeState(state: PlayerState):
+	print('current state: ', state)
+	currentState = state;
 	
 func physics_process_deprecated(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
