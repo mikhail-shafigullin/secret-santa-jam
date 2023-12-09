@@ -29,6 +29,8 @@ var jump_counter: int = 0;
 var is_jump_pressed: bool = false;
 var coyote_time_ended: bool = false;
 var jump_buffer_timer: Timer = Timer.new();
+var velocity_from_other_sources: Vector3 = Vector3.ZERO;
+var velocity_viscosity: float = 0.1;
 
 var start_jump_velocity:float = (2 * planned_jump_height) / planned_time_in_air
 var gravity_counted:float = (-2 * planned_jump_height) / (planned_time_in_air * planned_time_in_air)
@@ -59,10 +61,11 @@ func _process(delta):
 	process_new(delta);
 		
 func _input(event):
-	if currentState == PlayerState.STATE_ON_GROUND:
-		handle_input_standing(event)
-	elif currentState == PlayerState.STATE_IN_AIR:
-		handle_input_jumping(event)
+	if not busy:
+		if currentState == PlayerState.STATE_ON_GROUND:
+			handle_input_standing(event)
+		elif currentState == PlayerState.STATE_IN_AIR:
+			handle_input_jumping(event)
 		
 func process_new(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -70,11 +73,6 @@ func process_new(delta):
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	
-	if currentState == PlayerState.STATE_ON_GROUND: 
-		update_standing(delta)
-	elif currentState == PlayerState.STATE_IN_AIR:
-		update_in_air(delta)
 	
 	if Input.is_action_pressed("run"):
 		speed = walk_speed
@@ -92,21 +90,32 @@ func physics_process_new(delta):
 		move_direction.z = Input.get_action_strength("move_backwards") - Input.get_action_strength("move_forwards")
 		move_direction = move_direction.rotated(Vector3.UP, spring_arm_pivot.rotation.y)
 		
+		if not move_direction.is_zero_approx():
+			print(camera.global_rotation.y - player_mesh.global_rotation.y)
+			if abs(sin(camera.global_rotation.y - player_mesh.global_rotation.y)) > 0.1:
+				var global_quat = spring_arm_pivot.quaternion.slerp(Quaternion.from_euler(player_mesh.global_rotation), -0.5*delta);
+				spring_arm_pivot.rotation = global_quat.get_euler();
+				#spring_arm_pivot.rotate(Vector3.UP, move_direction.angle_to(spring_arm_pivot.position)*delta)
 	
 	velocity.x = move_direction.x * speed
 	velocity.z = move_direction.z * speed
 	
-	gravity = gravity_evaluate(velocity)
+	if currentState == PlayerState.STATE_ON_GROUND: 
+		update_standing(delta)
+	elif currentState == PlayerState.STATE_IN_AIR:
+		update_in_air(delta)
+	
+	gravity = gravity_evaluate()
 	velocity.y += gravity * delta
 		
 	if move_direction:
 		player_mesh.rotation.y = lerp_angle(player_mesh.rotation.y, atan2(velocity.x, velocity.z), LERP_VALUE)
-	
+
 	apply_floor_snap()
 	move_and_slide()
 	
 
-func gravity_evaluate(velocity : Vector3):
+func gravity_evaluate():
 	if velocity.y <= 0: 
 		return gravity_counted * 1.2;
 	else: 
@@ -115,11 +124,8 @@ func gravity_evaluate(velocity : Vector3):
 	
 func handle_input_standing(input: InputEvent):
 	if input.is_action_pressed("jump") and is_on_floor():
-		#print('standing jump', is_double_jump_available)
-		is_jump_pressed = true
-		velocity.y = start_jump_velocity
 		changeState(PlayerState.STATE_IN_AIR)
-		jump_counter+=1;
+		jump();
 		jump_buffer_timer.start();
 	
 	
@@ -135,14 +141,16 @@ func update_standing(delta):
 	jump_counter = 0;
 	is_jump_pressed = false;
 	coyote_time_ended = false;
+	velocity_from_other_sources = Vector3.ZERO;
 	if !jump_buffer_timer.is_stopped():
-		print('jump_buffered is activated')
 		jump();
 	if !is_on_floor(): 
 		changeState(PlayerState.STATE_IN_AIR)
 	
 func update_in_air(delta):
 	time_in_air += delta;
+	velocity_from_other_sources -= velocity_viscosity * delta * velocity_from_other_sources;
+	velocity += velocity_from_other_sources * 0.8
 	if time_in_air > time_block_jump_after_jumping:
 		if is_on_floor(): 
 			changeState(PlayerState.STATE_ON_GROUND)
@@ -154,6 +162,7 @@ func jump():
 	is_jump_pressed = true;
 	jump_counter+=1;
 	velocity.y = start_jump_velocity
+	velocity_from_other_sources = get_platform_velocity()
 
 func changeState(state: PlayerState):
 	#print('current state: ', state)
