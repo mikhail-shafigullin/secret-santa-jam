@@ -1,0 +1,14 @@
+~ this_is_a_node_title
+do Global.cutscener.start("test")
+Fisherman: Hello, can you help me to catch a fish?
+Fisherman: My shaky hands just can't to hold this fishing rod.
+Fisherman: Do you help me?
+- Try to catch a fish
+	do Global.mainScreen.play_mini_by_name("fishing")
+- End the conversation => end
+Fisherman: For more information see the online documentation.
+
+
+~ end
+do Global.cutscener.end()
+=> END

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://cwjclw75a2a4e"
+path="res://.godot/imported/fisherman.dialogue-f1587299a9ff1300cd666f8350ae3519.tres"
+
+[deps]
+
+source_file="res://Scenes/Characters/fisherman.dialogue"
+dest_files=["res://.godot/imported/fisherman.dialogue-f1587299a9ff1300cd666f8350ae3519.tres"]
+
+[params]
+
+defaults=true
