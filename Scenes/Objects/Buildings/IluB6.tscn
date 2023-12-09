@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cud5yyt0p324i"]
+
+[ext_resource type="ArrayMesh" uid="uid://d3iwx2wpdy8lj" path="res://Assets/Models/Objects/Buildings/Ilub6.res" id="1_7oasj"]
+
+[node name="IluB6" type="StaticBody3D"]
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_7oasj")

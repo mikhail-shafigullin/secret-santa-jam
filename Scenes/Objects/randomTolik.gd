@@ -11,6 +11,7 @@ func _ready():
 	anim.connect("animation_finished", stop_anim)
 	timer.connect("timeout", start_anim)
 	timer.one_shot = true
+	timer.wait_time = 100
 	add_child(timer)
 
 	stop_anim()
@@ -19,14 +20,15 @@ func stop_anim(_name: String=""):
 	if anim.is_playing():
 		anim.stop()
 	anim.active = false
-	timer.wait_time = randf_range(10, 120)
-	timer.start()
+	timer.start(randf_range(15, 240))
+	anim.process_mode = PROCESS_MODE_DISABLED
 
 func start_anim():
 	idle_shot()
 
 func idle_shot() -> void:
 	anim.active = true
+	anim.process_mode = PROCESS_MODE_INHERIT
 	anim.play("idle%d" %randi_range(1, 9))
 
 func randomize_tolik() -> void:

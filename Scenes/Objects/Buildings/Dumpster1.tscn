@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://baqgsd71tvpgc"]
+
+[ext_resource type="ArrayMesh" uid="uid://dw6re6xnwj58k" path="res://Assets/Models/Objects/Buildings/dumpster1.res" id="1_ng5fj"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8a11o"]
+points = PackedVector3Array(0.900334, 0.840651, -0.0870953, -0.953336, 0, -0.367663, -0.953336, 0, 0.615272, -0.924274, 0.88013, -0.352681, 0.953336, 0, -0.367663, 0.931443, 0.737924, 0.603986, 0.953336, 0, 0.615272, -0.931443, 0.737924, 0.603986, 0.924274, 0.88013, -0.352681)
+
+[node name="Dumpster1" type="StaticBody3D"]
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_ng5fj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_8a11o")

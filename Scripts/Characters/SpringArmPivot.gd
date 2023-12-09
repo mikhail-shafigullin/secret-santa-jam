@@ -19,6 +19,15 @@ func _unhandled_input(event):
 		spring_arm.rotate_x(-event.relative.y * 0.005)
 		spring_arm.rotation.x = clamp(spring_arm.rotation.x, -PI/4, PI/4)
 
+func _process(delta):
+	var axis = Vector2(Input.get_action_strength("camera_left") - Input.get_action_strength("camera_right"),
+						Input.get_action_strength("camera_up") - Input.get_action_strength("camera_down"))
+	if axis.length() < 0.1:
+		return
+	rotate_y(axis.x * 0.05)
+	spring_arm.rotate_x(axis.y * 0.05)
+	spring_arm.rotation.x = clamp(spring_arm.rotation.x, -PI/4, PI/4)
+
 func _physics_process(_delta):
 	if change_fov_on_run:
 		if owner.is_on_floor():

@@ -61,6 +61,16 @@ _subresources={
 "save_to_file/make_streamable": "",
 "save_to_file/path": "res://Assets/Models/Objects/Buildings/Ilub4.res"
 },
+"IluBuild_Plane_004": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/Ilub6.res"
+},
 "IluBuild_Plane_005": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -71,6 +81,26 @@ _subresources={
 "save_to_file/make_streamable": "",
 "save_to_file/path": "res://Assets/Models/Objects/Buildings/Ilub2.res"
 },
+"IluBuild_Plane_006": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/Ilub7.res"
+},
+"IluBuild_Plane_007": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/Ilub8.res"
+},
 "IluBuild_Plane_008": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -80,6 +110,46 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/make_streamable": "",
 "save_to_file/path": "res://Assets/Models/Objects/Buildings/Ilub5.res"
+},
+"IluBuild_Plane_013": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/Ilub9.res"
+},
+"IluBuild_Plane_022": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/dumpster1.res"
+},
+"IluBuild_Plane_023": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/dumpster2.res"
+},
+"IluBuild_Plane_024": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/bench.res"
 }
 }
 }
