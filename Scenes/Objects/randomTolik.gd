@@ -19,7 +19,7 @@ func stop_anim(_name: String=""):
 	if anim.is_playing():
 		anim.stop()
 	anim.active = false
-	timer.wait_time = randf_range(50, 150)
+	timer.wait_time = randf_range(10, 120)
 	timer.start()
 
 func start_anim():
@@ -33,8 +33,10 @@ func randomize_tolik() -> void:
 	anim.speed_scale = speed
 	mesh.set("blend_shapes/fat", randf_range(-0.05, 1))
 	mesh.set("blend_shapes/female", randi_range(0, 1))
+	
 	var mat: Material = mesh.get_active_material(0)
 	var new_mat = mat.duplicate()
+	new_mat.set("shader_parameter/texture_albedo", load("res://Assets/Models/Characters/Tolik/texture/tolik%d.png"%randi_range(1,7)))
 	new_mat.set("shader_parameter/breath", randf_range(0.03, 0.05))
 	mesh.material_override = new_mat
 	
