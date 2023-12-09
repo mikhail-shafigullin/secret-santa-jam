@@ -91,8 +91,6 @@ func physics_process_new(delta):
 		move_direction = move_direction.rotated(Vector3.UP, spring_arm_pivot.rotation.y)
 		
 		if not move_direction.is_zero_approx():
-			var angle = player_mesh.global_rotation.signed_angle_to(spring_arm_pivot.global_rotation, Vector3.UP);
-			
 			print(camera.global_rotation.y - player_mesh.global_rotation.y)
 			if abs(sin(camera.global_rotation.y - player_mesh.global_rotation.y)) > 0.1:
 				var global_quat = spring_arm_pivot.quaternion.slerp(Quaternion.from_euler(player_mesh.global_rotation), -0.5*delta);
