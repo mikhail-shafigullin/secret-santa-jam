@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://boit6xug1wpm4"]
+[gd_scene load_steps=5 format=3 uid="uid://boit6xug1wpm4"]
 
 [ext_resource type="Script" path="res://SubViewScale.gd" id="1_5n7o5"]
 [ext_resource type="Script" path="res://Scenes/Screens/MainScreen.gd" id="1_pyol8"]
-[ext_resource type="PackedScene" uid="uid://dqq5k5oslpbm0" path="res://Scenes/Levels/world.tscn" id="2_kc36r"]
 [ext_resource type="Texture2D" uid="uid://daxe2mb8ywsvx" path="res://Assets/Textures/fullscreen-svgrepo-com.svg" id="4_hjjw2"]
 [ext_resource type="Texture2D" uid="uid://ddajpt0ew2bm" path="res://Assets/Textures/volume-min-svgrepo-com.svg" id="5_nr1bp"]
 
@@ -55,6 +54,7 @@ focus_mode = 2
 script = ExtResource("1_5n7o5")
 
 [node name="SubViewport" type="SubViewport" parent="Control/SubViewScale"]
+own_world_3d = true
 handle_input_locally = false
 scaling_3d_mode = 1
 canvas_item_default_texture_filter = 0
@@ -63,7 +63,16 @@ audio_listener_enable_3d = true
 size = Vector2i(320, 240)
 render_target_update_mode = 4
 
-[node name="World" parent="Control/SubViewScale/SubViewport" instance=ExtResource("2_kc36r")]
+[node name="Label" type="Label" parent="Control/SubViewScale/SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 96
+text = "game"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="FullScreen" type="Button" parent="Control"]
 top_level = true
