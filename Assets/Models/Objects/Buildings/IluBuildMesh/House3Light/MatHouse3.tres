@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bxgs077d50w2v"]
+
+[ext_resource type="Shader" path="res://Assets/Models/Objects/Buildings/IluBuildMesh/House1Light/MatHouse1.gdshader" id="1_vuv6n"]
+[ext_resource type="Texture2D" uid="uid://bb5ugwwa4l3wu" path="res://Assets/Models/Objects/Buildings/IluBuildMesh/House3Light/IluBuild_Untitled_4.png" id="2_c45m6"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_vuv6n")
+shader_parameter/color = ExtResource("2_c45m6")
