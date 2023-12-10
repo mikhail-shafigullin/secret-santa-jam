@@ -3450,7 +3450,7 @@ mesh = SubResource("ArrayMesh_mh0qi")
 skin = SubResource("Skin_ss60q")
 
 [node name="LeftHandAtt" type="BoneAttachment3D" parent="tim/TimMixemoRig/Skeleton3D"]
-transform = Transform3D(0.879003, 0.446827, -0.166433, 0.129559, -0.559735, -0.818481, -0.458878, 0.697884, -0.549899, 33.1147, 46.1416, 27.5515)
+transform = Transform3D(0.879003, 0.446827, -0.166432, 0.129559, -0.559735, -0.818481, -0.458878, 0.697884, -0.549899, 33.1147, 46.1416, 27.5515)
 bone_name = "mixamorig_LeftHand"
 bone_idx = 9
 
@@ -3463,7 +3463,7 @@ mesh = SubResource("BoxMesh_cca03")
 skeleton = NodePath("../..")
 
 [node name="RightHandAtt" type="BoneAttachment3D" parent="tim/TimMixemoRig/Skeleton3D"]
-transform = Transform3D(-0.319281, -0.927836, 0.192823, -0.680797, 0.0830314, -0.727751, 0.659222, -0.36363, -0.658178, -33.0433, 75.7566, -23.6145)
+transform = Transform3D(-0.319282, -0.927835, 0.192823, -0.680797, 0.0830311, -0.727751, 0.659222, -0.363631, -0.658178, -33.0433, 75.7566, -23.6145)
 bone_name = "mixamorig_RightHand"
 bone_idx = 15
 
