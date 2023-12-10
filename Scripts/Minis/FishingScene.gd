@@ -1,6 +1,11 @@
 extends MiniGame
 
 @onready var c = Global.cutscener
+
+@onready var firstPartSection = %FirstPart;
+@onready var bubblesText = %BubblesText;
+
+@onready var secondPartSection = %SecondPart;
 @onready var fishingSlider = %rodSlider;
 @onready var fishSlider = %fishSlider;
 @onready var fishSlider2 = %fishSlider2;
@@ -16,14 +21,17 @@ var slider_value: float = 0;
 
 @export var success_slider_speed = 20;
 
+var currentPart = 1;
+
+var firstPartTimer : Timer = Timer.new();
+var failureFirstPartTimer : Timer = Timer.new();
+
 var sliderValue = 0;
 var current_slider_hold_speed: float = 0;
 var is_slider_holded = false;
-
 var fish_slider_value: float = 0;
 var current_fish_slider_speed: float = 0;
 var current_fish_time: float = 0;
-
 var fish_easy_acceleration = {
 	0.0: 10.0,
 	1.5: 100.0,
@@ -32,14 +40,12 @@ var fish_easy_acceleration = {
 }
 var next_fish_index: int = 0;
 var current_fish_acceleration = 0.0
-
 var sucessValue:float = 0.0
 var is_sucess = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	start();
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -63,6 +69,8 @@ func start() -> bool:
 	
 	Global.player.set_busy(true)
 	Global.player.visible = false
+	
+	start_second_part();
 	
 	return true
 
@@ -111,6 +119,16 @@ func process_victory(delta: float):
 	if(sucessValue > 100.0 and !is_sucess):
 		is_sucess = true;
 		show_sucess_screen();
+
+func start_first_part():
+	firstPartSection.visible = true;
+	secondPartSection.visible = false;
+	currentPart = 1;
+	
+func start_second_part():
+	firstPartSection.visible = false;
+	secondPartSection.visible = true;
+	currentPart = 2;
 
 func show_sucess_screen():
 	victoryControls.visible = true;

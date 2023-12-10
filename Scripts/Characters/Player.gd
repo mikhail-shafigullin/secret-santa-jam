@@ -182,7 +182,7 @@ func animate(delta):
 		animator.set("parameters/ground_air_transition/transition_request", "air")
 
 func set_busy(state: bool) -> void:
-	print('Player is ', busy)
+	
 	busy = state
 	$PlayerLayout/UseMessage/UseMessageText.visible = !busy
 	if !busy:

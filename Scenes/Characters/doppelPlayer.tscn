@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2cq3t2najx13"]
+
+[ext_resource type="PackedScene" uid="uid://ddjjbwbp384iw" path="res://Assets/Models/Characters/tim.glb" id="1_tkj0d"]
+
+[node name="DoppelPlayer" type="Node3D"]
+
+[node name="tim2" parent="." instance=ExtResource("1_tkj0d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.023402, 0, -0.194234)
+
+[node name="Skeleton3D" parent="tim2/TimMixemoRig" index="0"]
+bones/0/position = Vector3(-0.816091, 41.7391, 1.64228)
+bones/0/rotation = Quaternion(-0.0299676, -0.367719, -0.0122078, 0.929374)
+bones/1/rotation = Quaternion(-0.0298086, 0.0412393, -0.00444139, 0.998695)
+bones/2/rotation = Quaternion(0.100634, 0.0828646, -0.00643815, 0.991446)
+bones/3/rotation = Quaternion(0.113402, 0.0827746, -0.00750535, 0.990067)
+bones/4/rotation = Quaternion(0.0186575, -0.0113097, 0.000180455, 0.999762)
+bones/5/rotation = Quaternion(-0.0794388, 0.17735, 0.00411201, 0.980928)
+bones/6/rotation = Quaternion(-0.544115, -0.485659, 0.590727, -0.345133)
+bones/7/position = Vector3(-3.8381e-06, 11.0439, -3.00375e-06)
+bones/7/rotation = Quaternion(0.572987, 0.0907263, 0.0631271, 0.812077)
+bones/8/position = Vector3(-4.1978e-07, 15.879, 3.76767e-06)
+bones/8/rotation = Quaternion(-0.0627465, -0.00554185, 0.442804, 0.894403)
+bones/9/rotation = Quaternion(-0.160505, 0.123808, 0.0495024, 0.977987)
+bones/10/rotation = Quaternion(0.318837, -0.00388207, 0.251396, 0.913853)
+bones/11/rotation = Quaternion(0.0326851, -0.00591981, 0.0609698, 0.997587)
+bones/12/rotation = Quaternion(0.606887, -0.448238, 0.541085, 0.371482)
+bones/13/position = Vector3(-1.7847e-06, 12.638, -4.81428e-06)
+bones/13/rotation = Quaternion(0.498529, -0.10482, 0.166321, 0.844286)
+bones/14/rotation = Quaternion(-0.0191493, 0.18189, -0.407915, 0.894514)
+bones/15/position = Vector3(-0.0794082, 16.6516, 0.212)
+bones/15/rotation = Quaternion(0.123018, -0.165994, -0.125464, 0.970346)
+bones/16/position = Vector3(4.31366, 3.72637, -0.686604)
+bones/16/rotation = Quaternion(0.193169, 0.0297992, -0.347557, 0.917062)
+bones/17/rotation = Quaternion(0.0395807, 0.00962097, 0.0102664, 0.999117)
+bones/18/rotation = Quaternion(0.0756255, 0.194841, 0.972336, -0.104313)
+bones/19/rotation = Quaternion(-0.295705, 0.119044, -0.0302439, 0.94735)
+bones/20/rotation = Quaternion(0.443541, -0.031992, -0.0552511, 0.893977)
+bones/21/rotation = Quaternion(0.385328, 0.0172793, -0.0231982, 0.922326)
+bones/23/rotation = Quaternion(-0.121337, 0.0109243, 0.98451, 0.126091)
+bones/24/rotation = Quaternion(-0.29221, 0.0768057, -0.0216819, 0.953018)
+bones/25/rotation = Quaternion(0.553462, 0.0725546, 0.12493, 0.820249)
+bones/26/rotation = Quaternion(0.381033, 0.00387223, -0.00183804, 0.924552)
+
+[editable path="tim2"]
