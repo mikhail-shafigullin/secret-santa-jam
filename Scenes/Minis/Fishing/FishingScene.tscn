@@ -12,8 +12,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_vertical = 4
 
-[node name="fishingSlider" type="VSlider" parent="FishingScreen"]
+[node name="rodSlider" type="VSlider" parent="FishingScreen"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 3
@@ -27,3 +28,103 @@ offset_right = -27.0
 offset_bottom = -25.0
 grow_horizontal = 0
 grow_vertical = 0
+editable = false
+scrollable = false
+
+[node name="fishSlider" type="VSlider" parent="FishingScreen"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -103.0
+offset_top = -154.0
+offset_right = -57.0
+offset_bottom = -25.0
+grow_horizontal = 0
+grow_vertical = 0
+editable = false
+scrollable = false
+
+[node name="fishSlider2" type="VSlider" parent="FishingScreen"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -118.0
+offset_top = -154.0
+offset_right = -72.0
+offset_bottom = -25.0
+grow_horizontal = 0
+grow_vertical = 0
+editable = false
+scrollable = false
+
+[node name="sucessSlider" type="VSlider" parent="FishingScreen"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -151.0
+offset_top = -154.0
+offset_right = -105.0
+offset_bottom = -25.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="victoryControls" type="Control" parent="FishingScreen"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -92.0
+offset_right = 20.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="FishingScreen/victoryControls"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = -4.0
+offset_right = 19.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "exit"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="FishingScreen/victoryControls"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -45.5
+offset_top = -39.0
+offset_right = 45.5
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+text = "[center]Victory!"
+
+[connection signal="pressed" from="FishingScreen/victoryControls/Button" to="." method="_on_button_pressed"]

@@ -25,8 +25,6 @@ var dialogue_line: DialogueLine:
 
 		# The dialogue has finished so close the balloon
 		if not next_dialogue_line:
-			if Global.player:
-				Global.player.set_busy(false)
 			queue_free()
 			return
 

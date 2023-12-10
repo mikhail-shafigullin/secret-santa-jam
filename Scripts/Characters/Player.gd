@@ -91,7 +91,6 @@ func physics_process_new(delta):
 		move_direction = move_direction.rotated(Vector3.UP, spring_arm_pivot.rotation.y)
 		
 		if not move_direction.is_zero_approx():
-			print(camera.global_rotation.y - player_mesh.global_rotation.y)
 			if abs(sin(camera.global_rotation.y - player_mesh.global_rotation.y)) > 0.1:
 				var global_quat = spring_arm_pivot.quaternion.slerp(Quaternion.from_euler(player_mesh.global_rotation), -0.5*delta);
 				spring_arm_pivot.rotation = global_quat.get_euler();
@@ -183,6 +182,7 @@ func animate(delta):
 		animator.set("parameters/ground_air_transition/transition_request", "air")
 
 func set_busy(state: bool) -> void:
+	print('Player is ', busy)
 	busy = state
 	$PlayerLayout/UseMessage/UseMessageText.visible = !busy
 	if !busy:

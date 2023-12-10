@@ -4,9 +4,9 @@ Fisherman: Hello, can you help me to catch a fish?
 Fisherman: My shaky hands just can't to hold this fishing rod.
 Fisherman: Do you help me?
 - Try to catch a fish
-	do Global.mainScreen.play_mini_by_name("fishing")
+	do Global.main_screen.play_mini_by_name("fishing")
+	=> END
 - End the conversation => end
-Fisherman: For more information see the online documentation.
 
 
 ~ end

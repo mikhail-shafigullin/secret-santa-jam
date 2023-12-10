@@ -44,7 +44,7 @@ func play_mini_by_name(miniName: String) -> bool:
 	if mini_game != null:
 		mini_game.queue_free()
 	
-	mini_game = minis.get(miniName);
+	mini_game = minis.get(miniName).instantiate();
 	root.add_child(mini_game)
 	return mini_game.start()
 

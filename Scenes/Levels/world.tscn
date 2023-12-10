@@ -334,48 +334,6 @@ shadow_enabled = true
 [node name="Player" parent="." instance=ExtResource("2_3okkh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.329102, 1.52691, 2.87322)
 
-[node name="GPUParticles3D" parent="Player" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.0823, 0)
-lifetime = 5.01
-
-[node name="tim" parent="Player" index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0402329, 0)
-
-[node name="Skeleton3D" parent="Player/tim/TimMixemoRig" index="0"]
-bones/0/position = Vector3(2.50766, 41.2826, 4.62142)
-bones/0/rotation = Quaternion(0.020603, -0.0273506, -0.00502388, 0.999401)
-bones/1/rotation = Quaternion(-0.0822807, 0.0143764, -0.00286898, 0.996501)
-bones/2/rotation = Quaternion(-0.00416108, 0.0336889, -0.0120702, 0.999351)
-bones/3/rotation = Quaternion(0.00871662, 0.0335307, -0.0125033, 0.999321)
-bones/4/rotation = Quaternion(0.0647635, -0.0156516, 0.0256141, 0.997449)
-bones/5/rotation = Quaternion(-0.0125027, -0.0213757, 0.0211759, 0.999469)
-bones/6/rotation = Quaternion(-0.649139, -0.381925, 0.557944, -0.348499)
-bones/7/rotation = Quaternion(0.448866, 0.202661, -0.229967, 0.839382)
-bones/8/rotation = Quaternion(-0.000962476, 0.100962, 0.362637, 0.926445)
-bones/9/rotation = Quaternion(0.0253246, 0.195012, -0.0759738, 0.977526)
-bones/11/rotation = Quaternion(0.327561, 0.00781451, 0.0535673, 0.943278)
-bones/12/rotation = Quaternion(0.615805, -0.440296, 0.551154, 0.350931)
-bones/13/rotation = Quaternion(0.531015, -0.173573, -0.00527766, 0.829378)
-bones/14/rotation = Quaternion(-0.112809, 0.0615247, -0.484466, 0.865322)
-bones/15/rotation = Quaternion(-0.178894, -0.231774, -0.127597, 0.947627)
-bones/16/rotation = Quaternion(0.21277, 0.0341611, -0.31598, 0.923969)
-bones/17/rotation = Quaternion(0.429293, 0.0256566, -0.0039244, 0.902793)
-bones/18/rotation = Quaternion(0.047893, 0.281907, 0.958237, -0.00406641)
-bones/19/rotation = Quaternion(-0.326313, 0.0335877, -0.00740809, 0.944636)
-bones/20/rotation = Quaternion(0.430438, 0.00519893, 0.016132, 0.902461)
-bones/21/rotation = Quaternion(0.390246, -0.0508546, 0.01414, 0.919196)
-bones/23/rotation = Quaternion(-0.0933456, -0.0854671, 0.99113, 0.0405419)
-bones/24/rotation = Quaternion(-0.390159, -0.0148606, -0.0170584, 0.92047)
-bones/25/rotation = Quaternion(0.141921, -0.0300991, -0.0175704, 0.989264)
-bones/26/rotation = Quaternion(0.558235, 0.0275781, 0.0188276, 0.82901)
-
-[node name="Camera3D" parent="Player/SpringArmPivot/SpringArm3D" index="0"]
-current = true
-
-[node name="PlayerLayout" parent="Player" index="7"]
-mouse_filter = 1
-metadata/_edit_use_anchors_ = true
-
 [node name="TestRobot" parent="." instance=ExtResource("3_hs1wi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.31123, 0.5, 5.51678)
 
@@ -784,5 +742,4 @@ transform = Transform3D(-0.00488689, 0, -0.999988, 0, 1, 0, 0.999988, 0, -0.0048
 [node name="taiko" parent="." instance=ExtResource("7_wp63y")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.543631, 0.5, 6.41517)
 
-[editable path="Player"]
 [editable path="Cutscener"]
