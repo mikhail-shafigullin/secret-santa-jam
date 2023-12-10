@@ -8,10 +8,13 @@ extends MiniGame
 @onready var hit_fail = $TaikoScreen/TaikoLine/Panel/Panel/HitFail
 var hit_timer = Timer.new()
 var model = null
+var tim = null
 
 enum HIT_TYPE {
-	pon,
-	kat
+	ponL,
+	katL,
+	ponR,
+	katR
 }
 enum HIT_EFFECT {
 	gold = 0,
@@ -27,17 +30,29 @@ func _ready():
 	hit_timer.connect("timeout", hit_timeout)
 	
 func _input(event):
-	if event.is_action_pressed("taiko_pon"):
-		hit(HIT_TYPE.pon)
-	if event.is_action_pressed("taiko_kat"):
-		hit(HIT_TYPE.kat)
+	if event.is_action_pressed("taiko_pon_left"):
+		hit(HIT_TYPE.ponL)
+	if event.is_action_pressed("taiko_kat_left"):
+		hit(HIT_TYPE.katL)
+	if event.is_action_pressed("taiko_pon_right"):
+		hit(HIT_TYPE.ponR)
+	if event.is_action_pressed("taiko_kat_right"):
+		hit(HIT_TYPE.katR)
 		
 func hit(type: HIT_TYPE):
 	match type:
-		HIT_TYPE.pon:
+		HIT_TYPE.ponL:
 			model.pon.play()
-		HIT_TYPE.kat:
+			play_blend("LeftDon")
+		HIT_TYPE.katL:
 			model.kat.play()
+			play_blend("LeftKat")
+		HIT_TYPE.ponR:
+			model.pon.play()
+			play_blend("RightDon")
+		HIT_TYPE.katR:
+			model.kat.play()
+			play_blend("RightKat")
 	
 	hit_anim()
 	
@@ -52,10 +67,16 @@ func start() -> bool:
 	Global.player.set_busy(true)
 	Global.player.visible = false
 	c.start("taiko_start", false)
-	
+	tim = model.tim
+
+	tim.visible = true
+	tim.taiko_tree.active = true
+
 	return true
 
 func end() -> void:
+	tim.taiko_tree.active = false
+	tim.visible = false
 	c.start("taiko_rest", false)
 
 	Global.player.visible = true
@@ -85,3 +106,5 @@ func hit_timeout():
 	hit_ok.visible = false
 	hit_fail.visible = false
 	
+func play_blend(name: String):
+	tim.taiko_tree["parameters/%s/request" %name]= AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE
