@@ -32,6 +32,9 @@ var jump_buffer_timer: Timer = Timer.new();
 var velocity_from_other_sources: Vector3 = Vector3.ZERO;
 var velocity_viscosity: float = 0.1;
 
+var mouse_moved_timer: Timer = Timer.new();
+var mouse_moved_wait_time = 0.5;
+
 var start_jump_velocity:float = (2 * planned_jump_height) / planned_time_in_air
 var gravity_counted:float = (-2 * planned_jump_height) / (planned_time_in_air * planned_time_in_air)
 
@@ -53,6 +56,9 @@ func _ready():
 	add_child(jump_buffer_timer)
 	jump_buffer_timer.wait_time = jump_buffer_time
 	jump_buffer_timer.one_shot = true
+	add_child(mouse_moved_timer)
+	mouse_moved_timer.one_shot = true
+	mouse_moved_timer.wait_time = mouse_moved_wait_time;
 
 func _physics_process(delta):
 	physics_process_new(delta);
@@ -66,6 +72,9 @@ func _input(event):
 			handle_input_standing(event)
 		elif currentState == PlayerState.STATE_IN_AIR:
 			handle_input_jumping(event)
+	
+	if is_camera_moving_by_input(event):
+		mouse_moved_timer.start();
 		
 func process_new(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -90,11 +99,12 @@ func physics_process_new(delta):
 		move_direction.z = Input.get_action_strength("move_backwards") - Input.get_action_strength("move_forwards")
 		move_direction = move_direction.rotated(Vector3.UP, spring_arm_pivot.rotation.y)
 		
-		if not move_direction.is_zero_approx():
-			if abs(sin(camera.global_rotation.y - player_mesh.global_rotation.y)) > 0.1:
-				var global_quat = spring_arm_pivot.quaternion.slerp(Quaternion.from_euler(player_mesh.global_rotation), -0.5*delta);
-				spring_arm_pivot.rotation = global_quat.get_euler();
-				#spring_arm_pivot.rotate(Vector3.UP, move_direction.angle_to(spring_arm_pivot.position)*delta)
+		if(mouse_moved_timer.is_stopped()):
+			if not move_direction.is_zero_approx():
+				if abs(sin(camera.global_rotation.y - player_mesh.global_rotation.y)) > 0.1:
+					var global_quat = spring_arm_pivot.quaternion.slerp(Quaternion.from_euler(player_mesh.global_rotation), -0.5*delta);
+					spring_arm_pivot.rotation = global_quat.get_euler();
+					#spring_arm_pivot.rotate(Vector3.UP, move_direction.angle_to(spring_arm_pivot.position)*delta)
 	
 	velocity.x = move_direction.x * speed
 	velocity.z = move_direction.z * speed
@@ -181,8 +191,12 @@ func animate(delta):
 	else:
 		animator.set("parameters/ground_air_transition/transition_request", "air")
 
+func is_camera_moving_by_input(event: InputEvent) -> bool:
+	return (event.is_action("camera_down") or event.is_action("camera_up")
+		or event.is_action("camera_left") or event.is_action("camera_right") or
+		event is InputEventMouseMotion)
+
 func set_busy(state: bool) -> void:
-	
 	busy = state
 	$PlayerLayout/UseMessage/UseMessageText.visible = !busy
 	if !busy:
@@ -190,4 +204,3 @@ func set_busy(state: bool) -> void:
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		
-
