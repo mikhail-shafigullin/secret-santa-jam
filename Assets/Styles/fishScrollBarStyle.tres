@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://d4h5e55bm76fj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tt58w"]
+bg_color = Color(0.890196, 0, 0.215686, 1)
+
+[resource]
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_tt58w")
+VScrollBar/styles/grabber_pressed = null
+VScrollBar/styles/scroll = null
+VScrollBar/styles/scroll_focus = null

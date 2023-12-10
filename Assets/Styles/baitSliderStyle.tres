@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://c52nbngpy3mu6"]
+
+[ext_resource type="Texture2D" uid="uid://05v1em8ateeq" path="res://Assets/Sprites/Bait.png" id="1_7rr3f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qt5b"]
+bg_color = Color(0.803922, 0.729412, 0.309804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0r50u"]
+bg_color = Color(0.933333, 0.411765, 0.415686, 1)
+
+[resource]
+VSlider/icons/grabber = ExtResource("1_7rr3f")
+VSlider/icons/grabber_disabled = ExtResource("1_7rr3f")
+VSlider/icons/grabber_highlight = ExtResource("1_7rr3f")
+VSlider/icons/tick = null
+VSlider/styles/grabber_area = SubResource("StyleBoxFlat_8qt5b")
+VSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_0r50u")

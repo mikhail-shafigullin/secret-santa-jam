@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cktwbup1665lr"]
+[gd_scene load_steps=6 format=3 uid="uid://cktwbup1665lr"]
 
 [ext_resource type="Script" path="res://Scripts/Minis/FishingScene.gd" id="1_f5vfw"]
+[ext_resource type="Theme" uid="uid://c52nbngpy3mu6" path="res://Assets/Styles/baitSliderStyle.tres" id="2_3tj6h"]
+[ext_resource type="Texture2D" uid="uid://05v1em8ateeq" path="res://Assets/Sprites/Bait.png" id="2_ewmc0"]
+[ext_resource type="Texture2D" uid="uid://b8l5urnietu56" path="res://Assets/Sprites/Fish.png" id="3_72i3t"]
+[ext_resource type="Theme" uid="uid://d4h5e55bm76fj" path="res://Assets/Styles/fishScrollBarStyle.tres" id="3_fnk26"]
 
 [node name="FishingScene" type="CanvasLayer"]
 script = ExtResource("1_f5vfw")
@@ -24,7 +28,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BubblesText" type="RichTextLabel" parent="FishingScreen/FirstPart"]
+[node name="StartFishingSection" type="Control" parent="FishingScreen/FirstPart"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BubblesText" type="RichTextLabel" parent="FishingScreen/FirstPart/StartFishingSection"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 3
@@ -32,16 +44,17 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -324.0
+offset_left = -196.0
 offset_top = -136.0
-offset_right = -198.0
-offset_bottom = -108.0
+offset_right = -16.0
+offset_bottom = -79.0
 grow_horizontal = 0
 grow_vertical = 0
 bbcode_enabled = true
 text = "[center]wait..."
 
-[node name="InstructionText" type="RichTextLabel" parent="FishingScreen/FirstPart"]
+[node name="InstructionText" type="RichTextLabel" parent="FishingScreen/FirstPart/StartFishingSection"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -57,7 +70,7 @@ grow_vertical = 0
 bbcode_enabled = true
 text = "[right]Press E when you see bubbles"
 
-[node name="SecondPart" type="Control" parent="FishingScreen"]
+[node name="ThirdPart" type="Control" parent="FishingScreen"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -66,7 +79,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="rodSlider" type="VSlider" parent="FishingScreen/SecondPart"]
+[node name="fishScrollBar" type="VScrollBar" parent="FishingScreen/ThirdPart"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -37.0
+offset_right = -20.0
+offset_bottom = 74.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 3.14159
+theme = ExtResource("3_fnk26")
+page = 30.0
+
+[node name="rodSlider" type="VSlider" parent="FishingScreen/ThirdPart"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 3
@@ -80,11 +111,13 @@ offset_right = -27.0
 offset_bottom = -25.0
 grow_horizontal = 0
 grow_vertical = 0
+theme = ExtResource("2_3tj6h")
 editable = false
 scrollable = false
 
-[node name="fishSlider" type="VSlider" parent="FishingScreen/SecondPart"]
+[node name="fishSlider" type="VSlider" parent="FishingScreen/ThirdPart"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -100,8 +133,9 @@ grow_vertical = 0
 editable = false
 scrollable = false
 
-[node name="fishSlider2" type="VSlider" parent="FishingScreen/SecondPart"]
+[node name="fishSlider2" type="VSlider" parent="FishingScreen/ThirdPart"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -117,7 +151,7 @@ grow_vertical = 0
 editable = false
 scrollable = false
 
-[node name="sucessSlider" type="VSlider" parent="FishingScreen/SecondPart"]
+[node name="sucessSlider" type="VSlider" parent="FishingScreen/ThirdPart"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 3
@@ -134,7 +168,7 @@ grow_vertical = 0
 editable = false
 scrollable = false
 
-[node name="victoryControls" type="Control" parent="FishingScreen/SecondPart"]
+[node name="victoryControls" type="Control" parent="FishingScreen/ThirdPart"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -144,7 +178,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="FishingScreen/SecondPart/victoryControls"]
+[node name="Button" type="Button" parent="FishingScreen/ThirdPart/victoryControls"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -159,7 +193,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "exit"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="FishingScreen/SecondPart/victoryControls"]
+[node name="RichTextLabel" type="RichTextLabel" parent="FishingScreen/ThirdPart/victoryControls"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -167,12 +201,86 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -44.0
-offset_top = -115.0
+offset_top = -152.0
 offset_right = 47.0
 offset_bottom = -75.0
 grow_horizontal = 2
 grow_vertical = 0
 bbcode_enabled = true
-text = "[center]Victory!"
+text = "[center]You catched the fish!"
 
-[connection signal="pressed" from="FishingScreen/SecondPart/victoryControls/Button" to="." method="_on_button_pressed"]
+[node name="GameOverPart" type="Control" parent="FishingScreen"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="FishingScreen/GameOverPart"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -87.0
+offset_top = -135.0
+offset_right = 93.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+text = "[center] You didn't catch anything"
+
+[node name="ExitButton" type="Button" parent="FishingScreen/GameOverPart"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -18.5
+offset_top = -76.0
+offset_right = 18.5
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Exit"
+
+[node name="TextureRect" type="TextureRect" parent="FishingScreen"]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -59.0
+offset_top = -131.0
+offset_right = -19.0
+offset_bottom = -91.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_ewmc0")
+
+[node name="TextureRect2" type="TextureRect" parent="FishingScreen"]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -184.0
+offset_right = -20.0
+offset_bottom = -144.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("3_72i3t")
+
+[connection signal="pressed" from="FishingScreen/ThirdPart/victoryControls/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="FishingScreen/GameOverPart/ExitButton" to="." method="_on_exit_button_pressed"]

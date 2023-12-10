@@ -4,13 +4,17 @@ extends MiniGame
 
 @onready var firstPartSection = %FirstPart;
 @onready var bubblesText = %BubblesText;
+@onready var instructionText = %InstructionText;
 
-@onready var secondPartSection = %SecondPart;
+@onready var thirdPartSection = %ThirdPart;
 @onready var fishingSlider = %rodSlider;
 @onready var fishSlider = %fishSlider;
 @onready var fishSlider2 = %fishSlider2;
+@onready var fishScrollBar = %fishScrollBar;
 @onready var sucessSlider = %sucessSlider;
 @onready var victoryControls = %victoryControls;
+
+@onready var gameOverSection = %GameOverPart;
 
 var slider_value: float = 0;
 @export var slider_usual_acceleration: float = -240.0;
@@ -18,13 +22,17 @@ var slider_value: float = 0;
 @export var slider_min_speed: float = -120.0;
 @export var slider_hold_max_speed: float = 240.0;
 @export var fish_slider_length = 30;
-
 @export var success_slider_speed = 20;
+@export var success_failure_slider_speed = -10;
+
+@export var min_fishing_time = 1.0
+@export var max_fishing_time = 2.0
+@export var failure_fishing_time = 2.0
 
 var currentPart = 1;
 
-var firstPartTimer : Timer = Timer.new();
-var failureFirstPartTimer : Timer = Timer.new();
+@onready var firstPartTimer : Timer = Timer.new();
+@onready var failureFirstPartTimer : Timer = Timer.new();
 
 var sliderValue = 0;
 var current_slider_hold_speed: float = 0;
@@ -40,8 +48,10 @@ var fish_easy_acceleration = {
 }
 var next_fish_index: int = 0;
 var current_fish_acceleration = 0.0
-var sucessValue:float = 0.0
+var sucessValue:float = 20.0
 var is_sucess = false;
+
+var current_fishing_time = INF
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -50,27 +60,29 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	process_slider(delta);
-	process_slider_fish(delta);
-	process_victory(delta)
-	fishingSlider.value = sliderValue;
-	fishSlider.value = fish_slider_value;
-	fishSlider2.value = fish_slider_value + fish_slider_length;
-	sucessSlider.value = sucessValue;
-	if((fishingSlider.value == 0.0 or fishingSlider.value == 100.0) and !is_slider_holded):
-		current_slider_hold_speed = 0.0;
-	if((fishSlider.value == 0.0 or fishSlider2.value == 100.0)):
-		current_fish_slider_speed = 0.0;
+	if currentPart == 3: 
+		process_slider(delta);
+		process_slider_fish(delta);
+		process_victory(delta)
+		fishingSlider.value = sliderValue;
+		fishSlider.value = fish_slider_value;
+		fishSlider2.value = fish_slider_value + fish_slider_length;
+		fishScrollBar.value = fish_slider_value;
+		sucessSlider.value = sucessValue;
+		if((fishingSlider.value == 0.0 or fishingSlider.value == 100.0) and !is_slider_holded):
+			current_slider_hold_speed = 0.0;
+		if((fishSlider.value == 0.0 or fishSlider2.value == 100.0)):
+			current_fish_slider_speed = 0.0;
 
 
 func start() -> bool:
+	start_first_part();
+	
 	if not c:
 		return false
 	
 	Global.player.set_busy(true)
 	Global.player.visible = false
-	
-	start_second_part();
 	
 	return true
 
@@ -79,13 +91,23 @@ func end() -> void:
 	Global.player.set_busy(false)
 	Global.cutscener.end();
 	queue_free()
-	pass;
 	
 func _input(event):
-	if event.is_action_pressed('use'):
-		is_slider_holded = true;
-	if event.is_action_released('use'):
-		is_slider_holded = false;
+	
+	match currentPart:
+		1:
+			if event.is_action_pressed('use'):
+				start_second_part()
+		2:
+			if event.is_action_pressed('use'):
+				if !failureFirstPartTimer.is_stopped():
+					start_third_part();
+		3:
+			if event.is_action_pressed('use'):
+				is_slider_holded = true;
+			if event.is_action_released('use'):
+				is_slider_holded = false;
+				
 	
 func process_slider(delta: float):
 	if is_slider_holded:
@@ -116,22 +138,61 @@ func process_slider_fish(delta: float):
 func process_victory(delta: float):
 	if sliderValue > fish_slider_value and sliderValue < fish_slider_value + fish_slider_length:
 		sucessValue += success_slider_speed * delta;
+	else :
+		sucessValue += success_failure_slider_speed * delta;
 	if(sucessValue > 100.0 and !is_sucess):
 		is_sucess = true;
 		show_sucess_screen();
+	if(sucessValue <= 0.0):
+		start_game_over();
 
 func start_first_part():
-	firstPartSection.visible = true;
-	secondPartSection.visible = false;
 	currentPart = 1;
+	instructionText.text = '[right]Press E to throw a rod';
+	firstPartSection.visible = true;
+	thirdPartSection.visible = false;
+	bubblesText.visible = false;
 	
 func start_second_part():
-	firstPartSection.visible = false;
-	secondPartSection.visible = true;
 	currentPart = 2;
-
+	instructionText.text = '[right]Press E when you see bubbles';
+	bubblesText.visible = true;
+	current_fishing_time = randf_range(min_fishing_time, max_fishing_time)
+	firstPartTimer.wait_time = current_fishing_time;
+	firstPartTimer.one_shot = true;
+	firstPartTimer.timeout.connect(start_bubbles_reaction_part)
+	add_child(firstPartTimer)
+	firstPartTimer.start();
+	
+func start_bubbles_reaction_part():
+	bubblesText.text = '[center]CATCH THE FISH!';
+	failureFirstPartTimer.wait_time = failure_fishing_time
+	failureFirstPartTimer.one_shot = true
+	failureFirstPartTimer.timeout.connect(failure_in_second_part)
+	add_child(failureFirstPartTimer)
+	failureFirstPartTimer.start()
+	pass
+	
+func start_third_part():
+	currentPart = 3;
+	failureFirstPartTimer.stop();
+	firstPartSection.visible = false;
+	thirdPartSection.visible = true;
+	
 func show_sucess_screen():
 	victoryControls.visible = true;
+	
+func failure_in_second_part():
+	if currentPart != 3:
+		start_game_over()
+		currentPart = 0;
+	pass;
+
+func start_game_over():
+	gameOverSection.visible = true;
 
 func _on_button_pressed():
+	end();
+
+func _on_exit_button_pressed():
 	end();
