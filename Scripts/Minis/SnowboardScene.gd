@@ -68,7 +68,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if is_active:
-		#process_balance(delta);
+		process_balance(delta);
 		process_speed(delta);
 		process_rival_speed(delta);
 		process_status(delta);
@@ -200,7 +200,7 @@ func remove_right_balance():
 	
 func calculate_railed_acceleration():
 	var balance_koeff = balance_value - normal_balance_value;
-	current_railed_balance_acceleration = balance_koeff * (speed/50) + randf_range(-speed*5, speed*5);
+	current_railed_balance_acceleration = balance_koeff * (speed/60) + randf_range(-speed*5, speed*5);
 	
 func game_over():
 	is_active = false;
