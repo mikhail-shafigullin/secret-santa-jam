@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dey4nk18x0x4v"]
+[gd_scene load_steps=12 format=3 uid="uid://dey4nk18x0x4v"]
 
 [ext_resource type="ArrayMesh" uid="uid://c1uou1qpq8ekc" path="res://Assets/Models/Objects/Buildings/Ilub5.res" id="1_edvbh"]
+[ext_resource type="Script" path="res://Assets/Models/Objects/Buildings/IluBuildMesh/Lights.gd" id="1_t325f"]
 [ext_resource type="ArrayMesh" uid="uid://bal6lxb0dn7bm" path="res://Assets/Models/Objects/Buildings/IluBuildMesh/House3Light/IluBuild_Plane_035.res" id="2_fvkf7"]
 [ext_resource type="ArrayMesh" uid="uid://cuo7ipj227egm" path="res://Assets/Models/Objects/Buildings/IluBuildMesh/House3Light/IluBuild_Plane_036.res" id="3_h3bsl"]
 [ext_resource type="ArrayMesh" uid="uid://812yflmuyanc" path="res://Assets/Models/Objects/Buildings/IluBuildMesh/House3Light/IluBuild_Plane_037.res" id="4_8gu25"]
@@ -19,6 +20,7 @@ size = Vector3(3.60915, 3.57031, 2.76208)
 
 [node name="IluB5" type="StaticBody3D"]
 transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
+script = ExtResource("1_t325f")
 metadata/_edit_group_ = true
 
 [node name="Lights" type="Node3D" parent="."]
