@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8o5gcv555lhn"]
+[gd_scene load_steps=6 format=3 uid="uid://b8o5gcv555lhn"]
 
 [ext_resource type="Script" path="res://Scripts/Minis/SnowboardMiniStarter.gd" id="1_jrshm"]
 [ext_resource type="PackedScene" uid="uid://bo1tr0fadvf6l" path="res://Scenes/UsableObject.tscn" id="1_pkkgt"]
+[ext_resource type="PackedScene" uid="uid://2gq0j2u71tdk" path="res://Scenes/Abstracts/QuestLocator.tscn" id="3_mj1k8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cm3vq"]
 size = Vector3(0.56839, 1, 0.558472)
@@ -26,5 +27,7 @@ shape = SubResource("BoxShape3D_cm3vq")
 [node name="snowboardMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.911482, -0.411339, 0, 0.411339, 0.911482, 0, 0, 0, 1, 0, 0.307405, 0)
 mesh = SubResource("BoxMesh_ujkes")
+
+[node name="QuestLocator" parent="." instance=ExtResource("3_mj1k8")]
 
 [connection signal="on_object_use" from="UsableObject" to="." method="_on_usable_object_on_object_use"]
