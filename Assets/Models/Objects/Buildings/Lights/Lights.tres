@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dbmkjg4gn6k5r"]
+
+[ext_resource type="Shader" path="res://Assets/Models/Objects/Buildings/Lights/Lights.gdshader" id="1_rr0ie"]
+[ext_resource type="Texture2D" uid="uid://bkcqs8t4e0rg7" path="res://Assets/Models/Objects/Buildings/Lights/testLights.png" id="2_dvchd"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_rr0ie")
+shader_parameter/speed = 8.9
+shader_parameter/color = ExtResource("2_dvchd")
