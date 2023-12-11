@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cogc0jr2nft03"]
+[gd_scene load_steps=40 format=3 uid="uid://cogc0jr2nft03"]
 
 [ext_resource type="Texture2D" uid="uid://3jauchyvj37w" path="res://Assets/Models/Characters/tim_tim.png" id="1_i4l2i"]
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="2_3okkh"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://j7ntiubf8kn0" path="res://Scenes/Objects/Pinus.tscn" id="16_t1ka5"]
 [ext_resource type="PackedScene" uid="uid://b8o5gcv555lhn" path="res://Scenes/Minis/Snowboard/SnowboardMiniStarter.tscn" id="18_svub7"]
 [ext_resource type="PackedScene" uid="uid://cuhldd5rqu02s" path="res://Scenes/Characters/tim_doppelganger.tscn" id="18_wud7l"]
+[ext_resource type="PackedScene" uid="uid://5u7qxg6184ef" path="res://Assets/Models/Characters/fisherman.glb" id="19_6jklo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ubn07"]
 
@@ -863,8 +864,19 @@ loop = false
 unique_name_in_owner = true
 transform = Transform3D(0.999981, -0.00727081, -0.000824528, 0.00725015, 0.969241, 0.246012, -0.00098954, -0.246013, 0.969273, 0.0556534, 1.41029, 1.86975)
 
-[node name="TimDoppelganger" parent="PathForRace/Path3D/SnowboardRacePathFollow/Node3D" instance=ExtResource("18_wud7l")]
-transform = Transform3D(-1, 0, -8.75443e-08, 0, 1, 8.8221e-11, 8.9407e-08, -5.45697e-12, -1, 0, 0, 0)
+[node name="SnowboardModel" parent="PathForRace/Path3D/SnowboardRacePathFollow/Node3D" instance=ExtResource("18_wud7l")]
+transform = Transform3D(-1, 0, -9.31323e-08, -5.82077e-11, 1, 2.91584e-09, 9.49949e-08, 2.91038e-11, -1, 0, 0, 0)
+
+[node name="Path3D2" type="Path3D" parent="PathForRace"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.18397, 5.77329, 2.42309)
+curve = SubResource("Curve3D_gcy76")
+
+[node name="SnowboardRivalRacePathFollow" type="PathFollow3D" parent="PathForRace/Path3D2"]
+transform = Transform3D(-0.0295011, -0.0113546, -0.999493, 4.65657e-10, 0.999934, -0.0113595, 0.999557, -0.000335123, -0.0294993, 0.89481, 0.00858164, 0.033494)
+loop = false
+
+[node name="fisherman2" parent="PathForRace/Path3D2/SnowboardRivalRacePathFollow" instance=ExtResource("19_6jklo")]
+transform = Transform3D(-1.00001, 0, -8.74235e-08, 0, 1, 0, 8.74234e-08, 0, -1.00001, 0, 0, 0)
 
 [node name="SnowboardMiniStarter" parent="." instance=ExtResource("18_svub7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.29423, 5.3743, 0.93026)

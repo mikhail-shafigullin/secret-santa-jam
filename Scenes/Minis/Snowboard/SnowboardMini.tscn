@@ -45,9 +45,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -64.0
+offset_left = -170.0
 offset_top = -97.0
-offset_right = 64.0
+offset_right = 176.0
 offset_bottom = -70.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -56,15 +56,16 @@ text = "[center]10"
 metadata/_edit_group_ = true
 
 [node name="SpeedInstructions" type="RichTextLabel" parent="MainUI/BalanceSection"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -64.0
+offset_left = -167.0
 offset_top = -121.0
-offset_right = 64.0
+offset_right = 169.0
 offset_bottom = -94.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -72,6 +73,8 @@ bbcode_enabled = true
 text = "[center]Speed"
 
 [node name="ExitButton" type="Button" parent="MainUI/BalanceSection"]
+unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -86,13 +89,29 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Exit"
 
-[node name="SpeedSection" type="Control" parent="MainUI"]
-visible = false
+[node name="Control" type="Control" parent="MainUI/BalanceSection"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 2
+anchor_top = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_top = -111.0
+offset_right = 191.0
+grow_vertical = 0
+
+[node name="Instructions" type="RichTextLabel" parent="MainUI/BalanceSection/Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = -63.0
+offset_right = 205.0
+offset_bottom = -8.0
+grow_vertical = 0
+bbcode_enabled = true
+text = "[font_size=12]W - accelerate
+S - brake
+A, D - balance
+"
 
 [connection signal="pressed" from="MainUI/BalanceSection/ExitButton" to="." method="_on_exit_button_pressed"]
