@@ -1,0 +1,15 @@
+~ this_is_a_node_title
+do Global.cutscener.start("snowboard_dialogue")
+Bob: Hey, Tim!
+Bob: You'll never beat me on these wires
+Bob: Bet I can overtake you?
+- I will win!
+	do Global.main_screen.play_mini_by_name("snowboard")
+	=> END
+- No, I don't have time for this! => end
+
+
+~ end
+do Global.cutscener.end()
+do Global.player.set_busy(false)
+=> END

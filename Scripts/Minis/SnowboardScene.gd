@@ -1,3 +1,4 @@
+class_name SnowboardScene
 extends MiniGame
 
 @onready var c = Global.cutscener
@@ -89,7 +90,7 @@ func _input(event):
 		
 	if event.is_action_released("move_backwards"):
 		speed_down = false;
-
+	
 func start() -> bool:
 	if not c:
 		return false

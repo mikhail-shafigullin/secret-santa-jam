@@ -14,5 +14,6 @@ func _process(delta):
 
 func _on_usable_object_on_object_use():
 	var mini = snowboard_mini.instantiate()
+	
 	var started = Global.main_screen.play_mini(mini)
 	assert(started)

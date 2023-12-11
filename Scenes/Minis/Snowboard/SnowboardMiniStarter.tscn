@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8o5gcv555lhn"]
+
+[ext_resource type="Script" path="res://Scripts/Minis/SnowboardMiniStarter.gd" id="1_jrshm"]
+[ext_resource type="PackedScene" uid="uid://bo1tr0fadvf6l" path="res://Scenes/UsableObject.tscn" id="1_pkkgt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cm3vq"]
+size = Vector3(0.56839, 1, 0.558472)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ujkes"]
+size = Vector3(0.05, 1.2, 0.5)
+
+[node name="SnowboardMiniStarter" type="Node3D"]
+script = ExtResource("1_jrshm")
+
+[node name="UsableObject" parent="." instance=ExtResource("1_pkkgt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0372236, 0.0255467, 0.0193536)
+useObjectMessage = "Talk with Bob"
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.307405, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0235443, 0, -0.00738525)
+shape = SubResource("BoxShape3D_cm3vq")
+
+[node name="snowboardMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.911482, -0.411339, 0, 0.411339, 0.911482, 0, 0, 0, 1, 0, 0.307405, 0)
+mesh = SubResource("BoxMesh_ujkes")
+
+[connection signal="on_object_use" from="UsableObject" to="." method="_on_usable_object_on_object_use"]
