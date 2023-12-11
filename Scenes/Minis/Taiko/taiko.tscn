@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c5ilmrssvix5k"]
+[gd_scene load_steps=9 format=3 uid="uid://c5ilmrssvix5k"]
 
 [ext_resource type="Texture2D" uid="uid://c11f0ruhywo6l" path="res://Scenes/Minis/Taiko/Texture/taiko.png" id="1_73q0b"]
 [ext_resource type="Script" path="res://Scenes/Minis/Taiko/Taiko.gd" id="1_ei6s2"]
@@ -23,74 +23,6 @@ region = Rect2(0, 32, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_penf1"]
 atlas = ExtResource("1_73q0b")
 region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wum5v"]
-atlas = ExtResource("1_73q0b")
-region = Rect2(0, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h8tsj"]
-atlas = ExtResource("1_73q0b")
-region = Rect2(0, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7e8w4"]
-atlas = ExtResource("1_73q0b")
-region = Rect2(64, 64, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_raq1l"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wum5v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h8tsj")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7e8w4")
-}],
-"loop": true,
-"name": &"tap",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yuuuh"]
-atlas = ExtResource("1_73q0b")
-region = Rect2(32, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d7mob"]
-atlas = ExtResource("1_73q0b")
-region = Rect2(32, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dists"]
-atlas = ExtResource("1_73q0b")
-region = Rect2(96, 64, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xvt3o"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yuuuh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d7mob")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dists")
-}],
-"loop": true,
-"name": &"tap",
-"speed": 5.0
-}]
 
 [node name="Taiko" type="CanvasLayer"]
 layer = 128
@@ -181,27 +113,6 @@ theme_override_constants/outline_size = 2
 text = "combo: 5"
 vertical_alignment = 1
 
-[node name="blue" type="AnimatedSprite2D" parent="TaikoScreen/TaikoLine"]
-texture_filter = 3
-position = Vector2(127, 38)
-sprite_frames = SubResource("SpriteFrames_raq1l")
-autoplay = "default"
-frame_progress = 0.865235
-
-[node name="blue3" type="AnimatedSprite2D" parent="TaikoScreen/TaikoLine"]
-texture_filter = 3
-position = Vector2(97, 38)
-sprite_frames = SubResource("SpriteFrames_xvt3o")
-autoplay = "default"
-frame_progress = 0.53229
-
-[node name="blue2" type="AnimatedSprite2D" parent="TaikoScreen/TaikoLine"]
-texture_filter = 3
-position = Vector2(157, 37)
-sprite_frames = SubResource("SpriteFrames_xvt3o")
-autoplay = "default"
-frame_progress = 0.211129
-
 [node name="Exit" type="Button" parent="TaikoScreen"]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 16)
@@ -235,6 +146,10 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 text = "Score: 9001"
 
+[node name="HitCenter" type="Node2D" parent="TaikoScreen"]
+unique_name_in_owner = true
+position = Vector2(48, 63)
+
 [node name="hint" type="Control" parent="TaikoScreen"]
 texture_filter = 1
 layout_mode = 1
@@ -248,20 +163,6 @@ offset_top = -51.0
 grow_horizontal = 0
 grow_vertical = 0
 metadata/_edit_group_ = true
-
-[node name="blue" type="AnimatedSprite2D" parent="TaikoScreen/hint"]
-modulate = Color(0.545098, 0.545098, 0.545098, 1)
-texture_filter = 3
-position = Vector2(-13, 38)
-sprite_frames = SubResource("SpriteFrames_raq1l")
-frame_progress = 0.865235
-
-[node name="orange" type="AnimatedSprite2D" parent="TaikoScreen/hint"]
-modulate = Color(0.545098, 0.545098, 0.545098, 1)
-texture_filter = 3
-position = Vector2(-13, 12)
-sprite_frames = SubResource("SpriteFrames_xvt3o")
-frame_progress = 0.53229
 
 [node name="keymap" type="Label" parent="TaikoScreen/hint"]
 texture_filter = 3

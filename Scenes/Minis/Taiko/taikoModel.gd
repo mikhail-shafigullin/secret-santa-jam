@@ -5,6 +5,7 @@ const taiko_mini = preload ("res://Scenes/Minis/Taiko/taiko.tscn")
 @onready var pon = $Pon
 @onready var kat = $Kat
 @onready var tim = $TimDoppelganger
+@onready var music = $baseMusic
 
 func _on_usable_object_on_object_use():
 	var mini = taiko_mini.instantiate()
