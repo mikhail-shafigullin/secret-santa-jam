@@ -29,6 +29,17 @@ var current_railed_balance_acceleration: float = 0.0;
 
 var speed_up = false;
 var speed_down = false;
+
+# VISUAL
+@onready var mainScreen = Global.main_screen;
+
+@export var racePathFollowStr = "SnowboardRacePathFollow"
+@export var snowboardCameraStr = "SnowboardCamera"
+
+var racePathFollow: PathFollow3D;
+var snowboardCamera: Camera3D;
+
+var currentPathProgress: float = 0.0;
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -38,6 +49,7 @@ func _ready():
 func _process(delta):
 	process_balance(delta);
 	process_speed(delta);
+	process_visual(delta);
 	
 func process_balance(delta):
 	if(is_left_balance):
@@ -65,6 +77,11 @@ func process_speed(delta):
 	speed = clampf(speed, min_speed, max_speed);
 	
 	speedText.text = "[center]" + str(floorf(speed));
+
+func process_visual(delta):
+	currentPathProgress += delta * speed * 0.3;
+	racePathFollow.progress = currentPathProgress;
+	pass;
 	
 func _input(event):
 	if event.is_action_pressed("move_left"):
@@ -96,6 +113,13 @@ func start() -> bool:
 		return false
 	Global.player.set_busy(true)
 	Global.player.visible = false
+	
+	if not mainScreen: 
+		return false;
+	racePathFollow = mainScreen.find_child(racePathFollowStr, true, false)
+	snowboardCamera = mainScreen.find_child(snowboardCameraStr,true, false);
+	Global.player.camera.current = false
+	snowboardCamera.current = true
 	
 	return true
 

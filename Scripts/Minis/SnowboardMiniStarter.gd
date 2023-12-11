@@ -5,6 +5,7 @@ const dialogue = preload("res://Scenes/Characters/snowboard.dialogue")
 
 @onready var snowboardMesh = $snowboardMesh;
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
