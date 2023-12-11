@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://cuhldd5rqu02s"]
+[gd_scene load_steps=28 format=3 uid="uid://cuhldd5rqu02s"]
 
 [ext_resource type="Script" path="res://Assets/Models/Characters/TimDoppelganger.gd" id="1_yh5hk"]
 [ext_resource type="Material" uid="uid://cbbtjnwpyd5m" path="res://Assets/Models/Characters/timMaterial.tres" id="2_gux75"]
+[ext_resource type="PackedScene" uid="uid://contjdj0wkdrr" path="res://Assets/Test/testAnim.tscn" id="3_jger2"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_mh0qi"]
 resource_name = "tim_Plane_002"
@@ -3235,6 +3236,7 @@ node_connections = [&"LeftDon", 0, &"LeftKat", &"LeftDon", 1, &"Animation 2", &"
 script = ExtResource("1_yh5hk")
 
 [node name="tim" type="Node3D" parent="."]
+visible = false
 
 [node name="TimMixemoRig" type="Node3D" parent="tim"]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
@@ -3493,3 +3495,5 @@ parameters/RightDon/request = 0
 parameters/RightKat/active = false
 parameters/RightKat/internal_active = false
 parameters/RightKat/request = 0
+
+[node name="RagdollTest" parent="." instance=ExtResource("3_jger2")]
