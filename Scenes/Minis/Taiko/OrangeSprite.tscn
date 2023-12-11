@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2pw0fshwyeat"]
+
+[ext_resource type="Texture2D" uid="uid://c11f0ruhywo6l" path="res://Scenes/Minis/Taiko/Texture/taiko.png" id="1_i3ux6"]
+[ext_resource type="Script" path="res://Scenes/Minis/Taiko/TaikoSprite.gd" id="2_u2vnl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuuuh"]
+atlas = ExtResource("1_i3ux6")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7mob"]
+atlas = ExtResource("1_i3ux6")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dists"]
+atlas = ExtResource("1_i3ux6")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xvt3o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuuuh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7mob")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dists")
+}],
+"loop": true,
+"name": &"tap",
+"speed": 5.0
+}]
+
+[node name="orange" type="AnimatedSprite2D"]
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_xvt3o")
+autoplay = "default"
+frame_progress = 0.53229
+script = ExtResource("2_u2vnl")
