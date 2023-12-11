@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmc62e26ksdt3"]
+[gd_scene load_steps=9 format=3 uid="uid://bmc62e26ksdt3"]
 
 [ext_resource type="Script" path="res://Scripts/Minis/SnowboardScene.gd" id="1_ti2ic"]
+[ext_resource type="Texture2D" uid="uid://kkbt1hn3mf1w" path="res://Assets/Sprites/BalanceMeter.png" id="2_6s87r"]
+[ext_resource type="Texture2D" uid="uid://yt1d5f354oub" path="res://Assets/Sprites/BalanceMeterArrow.png" id="3_1pblb"]
+[ext_resource type="Texture2D" uid="uid://dj68iv64mye14" path="res://Assets/Sprites/Speedometer.png" id="4_7o26y"]
+[ext_resource type="Texture2D" uid="uid://bxrk4b3yq63ug" path="res://Assets/Sprites/SpeedometerArrow.png" id="5_wbjrn"]
+[ext_resource type="Texture2D" uid="uid://c3vgoq81v5ryx" path="res://Assets/Sprites/Note.png" id="6_xnsoo"]
+[ext_resource type="Texture2D" uid="uid://w0o8p0c7ime4" path="res://Assets/Sprites/Win.png" id="7_c51es"]
+[ext_resource type="Texture2D" uid="uid://jetbf3drdyc6" path="res://Assets/Sprites/Fail.png" id="8_8bevs"]
 
 [node name="SnowboardMini" type="CanvasLayer"]
 script = ExtResource("1_ti2ic")
@@ -23,6 +30,7 @@ grow_vertical = 2
 
 [node name="BalanceSlider" type="HSlider" parent="MainUI/BalanceSection"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -39,6 +47,7 @@ value = 50.0
 
 [node name="SpeedText" type="RichTextLabel" parent="MainUI/BalanceSection"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -46,17 +55,19 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -170.0
-offset_top = -97.0
+offset_top = -52.0
 offset_right = 176.0
-offset_bottom = -70.0
+offset_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.991326, 0.996135)
 bbcode_enabled = true
 text = "[center]10"
 metadata/_edit_group_ = true
 
 [node name="SpeedInstructions" type="RichTextLabel" parent="MainUI/BalanceSection"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -64,32 +75,16 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -167.0
-offset_top = -121.0
+offset_top = -76.0
 offset_right = 169.0
-offset_bottom = -94.0
+offset_bottom = -49.0
 grow_horizontal = 2
 grow_vertical = 2
 bbcode_enabled = true
 text = "[center]Speed"
 
-[node name="ExitButton" type="Button" parent="MainUI/BalanceSection"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -52.0
-offset_top = -43.0
-offset_right = -15.0
-offset_bottom = -12.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "Exit"
-
 [node name="Control" type="Control" parent="MainUI/BalanceSection"]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -105,7 +100,7 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 7.0
 offset_top = -63.0
-offset_right = 205.0
+offset_right = 93.0
 offset_bottom = -8.0
 grow_vertical = 0
 bbcode_enabled = true
@@ -113,5 +108,136 @@ text = "[font_size=12]W - accelerate
 S - brake
 A, D - balance
 "
+
+[node name="TextureRect" type="TextureRect" parent="MainUI/BalanceSection"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -107.0
+offset_right = 67.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6s87r")
+
+[node name="BalanceArrowTexture" type="TextureRect" parent="MainUI/BalanceSection"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.0
+offset_top = -93.0
+offset_right = 6.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(6, 44)
+texture = ExtResource("3_1pblb")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="MainUI/BalanceSection"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -99.0
+offset_top = -68.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("4_7o26y")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="SpeedArrowTexture" type="TextureRect" parent="MainUI/BalanceSection"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -49.0
+offset_top = -47.0
+offset_right = -37.0
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 0.698132
+pivot_offset = Vector2(6, 40)
+texture = ExtResource("5_wbjrn")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="ExitButton" type="Button" parent="MainUI/BalanceSection"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -18.5
+offset_top = -45.0
+offset_right = 18.5
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Exit"
+
+[node name="TextureRect3" type="TextureRect" parent="MainUI/BalanceSection"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+texture = ExtResource("6_xnsoo")
+stretch_mode = 1
+
+[node name="WinTexture" type="TextureRect" parent="MainUI/BalanceSection"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_c51es")
+
+[node name="FailTexture" type="TextureRect" parent="MainUI/BalanceSection"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_8bevs")
 
 [connection signal="pressed" from="MainUI/BalanceSection/ExitButton" to="." method="_on_exit_button_pressed"]

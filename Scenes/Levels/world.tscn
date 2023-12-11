@@ -855,7 +855,7 @@ curve = SubResource("Curve3D_gcy76")
 
 [node name="SnowboardRacePathFollow" type="PathFollow3D" parent="PathForRace/Path3D"]
 unique_name_in_owner = true
-transform = Transform3D(-0.0295011, -0.0113546, -0.999493, 4.65657e-10, 0.999934, -0.0113595, 0.999557, -0.000335123, -0.0294993, 0.00959229, 0.00858164, 0.033494)
+transform = Transform3D(-0.0295011, -0.0113546, -0.999493, 4.65658e-10, 0.999934, -0.0113595, 0.999557, -0.000335123, -0.0294993, 0.00959229, 0.00858164, 0.033494)
 loop = false
 
 [node name="Node3D" type="Node3D" parent="PathForRace/Path3D/SnowboardRacePathFollow"]
@@ -872,7 +872,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.18397, 5.77329, 2.42309)
 curve = SubResource("Curve3D_gcy76")
 
 [node name="SnowboardRivalRacePathFollow" type="PathFollow3D" parent="PathForRace/Path3D2"]
-transform = Transform3D(-0.0295011, -0.0113546, -0.999493, 4.65657e-10, 0.999934, -0.0113595, 0.999557, -0.000335123, -0.0294993, 0.89481, 0.00858164, 0.033494)
+transform = Transform3D(-0.0295011, -0.0113546, -0.999493, 4.65658e-10, 0.999934, -0.0113595, 0.999557, -0.000335123, -0.0294993, 0.00959229, 0.00858164, 0.033494)
 loop = false
 
 [node name="fisherman2" parent="PathForRace/Path3D2/SnowboardRivalRacePathFollow" instance=ExtResource("19_6jklo")]

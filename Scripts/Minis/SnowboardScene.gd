@@ -6,6 +6,10 @@ extends MiniGame
 @onready var speedText: RichTextLabel = %SpeedText;
 @onready var speedInstructions: RichTextLabel = %SpeedInstructions;
 @onready var exitButton: Button = %ExitButton;
+@onready var balanceArrowTexture: Control = %BalanceArrowTexture;
+@onready var speedArrowTexture: Control = %SpeedArrowTexture;
+@onready var winTexture: Control = %WinTexture;
+@onready var failTexture: Control = %FailTexture;
 
 @export var balance_acceleration = 200.0;
 @export var movement_acceleration_on_press = 10.0;
@@ -63,10 +67,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	process_balance(delta);
-	process_speed(delta);
-	process_rival_speed(delta);
-	process_status(delta);
+	if is_active:
+		#process_balance(delta);
+		process_speed(delta);
+		process_rival_speed(delta);
+		process_status(delta);
+		
 	process_visual(delta);
 	
 	
@@ -108,7 +114,18 @@ func process_visual(delta):
 		rivalPathFollow.progress = current_rival_path_progress;
 		
 		balanceSlider.value = balance_value;
+		
+		var balanceArrowRotation = lerpf(-PI/2, PI/2, balance_value/max_balance_value)
+		balanceArrowTexture.rotation = balanceArrowRotation;
+		
+		var speedArrowRotation = lerpf(-PI/2, PI*4/18, (speed - min_speed)/(max_speed - min_speed))
+		speedArrowTexture.rotation = speedArrowRotation;
 		speedText.text = "[center]" + str(floorf(speed));
+		
+		if racePathFollow.progress_ratio >= 1:
+			victory();
+		if rivalPathFollow.progress_ratio >= 1:
+			game_over();
 	else:
 		snowboardModel.visible = false;
 	
@@ -188,6 +205,13 @@ func calculate_railed_acceleration():
 func game_over():
 	is_active = false;
 	speedInstructions.visible = false
-	speedText.text = "[center]You lose the race";
+	#speedText.text = "[center]You lose the race";
+	failTexture.visible = true;
 	exitButton.visible = true;
 	
+func victory():
+	is_active = false;
+	speedInstructions.visible = false
+	#speedText.text = "[center]You win!";
+	winTexture.visible = true;
+	exitButton.visible = true;
