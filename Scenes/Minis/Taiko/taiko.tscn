@@ -27,6 +27,8 @@ region = Rect2(0, 0, 32, 32)
 [node name="Taiko" type="CanvasLayer"]
 layer = 128
 script = ExtResource("1_ei6s2")
+speed = 150.0
+time_window = 0.6
 
 [node name="TaikoScreen" type="Control" parent="."]
 layout_mode = 3
@@ -98,6 +100,7 @@ texture = SubResource("AtlasTexture_penf1")
 offset = Vector2(16, 16)
 
 [node name="Combo" type="Label" parent="TaikoScreen/TaikoLine/Panel/Panel"]
+unique_name_in_owner = true
 texture_filter = 3
 layout_mode = 1
 anchors_preset = 2
@@ -132,6 +135,7 @@ theme_override_font_sizes/font_size = 16
 text = "exit"
 
 [node name="Score" type="Label" parent="TaikoScreen"]
+unique_name_in_owner = true
 texture_filter = 3
 layout_mode = 1
 anchors_preset = 5
@@ -148,7 +152,7 @@ text = "Score: 9001"
 
 [node name="HitCenter" type="Node2D" parent="TaikoScreen"]
 unique_name_in_owner = true
-position = Vector2(48, 63)
+position = Vector2(48, 64)
 
 [node name="hint" type="Control" parent="TaikoScreen"]
 texture_filter = 1

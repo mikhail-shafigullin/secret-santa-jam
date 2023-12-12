@@ -6,6 +6,9 @@ extends MiniGame
 @onready var hit_gold = $TaikoScreen/TaikoLine/Panel/Panel/HitGold
 @onready var hit_ok = $TaikoScreen/TaikoLine/Panel/Panel/HitOk
 @onready var hit_fail = $TaikoScreen/TaikoLine/Panel/Panel/HitFail
+@onready var combo_lable = %Combo
+@onready var score_lable = %Score
+
 var hit_timer = Timer.new()
 var model = null
 var tim = null
@@ -23,8 +26,9 @@ var score: int;
 const KatSpriteRes = preload ("res://Scenes/Minis/Taiko/BlueSprite.tscn")
 const DonSpriteRes = preload ("res://Scenes/Minis/Taiko/OrangeSprite.tscn")
 
-const music = {2.7: 'D', 3.73: 'K', 5.28: 'K', 7.43: 'K', 9.04: 'D', 10.72: 'D', 13.31: 'D', 14.44: 'D', 16.05: 'D', 18.05: 'K', 19.65: 'K', 21.34: 'D', 23.38: 'K', 24.09: 'K', 24.82: 'K', 26.6: 'K', 28.71: 'D', 29.38: 'K', 30.12: 'K', 31.98: 'D', 33.08: 'D', 34.65: 'K', 37.32: 'D', 38.31: 'D', 39.57: 'D', 40.07: 'D', 40.57: 'D', 41.07: 'K', 42.65: 'D', 43.15: 'D', 44.54: 'D', 46.5: 'K', 47.63: 'K', 48.14: 'K', 49.02: 'K', 49.37: 'K', 49.72: 'K', 50.05: 'K', 50.35: 'K', 50.71: 'D', 51.69: 'K', 52.02: 'K', 52.83: 'D', 53.33: 'D', 54.37: 'K', 54.72: 'K', 55.07: 'K', 55.4: 'K', 55.7: 'K', 56.03: 'D', 57.57: 'K', 58.2: 'K', 58.53: 'K', 58.83: 'K', 60.07: 'D', 61.37: 'D', 61.87: 'D', 62.37: 'D', 64.1: 'D', 65.1: 'D', 66.37: 'D', 67.37: 'D'}
+const music = {2.7: 'D', 3.73: 'K', 4.28: 'K'}
 
+var music_spawned: bool = false
 
 enum NoteType {
 	KAT,
@@ -57,9 +61,11 @@ enum HIT_EFFECT {
 
 var last_index: int = 0
 func spawn_next_note():
+	if music_spawned:
+		return
 	var note_time = music.keys()[last_index]
 	if (time + visible_time) > note_time:
-		print("spawned", note_time)
+		#print("spawned ", note_time)
 		var type: NoteType
 		var sprite: AnimatedSprite2D
 		if music[note_time] == "D":
@@ -68,11 +74,21 @@ func spawn_next_note():
 		else:
 			type = NoteType.KAT
 			sprite = KatSpriteRes.instantiate()
-		last_index += 1
-		
+
+
 		hit_center.add_child(sprite)
 		sprite.global_position = hit_center.global_position - Vector2(speed*(time - note_time),0)
 		notes.append(Note.new(type, note_time, sprite))
+		
+		last_index += 1
+		if last_index >= music.size()-1:
+			var end_sprite = AnimatedSprite2D.new()
+			hit_center.add_child(end_sprite)
+			end_sprite.global_position = hit_center.global_position - Vector2(speed*(time - note_time - time_window*3),0 )
+			notes.append(Note.new(NoteType.END, note_time + 3, end_sprite))
+			music_spawned = true
+		
+
 	
 func _process(delta):
 	time += delta
@@ -84,51 +100,64 @@ func _process(delta):
 
 func check_miss():
 	var distance = get_note_dist()
-	if distance <= - speed * time_window/2:
+	if distance <= -time_window/2:
 		if get_note_type() == NoteType.END:
 			end()
 		else:
-			var left_note = notes[0]
-			left_note.sprite.queue_free()
-			notes.remove_at(0)
 			on_miss()
 		
-func on_miss():
-	print("miss")
-	combo = 0;
-
+func on_miss(hit: bool = false):
+	if notes.is_empty():
+		return
+	var left_note = notes[0]
+	if hit:
+		left_note.sprite.hit()
+	else:
+		left_note.sprite.queue_free()
+		
+	notes.remove_at(0)
+	reset_combo()
 
 func on_hit(type: NoteType):
 	var dist = get_note_dist()
 	var note_type = get_note_type()
-	if abs(dist) < time_window:
+
+	if note_type == NoteType.END:
+		hit_anim()
+		return
+	if abs(dist) < time_window/2:
 		if type != note_type:
-			if dist > time_window - time_window*0.1:
+			if dist > time_window/2 - time_window * 0.5:
 				on_miss();
-				return
 		else:
-			hit_anim(score_dist(dist))
+			var score = score_dist(dist)
+			hit_anim(score)
+			if(score == HIT_EFFECT.fail):
+				on_miss(true)
+			else:
+				#print("hit")
+				notes[0].sprite.hit()
+				add_combo(score)
+				notes.remove_at(0)
 	hit_anim()
 			
 func score_dist(dist: float) -> HIT_EFFECT:
 	var max = time_window / 2
-	if abs(dist) < max * 0.8:
+	if abs(dist) < max * 0.2:
 		return HIT_EFFECT.gold
-	if abs(dist) > max *0.8:
+	if abs(dist) > max * 0.75:
 		return HIT_EFFECT.ok
-	if abs(dist) > max:
+	if abs(dist) > max * 0.9:
 		return HIT_EFFECT.fail
 	return HIT_EFFECT.empty
 
 func on_kat():
 	model.kat.play()
-	if get_note_type() == NoteType.KAT:
-		on_hit(NoteType.KAT)
+	on_hit(NoteType.KAT)
 
 func on_pon():
 	model.pon.play()
-	if get_note_type() == NoteType.DON:
-		on_hit(NoteType.DON)
+	on_hit(NoteType.DON)
 
 func get_note() -> Note:
 	if notes.is_empty():
@@ -143,7 +172,7 @@ func get_note_type() -> NoteType:
 func get_note_dist() -> float:
 	if notes.is_empty():
 		return 9001.0
-	var distance: float = notes[0].sprite.global_position.x - hit_center.global_position.x
+	var distance: float = (notes[0].sprite.global_position.x - hit_center.global_position.x)/speed
 	return distance
 	
 func _ready():
@@ -232,3 +261,18 @@ func hit_timeout():
 	
 func play_blend(name: String):
 	tim.taiko_tree["parameters/%s/request" %name]=AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE
+
+func reset_combo():
+	combo = 0
+	combo_lable.text = str(0)
+
+func add_combo(hit_type: HIT_EFFECT):
+	combo += 1
+	add_score(hit_type)
+	combo_lable.text = str(combo)
+	if combo > max_combo:
+		max_combo = combo
+	
+func add_score(hit_type: HIT_EFFECT):
+	score += 10*combo
+	score_lable.text = str(score)

@@ -92,6 +92,7 @@ func process_new(delta):
 	
 	 
 func physics_process_new(delta):
+	apply_floor_snap()
 	var move_direction : Vector3 = Vector3.ZERO
 	
 	if not busy:
@@ -120,7 +121,7 @@ func physics_process_new(delta):
 	if move_direction:
 		player_mesh.rotation.y = lerp_angle(player_mesh.rotation.y, atan2(velocity.x, velocity.z), LERP_VALUE)
 
-	apply_floor_snap()
+	
 	move_and_slide()
 	
 

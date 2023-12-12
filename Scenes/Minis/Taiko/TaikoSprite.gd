@@ -1,11 +1,15 @@
 extends AnimatedSprite2D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
+func hit():
+	var timer = Timer.new()
+	timer.autostart = false
+	timer.connect("timeout", clear)
+	add_child(timer)
+	timer.start(0.15)
+	
+	play("tap")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func clear():
+	queue_free()
