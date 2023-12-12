@@ -25,43 +25,33 @@ metadata/_edit_group_ = true
 
 [node name="IluBuildPlane025" type="MeshInstance3D" parent="Lights"]
 mesh = ExtResource("1_nfy1h")
-skeleton = NodePath("../..")
 
 [node name="IluBuildPlane026" type="MeshInstance3D" parent="Lights"]
 mesh = ExtResource("2_oupby")
-skeleton = NodePath("../..")
 
 [node name="IluBuildPlane027" type="MeshInstance3D" parent="Lights"]
 mesh = ExtResource("3_l3asb")
-skeleton = NodePath("../..")
 
 [node name="IluBuildPlane028" type="MeshInstance3D" parent="Lights"]
 mesh = ExtResource("4_srr0u")
-skeleton = NodePath("../..")
 
 [node name="IluBuildPlane029" type="MeshInstance3D" parent="Lights"]
 mesh = ExtResource("5_iy1ts")
-skeleton = NodePath("../..")
 
 [node name="IluBuildPlane030" type="MeshInstance3D" parent="Lights"]
 mesh = ExtResource("6_tuti7")
-skeleton = NodePath("../..")
 
 [node name="IluBuildPlane031" type="MeshInstance3D" parent="Lights"]
 mesh = ExtResource("7_ymggx")
-skeleton = NodePath("../..")
 
 [node name="IluBuildPlane032" type="MeshInstance3D" parent="Lights"]
 mesh = ExtResource("8_g6u6x")
-skeleton = NodePath("../..")
 
 [node name="IluBuildPlane033" type="MeshInstance3D" parent="Lights"]
 mesh = ExtResource("9_6gdsu")
-skeleton = NodePath("../..")
 
 [node name="IluBuildPlane034" type="MeshInstance3D" parent="Lights"]
 mesh = ExtResource("10_u8mrq")
-skeleton = NodePath("../..")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_eoiaw")
