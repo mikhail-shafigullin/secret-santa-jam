@@ -16,6 +16,7 @@ func start(name: String, auto_stop: bool=false):
 	play(name)
 
 func end():
+	play("RESET")
 	Global.player.camera.current = true
 	camera.current = false
 	

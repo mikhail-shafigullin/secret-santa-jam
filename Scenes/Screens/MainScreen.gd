@@ -2,7 +2,7 @@ class_name MainScreen
 extends Control
 
 const world_res = preload ("res://Scenes/Levels/world.tscn");
-const fishing_mini = preload ("res://Scenes/Minis/Fishing/FishingScene.tscn")
+const fishing_mini = preload ("res://Scenes/Minis/Fishing/FishingMini.tscn")
 const snowboard_mini = preload ("res://Scenes/Minis/Snowboard/SnowboardMini.tscn")
 
 const minis = {

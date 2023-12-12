@@ -1,3 +1,4 @@
+class_name TimDoppelganger
 extends Node3D
 
 @onready var tim = $tim
@@ -10,6 +11,24 @@ extends Node3D
 @onready var rod = %Rod
 @onready var drum_l = %DrumL
 @onready var drum_r = %DrumR
+
+@export var inHands: InHandsEnum = InHandsEnum.EMPTY
+
+enum InHandsEnum {
+	EMPTY,
+	ROD,
+	DRUMS,
+}
+
+func _ready():
+	match inHands:
+		InHandsEnum.EMPTY: 
+			empty_hand();
+		InHandsEnum.ROD:
+			show_rod();
+		InHandsEnum.DRUMS:
+			show_drum_sticks();
+			
 
 func empty_hand():
 	for node in hand_left.get_children():

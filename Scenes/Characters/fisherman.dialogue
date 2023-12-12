@@ -1,5 +1,6 @@
 ~ this_is_a_node_title
 do Global.cutscener.start("fisherman_dialogue")
+do Global.player.visible = false
 Fisherman: Hello, can you help me to catch a fish?
 Fisherman: My shaky hands just can't to hold this fishing rod.
 Fisherman: Do you help me?
@@ -8,8 +9,12 @@ Fisherman: Do you help me?
 	=> END
 - End the conversation => end
 
+~ victory
+do Global.cutscener.start("fisherman_dialogue")
 
 ~ end
+do Global.cutscener.start("RESET")
+do Global.player.visible = true
 do Global.cutscener.end()
 do Global.player.set_busy(false)
 => END

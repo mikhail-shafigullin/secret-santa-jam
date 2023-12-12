@@ -25,8 +25,8 @@ var slider_value: float = 0;
 @export var success_slider_speed = 20;
 @export var success_failure_slider_speed = -10;
 
-@export var min_fishing_time = 1.0
-@export var max_fishing_time = 2.0
+@export var min_fishing_time = 3.0
+@export var max_fishing_time = 5.0
 @export var failure_fishing_time = 2.0
 
 var currentPart = 1;
@@ -53,6 +53,12 @@ var is_sucess = false;
 
 var current_fishing_time = INF
 
+# VISUAL
+@onready var mainScreen = Global.main_screen;
+
+@export var fisherManNodeName = "fishermanMini";
+var fisherman: Fisherman;
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	start();
@@ -77,6 +83,7 @@ func _process(delta):
 
 func start() -> bool:
 	start_first_part();
+	Global.cutscener.start("RESET")
 	
 	if not c:
 		return false
@@ -84,12 +91,18 @@ func start() -> bool:
 	Global.player.set_busy(true)
 	Global.player.visible = false
 	
+	if not mainScreen:
+		return false;
+		
+	fisherman = mainScreen.find_child(fisherManNodeName, true, false)
+	fisherman.mini_game_start();
 	return true
 
 func end() -> void:
 	Global.player.visible = true
 	Global.player.set_busy(false)
 	Global.cutscener.end();
+	fisherman.mini_game_stop();
 	queue_free()
 	
 func _input(event):
@@ -151,24 +164,26 @@ func start_first_part():
 	instructionText.text = '[right]Press E to throw a rod';
 	firstPartSection.visible = true;
 	thirdPartSection.visible = false;
-	bubblesText.visible = false;
+	#bubblesText.visible = false;
 	
 func start_second_part():
 	currentPart = 2;
-	instructionText.text = '[right]Press E when you see bubbles';
-	bubblesText.visible = true;
+	instructionText.text = '[right]Press E when you feel pressure';
+	#bubblesText.visible = true;
 	current_fishing_time = randf_range(min_fishing_time, max_fishing_time)
 	firstPartTimer.wait_time = current_fishing_time;
 	firstPartTimer.one_shot = true;
 	firstPartTimer.timeout.connect(start_bubbles_reaction_part)
+	fisherman.mini_game_throw_rod();
 	add_child(firstPartTimer)
 	firstPartTimer.start();
 	
 func start_bubbles_reaction_part():
-	bubblesText.text = '[center]CATCH THE FISH!';
+	#bubblesText.text = '[center]CATCH THE FISH!';
 	failureFirstPartTimer.wait_time = failure_fishing_time
 	failureFirstPartTimer.one_shot = true
 	failureFirstPartTimer.timeout.connect(failure_in_second_part)
+	fisherman.mini_game_fish_founded();
 	add_child(failureFirstPartTimer)
 	failureFirstPartTimer.start()
 	pass
@@ -180,6 +195,7 @@ func start_third_part():
 	thirdPartSection.visible = true;
 	
 func show_sucess_screen():
+	fisherman.mini_game_fish_end();
 	victoryControls.visible = true;
 	
 func failure_in_second_part():
@@ -189,6 +205,7 @@ func failure_in_second_part():
 	pass;
 
 func start_game_over():
+	fisherman.mini_game_fish_end();
 	gameOverSection.visible = true;
 
 func _on_button_pressed():

@@ -1,13 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://cktwbup1665lr"]
 
-[ext_resource type="Script" path="res://Scripts/Minis/FishingScene.gd" id="1_f5vfw"]
-[ext_resource type="Theme" uid="uid://c52nbngpy3mu6" path="res://Assets/Styles/baitSliderStyle.tres" id="2_3tj6h"]
-[ext_resource type="Texture2D" uid="uid://05v1em8ateeq" path="res://Assets/Sprites/Bait.png" id="2_ewmc0"]
-[ext_resource type="Texture2D" uid="uid://b8l5urnietu56" path="res://Assets/Sprites/Fish.png" id="3_72i3t"]
-[ext_resource type="Theme" uid="uid://d4h5e55bm76fj" path="res://Assets/Styles/fishScrollBarStyle.tres" id="3_fnk26"]
+[ext_resource type="Script" path="res://Scripts/Minis/FishingMini.gd" id="1_4wras"]
+[ext_resource type="Theme" uid="uid://d4h5e55bm76fj" path="res://Assets/Styles/fishScrollBarStyle.tres" id="2_i8nug"]
+[ext_resource type="Theme" uid="uid://c52nbngpy3mu6" path="res://Assets/Styles/baitSliderStyle.tres" id="3_olv12"]
+[ext_resource type="Texture2D" uid="uid://05v1em8ateeq" path="res://Assets/Sprites/Bait.png" id="4_f5n5o"]
+[ext_resource type="Texture2D" uid="uid://b8l5urnietu56" path="res://Assets/Sprites/Fish.png" id="5_1s4hm"]
 
 [node name="FishingScene" type="CanvasLayer"]
-script = ExtResource("1_f5vfw")
+script = ExtResource("1_4wras")
 
 [node name="FishingScreen" type="Control" parent="."]
 layout_mode = 3
@@ -38,6 +38,7 @@ grow_vertical = 2
 
 [node name="BubblesText" type="RichTextLabel" parent="FishingScreen/FirstPart/StartFishingSection"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -94,7 +95,7 @@ offset_bottom = 74.0
 grow_horizontal = 0
 grow_vertical = 0
 rotation = 3.14159
-theme = ExtResource("3_fnk26")
+theme = ExtResource("2_i8nug")
 page = 30.0
 
 [node name="rodSlider" type="VSlider" parent="FishingScreen/ThirdPart"]
@@ -111,7 +112,7 @@ offset_right = -27.0
 offset_bottom = -25.0
 grow_horizontal = 0
 grow_vertical = 0
-theme = ExtResource("2_3tj6h")
+theme = ExtResource("3_olv12")
 editable = false
 scrollable = false
 
@@ -264,7 +265,7 @@ offset_right = -19.0
 offset_bottom = -91.0
 grow_horizontal = 0
 grow_vertical = 0
-texture = ExtResource("2_ewmc0")
+texture = ExtResource("4_f5n5o")
 
 [node name="TextureRect2" type="TextureRect" parent="FishingScreen"]
 visible = false
@@ -280,7 +281,7 @@ offset_right = -20.0
 offset_bottom = -144.0
 grow_horizontal = 0
 grow_vertical = 0
-texture = ExtResource("3_72i3t")
+texture = ExtResource("5_1s4hm")
 
 [connection signal="pressed" from="FishingScreen/ThirdPart/victoryControls/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="FishingScreen/GameOverPart/ExitButton" to="." method="_on_exit_button_pressed"]

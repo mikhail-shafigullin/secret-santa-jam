@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://hd06iu5g1ddy"]
+[gd_scene load_steps=7 format=3 uid="uid://hd06iu5g1ddy"]
 
 [ext_resource type="PackedScene" uid="uid://5u7qxg6184ef" path="res://Assets/Models/Characters/fisherman.glb" id="1_mvymt"]
 [ext_resource type="Script" path="res://Scenes/Characters/fisherman.gd" id="2_jedh1"]
 [ext_resource type="Material" uid="uid://78p2e1omip1d" path="res://Assets/Models/Characters/fishermanMaterial.tres" id="2_sada8"]
 [ext_resource type="PackedScene" uid="uid://bo1tr0fadvf6l" path="res://Scenes/UsableObject.tscn" id="3_d1ahl"]
+[ext_resource type="PackedScene" uid="uid://2gq0j2u71tdk" path="res://Scenes/Abstracts/QuestLocator.tscn" id="5_m71bf"]
+[ext_resource type="PackedScene" uid="uid://cuhldd5rqu02s" path="res://Scenes/Characters/tim_doppelganger.tscn" id="6_j7ntb"]
 
 [node name="fisherman2" instance=ExtResource("1_mvymt")]
 script = ExtResource("2_jedh1")
@@ -53,6 +55,74 @@ useObjectMessage = "fisherman, take me by the hand"
 [node name="CollisionShape3D" parent="UsableObject/E_UseAreaEvent" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0239868, 0.371367, 0.294532)
 
+[node name="QuestLocator" parent="." index="3" instance=ExtResource("5_m71bf")]
+
+[node name="TimDoppelganger" parent="." index="4" instance=ExtResource("6_j7ntb")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.950715, 0.00845355, -0.0972328)
+visible = false
+inHands = 1
+
+[node name="Skeleton3D" parent="TimDoppelganger/tim/TimMixemoRig" index="0"]
+bones/0/position = Vector3(-0.816091, 41.7391, 1.64228)
+bones/0/rotation = Quaternion(-0.0299676, -0.367719, -0.0122078, 0.929374)
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/rotation = Quaternion(-0.0298086, 0.0412393, -0.00444139, 0.998695)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/rotation = Quaternion(0.100634, 0.0828646, -0.00643815, 0.991446)
+bones/3/rotation = Quaternion(0.113402, 0.0827746, -0.00750535, 0.990067)
+bones/4/position = Vector3(1.40637e-07, 14.8407, -0.161849)
+bones/4/rotation = Quaternion(0.0186575, -0.0113097, 0.000180455, 0.999762)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(-0.0794388, 0.17735, 0.00411201, 0.980928)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(-0.544115, -0.485659, 0.590727, -0.345133)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/position = Vector3(-3.8381e-06, 11.0439, -3.00375e-06)
+bones/7/rotation = Quaternion(0.572988, 0.0907263, 0.0631271, 0.812077)
+bones/8/position = Vector3(-4.1978e-07, 15.879, 3.76767e-06)
+bones/8/rotation = Quaternion(-0.0627465, -0.00554185, 0.442804, 0.894403)
+bones/9/rotation = Quaternion(-0.160505, 0.123808, 0.0495024, 0.977987)
+bones/10/rotation = Quaternion(0.318837, -0.00388206, 0.251396, 0.913853)
+bones/11/rotation = Quaternion(0.0326851, -0.00591981, 0.0609698, 0.997587)
+bones/12/position = Vector3(-8.02915, 15.8991, 3.42967)
+bones/12/rotation = Quaternion(0.606887, -0.448238, 0.541085, 0.371482)
+bones/12/scale = Vector3(1, 1, 1)
+bones/13/position = Vector3(-1.7847e-06, 12.638, -4.81428e-06)
+bones/13/rotation = Quaternion(0.498529, -0.10482, 0.166321, 0.844286)
+bones/14/position = Vector3(-5.96046e-07, 16.8332, 2.80142e-06)
+bones/14/rotation = Quaternion(-0.0191493, 0.18189, -0.407915, 0.894514)
+bones/15/position = Vector3(-0.0794082, 16.6516, 0.212)
+bones/15/rotation = Quaternion(0.123018, -0.165994, -0.125464, 0.970346)
+bones/16/position = Vector3(4.31366, 3.72637, -0.686604)
+bones/16/rotation = Quaternion(0.193169, 0.0297992, -0.347557, 0.917062)
+bones/17/position = Vector3(0.00597358, 8.17948, 0.13427)
+bones/17/rotation = Quaternion(0.0395807, 0.00962097, 0.0102664, 0.999117)
+bones/18/rotation = Quaternion(0.0756255, 0.194841, 0.972336, -0.104313)
+bones/19/rotation = Quaternion(-0.295705, 0.119044, -0.0302439, 0.94735)
+bones/20/rotation = Quaternion(0.443541, -0.031992, -0.0552511, 0.893977)
+bones/20/scale = Vector3(1, 1, 1)
+bones/21/position = Vector3(7.46652e-07, 6.31136, 1.71873e-06)
+bones/21/rotation = Quaternion(0.385328, 0.0172793, -0.0231982, 0.922326)
+bones/21/scale = Vector3(1, 1, 1)
+bones/23/rotation = Quaternion(-0.121337, 0.0109243, 0.98451, 0.126091)
+bones/24/rotation = Quaternion(-0.29221, 0.0768057, -0.0216819, 0.953018)
+bones/25/rotation = Quaternion(0.553462, 0.0725546, 0.12493, 0.820249)
+bones/25/scale = Vector3(1, 1, 1)
+bones/26/rotation = Quaternion(0.381033, 0.00387223, -0.00183804, 0.924552)
+bones/26/scale = Vector3(1, 1, 1)
+
+[node name="LeftHandAtt" parent="TimDoppelganger/tim/TimMixemoRig/Skeleton3D" index="1"]
+transform = Transform3D(0.599202, 0.148919, -0.786626, -0.462175, -0.737948, -0.49176, -0.653721, 0.658222, -0.373352, 19.5858, 53.376, 14.2521)
+
+[node name="RightHandAtt" parent="TimDoppelganger/tim/TimMixemoRig/Skeleton3D" index="2"]
+transform = Transform3D(-0.155733, -0.181882, 0.97091, 0.237612, -0.96094, -0.141901, 0.958795, 0.208601, 0.192868, -24.1152, 55.1642, -14.0472)
+
+[node name="MiniGameCamera" type="Camera3D" parent="." index="5"]
+unique_name_in_owner = true
+transform = Transform3D(0.00745261, -0.584715, 0.811205, -2.13742e-09, 0.811227, 0.584731, -0.999972, -0.00435777, 0.00604576, 0.628754, 1.43974, 1.12479)
+
 [connection signal="on_object_use" from="UsableObject" to="." method="_on_usable_object_on_object_use"]
 
 [editable path="UsableObject"]
+[editable path="TimDoppelganger"]
