@@ -15,11 +15,14 @@ func set_animation_talking():
 	
 func set_animation_idle():
 	fishermanAnimationPlayer.play("FishingIdle")
+
+func set_animation_stand():
+	fishermanAnimationPlayer.play("stand")
 	
 func mini_game_start():
 	timModel.visible = true;
 	timAnimationPlayer.play("fishing_start_idle");
-	fishermanAnimationPlayer.play("stand");
+	fishermanAnimationPlayer.play("stand")
 	camera.current = true;
 	Global.player.camera.current = false;
 	

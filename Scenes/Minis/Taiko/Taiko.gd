@@ -7,6 +7,7 @@ extends MiniGame
 @onready var hit_ok = $TaikoScreen/TaikoLine/Panel/Panel/HitOk
 @onready var hit_fail = $TaikoScreen/TaikoLine/Panel/Panel/HitFail
 @onready var combo_lable = %Combo
+@onready var max_combo_lable = %MaxCombo
 @onready var score_lable = %Score
 
 var hit_timer = Timer.new()
@@ -19,14 +20,14 @@ var time: float = 0
 @export var speed := 100.0
 @export var time_window = 0.5
 
-var combo: int;
-var max_combo: int;
-var score: int;
+var combo: int = 0;
+var max_combo: int = 0;
+var score: int = 0;
 
 const KatSpriteRes = preload ("res://Scenes/Minis/Taiko/BlueSprite.tscn")
 const DonSpriteRes = preload ("res://Scenes/Minis/Taiko/OrangeSprite.tscn")
 
-const music = {2.7: 'D', 3.73: 'K', 4.28: 'K'}
+const music = {8.06: 'K', 8.55: 'K', 9.05: 'K', 9.56: 'K', 10.06: 'K', 11.62: 'K', 11.84: 'D', 12.06: 'K', 13.6: 'K', 13.82: 'D', 14.04: 'K', 15.61: 'K', 15.83: 'D', 16.05: 'K', 16.49: 'D', 17.05: 'K', 17.55: 'K', 17.8: 'D', 18.05: 'K', 19.33: 'K', 19.58: 'D', 19.83: 'K', 20.08: 'D', 21.58: 'D', 21.83: 'K', 22.08: 'D', 23.57: 'D', 23.82: 'K', 24.07: 'D', 24.57: 'D', 24.82: 'K', 25.07: 'D', 25.57: 'D', 25.82: 'D', 26.07: 'D', 27.57: 'D', 27.82: 'K', 28.07: 'D', 29.56: 'D', 29.81: 'K', 30.06: 'D', 31.56: 'D', 31.81: 'K', 32.06: 'D', 32.49: 'K', 32.84: 'K', 33.08: 'D', 33.49: 'D', 33.83: 'D', 34.11: 'K', 34.59: 'K', 35.09: 'K', 35.59: 'K', 35.84: 'D', 36.09: 'K', 36.59: 'K', 37.09: 'K', 37.59: 'K', 37.84: 'D', 38.09: 'K', 38.59: 'K', 39.09: 'K', 39.59: 'K', 39.84: 'D', 40.09: 'K', 40.59: 'K', 41.09: 'K', 41.59: 'K', 41.84: 'D', 42.09: 'K', 42.59: 'K', 43.34: 'D', 43.59: 'K', 43.84: 'D', 44.59: 'K', 45.09: 'K', 45.59: 'K', 45.84: 'D', 46.09: 'K', 46.59: 'K', 47.59: 'K', 47.84: 'D', 48.09: 'K', 48.59: 'K', 48.84: 'D', 49.09: 'K', 49.56: 'K', 49.76: 'D', 49.96: 'K', 50.16: 'K', 50.59: 'K', 51.09: 'K', 51.59: 'K', 51.84: 'D', 52.09: 'K', 52.59: 'K', 53.09: 'K', 53.6: 'K', 53.84: 'D', 54.07: 'K', 54.57: 'K', 55.07: 'K', 55.57: 'K', 55.82: 'D', 56.07: 'K', 56.46: 'D', 56.66: 'K', 57.36: 'K', 57.61: 'D', 57.86: 'D', 58.11: 'K', 58.57: 'K', 59.07: 'K', 59.57: 'K', 59.82: 'D', 60.07: 'K', 60.55: 'D', 60.95: 'K', 61.82: 'D', 62.07: 'K', 62.32: 'D', 62.57: 'K', 63.07: 'K', 63.57: 'K', 63.83: 'D', 64.09: 'K', 64.46: 'D', 64.66: 'K', 65.07: 'K', 65.59: 'K', 65.82: 'D', 66.05: 'K', 66.46: 'D', 66.66: 'K', 67.07: 'K', 67.32: 'D', 67.57: 'K', 67.82: 'D', 68.07: 'K', 68.45: 'D', 68.65: 'K', 69.07: 'K', 69.57: 'K', 69.82: 'D', 70.07: 'K', 70.45: 'D', 70.65: 'K', 71.07: 'K', 71.57: 'K', 71.82: 'D', 72.07: 'K', 72.57: 'K', 72.82: 'D', 73.07: 'K', 73.57: 'K', 73.77: 'D', 73.97: 'K', 74.17: 'K', 74.5: 'D', 74.7: 'K', 75.07: 'K', 75.57: 'K', 75.82: 'D', 76.07: 'K', 76.46: 'D', 76.66: 'K', 77.07: 'K', 77.57: 'K', 77.82: 'D', 78.07: 'K', 78.47: 'D', 78.67: 'K', 79.07: 'K', 79.57: 'K', 79.82: 'D', 80.07: 'K', 80.45: 'D', 80.65: 'K', 81.07: 'K', 81.27: 'D', 81.47: 'D', 81.67: 'K', 81.87: 'D', 82.07: 'K', 83.87: 'K', 84.07: 'K', 85.45: 'D', 85.66: 'D', 85.87: 'K', 86.08: 'K', 87.84: 'D', 88.07: 'K', 88.57: 'K', 88.82: 'D', 89.07: 'K', 89.33: 'D', 89.57: 'K', 89.79: 'D', 90.01: 'K', 90.45: 'D', 90.67: 'K', 91.06: 'K', 91.56: 'K', 91.81: 'D', 92.06: 'K', 92.44: 'D', 92.64: 'K', 93.06: 'K', 93.56: 'K', 93.81: 'D', 94.06: 'K', 94.44: 'D', 94.64: 'K', 95.06: 'K', 95.56: 'K', 95.81: 'D', 96.06: 'K', 96.45: 'D', 96.65: 'K', 97.06: 'K', 97.46: 'D', 97.66: 'K', 97.86: 'D', 98.06: 'K', 98.45: 'D', 98.65: 'K', 99.07: 'K', 99.32: 'D', 99.56: 'K', 99.81: 'D', 100.06: 'K', 100.45: 'D', 100.65: 'D', 101.06: 'K', 101.56: 'K', 101.83: 'D', 102.1: 'K', 102.46: 'D', 102.66: 'K', 103.06: 'K', 103.56: 'K', 103.81: 'D', 104.06: 'K', 104.56: 'K', 104.81: 'D', 105.06: 'K', 105.56: 'K', 105.91: 'K', 106.11: 'K', 106.86: 'K', 107.86: 'K', 108.06: 'K', 108.86: 'K', 109.43: 'D', 109.65: 'D', 109.86: 'K', 110.07: 'K', 110.5: 'D', 110.84: 'D', 111.06: 'K', 111.28: 'D', 111.5: 'D', 111.84: 'D', 112.06: 'K', 112.54: 'K', 112.8: 'D', 113.06: 'K', 113.45: 'D', 113.81: 'D', 114.06: 'K'}
 
 var music_spawned: bool = false
 
@@ -43,7 +44,7 @@ class Note:
 	var sprite: AnimatedSprite2D
 	func _init(_type: NoteType, _time: float, _sprite: AnimatedSprite2D):
 		type = _type
-		time = _time	
+		time = _time
 		sprite = _sprite
 
 enum HIT_TYPE {
@@ -81,7 +82,7 @@ func spawn_next_note():
 		notes.append(Note.new(type, note_time, sprite))
 		
 		last_index += 1
-		if last_index >= music.size()-1:
+		if last_index >= music.size():
 			var end_sprite = AnimatedSprite2D.new()
 			hit_center.add_child(end_sprite)
 			end_sprite.global_position = hit_center.global_position - Vector2(speed*(time - note_time - time_window*3),0 )
@@ -100,7 +101,7 @@ func _process(delta):
 
 func check_miss():
 	var distance = get_note_dist()
-	if distance <= -time_window/2:
+	if distance <= -time_window/2 :
 		if get_note_type() == NoteType.END:
 			end()
 		else:
@@ -109,12 +110,15 @@ func check_miss():
 func on_miss(hit: bool = false):
 	if notes.is_empty():
 		return
+	if (notes[0].type == NoteType.END):
+		return
+	
 	var left_note = notes[0]
 	if hit:
 		left_note.sprite.hit()
 	else:
 		left_note.sprite.queue_free()
-		
+	
 	notes.remove_at(0)
 	reset_combo()
 
@@ -125,22 +129,32 @@ func on_hit(type: NoteType):
 	if note_type == NoteType.END:
 		hit_anim()
 		return
-	if abs(dist) < time_window/2:
+	var max = time_window*0.5
+	if abs(dist) < max:
 		if type != note_type:
-			if dist > time_window/2 - time_window * 0.5:
-				on_miss();
+			var t1 = get_note_type(1)
+			if dist < max and note_type != NoteType.NONE:
+				if t1 != NoteType.NONE and t1 != NoteType.END:
+					if abs(get_note_dist(1)) < max:
+						on_miss()
+						on_true_hit()
+				else:
+					on_miss();
 		else:
 			var score = score_dist(dist)
 			hit_anim(score)
 			if(score == HIT_EFFECT.fail):
 				on_miss(true)
 			else:
-				#print("hit")
-				notes[0].sprite.hit()
-				add_combo(score)
-				notes.remove_at(0)
+				on_true_hit()
 	hit_anim()
-			
+
+func on_true_hit():
+	#print("hit")
+	notes[0].sprite.hit()
+	add_combo(score)
+	notes.remove_at(0)
+
 func score_dist(dist: float) -> HIT_EFFECT:
 	var max = time_window / 2
 	if abs(dist) < max * 0.2:
@@ -164,15 +178,15 @@ func get_note() -> Note:
 		return Note.new(NoteType.NONE, 9001, null)
 	return notes[0] 
 
-func get_note_type() -> NoteType:
-	if notes.is_empty():
+func get_note_type(index: int = 0) -> NoteType:
+	if notes.size() - 1 < index:
 		return NoteType.NONE
-	return notes[0].type
+	return notes[index].type
 
-func get_note_dist() -> float:
+func get_note_dist(index: int = 0) -> float:
 	if notes.is_empty():
 		return 9001.0
-	var distance: float = (notes[0].sprite.global_position.x - hit_center.global_position.x)/speed
+	var distance: float = (notes[index].sprite.global_position.x - hit_center.global_position.x)/speed
 	return distance
 	
 func _ready():
@@ -273,7 +287,17 @@ func add_combo(hit_type: HIT_EFFECT):
 	combo_lable.text = str(combo)
 	if combo > max_combo:
 		max_combo = combo
+		max_combo_lable.text = str(max_combo)
 	
 func add_score(hit_type: HIT_EFFECT):
-	score += 10*combo
+	var base: int = 10
+	var scaling: float = 1.0
+	match hit_type:
+		HIT_EFFECT.ok:
+			scaling = 1
+		HIT_EFFECT.gold:
+			scaling = 1.5
+		_:
+			scaling = 0.5
+	score += (base+combo)*scaling
 	score_lable.text = str(score)

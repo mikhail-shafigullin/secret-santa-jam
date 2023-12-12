@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bo1tr0fadvf6l" path="res://Scenes/UsableObject.tscn" id="3_1kuij"]
 [ext_resource type="AudioStream" uid="uid://bkfvkonylp4iw" path="res://Scenes/Minis/Taiko/Sound/203344__klemmy__123-taiko-open.wav" id="4_tfhxg"]
 [ext_resource type="AudioStream" uid="uid://djmh5g2h74rtw" path="res://Scenes/Minis/Taiko/Sound/203343__klemmy__124-taiko-rim.wav" id="5_yav7p"]
-[ext_resource type="AudioStream" uid="uid://drexmv745s6wx" path="res://Scenes/Minis/Taiko/Sound/base2.mp3" id="6_c8uof"]
+[ext_resource type="AudioStream" uid="uid://cs3ehy0up3o1a" path="res://Scenes/Minis/Taiko/Sound/no_drums.mp3" id="6_obuu0"]
 [ext_resource type="PackedScene" uid="uid://cuhldd5rqu02s" path="res://Scenes/Characters/tim_doppelganger.tscn" id="6_w7w5x"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_eqn74"]
@@ -41,8 +41,8 @@ max_distance = 10.0
 
 [node name="baseMusic" type="AudioStreamPlayer3D" parent="." index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.948597, 0.390074, -0.85343)
-stream = ExtResource("6_c8uof")
-volume_db = 42.919
+stream = ExtResource("6_obuu0")
+volume_db = -40.0
 max_distance = 50.0
 
 [node name="TimDoppelganger" parent="." index="6" instance=ExtResource("6_w7w5x")]

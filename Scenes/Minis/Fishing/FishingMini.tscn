@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://cktwbup1665lr"]
+[gd_scene load_steps=9 format=3 uid="uid://cktwbup1665lr"]
 
 [ext_resource type="Script" path="res://Scripts/Minis/FishingMini.gd" id="1_4wras"]
 [ext_resource type="Theme" uid="uid://d4h5e55bm76fj" path="res://Assets/Styles/fishScrollBarStyle.tres" id="2_i8nug"]
 [ext_resource type="Theme" uid="uid://c52nbngpy3mu6" path="res://Assets/Styles/baitSliderStyle.tres" id="3_olv12"]
 [ext_resource type="Texture2D" uid="uid://05v1em8ateeq" path="res://Assets/Sprites/Bait.png" id="4_f5n5o"]
 [ext_resource type="Texture2D" uid="uid://b8l5urnietu56" path="res://Assets/Sprites/Fish.png" id="5_1s4hm"]
+
+[sub_resource type="Theme" id="Theme_fg2y0"]
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/outline_size = 4
 
 [sub_resource type="Gradient" id="Gradient_clddi"]
 colors = PackedColorArray(1, 0.0448355, 0.223405, 0.588235, 0.204579, 0.800069, 0, 0.588235)
@@ -25,10 +29,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
+theme = SubResource("Theme_fg2y0")
 
 [node name="FirstPart" type="Control" parent="FishingScreen"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

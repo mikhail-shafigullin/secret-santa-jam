@@ -5,14 +5,16 @@ Fisherman: Hello, can you help me to catch a fish?
 Fisherman: My shaky hands just can't to hold this fishing rod.
 Fisherman: Do you help me?
 - Try to catch a fish
+	do Global.cutscener.start("fisherman_wait")
 	do Global.main_screen.play_mini_by_name("fishing")
 	=> END
-- End the conversation => end
+- End the conversation => end_script
 
 ~ victory
 do Global.cutscener.start("fisherman_dialogue")
 
-~ end
+~ end_script
+do Global.cutscener.start("fisherman_reset")
 do Global.cutscener.start("RESET")
 do Global.player.visible = true
 do Global.cutscener.end()
