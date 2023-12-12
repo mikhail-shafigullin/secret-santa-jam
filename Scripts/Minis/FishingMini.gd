@@ -49,15 +49,21 @@ var fish_easy_acceleration = {
 var next_fish_index: int = 0;
 var current_fish_acceleration = 0.0
 var sucessValue:float = 20.0
-var is_sucess = false;
+var is_success = false;
 
 var current_fishing_time = INF
 
 # VISUAL
 @onready var mainScreen = Global.main_screen;
+@onready var fishSuccessTexture = %fishSuccessTexture;
+@onready var fishIcon = %fishIcon;
 
 @export var fisherManNodeName = "fishermanMini";
 var fisherman: Fisherman;
+
+var fishIcon_current_position = 0.0;
+var fishIcon_min_position = -11.0;
+var fishIcon_max_position = 209.0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -66,20 +72,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if currentPart == 3: 
+	if currentPart == 3 and !is_success: 
 		process_slider(delta);
 		process_slider_fish(delta);
 		process_victory(delta)
-		fishingSlider.value = sliderValue;
-		fishSlider.value = fish_slider_value;
-		fishSlider2.value = fish_slider_value + fish_slider_length;
-		fishScrollBar.value = fish_slider_value;
-		sucessSlider.value = sucessValue;
-		if((fishingSlider.value == 0.0 or fishingSlider.value == 100.0) and !is_slider_holded):
-			current_slider_hold_speed = 0.0;
-		if((fishSlider.value == 0.0 or fishSlider2.value == 100.0)):
-			current_fish_slider_speed = 0.0;
-
+		process_visual(delta);
+		
 
 func start() -> bool:
 	start_first_part();
@@ -153,11 +151,25 @@ func process_victory(delta: float):
 		sucessValue += success_slider_speed * delta;
 	else :
 		sucessValue += success_failure_slider_speed * delta;
-	if(sucessValue > 100.0 and !is_sucess):
-		is_sucess = true;
+	if(sucessValue > 100.0 and !is_success):
+		is_success = true;
 		show_sucess_screen();
 	if(sucessValue <= 0.0):
 		start_game_over();
+		
+func process_visual(delta: float):
+	fishingSlider.value = sliderValue;
+	fishSlider.value = fish_slider_value;
+	fishSlider2.value = fish_slider_value + fish_slider_length;
+	fishScrollBar.value = fish_slider_value;
+	sucessSlider.value = sucessValue;
+	if((fishingSlider.value == 0.0 or fishingSlider.value == 100.0) and !is_slider_holded):
+		current_slider_hold_speed = 0.0;
+	if((fishSlider.value == 0.0 or fishSlider2.value == 100.0)):
+		current_fish_slider_speed = 0.0;
+		
+	fishIcon_current_position = lerpf(fishIcon_min_position, fishIcon_max_position, sucessSlider.value/sucessSlider.max_value);
+	fishIcon.position.x = fishIcon_current_position
 
 func start_first_part():
 	currentPart = 1;
@@ -193,6 +205,7 @@ func start_third_part():
 	failureFirstPartTimer.stop();
 	firstPartSection.visible = false;
 	thirdPartSection.visible = true;
+	fishSuccessTexture.visible = true;
 	
 func show_sucess_screen():
 	fisherman.mini_game_fish_end();

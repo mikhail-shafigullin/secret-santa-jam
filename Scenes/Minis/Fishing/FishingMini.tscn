@@ -1,10 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://cktwbup1665lr"]
+[gd_scene load_steps=8 format=3 uid="uid://cktwbup1665lr"]
 
 [ext_resource type="Script" path="res://Scripts/Minis/FishingMini.gd" id="1_4wras"]
 [ext_resource type="Theme" uid="uid://d4h5e55bm76fj" path="res://Assets/Styles/fishScrollBarStyle.tres" id="2_i8nug"]
 [ext_resource type="Theme" uid="uid://c52nbngpy3mu6" path="res://Assets/Styles/baitSliderStyle.tres" id="3_olv12"]
 [ext_resource type="Texture2D" uid="uid://05v1em8ateeq" path="res://Assets/Sprites/Bait.png" id="4_f5n5o"]
 [ext_resource type="Texture2D" uid="uid://b8l5urnietu56" path="res://Assets/Sprites/Fish.png" id="5_1s4hm"]
+
+[sub_resource type="Gradient" id="Gradient_clddi"]
+colors = PackedColorArray(1, 0.0448355, 0.223405, 0.588235, 0.204579, 0.800069, 0, 0.588235)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ceut5"]
+gradient = SubResource("Gradient_clddi")
+width = 32
+height = 16
 
 [node name="FishingScene" type="CanvasLayer"]
 script = ExtResource("1_4wras")
@@ -57,19 +65,14 @@ text = "[center]wait..."
 [node name="InstructionText" type="RichTextLabel" parent="FishingScreen/FirstPart/StartFishingSection"]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -176.0
-offset_top = -69.0
-offset_right = -17.0
-offset_bottom = -15.0
-grow_horizontal = 0
+offset_top = -54.0
+offset_right = 159.0
 grow_vertical = 0
 bbcode_enabled = true
-text = "[right]Press E when you see bubbles"
+text = "[right]Press E when you feel pressure"
 
 [node name="ThirdPart" type="Control" parent="FishingScreen"]
 unique_name_in_owner = true
@@ -88,10 +91,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -37.0
-offset_right = -20.0
-offset_bottom = 74.0
+offset_left = -30.0
+offset_top = -28.0
+offset_right = -10.0
+offset_bottom = 83.0
 grow_horizontal = 0
 grow_vertical = 0
 rotation = 3.14159
@@ -106,10 +109,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -73.0
-offset_top = -154.0
-offset_right = -27.0
-offset_bottom = -25.0
+offset_left = -63.0
+offset_top = -145.0
+offset_right = -17.0
+offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 0
 theme = ExtResource("3_olv12")
@@ -154,6 +157,7 @@ scrollable = false
 
 [node name="sucessSlider" type="VSlider" parent="FishingScreen/ThirdPart"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -181,34 +185,34 @@ grow_vertical = 2
 
 [node name="Button" type="Button" parent="FishingScreen/ThirdPart/victoryControls"]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -19.0
-offset_top = -70.0
-offset_right = 18.0
-offset_bottom = -39.0
-grow_horizontal = 2
+offset_left = -101.0
+offset_top = -114.0
+offset_right = -64.0
+offset_bottom = -83.0
+grow_horizontal = 0
 grow_vertical = 0
 text = "exit"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="FishingScreen/ThirdPart/victoryControls"]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -44.0
-offset_top = -152.0
-offset_right = 47.0
-offset_bottom = -75.0
-grow_horizontal = 2
+offset_left = -198.0
+offset_top = -112.0
+offset_right = -107.0
+offset_bottom = -64.0
+grow_horizontal = 0
 grow_vertical = 0
 bbcode_enabled = true
-text = "[center]You catched the fish!"
+text = "[right]Success"
 
 [node name="GameOverPart" type="Control" parent="FishingScreen"]
 unique_name_in_owner = true
@@ -267,7 +271,8 @@ grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("4_f5n5o")
 
-[node name="TextureRect2" type="TextureRect" parent="FishingScreen"]
+[node name="fishSuccessTexture" type="TextureRect" parent="FishingScreen"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = 3
@@ -275,10 +280,26 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -60.0
-offset_top = -184.0
-offset_right = -20.0
-offset_bottom = -144.0
+offset_left = -286.0
+offset_top = -50.0
+offset_right = -58.0
+offset_bottom = -34.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = SubResource("GradientTexture2D_ceut5")
+
+[node name="fishIcon" type="TextureRect" parent="FishingScreen/fishSuccessTexture"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -19.0
+offset_top = -27.0
+offset_right = 21.0
+offset_bottom = 13.0
 grow_horizontal = 0
 grow_vertical = 0
 texture = ExtResource("5_1s4hm")
