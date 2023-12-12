@@ -19,6 +19,7 @@ func set_animation_idle():
 func mini_game_start():
 	timModel.visible = true;
 	timAnimationPlayer.play("fishing_start_idle");
+	fishermanAnimationPlayer.play("stand");
 	camera.current = true;
 	Global.player.camera.current = false;
 	
