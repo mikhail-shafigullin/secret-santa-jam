@@ -220,7 +220,8 @@ func start() -> bool:
 	tim = model.tim
 	
 	model.music.play()
-
+	
+	tim.show_drum_sticks()
 	tim.visible=true
 	tim.taiko_tree.active=true
 
