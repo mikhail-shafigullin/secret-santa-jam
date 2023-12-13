@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cgyq8lxgew0ck"]
+[gd_scene load_steps=18 format=3 uid="uid://cgyq8lxgew0ck"]
 
 [ext_resource type="ArrayMesh" uid="uid://c1miqwvglstgs" path="res://Assets/Models/Objects/Buildings/Ilub7.res" id="1_eoiaw"]
 [ext_resource type="Script" path="res://Assets/Models/Objects/Buildings/IluBuildMesh/Lights.gd" id="1_fev50"]
@@ -20,7 +20,10 @@ data = PackedVector3Array(1.5402, 0, 1.8341, 2.368, 0, -1.9092, 1.5402, 0, -1.90
 size = Vector3(2.41626, 0.27005, 0.57666)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r31jk"]
-size = Vector3(2.41626, 0.27005, 1.30139)
+size = Vector3(2.37756, 0.27005, 1.30139)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5olla"]
+size = Vector3(3.42404, 2.87196, 0.508117)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2uqli"]
 size = Vector3(1.39233, 0.190689, 1.30139)
@@ -77,8 +80,12 @@ transform = Transform3D(1, 0, 0, 0, 0.999904, 0.01384, 0, -0.01384, 0.999904, -0
 shape = SubResource("BoxShape3D_bow47")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.0138401, 0.999904, 0, -0.999904, -0.0138401, -0.918996, 1.06121, 1.84697)
+transform = Transform3D(1, 0, 0, 0, -0.0138401, 0.999904, 0, -0.999904, -0.0138401, -0.899648, 1.06121, 1.84697)
 shape = SubResource("BoxShape3D_r31jk")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0138401, 0.999904, 0, -0.999904, -0.0138401, -0.776083, 0.238176, 0.499888)
+shape = SubResource("BoxShape3D_5olla")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.999904, 0.01384, 0, -0.01384, 0.999904, 1.26744, 1.91523, 1.69331)
