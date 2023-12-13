@@ -103,7 +103,7 @@ func _process(delta):
 
 func check_miss():
 	var distance = get_note_dist()
-	if distance <= -time_window/2 :
+	if distance <= -(time_window / 2) * 0.55 :
 		if get_note_type() == NoteType.END:
 			end()
 		else:
@@ -121,7 +121,7 @@ func on_miss(hit: bool = false):
 	else:
 		left_note.sprite.queue_free()
 	
-	notes.remove_at(0)
+	notes.pop_front()
 	reset_combo()
 
 func on_hit(type: NoteType):
@@ -133,12 +133,12 @@ func on_hit(type: NoteType):
 		return
 	var max = time_window*0.5
 	if abs(dist) <= max:
-		if type != note_type:
+		if type != note_type and get_note_type(1) == type:
 			var t1 = get_note_type(1)
 			var t1_dist = get_note_dist(1)
 			if dist < max and note_type != NoteType.NONE:
 				if t1 != NoteType.NONE and t1 != NoteType.END:
-					if abs(get_note_dist(1)) < max:
+					if abs(get_note_dist(1)) < max*0.54:
 						if (score_dist(t1_dist) != HIT_EFFECT.fail):
 							on_miss()
 							on_true_hit()
@@ -159,9 +159,9 @@ func on_true_hit():
 		on_miss(true)
 	else:
 		#print("hit")
-		notes[0].sprite.hit()
+		var note = notes.pop_front()
+		note.sprite.hit()
 		add_combo(score)
-		notes.remove_at(0)
 
 func score_dist(dist: float) -> HIT_EFFECT:
 	var max = time_window / 2
@@ -227,6 +227,8 @@ func hit(type: HIT_TYPE):
 		HIT_TYPE.katR:
 			on_kat()
 			play_blend("RightKat")
+		_:
+			pass
 	
 func start() -> bool:
 	if not c:
