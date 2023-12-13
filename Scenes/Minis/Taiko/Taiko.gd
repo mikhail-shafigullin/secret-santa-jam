@@ -133,15 +133,16 @@ func on_hit(type: NoteType):
 		return
 	var max = time_window*0.5
 	if abs(dist) <= max:
-		if type != note_type and get_note_type(1) == type:
-			var t1 = get_note_type(1)
-			var t1_dist = get_note_dist(1)
-			if dist < max and note_type != NoteType.NONE:
-				if t1 != NoteType.NONE and t1 != NoteType.END:
-					if abs(get_note_dist(1)) < max*0.54:
-						if (score_dist(t1_dist) != HIT_EFFECT.fail):
-							on_miss()
-							on_true_hit()
+		if type != note_type:
+			if  get_note_type(1) == type:
+				var t1 = get_note_type(1)
+				var t1_dist = get_note_dist(1)
+				if dist < max and note_type != NoteType.NONE:
+					if t1 != NoteType.NONE and t1 != NoteType.END:
+						if abs(get_note_dist(1)) < max*0.54:
+							if (score_dist(t1_dist) != HIT_EFFECT.fail):
+								on_miss()
+								on_true_hit()
 		else:
 			on_true_hit()
 	hit_anim()

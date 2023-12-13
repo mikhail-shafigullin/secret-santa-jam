@@ -1,15 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://cud5yyt0p324i"]
+[gd_scene load_steps=9 format=3 uid="uid://cud5yyt0p324i"]
 
 [ext_resource type="ArrayMesh" uid="uid://d3iwx2wpdy8lj" path="res://Assets/Models/Objects/Buildings/Ilub6.res" id="1_7oasj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ka6h"]
-size = Vector3(4.64868, 2.67048, 3.80566)
+custom_solver_bias = 0.115
+margin = 0.09
+size = Vector3(4.64868, 2.67048, 3.86212)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ocn2x"]
 size = Vector3(4.88257, 3.21695, 4.05054)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8kccv"]
-size = Vector3(4.25684, 0.855957, 0.163605)
+size = Vector3(4.25684, 0.952881, 0.238167)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6cm10"]
+margin = 0.14
+size = Vector3(4.25684, 3.06824, 0.282658)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tuc5m"]
 size = Vector3(4.99707, 0.215332, 4.58228)
@@ -28,7 +34,7 @@ metadata/_edit_group_ = true
 mesh = ExtResource("1_7oasj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28058, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28058, 0.0282303)
 shape = SubResource("BoxShape3D_3ka6h")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
@@ -38,6 +44,10 @@ shape = SubResource("BoxShape3D_ocn2x")
 [node name="CollisionShape3D7" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0.0670166, 1.65901, 1.96574)
 shape = SubResource("BoxShape3D_8kccv")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0798334, 0.996808, 0, -0.996808, -0.0798334, 0.0670166, 1.35306, 0.865915)
+shape = SubResource("BoxShape3D_6cm10")
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.26959, 0)
