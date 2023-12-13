@@ -95,7 +95,7 @@ animations = [{
 [node name="Taiko" type="CanvasLayer"]
 layer = 128
 script = ExtResource("1_ei6s2")
-speed = 150.0
+speed = 240.0
 time_window = 0.6
 
 [node name="TaikoScreen" type="Control" parent="."]
