@@ -7,6 +7,33 @@
 [ext_resource type="PackedScene" uid="uid://2gq0j2u71tdk" path="res://Scenes/Abstracts/QuestLocator.tscn" id="5_m71bf"]
 [ext_resource type="PackedScene" uid="uid://cuhldd5rqu02s" path="res://Scenes/Characters/tim_doppelganger.tscn" id="6_j7ntb"]
 
+[sub_resource type="Animation" id="Animation_np6df"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-3.65737, 1.53809, 1.63222)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.259531, -0.582277, -1.02175e-08)]
+}
+
 [sub_resource type="Animation" id="Animation_yid1t"]
 resource_name = "camera_mv"
 length = 37.0
@@ -34,33 +61,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 0.5),
 "update": 0,
 "values": [Vector3(-0.226893, -1.07851, 1.25274e-08), Vector3(-0.240855, -0.646452, 0), Vector3(-0.240855, -0.523861, -9.24264e-09), Vector3(-0.260054, -0.574213, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_np6df"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-3.65737, 1.53809, 1.63222)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.259531, -0.582277, -1.02175e-08)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_57lmn"]
@@ -125,31 +125,22 @@ inHands = 1
 [node name="Skeleton3D" parent="TimDoppelganger/tim/TimMixemoRig" index="0"]
 bones/0/position = Vector3(-0.514468, 38.964, 2.2776)
 bones/0/rotation = Quaternion(-0.0268172, -0.369416, -0.02009, 0.92866)
-bones/0/scale = Vector3(1, 1, 1)
 bones/1/position = Vector3(-4.32122e-10, 10.1824, -1.42131e-12)
 bones/1/rotation = Quaternion(0.0487391, 0.00449974, -0.0197996, 0.998605)
-bones/1/scale = Vector3(1, 1, 1)
-bones/2/position = Vector3(-1.91589e-11, 10.0027, 7.30164e-07)
 bones/2/rotation = Quaternion(0.255109, 0.00926345, -0.0596574, 0.965026)
 bones/3/rotation = Quaternion(0.267523, 0.00849406, -0.0597718, 0.961658)
 bones/4/position = Vector3(1.40637e-07, 14.8407, -0.161849)
 bones/4/rotation = Quaternion(0.0700745, 0.0490108, -0.0482585, 0.995168)
-bones/4/scale = Vector3(1, 1, 1)
 bones/5/rotation = Quaternion(-0.00610837, 0.0619333, 0.0207712, 0.997846)
-bones/5/scale = Vector3(1, 1, 1)
-bones/6/position = Vector3(10.6815, 15.8991, 3.42966)
 bones/6/rotation = Quaternion(-0.501434, -0.479376, 0.618304, -0.369409)
-bones/6/scale = Vector3(1, 1, 1)
 bones/7/position = Vector3(-2.38419e-07, 11.0439, 8.13603e-06)
 bones/7/rotation = Quaternion(0.239407, -0.0480943, 0.0787501, 0.966525)
 bones/8/rotation = Quaternion(0.0355502, -0.0816328, 0.239457, 0.966816)
 bones/9/rotation = Quaternion(-0.288035, -0.0233717, 0.208161, 0.93443)
 bones/10/rotation = Quaternion(0.306528, -0.0646983, 0.228438, 0.921776)
-bones/11/position = Vector3(0.00271344, 8.17948, 0.134368)
 bones/11/rotation = Quaternion(0.0366914, 0.0382304, 0.051213, 0.997281)
 bones/12/position = Vector3(-8.02915, 15.8991, 3.42967)
 bones/12/rotation = Quaternion(0.450747, -0.523574, 0.646557, 0.323514)
-bones/12/scale = Vector3(1, 1, 1)
 bones/13/position = Vector3(-7.84671e-08, 12.638, -5.4436e-08)
 bones/13/rotation = Quaternion(0.266023, 0.0292956, -0.0115968, 0.963452)
 bones/14/rotation = Quaternion(-0.0291093, 0.0898305, -0.277337, 0.956121)
@@ -162,22 +153,18 @@ bones/17/rotation = Quaternion(0.0400388, 0.00165335, 0.00863665, 0.99916)
 bones/18/rotation = Quaternion(0.133284, 0.567391, 0.806278, -0.101086)
 bones/19/rotation = Quaternion(-0.872983, -0.0083009, 0.0128246, 0.487511)
 bones/20/rotation = Quaternion(0.399507, -0.062317, -0.108235, 0.908183)
-bones/20/scale = Vector3(1, 1, 1)
 bones/21/position = Vector3(7.46652e-07, 6.31136, 1.71873e-06)
 bones/21/rotation = Quaternion(0.378509, 5.98303e-08, 1.42121e-07, 0.925597)
-bones/21/scale = Vector3(1, 1, 1)
 bones/23/rotation = Quaternion(-0.171345, 0.552558, 0.807063, 0.118197)
 bones/24/rotation = Quaternion(-0.906004, -0.0454265, 0.0992013, 0.408964)
 bones/25/rotation = Quaternion(0.161497, 0.0878622, 0.145726, 0.972092)
-bones/25/scale = Vector3(1, 1, 1)
 bones/26/rotation = Quaternion(0.343689, 3.3737e-07, 3.2335e-08, 0.939084)
-bones/26/scale = Vector3(1, 1, 1)
 
 [node name="LeftHandAtt" parent="TimDoppelganger/tim/TimMixemoRig/Skeleton3D" index="1"]
-transform = Transform3D(0.879004, 0.446826, -0.166434, 0.129557, -0.559735, -0.818481, -0.458877, 0.697885, -0.549899, 33.1147, 46.1416, 27.5515)
+transform = Transform3D(0.879003, 0.446826, -0.166433, 0.129558, -0.559735, -0.818481, -0.458877, 0.697885, -0.549899, 33.1147, 46.1416, 27.5515)
 
 [node name="RightHandAtt" parent="TimDoppelganger/tim/TimMixemoRig/Skeleton3D" index="2"]
-transform = Transform3D(-0.31928, -0.927836, 0.192822, -0.680797, 0.0830305, -0.727751, 0.659224, -0.363629, -0.658178, -33.0433, 75.7566, -23.6145)
+transform = Transform3D(-0.31928, -0.927836, 0.192822, -0.680797, 0.0830302, -0.727751, 0.659223, -0.363629, -0.658178, -33.0433, 75.7566, -23.6145)
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="5"]
 root_node = NodePath("../MiniGameCamera")
@@ -188,7 +175,7 @@ autoplay = "camera_mv"
 
 [node name="MiniGameCamera" type="Camera3D" parent="." index="6"]
 unique_name_in_owner = true
-transform = Transform3D(0.835213, 0.141126, -0.53151, -9.87536e-09, 0.96651, 0.256627, 0.549927, -0.214338, 0.807242, -3.65737, 1.53809, 1.63222)
+transform = Transform3D(0.835213, 0.141126, -0.53151, -9.87532e-09, 0.96651, 0.256627, 0.549927, -0.214338, 0.807242, -3.65737, 1.53809, 1.63222)
 fov = 40.0
 far = 45.0
 

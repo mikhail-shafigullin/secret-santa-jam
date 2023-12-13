@@ -126,11 +126,11 @@ func on_hit(type: NoteType):
 	var dist = get_note_dist()
 	var note_type = get_note_type()
 
-	if note_type == NoteType.END:
+	if note_type == NoteType.END or note_type == NoteType.NONE:
 		hit_anim()
 		return
 	var max = time_window*0.5
-	if abs(dist) < max:
+	if abs(dist) <= max:
 		if type != note_type:
 			var t1 = get_note_type(1)
 			if dist < max and note_type != NoteType.NONE:
@@ -141,27 +141,33 @@ func on_hit(type: NoteType):
 				else:
 					on_miss();
 		else:
-			var score = score_dist(dist)
-			hit_anim(score)
-			if(score == HIT_EFFECT.fail):
-				on_miss(true)
-			else:
-				on_true_hit()
+			on_true_hit()
 	hit_anim()
 
 func on_true_hit():
-	#print("hit")
-	notes[0].sprite.hit()
-	add_combo(score)
-	notes.remove_at(0)
+	var dist = get_note_dist()
+	var note_type = get_note_type()
+	var score = score_dist(dist)
+	
+	if note_type == NoteType.END or note_type == NoteType.NONE:
+		return
+
+	hit_anim(score)
+	if(score == HIT_EFFECT.fail):
+		on_miss(true)
+	else:
+		#print("hit")
+		notes[0].sprite.hit()
+		add_combo(score)
+		notes.remove_at(0)
 
 func score_dist(dist: float) -> HIT_EFFECT:
 	var max = time_window / 2
 	if abs(dist) < max * 0.2:
 		return HIT_EFFECT.gold
-	if abs(dist) > max * 0.75:
+	if abs(dist) < max * 0.55:
 		return HIT_EFFECT.ok
-	if abs(dist) > max * 0.9:
+	if abs(dist) >= max * 0.55:
 		return HIT_EFFECT.fail
 	return HIT_EFFECT.empty
 
