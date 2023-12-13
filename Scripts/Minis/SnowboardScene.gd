@@ -11,17 +11,12 @@ extends MiniGame
 @onready var winTexture: Control = %WinTexture;
 @onready var failTexture: Control = %FailTexture;
 
-@onready var threeCountdown: Control = %ThreeCountdown;
-@onready var twoCountdown: Control = %TwoCountdown;
-@onready var oneCountdown: Control = %OneCountdown;
-@onready var startCountdown: Control = %StartCountdown;
-
 @onready var animationPlayer: AnimationPlayer = %AnimationPlayer; 
 
 @export var balance_acceleration = 200.0;
 @export var movement_acceleration_on_press = 10.0;
 
-var is_active: bool = true;
+var is_active: bool = false;
 
 var balance_value = 50.0;
 var normal_balance_value = 50.0;
@@ -182,6 +177,8 @@ func start() -> bool:
 	Global.player.camera.current = false
 	snowboardCamera.current = true
 	
+	startCountdown();
+	
 	return true
 
 func end() -> void:
@@ -189,6 +186,12 @@ func end() -> void:
 	Global.player.set_busy(false)
 	Global.cutscener.end();
 	queue_free()
+
+func startCountdown():
+	animationPlayer.play("ThreeCountdown");
+
+func startRace():
+	is_active = true;
 
 func _on_exit_button_pressed():
 	end();
