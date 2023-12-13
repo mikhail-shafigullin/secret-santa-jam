@@ -16,7 +16,8 @@ extends MiniGame
 @export var balance_acceleration = 200.0;
 @export var movement_acceleration_on_press = 10.0;
 
-var is_active: bool = false;
+var is_active: bool = true;
+var is_race_started: bool = false;
 
 var balance_value = 50.0;
 var normal_balance_value = 50.0;
@@ -69,7 +70,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if is_active:
+	if is_active and is_race_started:
 		process_balance(delta);
 		process_speed(delta);
 		process_rival_speed(delta);
@@ -106,7 +107,7 @@ func process_rival_speed(delta):
 	pass;
 
 func process_visual(delta):
-	if is_active:
+	if is_active and is_race_started:
 		current_path_progress += delta * speed * visual_speed_koeff;
 		racePathFollow.progress = current_path_progress;
 		currentAngle = lerpf(-max_angle, max_angle, balance_value / max_balance_value);
@@ -128,7 +129,9 @@ func process_visual(delta):
 			victory();
 		if rivalPathFollow.progress_ratio >= 1:
 			game_over();
-	else:
+	elif !is_race_started:
+		snowboardModel.visible = true;
+	else :
 		snowboardModel.visible = false;
 	
 func process_status(delta):
@@ -175,7 +178,11 @@ func start() -> bool:
 	snowboardModel = mainScreen.find_child(snowboardModelStr,true, false);
 	snowboardModel.visible = true;
 	Global.player.camera.current = false
-	snowboardCamera.current = true
+	snowboardCamera.current = true;
+	racePathFollow.progress = 0;
+	rivalPathFollow.progress = 0;
+	currentAngle = lerpf(-max_angle, max_angle, balance_value / max_balance_value);
+	snowboardModel.rotation.z = currentAngle;
 	
 	startCountdown();
 	
@@ -191,7 +198,7 @@ func startCountdown():
 	animationPlayer.play("ThreeCountdown");
 
 func startRace():
-	is_active = true;
+	is_race_started = true;
 
 func _on_exit_button_pressed():
 	end();
