@@ -11,6 +11,13 @@ extends MiniGame
 @onready var winTexture: Control = %WinTexture;
 @onready var failTexture: Control = %FailTexture;
 
+@onready var threeCountdown: Control = %ThreeCountdown;
+@onready var twoCountdown: Control = %TwoCountdown;
+@onready var oneCountdown: Control = %OneCountdown;
+@onready var startCountdown: Control = %StartCountdown;
+
+@onready var animationPlayer: AnimationPlayer = %AnimationPlayer; 
+
 @export var balance_acceleration = 200.0;
 @export var movement_acceleration_on_press = 10.0;
 

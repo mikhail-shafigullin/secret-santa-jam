@@ -42,7 +42,7 @@ max_distance = 10.0
 [node name="baseMusic" type="AudioStreamPlayer3D" parent="." index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.948597, 0.390074, -0.85343)
 stream = ExtResource("6_obuu0")
-volume_db = -40.0
+volume_db = -15.0
 max_distance = 50.0
 
 [node name="TimDoppelganger" parent="." index="6" instance=ExtResource("6_w7w5x")]
