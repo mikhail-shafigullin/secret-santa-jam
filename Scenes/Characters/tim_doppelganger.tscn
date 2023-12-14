@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cuhldd5rqu02s"]
+[gd_scene load_steps=35 format=3 uid="uid://cuhldd5rqu02s"]
 
 [ext_resource type="Script" path="res://Assets/Models/Characters/TimDoppelganger.gd" id="1_yh5hk"]
 [ext_resource type="Material" uid="uid://cbbtjnwpyd5m" path="res://Assets/Models/Characters/timMaterial.tres" id="2_gux75"]
@@ -8,6 +8,7 @@
 [ext_resource type="Animation" uid="uid://bvtueas327wwb" path="res://Assets/Models/Characters/TimAnimation/fishing/fishing_idle.res" id="6_rq8ug"]
 [ext_resource type="Animation" uid="uid://djri1q8mx25li" path="res://Assets/Models/Characters/TimAnimation/fishing/fishing_start.res" id="7_621uw"]
 [ext_resource type="Animation" uid="uid://duw7mfieijln2" path="res://Assets/Models/Characters/TimAnimation/fishing/fishing_start_idle.res" id="8_iumap"]
+[ext_resource type="Animation" uid="uid://1jd1c8r1qc0a" path="res://Assets/Models/Characters/TimAnimation/snowbording.res" id="9_7sodc"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_mh0qi"]
 resource_name = "tim_Plane_002"
@@ -3190,6 +3191,7 @@ _data = {
 "fishing_idle": ExtResource("6_rq8ug"),
 "fishing_start": ExtResource("7_621uw"),
 "fishing_start_idle": ExtResource("8_iumap"),
+"snowbording": ExtResource("9_7sodc"),
 "taiko_don_left": SubResource("Animation_5yg4o"),
 "taiko_don_right": SubResource("Animation_ob8mm"),
 "taiko_idle": SubResource("Animation_cb8si"),

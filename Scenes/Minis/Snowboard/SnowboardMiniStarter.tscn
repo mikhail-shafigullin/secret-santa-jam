@@ -2,13 +2,11 @@
 
 [ext_resource type="Script" path="res://Scripts/Minis/SnowboardMiniStarter.gd" id="1_jrshm"]
 [ext_resource type="PackedScene" uid="uid://bo1tr0fadvf6l" path="res://Scenes/UsableObject.tscn" id="1_pkkgt"]
+[ext_resource type="ArrayMesh" uid="uid://cmdw4mvg3jmvj" path="res://Assets/Models/Objects/other/snowboard_Plane_002.res" id="3_ex0tu"]
 [ext_resource type="PackedScene" uid="uid://2gq0j2u71tdk" path="res://Scenes/Abstracts/QuestLocator.tscn" id="3_mj1k8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cm3vq"]
 size = Vector3(0.56839, 1, 0.558472)
-
-[sub_resource type="BoxMesh" id="BoxMesh_ujkes"]
-size = Vector3(0.05, 1.2, 0.5)
 
 [node name="SnowboardMiniStarter" type="Node3D"]
 script = ExtResource("1_jrshm")
@@ -25,8 +23,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0235443, 0, -0.00738525)
 shape = SubResource("BoxShape3D_cm3vq")
 
 [node name="snowboardMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.911482, -0.411339, 0, 0.411339, 0.911482, 0, 0, 0, 1, 0, 0.307405, 0)
-mesh = SubResource("BoxMesh_ujkes")
+transform = Transform3D(0.948669, 0, 0, 0, 0.30312, -0.898939, 0, 0.898939, 0.30312, 0, 0.32924, 0)
+mesh = ExtResource("3_ex0tu")
 
 [node name="QuestLocator" parent="." instance=ExtResource("3_mj1k8")]
 

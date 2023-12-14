@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://7nir4w6ooi2"]
+[gd_scene load_steps=24 format=3 uid="uid://7nir4w6ooi2"]
 
 [ext_resource type="ArrayMesh" uid="uid://ca6nd2tr5wojf" path="res://Assets/Models/Objects/Buildings/InstaBuilding.res" id="1_b8b3s"]
 
@@ -64,6 +64,9 @@ points = PackedVector3Array(-8.6339, 4.99148, -8.71189, -5.12638, 5.8009, 1.0012
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i3ilk"]
 points = PackedVector3Array(-5.12575, 10.6575, 1.00131, 0.268331, 13.8952, 1.54082, 1.07755, 13.6252, 1.54082, -5.12575, 10.6575, 1.54082, 5.12575, 10.6575, 1.00131, 5.12575, 10.6575, 1.54082, -0.225886, 13.6391, 1.04398, -5.39619, 11.7372, 1.00131, 5.39619, 11.7372, 1.00131, -5.39619, 11.7372, 1.54082, 5.39619, 11.7372, 1.54082, -1.07755, 13.6252, 1.54082, 4.31653, 12.2763, 1.00131, -4.31653, 12.2763, 1.00131, 0.225872, 13.639, 1.04399, 5.39619, 10.9275, 1.54082, -5.39619, 10.9275, 1.54082)
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_avikm"]
+size = Vector3(9.23362, 13.9717, 9.53215)
 
 [node name="InstaBuild" type="StaticBody3D"]
 
@@ -132,3 +135,7 @@ shape = SubResource("ConvexPolygonShape3D_g8eno")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_i3ilk")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.96561, -3.81317)
+occluder = SubResource("BoxOccluder3D_avikm")
