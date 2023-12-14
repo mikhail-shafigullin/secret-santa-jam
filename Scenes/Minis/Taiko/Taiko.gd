@@ -16,7 +16,7 @@ var tim = null
 var notes: Array[Note] = []
 @onready var hit_center: Node2D = %HitCenter
 var time: float = 0
-@export var visible_time := 3.0
+@export var visible_time := 15.0
 @export var speed := 100.0
 @export var time_window = 0.5
 
@@ -71,6 +71,7 @@ func spawn_next_note():
 		#print("spawned ", note_time)
 		var type: NoteType
 		var sprite: AnimatedSprite2D
+		
 		if music[note_time] == "D":
 			type = NoteType.DON
 			sprite = DonSpriteRes.instantiate()
@@ -112,16 +113,16 @@ func check_miss():
 func on_miss(hit: bool = false):
 	if notes.is_empty():
 		return
+	
 	if (notes[0].type == NoteType.END):
 		return
 	
-	var left_note = notes[0]
+	var left_note = notes.pop_front()
 	if hit:
 		left_note.sprite.hit()
 	else:
 		left_note.sprite.queue_free()
 	
-	notes.pop_front()
 	reset_combo()
 
 func on_hit(type: NoteType):
@@ -182,10 +183,10 @@ func on_pon():
 	model.pon.play()
 	on_hit(NoteType.DON)
 
-func get_note() -> Note:
+func get_note(index: int = 0) -> Note:
 	if notes.is_empty():
 		return Note.new(NoteType.NONE, 9001, null)
-	return notes[0] 
+	return notes[index] 
 
 func get_note_type(index: int = 0) -> NoteType:
 	if notes.size() - 1 < index:

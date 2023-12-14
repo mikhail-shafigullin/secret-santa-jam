@@ -1,0 +1,51 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://ca4ftm1hislhw"
+path="res://.godot/imported/line.glb-0f3161f3e28504c3fe466fec2cfdbb06.scn"
+
+[deps]
+
+source_file="res://Assets/Models/Objects/lights/line.glb"
+dest_files=["res://.godot/imported/line.glb-0f3161f3e28504c3fe466fec2cfdbb06.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"lights": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/Objects/Buildings/Lights/Lights.tres"
+},
+"wire": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/Objects/Buildings/Lights/Wire.tres"
+}
+},
+"nodes": {
+"PATH:BezierCurve_001": {
+"generate/physics": true,
+"physics/shape_type": 1
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1
