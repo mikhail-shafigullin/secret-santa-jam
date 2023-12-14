@@ -285,6 +285,7 @@ _data = {
 script = ExtResource("1_ti2ic")
 
 [node name="MainUI" type="Control" parent="."]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -293,6 +294,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Countdown" type="Control" parent="MainUI"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -303,6 +305,7 @@ grow_vertical = 2
 [node name="ThreeCountdown" type="RichTextLabel" parent="MainUI/Countdown"]
 unique_name_in_owner = true
 visible = false
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -323,6 +326,7 @@ text = "[center]3"
 [node name="TwoCountdown" type="RichTextLabel" parent="MainUI/Countdown"]
 unique_name_in_owner = true
 visible = false
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -342,6 +346,7 @@ text = "[center]2"
 [node name="OneCountdown" type="RichTextLabel" parent="MainUI/Countdown"]
 unique_name_in_owner = true
 visible = false
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -361,6 +366,7 @@ text = "[center]1"
 [node name="StartCountdown" type="RichTextLabel" parent="MainUI/Countdown"]
 unique_name_in_owner = true
 visible = false
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
