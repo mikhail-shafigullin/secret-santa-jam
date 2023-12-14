@@ -4,10 +4,12 @@ extends Node3D
 @onready var tim = $tim
 @onready var tim_anim = $tim/AnimationPlayer
 @onready var taiko_tree = $TaikoTree
+@onready var snowboarding_tree: AnimationTree = $SnowboardTree
 
 @onready var hand_left = %LeftHand
 @onready var hand_right = %RightHand
 
+@onready var snowboard = %Snowboard
 @onready var rod = %Rod
 @onready var drum_l = %DrumL
 @onready var drum_r = %DrumR
@@ -35,6 +37,7 @@ func empty_hand():
 		node.visible = false
 	for node in hand_right.get_children():
 		node.visible = false
+	snowboard.visible = false
 
 func show_drum_sticks():
 	empty_hand()
@@ -44,3 +47,11 @@ func show_drum_sticks():
 func show_rod():
 	empty_hand()
 	rod.visible = true
+
+func snowboarding():
+	snowboard.visible = true
+	snowboarding_tree.active = true
+
+# left: -1 | middle: 0 | right: 1
+func set_snowboard_tilt(val: float):
+	snowboarding_tree["parameters/blend_position"] = val

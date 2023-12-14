@@ -271,10 +271,10 @@ tracks/4/path = NodePath("1/Ice5:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 14, 38, 59, 60, 72),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 13.9328, 14, 38, 59, 60, 72),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-12.1799, -0.200023, 13.8546), Vector3(4.02905, -0.276148, 13.9546), Vector3(39.0597, 0.121878, 10.0172), Vector3(55.8576, -2.97697, 5.15883), Vector3(-65.0711, -2.90139, 13.0658), Vector3(-49.2037, -0.0621805, 13.3025)]
+"values": [Vector3(-12.1799, -0.200023, 13.8546), Vector3(3.93097, 0.121877, 13.4361), Vector3(4.02905, -0.276148, 13.9546), Vector3(39.0597, 0.121878, 10.0172), Vector3(55.8576, -2.97697, 5.15883), Vector3(-65.0711, -2.90139, 13.0658), Vector3(-49.2037, -0.0621805, 13.3025)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -307,7 +307,7 @@ tracks/7/path = NodePath("1/Ice8:position")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(17, 19, 29, 46, 54, 71, 81, 98),
+"times": PackedFloat32Array(2, 11, 29, 46, 54, 71, 81, 98),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(57.5761, -1.82362, -5.09887), Vector3(-56.8654, -2.85036, 7.2443), Vector3(-39.3262, -0.596544, 6.79226), Vector3(-20.373, 0.180792, 6.35581), Vector3(-10.8525, 0.180792, 5.67026), Vector3(13.5071, 0.180792, 0.782137), Vector3(27.736, 0.148652, -0.146838), Vector3(41.9649, 0.0838261, -1.07581)]
@@ -331,10 +331,10 @@ tracks/9/path = NodePath("1/Ice10:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(10, 12, 20, 46, 71, 81, 93),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(10, 12, 20, 46, 71, 81, 93, 100),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(48.3539, -1.82362, 8.91677), Vector3(-54.2415, -2.85036, 19.8885), Vector3(-41.8865, -0.0301504, 18.7212), Vector3(-19.0298, 0.180791, 16.5617), Vector3(14.8403, 0.180791, 13.9824), Vector3(29.7146, 0.148651, 12.7754), Vector3(44.5889, 0.0838251, 11.5684)]
+"values": [Vector3(48.3539, -1.82362, 8.91677), Vector3(-54.2415, -2.85036, 19.8885), Vector3(-41.8865, -0.0301504, 18.7212), Vector3(-19.0298, 0.180791, 16.5617), Vector3(14.8403, 0.180791, 13.9824), Vector3(29.7146, 0.148651, 12.7754), Vector3(44.5889, 0.0838251, 11.5684), Vector3(58.1106, -0.701593, 8.00313)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_78kci"]

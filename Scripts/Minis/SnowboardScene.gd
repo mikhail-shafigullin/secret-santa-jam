@@ -1,6 +1,7 @@
 class_name SnowboardScene
 extends MiniGame
 
+var starter = null
 @onready var c = Global.cutscener
 @onready var balanceSlider = %BalanceSlider;
 @onready var speedText: RichTextLabel = %SpeedText;
@@ -10,6 +11,7 @@ extends MiniGame
 @onready var speedArrowTexture: Control = %SpeedArrowTexture;
 @onready var winTexture: Control = %WinTexture;
 @onready var failTexture: Control = %FailTexture;
+
 
 @onready var animationPlayer: AnimationPlayer = %AnimationPlayer; 
 
@@ -65,8 +67,8 @@ var max_angle: float = PI/4;
 var currentAngle: float = 0.0;
 	
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	start()
+#func _ready():
+	#start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -83,11 +85,14 @@ func process_balance(delta):
 	if(is_left_balance):
 		balance_velocity -= balance_acceleration * delta;
 	if(is_right_balance):
-		balance_velocity += balance_acceleration * delta;	
+		balance_velocity += balance_acceleration * delta;
 	calculate_railed_acceleration();
 	balance_velocity += current_railed_balance_acceleration * delta;
 	balance_value += balance_velocity * delta;
 	balance_value = clampf(balance_value, 0.0, 100.0);
+	var anim_bal = remap(balance_value, 0, 80, -1, 1)
+	snowboardModel.set_snowboard_tilt(anim_bal)
+	print(anim_bal)
 	
 func process_speed(delta):
 	var speed_resistance_koeff =(speed - min_speed) / (max_speed - min_speed);
@@ -111,7 +116,7 @@ func process_visual(delta):
 		current_path_progress += delta * speed * visual_speed_koeff;
 		racePathFollow.progress = current_path_progress;
 		currentAngle = lerpf(-max_angle, max_angle, balance_value / max_balance_value);
-		snowboardModel.rotation.z = currentAngle;
+		snowboardModel.rotation.x = currentAngle;
 		
 		current_rival_path_progress += delta * rival_speed * visual_speed_koeff;
 		rivalPathFollow.progress = current_rival_path_progress;
@@ -182,7 +187,9 @@ func start() -> bool:
 	racePathFollow.progress = 0;
 	rivalPathFollow.progress = 0;
 	currentAngle = lerpf(-max_angle, max_angle, balance_value / max_balance_value);
-	snowboardModel.rotation.z = currentAngle;
+	snowboardModel.rotation.x = currentAngle;
+	
+	snowboardModel.snowboarding()
 	
 	startCountdown();
 	
