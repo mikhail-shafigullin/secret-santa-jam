@@ -2,7 +2,9 @@ class_name UseObjectController
 extends Node3D
 
 var hoveredUsableObject: UseableObject;
-const max_distance = 3 * 3
+const max_distance = 3 * 3;
+@onready var dialogueBubble : Sprite3D = $bubbleSprite;
+@onready var animationPlayer : AnimationPlayer = %AnimationPlayer;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,10 +24,16 @@ func _input(event):
 			useObject()
 
 func hoverUsableObject(useableObject: UseableObject):
+	if(dialogueBubble) :
+		dialogueBubble.visible = true;
+		animationPlayer.play("bubbles");
 	Global.playerLayout.setTextOnUseMessage(useableObject.useObjectMessage);
 	hoveredUsableObject = useableObject;
 	
 func unhoverUsableObject():
+	if(dialogueBubble) :
+		dialogueBubble.visible = false;
+		animationPlayer.stop();
 	Global.playerLayout.clearTextOnUseMessage();
 	hoveredUsableObject = null;
 	

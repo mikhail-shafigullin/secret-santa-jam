@@ -109,7 +109,6 @@ autoplay = "FishingIdle"
 
 [node name="UsableObject" parent="." index="2" instance=ExtResource("3_d1ahl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.248449, 0)
-useObjectMessage = "fisherman, take me by the hand"
 
 [node name="CollisionShape3D" parent="UsableObject/E_UseAreaEvent" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0239868, 0.371367, 0.294532)

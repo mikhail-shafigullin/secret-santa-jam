@@ -51,6 +51,8 @@ const ANIMATION_BLEND : float = 7.0
 @onready var animator : AnimationTree = $AnimationTree
 @onready var camera : Camera3D = $SpringArmPivot/SpringArm3D/Camera3D
 
+@onready var dialogueBubble : Sprite3D = $UseObjectsController/bubbleSprite;
+
 func _ready():
 	Global.player = self
 	add_child(jump_buffer_timer)
@@ -88,6 +90,8 @@ func process_new(delta):
 	else:
 		speed = run_speed
 		
+	dialogueBubble.look_at(camera.global_position);
+			
 	animate(delta)
 	
 	 
