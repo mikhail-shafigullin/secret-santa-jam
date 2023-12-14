@@ -1,0 +1,73 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://db4xqpber7hvn"
+path="res://.godot/imported/snowboard.glb-9503c91aa981764fc83b6eb61e37385d.scn"
+
+[deps]
+
+source_file="res://Assets/Models/Objects/other/snowboard.glb"
+dest_files=["res://.godot/imported/snowboard.glb-9503c91aa981764fc83b6eb61e37385d.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"snowbord": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/Objects/other/snowbord.tres"
+}
+},
+"meshes": {
+"snowboard_Plane": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/other/snowboard_Plane.res"
+},
+"snowboard_Plane_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/other/snowboard_Plane_001.res"
+},
+"snowboard_Plane_002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/other/snowboard_Plane_002.res"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1
