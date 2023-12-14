@@ -42,6 +42,14 @@ _subresources={
 "HouseLight3": {
 "use_external/enabled": true,
 "use_external/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House3Light/MatHouse3.tres"
+},
+"HouseLight4": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/MatHouse4.tres"
+},
+"HouseLight5": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House5Lights/MatHouse5.tres"
 }
 },
 "meshes": {
@@ -454,6 +462,316 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/make_streamable": "",
 "save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House3Light/IluBuild_Plane_040.res"
+},
+"IluBuild_Plane_041": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/IluBuild_Plane_041.res"
+},
+"IluBuild_Plane_042": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/IluBuild_Plane_042.res"
+},
+"IluBuild_Plane_043": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/IluBuild_Plane_043.res"
+},
+"IluBuild_Plane_044": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/IluBuild_Plane_044.res"
+},
+"IluBuild_Plane_045": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/IluBuild_Plane_045.res"
+},
+"IluBuild_Plane_046": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/IluBuild_Plane_046.res"
+},
+"IluBuild_Plane_047": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/IluBuild_Plane_047.res"
+},
+"IluBuild_Plane_048": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/IluBuild_Plane_048.res"
+},
+"IluBuild_Plane_049": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/IluBuild_Plane_049.res"
+},
+"IluBuild_Plane_050": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/IluBuild_Plane_050.res"
+},
+"IluBuild_Plane_051": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/IluBuild_Plane_051.res"
+},
+"IluBuild_Plane_052": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/IluBuild_Plane_052.res"
+},
+"IluBuild_Plane_053": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/IluBuild_Plane_053.res"
+},
+"IluBuild_Plane_054": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/IluBuild_Plane_054.res"
+},
+"IluBuild_Plane_055": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/IluBuild_Plane_055.res"
+},
+"IluBuild_Plane_056": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/IluBuild_Plane_056.res"
+},
+"IluBuild_Plane_057": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/IluBuild_Plane_057.res"
+},
+"IluBuild_Plane_058": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/IluBuild_Plane_058.res"
+},
+"IluBuild_Plane_059": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/IluBuild_Plane_059.res"
+},
+"IluBuild_Plane_060": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/IluBuild_Plane_060.res"
+},
+"IluBuild_Plane_061": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/IluBuild_Plane_061.res"
+},
+"IluBuild_Plane_062": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/IluBuild_Plane_062.res"
+},
+"IluBuild_Plane_063": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/IluBuild_Plane_063.res"
+},
+"IluBuild_Plane_064": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/IluBuild_Plane_064.res"
+},
+"IluBuild_Plane_065": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House4Light/IluBuild_Plane_065.res"
+},
+"IluBuild_Plane_066": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House5Lights/IluBuild_Plane_066.res"
+},
+"IluBuild_Plane_067": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House5Lights/IluBuild_Plane_067.res"
+},
+"IluBuild_Plane_068": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House5Lights/IluBuild_Plane_068.res"
+},
+"IluBuild_Plane_069": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House5Lights/IluBuild_Plane_069.res"
+},
+"IluBuild_Plane_070": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House5Lights/IluBuild_Plane_070.res"
+},
+"IluBuild_Plane_071": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Objects/Buildings/IluBuildMesh/House5Lights/IluBuild_Plane_071.res"
 }
 }
 }
