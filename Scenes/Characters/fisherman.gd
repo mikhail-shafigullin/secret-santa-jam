@@ -9,6 +9,7 @@ const dialogue = preload("res://Scenes/Characters/fisherman.dialogue")
 @onready var fishermanAnimationPlayer: AnimationPlayer = $AnimationPlayer;
 @onready var timAnimationPlayer: AnimationPlayer = $TimDoppelganger/tim/AnimationPlayer;
 @onready var camera: Camera3D = %MiniGameCamera;
+@onready var reactionBubble: Sprite3D = %ReactionBubble;
 
 func set_animation_talking():
 	fishermanAnimationPlayer.play("Speak");
@@ -18,6 +19,12 @@ func set_animation_idle():
 
 func set_animation_stand():
 	fishermanAnimationPlayer.play("stand")
+
+func turn_on_reaction_bubble():
+	reactionBubble.visible = true;
+	
+func turn_off_reaction_bubble():
+	reactionBubble.visible = false;
 	
 func mini_game_start():
 	timModel.visible = true;
@@ -33,14 +40,17 @@ func mini_game_throw_rod():
 func mini_game_fish_founded():
 	timAnimationPlayer.play("fishing_catch_start");
 	timAnimationPlayer.queue("fishing_catch_fight");
+	turn_on_reaction_bubble();
 	
 func mini_game_fish_end():
+	turn_off_reaction_bubble();
 	timAnimationPlayer.play("fishing_catch_finish");
 
 func mini_game_stop():
 	timModel.visible = false;
 	camera.current = false;
 	Global.player.camera.current = true;
+	reactionBubble.visible = false;
 	
 func start_victory_dialogue():
 	Global.player.visible = false;

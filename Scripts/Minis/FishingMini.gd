@@ -205,6 +205,7 @@ func start_bubbles_reaction_part():
 	
 func start_third_part():
 	currentPart = 3;
+	fisherman.turn_off_reaction_bubble();
 	failureFirstPartTimer.stop();
 	firstPartSection.visible = false;
 	thirdPartSection.visible = true;

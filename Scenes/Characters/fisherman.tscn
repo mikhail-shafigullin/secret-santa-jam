@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://hd06iu5g1ddy"]
+[gd_scene load_steps=11 format=3 uid="uid://hd06iu5g1ddy"]
 
 [ext_resource type="PackedScene" uid="uid://5u7qxg6184ef" path="res://Assets/Models/Characters/fisherman.glb" id="1_mvymt"]
 [ext_resource type="Script" path="res://Scenes/Characters/fisherman.gd" id="2_jedh1"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bo1tr0fadvf6l" path="res://Scenes/UsableObject.tscn" id="3_d1ahl"]
 [ext_resource type="PackedScene" uid="uid://2gq0j2u71tdk" path="res://Scenes/Abstracts/QuestLocator.tscn" id="5_m71bf"]
 [ext_resource type="PackedScene" uid="uid://cuhldd5rqu02s" path="res://Scenes/Characters/tim_doppelganger.tscn" id="6_j7ntb"]
+[ext_resource type="Texture2D" uid="uid://c3j7cvh8uv0uf" path="res://Scenes/Characters/Bubble02.png" id="7_x5ujm"]
 
 [sub_resource type="Animation" id="Animation_np6df"]
 length = 0.001
@@ -137,14 +138,21 @@ transform = Transform3D(0.879003, 0.446826, -0.166433, 0.129558, -0.559735, -0.8
 [node name="RightHandAtt" parent="TimDoppelganger/tim/TimMixemoRig/Skeleton3D" index="2"]
 transform = Transform3D(-0.31928, -0.927836, 0.192822, -0.680797, 0.0830302, -0.727751, 0.659223, -0.363629, -0.658178, -33.0433, 75.7566, -23.6145)
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="5"]
+[node name="ReactionBubble" type="Sprite3D" parent="." index="5"]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.16164, 1.51637, 0)
+visible = false
+pixel_size = 0.007
+texture = ExtResource("7_x5ujm")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="6"]
 root_node = NodePath("../MiniGameCamera")
 libraries = {
 "": SubResource("AnimationLibrary_57lmn")
 }
 autoplay = "camera_mv"
 
-[node name="MiniGameCamera" type="Camera3D" parent="." index="6"]
+[node name="MiniGameCamera" type="Camera3D" parent="." index="7"]
 unique_name_in_owner = true
 transform = Transform3D(0.835213, 0.141126, -0.53151, -9.87532e-09, 0.96651, 0.256627, 0.549927, -0.214338, 0.807242, -3.65737, 1.53809, 1.63222)
 fov = 40.0
