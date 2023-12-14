@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cogc0jr2nft03"]
+[gd_scene load_steps=31 format=3 uid="uid://cogc0jr2nft03"]
 
 [ext_resource type="Texture2D" uid="uid://3jauchyvj37w" path="res://Assets/Models/Characters/tim_tim.png" id="1_i4l2i"]
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="2_3okkh"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://b8o5gcv555lhn" path="res://Scenes/Minis/Snowboard/SnowboardMiniStarter.tscn" id="18_svub7"]
 [ext_resource type="PackedScene" uid="uid://cuhldd5rqu02s" path="res://Scenes/Characters/tim_doppelganger.tscn" id="18_wud7l"]
 [ext_resource type="PackedScene" uid="uid://5u7qxg6184ef" path="res://Assets/Models/Characters/fisherman.glb" id="19_6jklo"]
-[ext_resource type="Material" uid="uid://ifxj2ivx5a5t" path="res://Assets/Models/Objects/Road/tilesMaterial.tres" id="34_gjb1b"]
 
 [sub_resource type="Environment" id="Environment_aex3l"]
 background_mode = 1
@@ -980,13 +979,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.222252, -1.07989, -8.50881)
 
 [node name="RandomTolik99" parent="test/Toliks" instance=ExtResource("5_vg0pf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.976501, -1.07989, -8.50882)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="test"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.6635, -7.13909, -6.4512)
-gi_mode = 0
-use_collision = true
-size = Vector3(19.3413, 16.581, 19.9218)
-material = ExtResource("34_gjb1b")
 
 [node name="LVL" parent="." instance=ExtResource("4_qd3xv")]
 

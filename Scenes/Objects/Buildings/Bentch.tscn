@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfginyvh47dbk"]
+
+[ext_resource type="ArrayMesh" uid="uid://cthr3n38rinbr" path="res://Assets/Models/Objects/Buildings/bench.res" id="1_vhl24"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b4oc3"]
+size = Vector3(2.00024, 0.115479, 0.668213)
+
+[node name="Bench" type="StaticBody3D"]
+
+[node name="Bench" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_vhl24")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.424072, 0)
+shape = SubResource("BoxShape3D_b4oc3")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 0.599791, -0.239328)
+shape = SubResource("BoxShape3D_b4oc3")
