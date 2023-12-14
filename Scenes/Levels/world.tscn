@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://hd06iu5g1ddy" path="res://Scenes/Characters/fisherman.tscn" id="4_nf8l7"]
 [ext_resource type="PackedScene" uid="uid://dwa64ft0y4d4h" path="res://Scenes/Levels/lvl.tscn" id="4_qd3xv"]
 [ext_resource type="PackedScene" uid="uid://bmo3dnmo8nkx1" path="res://Scenes/Controller/Cutscener.tscn" id="5_6em04"]
-[ext_resource type="PackedScene" uid="uid://do6hbchvfi3xr" path="res://Scenes/Objects/randomTolik.tscn" id="5_vg0pf"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/randomTolik.tscn" id="5_vg0pf"]
 [ext_resource type="PackedScene" uid="uid://degfp10g6rn1y" path="res://Scenes/Minis/Taiko/Models/taikoModel.tscn" id="7_wp63y"]
 [ext_resource type="PackedScene" uid="uid://b8o5gcv555lhn" path="res://Scenes/Minis/Snowboard/SnowboardMiniStarter.tscn" id="18_svub7"]
 [ext_resource type="PackedScene" uid="uid://cuhldd5rqu02s" path="res://Scenes/Characters/tim_doppelganger.tscn" id="18_wud7l"]
@@ -414,7 +414,7 @@ libraries = {
 autoplay = "RESET"
 
 [node name="Camera" parent="Cutscener" index="0"]
-transform = Transform3D(0.866025, 0.0895813, -0.49191, 0, 0.98382, 0.179162, 0.5, -0.155159, 0.852013, 2.27489, 3.69539, 5.82178)
+transform = Transform3D(0.866025, 0.0895812, -0.49191, 0, 0.983819, 0.179162, 0.5, -0.155159, 0.852013, 2.27489, 3.69539, 5.82178)
 fov = 27.6855
 far = 45.0
 

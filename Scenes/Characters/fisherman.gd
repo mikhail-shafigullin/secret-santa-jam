@@ -41,6 +41,17 @@ func mini_game_stop():
 	timModel.visible = false;
 	camera.current = false;
 	Global.player.camera.current = true;
+	
+func start_victory_dialogue():
+	Global.player.visible = false;
+	timModel.visible = false;
+	var balloon: Node = Balloon.instantiate()
+	Global.player.add_child(balloon)
+	balloon.start(dialogue, "victory");
+	pass;
+	
+func start_failure_dialogue():
+	pass;
 
 func _on_usable_object_on_object_use():
 	assert(dialogue)

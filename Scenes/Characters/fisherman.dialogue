@@ -12,6 +12,12 @@ Fisherman: Do you help me?
 
 ~ victory
 do Global.cutscener.start("fisherman_dialogue")
+Fisherman: Thank you, Tim!
+Fisherman: Take this fish and bring it to your mother.
+Fisherman: I'm sure she'll cook something delicious
+...
+[Fish] received
+=> end_script
 
 ~ end_script
 do Global.cutscener.start("fisherman_reset")

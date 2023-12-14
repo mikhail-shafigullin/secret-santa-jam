@@ -97,14 +97,17 @@ func start() -> bool:
 	return true
 
 func end() -> void:
-	Global.player.visible = true
-	Global.player.set_busy(false)
-	Global.cutscener.end();
-	fisherman.mini_game_stop();
-	queue_free()
+	if is_success:
+		get_tree().create_timer(0.1).connect("timeout", queue_free)
+		fisherman.start_victory_dialogue()
+	else: 
+		Global.player.visible = true
+		Global.player.set_busy(false)
+		Global.cutscener.end();
+		fisherman.mini_game_stop();
+		queue_free();
 	
 func _input(event):
-	
 	match currentPart:
 		1:
 			if event.is_action_pressed('use'):
