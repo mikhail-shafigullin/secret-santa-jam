@@ -407,12 +407,6 @@ point_count = 11
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_aex3l")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(0.641048, -0.654773, -0.400413, 0, -0.52171, 0.853123, -0.767501, -0.546893, -0.334441, 0, 2.45456, 0)
-visible = false
-light_energy = 1.26
-shadow_enabled = true
-
 [node name="Cutscener" parent="." instance=ExtResource("5_6em04")]
 libraries = {
 "": SubResource("AnimationLibrary_qummu")
