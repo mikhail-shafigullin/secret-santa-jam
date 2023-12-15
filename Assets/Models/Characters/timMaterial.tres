@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cbbtjnwpyd5m"]
 
-[ext_resource type="Texture2D" uid="uid://3jauchyvj37w" path="res://Assets/Models/Characters/tim_tim.png" id="1_fph4k"]
+[ext_resource type="Texture2D" uid="uid://dcnhwd5q4aouv" path="res://Assets/Models/Characters/tim_tim.png" id="1_4myb8"]
 
 [resource]
 resource_name = "Material.001"
@@ -8,5 +8,5 @@ cull_mode = 2
 shading_mode = 0
 specular_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("1_fph4k")
+albedo_texture = ExtResource("1_4myb8")
 texture_filter = 0

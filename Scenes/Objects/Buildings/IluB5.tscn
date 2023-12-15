@@ -19,7 +19,7 @@ size = Vector3(5.20563, 1.99536, 2.35986)
 size = Vector3(3.60915, 3.57031, 2.76208)
 
 [sub_resource type="BoxOccluder3D" id="BoxOccluder3D_gqo3a"]
-size = Vector3(3.52376, 3.73252, 2.73733)
+size = Vector3(3.52428, 3.73252, 2.66287)
 
 [sub_resource type="BoxOccluder3D" id="BoxOccluder3D_c6c2i"]
 size = Vector3(2.03739, 2.2943, 2.27564)

@@ -24,7 +24,7 @@ size = Vector3(1.39612, 0.209953, 2.23732)
 size = Vector3(1.39258, 0.222649, 3.07083)
 
 [sub_resource type="BoxOccluder3D" id="BoxOccluder3D_c65wx"]
-size = Vector3(3.48149, 7.39408, 2.83249)
+size = Vector3(3.48149, 7.39408, 2.72009)
 
 [node name="IluB2" type="StaticBody3D"]
 transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
@@ -65,5 +65,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.141, 0.122952, 0.021286)
 shape = SubResource("BoxShape3D_j8tnn")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77885, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77885, -0.058501)
 occluder = SubResource("BoxOccluder3D_c65wx")
