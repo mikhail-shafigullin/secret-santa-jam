@@ -92,7 +92,6 @@ func process_balance(delta):
 	balance_value = clampf(balance_value, 0.0, 100.0);
 	var anim_bal = remap(balance_value, 0, 80, -1, 1)
 	snowboardModel.set_snowboard_tilt(anim_bal)
-	print(anim_bal)
 	
 func process_speed(delta):
 	var speed_resistance_koeff =(speed - min_speed) / (max_speed - min_speed);
@@ -190,6 +189,7 @@ func start() -> bool:
 	snowboardModel.rotation.x = currentAngle;
 	
 	snowboardModel.snowboarding()
+	snowboardModel.set_snowboard_tilt(0)
 	
 	startCountdown();
 	
