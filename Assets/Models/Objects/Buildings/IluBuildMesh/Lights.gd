@@ -8,7 +8,7 @@ func _ready():
 		timer = Timer.new()
 		add_child(timer)
 		timer.connect("timeout", update)
-		timer.wait_time = randi_range(20, 500)
+		timer.wait_time = randi_range(20, 200)
 		timer.one_shot = false
 		timer.start()
 		meshes = light_root.get_children()

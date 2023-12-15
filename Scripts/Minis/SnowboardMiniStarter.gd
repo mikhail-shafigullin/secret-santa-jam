@@ -4,7 +4,6 @@ const Balloon = preload("res://addons/dialogue_manager/example_balloon/example_b
 const dialogue = preload("res://Scenes/Characters/snowboard.dialogue")
 
 @onready var snowboardMesh = $snowboardMesh;
-@onready var tim_clone = %SnowboardingTim;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
