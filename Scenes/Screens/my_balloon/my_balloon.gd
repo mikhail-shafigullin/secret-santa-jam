@@ -27,17 +27,17 @@ var dialogue_line: DialogueLine:
 		if not next_dialogue_line:
 			queue_free()
 			return
-
+		
 		# If the node isn't ready yet then none of the labels will be ready yet either
 		if not is_node_ready():
 			await ready
-
+		
 		dialogue_line = next_dialogue_line
 
 		character_label.visible = not dialogue_line.character.is_empty()
 		character_label.text = tr(dialogue_line.character, "dialogue")
 
-		dialogue_label.hide()
+		dialogue_label.hide()	
 		dialogue_label.dialogue_line = dialogue_line
 
 		responses_menu.hide()
@@ -84,7 +84,8 @@ func start(dialogue_resource: DialogueResource, title: String, extra_game_states
 	is_waiting_for_input = false
 	resource = dialogue_resource
 	self.dialogue_line = await resource.get_next_dialogue_line(title, temporary_game_states)
-
+	if Global.player:
+		Global.player.set_busy(true)
 
 ## Go to the next line
 func next(next_id: String) -> void:

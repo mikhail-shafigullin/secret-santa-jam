@@ -15,9 +15,11 @@ func fit():
 	else:
 		scale = Vector2(scaler.x, scaler.x)
 		
-func _input(event):
+
+func _on_gui_input(event):
 	if event is InputEventMouseButton:
 		if not event.pressed:
 			if Global.player:
 				if not Global.player.busy:
 					Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+

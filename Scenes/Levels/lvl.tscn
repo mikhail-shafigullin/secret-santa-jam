@@ -519,7 +519,7 @@ transform = Transform3D(1.29949, 0, 0.0366611, 0, 1.3, 0, -0.0366611, 0, 1.29949
 transform = Transform3D(-0.181149, -0.000556075, 0.690922, 0.103976, 0.706119, 0.027829, -0.683054, 0.107633, -0.179, 7.24899, -0.0742832, 2.65267)
 
 [node name="roadSign5" parent="HomeSqueare" instance=ExtResource("12_ffd42")]
-transform = Transform3D(0.97351, 0, 0.228639, 0, 1, 0, -0.228639, 0, 0.97351, -22.4445, -0.37361, 36.8252)
+transform = Transform3D(0.97351, 0, 0.228639, 0, 1, 0, -0.228639, 0, 0.97351, -23.357, -0.37361, 37.1767)
 
 [node name="IluB7" parent="HomeSqueare" instance=ExtResource("7_m2l80")]
 transform = Transform3D(1.28808, 0, 0.175644, 0, 1.3, 0, -0.175644, 0, 1.28808, -40.494, -0.16211, 2.32213)
@@ -2199,5 +2199,8 @@ transform = Transform3D(1, 0, 0, 0, 0.980412, -0.196956, 0, 0.196956, 0.980412, 
 
 [node name="roadSignSwim" parent="." instance=ExtResource("2_jbn5v")]
 transform = Transform3D(1, 0, 0, 0, 0.992671, -0.120847, 0, 0.120847, 0.992671, -41.508, 1.29269, -6.03614)
+
+[node name="sonw10" parent="." instance=ExtResource("15_eyx0f")]
+transform = Transform3D(-0.782521, 0, 0.622624, 0, 1, 0, -0.622624, 0, -0.782521, 12.8568, 2.31098, 60.2279)
 
 [editable path="lvl_v2"]

@@ -14,8 +14,8 @@ var primary_screen: Node
 var mini_game: MiniGame
 
 @onready var root = $Control/SubViewScale/SubViewport
-@onready var volume_slider = $Control/Volume/VSlider
-@onready var volume_button = $Control/Volume
+@onready var volume_slider = $Control/MouseBlock/Volume/VSlider
+@onready var volume_button = $Control/MouseBlock/Volume
 
 func _on_full_screen_pressed():
 	var vpw = get_viewport().get_window()

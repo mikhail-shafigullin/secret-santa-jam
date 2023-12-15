@@ -1,6 +1,6 @@
 extends Node3D
 
-const Balloon = preload("res://addons/dialogue_manager/example_balloon/example_balloon.tscn")
+const Balloon = preload("res://Scenes/Screens/my_balloon/my_balloon.tscn")
 const dialogue = preload("res://Scenes/Characters/snowboard.dialogue")
 
 @onready var snowboardMesh = $snowboardMesh;
