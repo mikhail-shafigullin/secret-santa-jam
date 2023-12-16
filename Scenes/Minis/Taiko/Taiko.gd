@@ -246,6 +246,7 @@ func end() -> void:
 	tim.taiko_tree.active=false
 	tim.visible=false
 	model.mini_ended.emit()
+	Global.questListUI.finishTaikoQuest();
 
 	queue_free()
 

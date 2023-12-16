@@ -254,6 +254,7 @@ func victory():
 	exitButton.visible = true;
 	Global.audioStreamPlayer.stream = walkingTheme;
 	Global.audioStreamPlayer.play();
+	Global.questListUI.finishSnowboardQuest();
 
 func write_timer(seconds: float):
 	timer.text = "%s:%s"%[duble_didget(int(floor(seconds)/60)), duble_didget(fmod(seconds,60)).pad_decimals(2)]

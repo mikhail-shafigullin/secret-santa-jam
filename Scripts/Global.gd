@@ -9,3 +9,7 @@ var currentTimDoppelganger: TimDoppelganger;
 var audioStreamPlayer: AudioStreamPlayer;
 
 var babushkaMiniGame: BabushkaQuestMiniGame;
+
+var questListUI: QuestListUI;
+
+

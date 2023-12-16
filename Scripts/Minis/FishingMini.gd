@@ -220,6 +220,7 @@ func start_third_part():
 func show_sucess_screen():
 	fisherman.mini_game_fish_end();
 	victoryControls.visible = true;
+	Global.questListUI.finishFishermanQuest();
 	
 func failure_in_second_part():
 	if currentPart != 3:

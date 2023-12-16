@@ -45,4 +45,5 @@ func resolveQuestPoint():
 
 func victory():
 	get_tree().create_timer(0.1).connect("timeout", queue_free)
+	Global.questListUI.finishBabushkaQuest();
 	babushka.victory_quest();
