@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cogc0jr2nft03"]
+[gd_scene load_steps=22 format=3 uid="uid://cogc0jr2nft03"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="2_3okkh"]
 [ext_resource type="PackedScene" uid="uid://hd06iu5g1ddy" path="res://Scenes/Characters/fisherman.tscn" id="4_nf8l7"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://do6hbchvfi3xr" path="res://Scenes/Objects/randomTolik.tscn" id="5_vg0pf"]
 [ext_resource type="PackedScene" uid="uid://bd1j2j6wn1nv" path="res://Scenes/Characters/Babushka.tscn" id="6_8n7hx"]
 [ext_resource type="PackedScene" uid="uid://degfp10g6rn1y" path="res://Scenes/Minis/Taiko/Models/taikoModel.tscn" id="7_wp63y"]
+[ext_resource type="PackedScene" uid="uid://7kpmk14keqwy" path="res://Scenes/Objects/other/Band/band.tscn" id="11_uu46n"]
 [ext_resource type="PackedScene" uid="uid://b8o5gcv555lhn" path="res://Scenes/Minis/Snowboard/SnowboardMiniStarter.tscn" id="18_svub7"]
 [ext_resource type="PackedScene" uid="uid://cuhldd5rqu02s" path="res://Scenes/Characters/tim_doppelganger.tscn" id="18_wud7l"]
 [ext_resource type="PackedScene" uid="uid://5u7qxg6184ef" path="res://Assets/Models/Characters/fisherman.glb" id="19_6jklo"]
@@ -408,6 +409,7 @@ point_count = 11
 environment = SubResource("Environment_aex3l")
 
 [node name="Cutscener" parent="." instance=ExtResource("5_6em04")]
+unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_qummu")
 }
@@ -492,5 +494,10 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.961
 visible = false
 
 [node name="LVL" parent="." instance=ExtResource("4_qd3xv")]
+
+[node name="Band" parent="." instance=ExtResource("11_uu46n")]
+process_priority = 1
+process_physics_priority = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46876, 2.86129, 2.18257)
 
 [editable path="Cutscener"]

@@ -1,6 +1,5 @@
 extends MiniGame
 
-@onready var c = Global.cutscener
 @onready var hit_marker = $TaikoScreen/TaikoLine/Panel/Panel/HitMarker
 @onready var hit_marker_col = hit_marker.modulate
 @onready var hit_gold = $TaikoScreen/TaikoLine/Panel/Panel/HitGold
@@ -238,38 +237,16 @@ func hit(type: HIT_TYPE):
 			pass
 	
 func start() -> bool:
-	if not c:
-		return false
+	assert(tim)
+	assert(model)
 	
-	if (not c.has_animation("taiko_start")
-		or not c.has_animation("taiko_rest")):
-		return false
-	
-	Global.audioStreamPlayer.stop();
-	Global.player.set_busy(true)
-	Global.player.visible=false
-	c.start("taiko_start", false)
-	tim = model.tim
-	
-	model.music.play()
-	
-	tim.show_drum_sticks()
-	tim.visible=true
-	tim.taiko_tree.active=true
-
 	return true
 
 func end() -> void:
 	tim.taiko_tree.active=false
 	tim.visible=false
-	model.music.stop()
-	c.start("taiko_rest", false)
-	
-	Global.audioStreamPlayer.play();
+	model.mini_ended.emit()
 
-	Global.player.visible=true
-	Global.player.set_busy(false)
-	Global.cutscener.end()
 	queue_free()
 
 func _on_exit_pressed():

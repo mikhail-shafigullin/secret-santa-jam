@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://de2djeibuesro"]
+
+[ext_resource type="ArrayMesh" uid="uid://d1es1bci3klow" path="res://Assets/Models/Objects/other/musicInstruments_Cube.res" id="1_etc7x"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ymw0h"]
+points = PackedVector3Array(-0.831175, 0.547688, -0.337248, 0.867139, 1.38132, 0.4323, 0.867139, -0.000546652, 0.4323, -0.867139, 1.38132, 0.4323, 0.859316, 0.837918, -0.35, -0.867139, -0.000546652, 0.4323, 0.890006, -0.0187675, -0.0300995, -0.840718, 1.36027, -6.93889e-18, -0.890006, -0.0187675, -0.0300995, 0.840718, 1.36027, -6.93889e-18, -0.859316, 0.837918, -0.35, 0.831175, 0.547688, -0.337248)
+
+[node name="Piano" type="StaticBody3D"]
+
+[node name="MusicInstrumentsCube" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_etc7x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_ymw0h")
