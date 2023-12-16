@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bd1j2j6wn1nv"]
+
+[ext_resource type="Script" path="res://Scripts/Characters/Babushka.gd" id="1_21q8b"]
+[ext_resource type="PackedScene" uid="uid://bo1tr0fadvf6l" path="res://Scenes/UsableObject.tscn" id="2_ibi6t"]
+[ext_resource type="PackedScene" uid="uid://bo8i6h6u8jxvd" path="res://Assets/Models/Characters/model.gltf" id="3_huyt2"]
+[ext_resource type="PackedScene" uid="uid://2gq0j2u71tdk" path="res://Scenes/Abstracts/QuestLocator.tscn" id="4_ujslx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b7qg7"]
+size = Vector3(0.538025, 0.979279, 0.435547)
+
+[node name="Babushka" type="Node3D"]
+script = ExtResource("1_21q8b")
+
+[node name="UsableObject" parent="." instance=ExtResource("2_ibi6t")]
+useObjectMessage = "Kick a Robot"
+
+[node name="MeshAndCollision" type="Node3D" parent="."]
+
+[node name="blockbench_export" parent="MeshAndCollision" instance=ExtResource("3_huyt2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0257905, 0, 0.0285146)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="MeshAndCollision"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshAndCollision/RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0111389, 0.408157, 0.0498047)
+shape = SubResource("BoxShape3D_b7qg7")
+
+[node name="QuestLocator" parent="." instance=ExtResource("4_ujslx")]
+
+[connection signal="on_object_use" from="UsableObject" to="." method="_on_usable_object_on_object_use"]

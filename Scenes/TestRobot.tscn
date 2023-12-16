@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://covjltvwg2htp"]
+[gd_scene load_steps=6 format=3 uid="uid://covjltvwg2htp"]
 
 [ext_resource type="Script" path="res://Scenes/TestRobot.gd" id="1_7kmin"]
 [ext_resource type="PackedScene" uid="uid://bo1tr0fadvf6l" path="res://Scenes/UsableObject.tscn" id="1_8frie"]
 [ext_resource type="PackedScene" uid="uid://bo8i6h6u8jxvd" path="res://Assets/Models/Characters/model.gltf" id="1_v6csv"]
+[ext_resource type="PackedScene" uid="uid://2gq0j2u71tdk" path="res://Scenes/Abstracts/QuestLocator.tscn" id="4_mimlc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5ghlc"]
 size = Vector3(0.538025, 0.979279, 0.435547)
@@ -23,5 +24,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0257905, 0, 0.0285146)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshAndCollision/RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0111389, 0.408157, 0.0498047)
 shape = SubResource("BoxShape3D_5ghlc")
+
+[node name="QuestLocator" parent="." instance=ExtResource("4_mimlc")]
 
 [connection signal="on_object_use" from="UsableObject" to="." method="_on_usable_object_on_object_use"]
