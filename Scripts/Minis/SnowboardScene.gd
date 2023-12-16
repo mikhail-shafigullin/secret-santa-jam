@@ -66,7 +66,7 @@ var snowboardModel: Node3D;
 
 var current_path_progress: float = 0.0;
 var current_rival_path_progress: float = 0.0;
-var visual_speed_koeff: float = 0.2;
+var visual_speed_koeff: float = 0.1;
 var max_angle: float = PI/4;
 var currentAngle: float = 0.0;
 var time: float = 0
@@ -235,7 +235,7 @@ func remove_right_balance():
 	
 func calculate_railed_acceleration():
 	var balance_koeff = balance_value - normal_balance_value;
-	current_railed_balance_acceleration = balance_koeff * (speed/60) + randf_range(-speed*5, speed*5);
+	current_railed_balance_acceleration = balance_koeff * (speed/100) + randf_range(-speed*3, speed*3);
 	
 func game_over():
 	is_active = false;
