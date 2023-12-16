@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://yys4y2yisvr1"]
+
+[ext_resource type="PackedScene" uid="uid://dmgj510j4wxcu" path="res://Assets/Models/Objects/lvl/lvl_race_track.glb" id="1_hw30k"]
+
+[node name="lvl_race_track" instance=ExtResource("1_hw30k")]
+
+[node name="race_Track1_012" parent="race_Track1" index="0"]
+visible = false
+
+[node name="race_Track1_003" parent="race_Track1_001" index="0"]
+visible = false
+
+[node name="race_Track1_011" parent="race_Track1_005" index="0"]
+visible = false
+
+[node name="race_Track1_008" parent="race_Track1_007" index="0"]
+visible = false
+
+[node name="race_Track1_006" parent="race_Track1_010" index="0"]
+visible = false
+
+[node name="race_Track1_002" parent="race_Track1_015" index="0"]
+visible = false
