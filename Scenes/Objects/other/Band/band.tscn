@@ -6,6 +6,33 @@
 [ext_resource type="PackedScene" uid="uid://degfp10g6rn1y" path="res://Scenes/Minis/Taiko/Models/taikoModel.tscn" id="3_3jm85"]
 [ext_resource type="PackedScene" uid="uid://bo1tr0fadvf6l" path="res://Scenes/UsableObject.tscn" id="5_3xha4"]
 
+[sub_resource type="Animation" id="Animation_5dj42"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Camera:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.91388, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%Camera:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-3.11252, 1.26429, -0.629545)]
+}
+
 [sub_resource type="Animation" id="Animation_uyjg5"]
 resource_name = "band_playing_01"
 length = 10.0
@@ -32,33 +59,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(-3.11252, 1.26429, -0.629545), Vector3(-2.18953, 1.26429, -2.94129), Vector3(-0.326539, 1.26429, -2.94129)]
-}
-
-[sub_resource type="Animation" id="Animation_5dj42"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("%Camera:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -1.91388, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("%Camera:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-3.11252, 1.26429, -0.629545)]
 }
 
 [sub_resource type="Animation" id="Animation_giges"]
@@ -168,7 +168,7 @@ transform = Transform3D(0.597975, 0, -0.801515, 0, 1, 0, 0.801515, 0, 0.597975, 
 
 [node name="Camera" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(-0.336389, 0, -0.941723, 0, 1, 0, 0.941723, 0, -0.336389, -3.11252, 1.26429, -0.629545)
+transform = Transform3D(-0.336393, 0, -0.941722, 0, 1, 0, 0.941722, 0, -0.336393, -3.11252, 1.26429, -0.629545)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
