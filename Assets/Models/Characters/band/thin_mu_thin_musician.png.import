@@ -3,21 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cg2o4cb2q3a7d"
-path.bptc="res://.godot/imported/thin_mu_thin_musician.png-c3123d1c77e516311e10d9f2c333cad5.bptc.ctex"
+path="res://.godot/imported/thin_mu_thin_musician.png-c3123d1c77e516311e10d9f2c333cad5.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={}
 
 [deps]
 
 source_file="res://Assets/Models/Characters/band/thin_mu_thin_musician.png"
-dest_files=["res://.godot/imported/thin_mu_thin_musician.png-c3123d1c77e516311e10d9f2c333cad5.bptc.ctex"]
+dest_files=["res://.godot/imported/thin_mu_thin_musician.png-c3123d1c77e516311e10d9f2c333cad5.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -1,6 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpai5ahxvfdmu"]
+[gd_scene load_steps=10 format=3 uid="uid://dpai5ahxvfdmu"]
 
+[ext_resource type="Script" path="res://Assets/Models/Objects/Buildings/IluBuildMesh/Lights.gd" id="1_cw05v"]
 [ext_resource type="ArrayMesh" uid="uid://cvd8e68c8f1c2" path="res://Assets/Models/Objects/Buildings/Ilub4.res" id="1_quh1g"]
+[ext_resource type="ArrayMesh" uid="uid://bal6lxb0dn7bm" path="res://Assets/Models/Objects/Buildings/IluBuildMesh/House3Light/IluBuild_Plane_035.res" id="2_ookfx"]
+[ext_resource type="ArrayMesh" uid="uid://cuo7ipj227egm" path="res://Assets/Models/Objects/Buildings/IluBuildMesh/House3Light/IluBuild_Plane_036.res" id="3_okioh"]
+[ext_resource type="ArrayMesh" uid="uid://812yflmuyanc" path="res://Assets/Models/Objects/Buildings/IluBuildMesh/House3Light/IluBuild_Plane_037.res" id="4_ueh2h"]
+[ext_resource type="ArrayMesh" uid="uid://bwth84550dj1x" path="res://Assets/Models/Objects/Buildings/IluBuildMesh/House3Light/IluBuild_Plane_038.res" id="5_2q802"]
+[ext_resource type="ArrayMesh" uid="uid://dt74cn2xech57" path="res://Assets/Models/Objects/Buildings/IluBuildMesh/House3Light/IluBuild_Plane_039.res" id="6_nmua1"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kk88i"]
 points = PackedVector3Array(1.6834, 4.21705, 0.860077, -1.7987, 0.0124234, -1.37917, -1.82066, 3.63108, 1.4438, 1.75859, 0.0497194, 1.3872, 1.7986, 0.00230041, -1.38581, -1.76724, 0.0497194, 1.3872, 1.82652, 3.6434, -1.42241, -1.84419, 4.24248, -0.837902, 1.81202, 3.63149, 1.4438, 1.8358, 4.24235, -0.838016, -1.82195, 4.21705, 0.860077, -1.83566, 3.6434, -1.4228, 1.81355, 4.21692, 0.86019)
@@ -10,7 +16,30 @@ size = Vector3(3.57243, 4.16909, 2.52627)
 
 [node name="IluB4" type="StaticBody3D"]
 transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
+script = ExtResource("1_cw05v")
 metadata/_edit_group_ = true
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="IluBuildPlane035" type="MeshInstance3D" parent="Lights"]
+mesh = ExtResource("2_ookfx")
+skeleton = NodePath("../..")
+
+[node name="IluBuildPlane036" type="MeshInstance3D" parent="Lights"]
+mesh = ExtResource("3_okioh")
+skeleton = NodePath("../..")
+
+[node name="IluBuildPlane037" type="MeshInstance3D" parent="Lights"]
+mesh = ExtResource("4_ueh2h")
+skeleton = NodePath("../..")
+
+[node name="IluBuildPlane038" type="MeshInstance3D" parent="Lights"]
+mesh = ExtResource("5_2q802")
+skeleton = NodePath("../..")
+
+[node name="IluBuildPlane039" type="MeshInstance3D" parent="Lights"]
+mesh = ExtResource("6_nmua1")
+skeleton = NodePath("../..")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_quh1g")

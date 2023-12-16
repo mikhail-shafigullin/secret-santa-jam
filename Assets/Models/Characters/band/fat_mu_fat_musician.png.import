@@ -3,21 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgo8kj5hg1fui"
-path.bptc="res://.godot/imported/fat_mu_fat_musician.png-21520f4244f9a0468b41050b668c93e4.bptc.ctex"
+path="res://.godot/imported/fat_mu_fat_musician.png-21520f4244f9a0468b41050b668c93e4.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={}
 
 [deps]
 
 source_file="res://Assets/Models/Characters/band/fat_mu_fat_musician.png"
-dest_files=["res://.godot/imported/fat_mu_fat_musician.png-21520f4244f9a0468b41050b668c93e4.bptc.ctex"]
+dest_files=["res://.godot/imported/fat_mu_fat_musician.png-21520f4244f9a0468b41050b668c93e4.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
