@@ -47,6 +47,7 @@ max_distance = 50.0
 
 [node name="TimDoppelganger" parent="." index="6" instance=ExtResource("6_w7w5x")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.0159613, 2.38419e-07, 0.833602)
+visible = false
 
 [connection signal="on_object_use" from="UsableObject" to="." method="_on_usable_object_on_object_use"]
 

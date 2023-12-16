@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bm4t42pcyd78t"
+path="res://.godot/imported/BandDialogue.dialogue-adb3bfee94e407507ea8159b44a715b8.tres"
+
+[deps]
+
+source_file="res://Scenes/Objects/other/Band/BandDialogue.dialogue"
+dest_files=["res://.godot/imported/BandDialogue.dialogue-adb3bfee94e407507ea8159b44a715b8.tres"]
+
+[params]
+
+defaults=true

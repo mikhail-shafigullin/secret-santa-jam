@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://djm71uriiefox"]
+[gd_scene load_steps=5 format=3 uid="uid://djm71uriiefox"]
 
 [ext_resource type="PackedScene" uid="uid://coe1g1e47umsl" path="res://Assets/Models/Characters/band/thin_mu.glb" id="1_r3d58"]
 [ext_resource type="ArrayMesh" uid="uid://cl75aohkx2fe0" path="res://Assets/Models/Objects/other/musicInstruments_Cube_001.res" id="2_00fev"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ymiyj"]
 points = PackedVector3Array(-0.524898, 0.813227, -0.142556, 0.389809, 0.873735, 0.217725, -0.329877, -0.0114976, 0.23222, 0.307403, 0.0157975, -0.1477, -0.524898, 0.813227, 0.202253, -0.404936, -0.0114976, -0.217567, 0.434798, 0.813227, -0.232598, 0.304101, 0.0198265, 0.1609, 0.434798, 0.813227, 0.24725, -0.51612, 0.8654, -0.139814, -0.404936, -0.0114976, 0.23222, -0.438849, 0.874865, 0.176072, -0.509867, 0.813227, -0.157539, 0.418183, 0.85842, -0.22429, -0.329877, -0.0114976, -0.217567, 0.37477, 0.813227, 0.24725, -0.389905, 0.0335395, -0.217567, -0.496645, 0.848055, 0.190775, -0.389905, 0.0335395, 0.23222, 0.406768, 0.848253, 0.233235)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4m661"]
+radius = 0.413626
 
 [node name="ThinMisician" type="Node3D"]
 
@@ -42,5 +45,9 @@ skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_ymiyj")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.893404, -0.440203)
+shape = SubResource("CapsuleShape3D_4m661")
 
 [editable path="thin_mu"]

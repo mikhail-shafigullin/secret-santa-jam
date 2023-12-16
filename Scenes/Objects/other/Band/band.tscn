@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://7kpmk14keqwy"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/other/Band/band.gd" id="1_fddwu"]
+[ext_resource type="PackedScene" uid="uid://47kkejhagjmj" path="res://Scenes/Characters/fat_musician.tscn" id="1_q2s67"]
+[ext_resource type="PackedScene" uid="uid://djm71uriiefox" path="res://Scenes/Characters/thin_musician.tscn" id="2_1gy2h"]
+[ext_resource type="PackedScene" uid="uid://degfp10g6rn1y" path="res://Scenes/Minis/Taiko/Models/taikoModel.tscn" id="3_3jm85"]
+
+[node name="Band" type="Node3D"]
+script = ExtResource("1_fddwu")
+
+[node name="FatMusician" parent="." instance=ExtResource("1_q2s67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.26982, 0, 1.05297)
+
+[node name="ThinMisician" parent="." instance=ExtResource("2_1gy2h")]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 1.29907, 2.38419e-07, 0.719787)
+
+[node name="taikoModel" parent="." instance=ExtResource("3_3jm85")]
+transform = Transform3D(0.597975, 0, -0.801515, 0, 1, 0, 0.801515, 0, 0.597975, -1.14464, 2.38419e-07, -1.15595)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../taikoModel")
+
+[node name="Camera3D" type="Camera3D" parent="AnimationPlayer"]
+transform = Transform3D(-0.612286, 0, -0.790636, 0, 1, 0, 0.790636, 0, -0.612286, -4.30042, 1.26429, -2.6373)
