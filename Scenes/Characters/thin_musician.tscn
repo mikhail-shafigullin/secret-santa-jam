@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://djm71uriiefox"]
+
+[ext_resource type="PackedScene" uid="uid://coe1g1e47umsl" path="res://Assets/Models/Characters/band/thin_mu.glb" id="1_r3d58"]
+[ext_resource type="ArrayMesh" uid="uid://cl75aohkx2fe0" path="res://Assets/Models/Objects/other/musicInstruments_Cube_001.res" id="2_00fev"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ymiyj"]
+points = PackedVector3Array(-0.524898, 0.813227, -0.142556, 0.389809, 0.873735, 0.217725, -0.329877, -0.0114976, 0.23222, 0.307403, 0.0157975, -0.1477, -0.524898, 0.813227, 0.202253, -0.404936, -0.0114976, -0.217567, 0.434798, 0.813227, -0.232598, 0.304101, 0.0198265, 0.1609, 0.434798, 0.813227, 0.24725, -0.51612, 0.8654, -0.139814, -0.404936, -0.0114976, 0.23222, -0.438849, 0.874865, 0.176072, -0.509867, 0.813227, -0.157539, 0.418183, 0.85842, -0.22429, -0.329877, -0.0114976, -0.217567, 0.37477, 0.813227, 0.24725, -0.389905, 0.0335395, -0.217567, -0.496645, 0.848055, 0.190775, -0.389905, 0.0335395, 0.23222, 0.406768, 0.848253, 0.233235)
+
+[node name="ThinMisician" type="Node3D"]
+
+[node name="thin_mu" parent="." instance=ExtResource("1_r3d58")]
+
+[node name="Skeleton3D" parent="thin_mu/tihnRig" index="0"]
+bones/0/position = Vector3(0.22466, 0.868547, 0.18645)
+bones/0/rotation = Quaternion(0.652404, -0.119897, -0.0232341, 0.747966)
+bones/2/position = Vector3(0.00662966, 0.035094, 0.983536)
+bones/2/rotation = Quaternion(0.692654, -0.0441034, -0.0611662, 0.717317)
+bones/3/rotation = Quaternion(0.252751, 0.0331189, -0.0111966, 0.9669)
+bones/4/rotation = Quaternion(0.233031, 0.0109829, -0.0615066, 0.97046)
+bones/5/position = Vector3(0.133916, 0.286014, 0.0406763)
+bones/5/rotation = Quaternion(0.0140917, 0.0142038, -0.990987, 0.132457)
+bones/6/rotation = Quaternion(0.426039, -0.0165819, -0.00557093, 0.904536)
+bones/7/rotation = Quaternion(-0.0234902, -0.0471121, -0.1636, 0.985121)
+bones/8/rotation = Quaternion(-0.0115382, 0.143626, 0.979886, 0.138066)
+bones/9/rotation = Quaternion(0.225304, 0.00384925, 0.0179101, 0.974116)
+bones/10/rotation = Quaternion(-0.0117754, 0.00416141, 0.165138, 0.986191)
+bones/11/rotation = Quaternion(-0.695395, -0.173573, 0.14681, 0.681722)
+bones/14/rotation = Quaternion(-0.7009, 0.149804, -0.123523, 0.686324)
+bones/16/rotation = Quaternion(-0.577742, -0.023363, 0.0265198, 0.815454)
+bones/17/position = Vector3(-0.295516, 0.852955, 0.15898)
+bones/17/rotation = Quaternion(0.583459, -0.0783274, -0.0325059, 0.807702)
+
+[node name="AnimationPlayer" parent="thin_mu" index="1"]
+autoplay = "thin_idle"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.529726)
+
+[node name="MusicInstrumentsCube001" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = ExtResource("2_00fev")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ymiyj")
+
+[editable path="thin_mu"]

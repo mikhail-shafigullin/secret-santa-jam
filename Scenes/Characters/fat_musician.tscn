@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://47kkejhagjmj"]
+
+[ext_resource type="ArrayMesh" uid="uid://d1es1bci3klow" path="res://Assets/Models/Objects/other/musicInstruments_Cube.res" id="1_f5s4k"]
+[ext_resource type="PackedScene" uid="uid://ctucm06eivq86" path="res://Assets/Models/Characters/band/fat_mu.glb" id="2_atipg"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_b02h6"]
+points = PackedVector3Array(-0.831175, 0.547688, -0.337248, 0.867139, 1.38132, 0.4323, 0.867139, -0.000546652, 0.4323, -0.867139, 1.38132, 0.4323, 0.859316, 0.837918, -0.35, -0.867139, -0.000546652, 0.4323, 0.890006, -0.0187675, -0.0300995, -0.840718, 1.36027, -6.93889e-18, -0.890006, -0.0187675, -0.0300995, 0.840718, 1.36027, -6.93889e-18, -0.859316, 0.837918, -0.35, 0.831175, 0.547688, -0.337248)
+
+[node name="FatMusician" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0181444, 0, 0.576041)
+
+[node name="MusicInstrumentsCube" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = ExtResource("1_f5s4k")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_b02h6")
+
+[node name="fat_mu" parent="." instance=ExtResource("2_atipg")]
+
+[node name="Skeleton3D" parent="fat_mu/fatRig" index="0"]
+bones/0/rotation = Quaternion(-0.707107, 7.85046e-17, 7.85046e-17, 0.707107)
+bones/1/position = Vector3(0.0079158, 0.00322132, 0.539758)
+bones/1/rotation = Quaternion(0.242692, 0.601196, 0.695408, 0.309954)
+bones/2/rotation = Quaternion(0.201759, -0.0354018, 0.0270386, 0.978422)
+bones/3/rotation = Quaternion(-0.0816227, -0.115646, -0.0014522, 0.98993)
+bones/4/rotation = Quaternion(0.185232, 0.0379115, -0.953643, 0.234131)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(0.322018, 0.0233635, -0.0620084, 0.944412)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(-0.0446909, -0.00367409, -0.072334, 0.996372)
+bones/7/position = Vector3(-0.197567, 0.301011, 0.0123278)
+bones/7/rotation = Quaternion(0.0879113, -0.0530203, 0.982696, 0.15417)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/rotation = Quaternion(0.353761, 0.00496858, 0.0226102, 0.935049)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/scale = Vector3(1, 1, 1)
+bones/10/position = Vector3(-0.0822263, 0.0988431, 0.618913)
+bones/10/rotation = Quaternion(-0.209909, -0.699266, 0.666284, 0.151762)
+bones/12/rotation = Quaternion(-0.735445, 0.0294627, -0.0203584, 0.676638)
+bones/12/scale = Vector3(1, 1, 1)
+bones/13/position = Vector3(0.0773817, -0.0734516, 0.622174)
+bones/13/rotation = Quaternion(-0.246777, -0.687643, 0.620422, 0.285175)
+bones/14/rotation = Quaternion(0.117429, 0.0083875, 0.0121459, 0.992972)
+bones/15/rotation = Quaternion(-0.719941, 0.0319224, 0.0837247, 0.688227)
+bones/15/scale = Vector3(1, 1, 1)
+bones/16/position = Vector3(-0.269457, 0.361426, -3.21119e-08)
+bones/16/rotation = Quaternion(0.707107, -7.85046e-17, -7.85046e-17, 0.707107)
+
+[node name="AnimationPlayer" parent="fat_mu" index="1"]
+autoplay = "fat_idle"
+
+[editable path="fat_mu"]

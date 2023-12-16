@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b65by50pgxdf8"]
+
+[ext_resource type="Texture2D" uid="uid://cg2o4cb2q3a7d" path="res://Assets/Models/Characters/band/thin_mu_thin_musician.png" id="1_i5pkc"]
+
+[resource]
+resource_name = "thin_musician"
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_i5pkc")
+texture_filter = 2
