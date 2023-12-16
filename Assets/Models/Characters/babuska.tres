@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dakl8y66eqec2"]
+
+[ext_resource type="Texture2D" uid="uid://cf17hypbeo0t0" path="res://Assets/Models/Characters/babushka_Babuska.png" id="1_kaptk"]
+
+[resource]
+resource_name = "babuska"
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_kaptk")
+texture_filter = 2

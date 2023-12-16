@@ -2,11 +2,12 @@
 
 [ext_resource type="Script" path="res://Scripts/Characters/Babushka.gd" id="1_21q8b"]
 [ext_resource type="PackedScene" uid="uid://bo1tr0fadvf6l" path="res://Scenes/UsableObject.tscn" id="2_ibi6t"]
-[ext_resource type="PackedScene" uid="uid://bo8i6h6u8jxvd" path="res://Assets/Models/Characters/model.gltf" id="3_huyt2"]
 [ext_resource type="PackedScene" uid="uid://2gq0j2u71tdk" path="res://Scenes/Abstracts/QuestLocator.tscn" id="4_ujslx"]
+[ext_resource type="PackedScene" uid="uid://bnhy0eypqecj2" path="res://Assets/Models/Characters/babushka.glb" id="4_x21x1"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_b7qg7"]
-size = Vector3(0.538025, 0.979279, 0.435547)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_chp56"]
+radius = 0.498039
+height = 2.32152
 
 [node name="Babushka" type="Node3D"]
 script = ExtResource("1_21q8b")
@@ -14,17 +15,41 @@ script = ExtResource("1_21q8b")
 [node name="UsableObject" parent="." instance=ExtResource("2_ibi6t")]
 useObjectMessage = "Kick a Robot"
 
-[node name="MeshAndCollision" type="Node3D" parent="."]
-
-[node name="blockbench_export" parent="MeshAndCollision" instance=ExtResource("3_huyt2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0257905, 0, 0.0285146)
-
-[node name="RigidBody3D" type="RigidBody3D" parent="MeshAndCollision"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshAndCollision/RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0111389, 0.408157, 0.0498047)
-shape = SubResource("BoxShape3D_b7qg7")
-
 [node name="QuestLocator" parent="." instance=ExtResource("4_ujslx")]
 
+[node name="babushka" parent="." instance=ExtResource("4_x21x1")]
+
+[node name="Skeleton3D" parent="babushka/babuskaRig" index="0"]
+bones/1/position = Vector3(-5.58986e-16, -0.0131141, 0.568624)
+bones/1/rotation = Quaternion(0.619141, 9.36127e-08, 7.38073e-08, 0.78528)
+bones/2/rotation = Quaternion(0.348079, 0.109592, 0.188498, 0.911756)
+bones/3/rotation = Quaternion(-0.0766107, -0.102776, -0.0846278, 0.988133)
+bones/4/rotation = Quaternion(0.867674, 0.0787332, 0.485195, 0.0743541)
+bones/5/rotation = Quaternion(-0.128171, -0.0407991, -0.0423468, 0.990007)
+bones/6/rotation = Quaternion(0.0326108, -0.0801572, 0.0104444, 0.996194)
+bones/7/position = Vector3(-0.200542, 0.340804, -0.000357039)
+bones/7/rotation = Quaternion(0.389218, -0.392695, -0.81411, -0.177554)
+bones/8/rotation = Quaternion(0.103349, 0.0894603, 0.645474, 0.751451)
+bones/9/rotation = Quaternion(-0.0292323, -0.373458, -0.193076, 0.906861)
+bones/10/position = Vector3(0.0730619, 0.0709858, -0.0206966)
+bones/10/rotation = Quaternion(0.265265, 0.845275, -0.444986, -0.130887)
+bones/11/position = Vector3(0.142177, -0.00321196, 0.645244)
+bones/11/rotation = Quaternion(-0.661645, -0.227418, 0.177438, 0.692115)
+bones/12/rotation = Quaternion(0.0763377, -0.00846125, -0.000437148, 0.997046)
+bones/13/rotation = Quaternion(-0.701652, 0.0355179, 0.0174504, 0.71142)
+bones/14/position = Vector3(-0.137661, 0.00807821, 0.628503)
+bones/14/rotation = Quaternion(-0.775863, -0.0115239, -0.0640602, 0.627535)
+bones/16/rotation = Quaternion(-0.643599, -0.0579609, 0.00713643, 0.763131)
+
+[node name="AnimationPlayer" parent="babushka" index="1"]
+autoplay = "babuska_idle"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="babushka"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="babushka/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.622029, 0.0566443)
+shape = SubResource("CapsuleShape3D_chp56")
+
 [connection signal="on_object_use" from="UsableObject" to="." method="_on_usable_object_on_object_use"]
+
+[editable path="babushka"]
