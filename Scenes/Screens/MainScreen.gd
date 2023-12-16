@@ -16,6 +16,7 @@ var mini_game: MiniGame
 @onready var root = $Control/SubViewScale/SubViewport
 @onready var volume_slider = $Control/MouseBlock/Volume/VSlider
 @onready var volume_button = $Control/MouseBlock/Volume
+@onready var audioStreamPlayer = %AudioStreamPlayer;
 
 func _on_full_screen_pressed():
 	var vpw = get_viewport().get_window()
@@ -33,6 +34,9 @@ func _ready():
 	
 	primary_screen = world_res.instantiate()
 	root.add_child(primary_screen)
+	Global.audioStreamPlayer = audioStreamPlayer;
+	Global.audioStreamPlayer.play()
+	
 	
 func play_mini(mini: MiniGame) -> bool:
 	if mini_game != null:

@@ -32,7 +32,10 @@ var slider_value: float = 0;
 var currentPart = 1;
 
 @onready var firstPartTimer : Timer = Timer.new();
-@onready var failureFirstPartTimer : Timer = Timer.new();
+@onready var failureFirstPartTimer : Timer = Timer.new();	
+
+var fishingTheme_01 = preload("res://Assets/Audio/Music/fishingTheme_01.mp3")
+var fishingTheme_02 = preload("res://Assets/Audio/Music/fishingTheme_02.mp3")
 
 var sliderValue = 0;
 var current_slider_hold_speed: float = 0;
@@ -179,6 +182,8 @@ func start_first_part():
 	instructionText.text = '[right]Press E to throw a rod';
 	firstPartSection.visible = true;
 	thirdPartSection.visible = false;
+	Global.audioStreamPlayer.stream = fishingTheme_01;
+	Global.audioStreamPlayer.play();
 	#bubblesText.visible = false;
 	
 func start_second_part():
@@ -201,7 +206,8 @@ func start_bubbles_reaction_part():
 	fisherman.mini_game_fish_founded();
 	add_child(failureFirstPartTimer)
 	failureFirstPartTimer.start()
-	pass
+	Global.audioStreamPlayer.stream = fishingTheme_02;
+	Global.audioStreamPlayer.play();
 	
 func start_third_part():
 	currentPart = 3;

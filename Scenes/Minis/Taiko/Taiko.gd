@@ -240,6 +240,7 @@ func start() -> bool:
 		or not c.has_animation("taiko_rest")):
 		return false
 	
+	Global.audioStreamPlayer.stop();
 	Global.player.set_busy(true)
 	Global.player.visible=false
 	c.start("taiko_start", false)
@@ -258,6 +259,8 @@ func end() -> void:
 	tim.visible=false
 	model.music.stop()
 	c.start("taiko_rest", false)
+	
+	Global.audioStreamPlayer.play();
 
 	Global.player.visible=true
 	Global.player.set_busy(false)
