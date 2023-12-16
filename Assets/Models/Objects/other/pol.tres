@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://sf2455da70nb"]
+
+[ext_resource type="Texture2D" uid="uid://b8tqwskxk3h8p" path="res://Assets/Models/Objects/other/lvl_race_tpol_pol.png" id="1_njpov"]
+
+[resource]
+resource_name = "pol"
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_njpov")
+texture_filter = 2

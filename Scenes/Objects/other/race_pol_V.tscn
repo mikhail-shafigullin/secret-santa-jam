@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckoneyg61sm2h"]
+
+[ext_resource type="ArrayMesh" uid="uid://bdrbb3i130hgd" path="res://Assets/Models/Objects/other/lvl_race_tpol_Cube_002.res" id="1_gj3y4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ps6s"]
+size = Vector3(1.14819, 0.11084, 0.131104)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_thfg1"]
+size = Vector3(0.132813, 2.67505, 0.131104)
+
+[node name="racePolV" type="StaticBody3D"]
+metadata/_edit_group_ = true
+
+[node name="LvlRaceTpolCube001" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_gj3y4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.154877, 0)
+shape = SubResource("BoxShape3D_7ps6s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.43698, 0)
+shape = SubResource("BoxShape3D_thfg1")
