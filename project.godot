@@ -121,7 +121,7 @@ taiko_pon_right={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Scenes/Characters/test.dialogue", "res://Scenes/Characters/fisherman.dialogue", "res://Scenes/Characters/snowboard.dialogue", "res://Scenes/Objects/other/Band/BandDialogue.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Scenes/Characters/test.dialogue", "res://Scenes/Characters/fisherman.dialogue", "res://Scenes/Characters/snowboard.dialogue", "res://Scenes/Objects/other/Band/BandDialogue.dialogue", "res://Scenes/Characters/babushka.dialogue")
 
 [rendering]
 

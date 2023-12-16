@@ -4,10 +4,12 @@ extends Control
 const world_res = preload ("res://Scenes/Levels/world.tscn");
 const fishing_mini = preload ("res://Scenes/Minis/Fishing/FishingMini.tscn")
 const snowboard_mini = preload ("res://Scenes/Minis/Snowboard/SnowboardMini.tscn")
+const babushka_mini = preload ("res://Scenes/Minis/Babushka/BabushkaQuestMiniGame.tscn")
 
 const minis = {
 	"fishing": fishing_mini,
 	"snowboard": snowboard_mini,
+	"babushka": babushka_mini
 }
 
 var primary_screen: Node

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://crlp1uohfn36k"
+path="res://.godot/imported/babushka.dialogue-b2e5b4231c04c036c1829be0a713115b.tres"
+
+[deps]
+
+source_file="res://Scenes/Characters/babushka.dialogue"
+dest_files=["res://.godot/imported/babushka.dialogue-b2e5b4231c04c036c1829be0a713115b.tres"]
+
+[params]
+
+defaults=true
