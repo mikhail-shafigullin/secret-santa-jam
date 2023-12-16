@@ -71,5 +71,8 @@ libraries = {
 }
 
 [node name="UsableObject" parent="." instance=ExtResource("5_pkctg")]
+unique_name_in_owner = true
+
+[connection signal="on_object_use" from="UsableObject" to="." method="_on_usable_object_on_object_use"]
 
 [editable path="QuestLocator"]

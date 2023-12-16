@@ -7,3 +7,5 @@ var cutscener: Cutscener;
 var main_screen: MainScreen;
 var currentTimDoppelganger: TimDoppelganger;
 var audioStreamPlayer: AudioStreamPlayer;
+
+var babushkaMiniGame: BabushkaQuestMiniGame;

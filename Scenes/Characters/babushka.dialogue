@@ -15,6 +15,7 @@ Anneliese: Do you help me?
 
 ~ victory
 do Global.cutscener.start("babushka_dialogue")
+do Global.player.visible = false
 Anneliese: Thank you, Tim!
 Anneliese: Take this fish and bring it to your mother.
 Anneliese: I'm sure she'll cook something delicious
