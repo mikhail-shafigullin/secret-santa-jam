@@ -1,11 +1,11 @@
 [gd_scene load_steps=21 format=3 uid="uid://cogc0jr2nft03"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="2_3okkh"]
-[ext_resource type="PackedScene" uid="uid://covjltvwg2htp" path="res://Scenes/TestRobot.tscn" id="3_hs1wi"]
 [ext_resource type="PackedScene" uid="uid://hd06iu5g1ddy" path="res://Scenes/Characters/fisherman.tscn" id="4_nf8l7"]
 [ext_resource type="PackedScene" uid="uid://dwa64ft0y4d4h" path="res://Scenes/Levels/lvl.tscn" id="4_qd3xv"]
 [ext_resource type="PackedScene" uid="uid://bmo3dnmo8nkx1" path="res://Scenes/Controller/Cutscener.tscn" id="5_6em04"]
-[ext_resource type="PackedScene" uid="uid://do6hbchvfi3xr" path="res://Scenes/Objects/randomTolik.tscn" id="5_vg0pf"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/randomTolik.tscn" id="5_vg0pf"]
+[ext_resource type="PackedScene" uid="uid://bd1j2j6wn1nv" path="res://Scenes/Characters/Babushka.tscn" id="6_8n7hx"]
 [ext_resource type="PackedScene" uid="uid://degfp10g6rn1y" path="res://Scenes/Minis/Taiko/Models/taikoModel.tscn" id="7_wp63y"]
 [ext_resource type="PackedScene" uid="uid://b8o5gcv555lhn" path="res://Scenes/Minis/Snowboard/SnowboardMiniStarter.tscn" id="18_svub7"]
 [ext_resource type="PackedScene" uid="uid://cuhldd5rqu02s" path="res://Scenes/Characters/tim_doppelganger.tscn" id="18_wud7l"]
@@ -448,8 +448,8 @@ transform = Transform3D(-3.61999e-06, 0, -1, 0, 1, 0, 1, 0, -3.61999e-06, -5.172
 
 [node name="taiko" parent="Objects" instance=ExtResource("7_wp63y")]
 
-[node name="TestRobot" parent="Objects" instance=ExtResource("3_hs1wi")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.54851, -1.72241, -1.7676)
+[node name="Babushka" parent="Objects" instance=ExtResource("6_8n7hx")]
+transform = Transform3D(-0.282375, 0, 0.959304, 0, 1, 0, -0.959304, 0, -0.282375, 27.8634, -2.3717, 3.51447)
 
 [node name="PathForRace" type="Node3D" parent="Objects"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.03173, -4.79409, 0.543631)

@@ -133,10 +133,10 @@ bones/16/rotation = Quaternion(0.188569, 0.0451043, -0.392444, 0.899108)
 bones/17/rotation = Quaternion(0.0400388, 0.00165335, 0.00863665, 0.99916)
 
 [node name="LeftHandAtt" parent="TimDoppelganger/tim/TimMixemoRig/Skeleton3D" index="1"]
-transform = Transform3D(0.879003, 0.446826, -0.166433, 0.129558, -0.559735, -0.818481, -0.458877, 0.697885, -0.549899, 33.1147, 46.1416, 27.5515)
+transform = Transform3D(0.87715, 0.198732, -0.437165, -0.418597, -0.129716, -0.898861, -0.23534, 0.971431, -0.0305919, 28.7589, 49.2799, 31.3884)
 
 [node name="RightHandAtt" parent="TimDoppelganger/tim/TimMixemoRig/Skeleton3D" index="2"]
-transform = Transform3D(-0.31928, -0.927836, 0.192822, -0.680797, 0.0830302, -0.727751, 0.659223, -0.363629, -0.658178, -33.0433, 75.7566, -23.6145)
+transform = Transform3D(-0.57025, -0.814878, 0.103866, -0.28222, 0.075596, -0.956367, 0.77147, -0.574681, -0.273084, -21.5378, 65.9283, -42.0975)
 
 [node name="ReactionBubble" type="Sprite3D" parent="." index="5"]
 unique_name_in_owner = true
