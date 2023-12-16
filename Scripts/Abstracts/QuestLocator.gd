@@ -3,7 +3,7 @@ extends Node3D
 @onready var cylinderMesh: MeshInstance3D = %LightCylinderMesh;
 
 var scale_y = 50;
-var free_space = 5;
+@export var free_space = 5;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
