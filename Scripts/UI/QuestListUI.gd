@@ -6,10 +6,19 @@ extends Control
 @onready var showboardQuest: RichTextLabel = %SnowboardQuest;
 @onready var taikoQuest: RichTextLabel = %TaikoQuest;
 
+@onready var animationPlayer: AnimationPlayer = %AnimationPlayer;
+
 var isFishermanQuestFinished = false;
 var isBabushkaQuestFinished = false;
 var isSnowboardQuestFinished = false;
 var isTaikoQuestFinished = false;
+
+var is_opened = false;
+
+func _input(event):
+	if(event.is_action_pressed("quest")):
+		toggleQuests()
+	
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,6 +32,14 @@ func _process(delta):
 	else:
 		visible = false;
 	pass
+	
+func toggleQuests():
+	if is_opened:
+		animationPlayer.play("close_quests");
+		is_opened = false;
+	else:
+		animationPlayer.play("open_quests");
+		is_opened = true;
 
 
 func finishFishermanQuest():
