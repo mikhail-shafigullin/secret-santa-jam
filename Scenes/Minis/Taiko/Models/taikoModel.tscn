@@ -22,7 +22,7 @@ shape = SubResource("ConvexPolygonShape3D_eqn74")
 
 [node name="UsableObject" parent="." index="2" instance=ExtResource("3_1kuij")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.296126, 0)
-useObjectMessage = "Use Taiko"
+is_active = false
 
 [node name="CollisionShape3D" parent="UsableObject/E_UseAreaEvent" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0239868, -0.183107, 0.466805)

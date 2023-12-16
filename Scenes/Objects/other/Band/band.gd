@@ -1,23 +1,27 @@
 extends Node3D
 
-@onready var cutscener: Cutscener = %Cutscener
 @onready var taiko_model = $taikoModel
 
-const band_dialogue = preload("res://Scenes/Objects/other/Band/BandDialogue.dialogue")
+const Balloon = preload("res://Scenes/Screens/my_balloon/my_balloon.tscn")
+const dialogue = preload("res://Scenes/Characters/band.dialogue")
 
-func _ready():
-	assert(cutscener)
-	assert(band_dialogue)
-	assert(cutscener.has_animation("taiko_start"))
-	assert(cutscener.has_animation("taiko_rest"))
-	
+@onready var animationPlayer = %AnimationPlayer;
+
+@onready var camera = %Camera;
+
+var animationNames = ['band_playing_01', 'band_playing_02', 'band_playing_03', 'band_playing_04']
+var nextAnimation = 'band_playing_01';
+var nextIndex = 0;
+
+func _ready():	
 	taiko_model.connect("mini_started", on_taiko_started)
 	taiko_model.connect("mini_ended", on_taiko_ended)
 
-
 func on_taiko_started():
 	print("start")
-	#$AnimationPlayer/Camera3D.current = true
+	camera.current = true
+	animationPlayer.connect("animation_finished",animation_play);
+	animation_play();
 
 func on_taiko_ended():
 	print("end")
@@ -28,4 +32,22 @@ func on_taiko_ended():
 	Global.player.visible=true
 	Global.player.set_busy(false)
 	Global.cutscener.end()
-	#$AnimationPlayer/Camera3D.current = false
+	camera.current = false
+
+func _on_usable_object_on_object_use():
+	assert(dialogue)
+	Global.player.visible = false;
+	if Global.player.busy:
+		return
+	var balloon: Node = Balloon.instantiate()
+	Global.player.add_child(balloon)
+	balloon.start(dialogue, "")
+
+func animation_play(_name: String=""):
+	animationPlayer.play(nextAnimation);
+	nextIndex = nextIndex + 1;
+	if(nextIndex >= animationNames.size()):
+		nextIndex = 0;
+	nextAnimation = animationNames[nextIndex];
+	#animationPlayer.disconnect("animation_finished", animation_play);
+	

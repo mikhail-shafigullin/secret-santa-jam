@@ -1,3 +1,4 @@
+class_name TaikoMiniGame
 extends MiniGame
 
 @onready var hit_marker = $TaikoScreen/TaikoLine/Panel/Panel/HitMarker
@@ -13,7 +14,7 @@ extends MiniGame
 var last_hit: String =  ""
 
 var hit_timer = Timer.new()
-var model = null
+var model: TaikoModel = null
 var tim = null
 var notes: Array[Note] = []
 @onready var hit_center: Node2D = %HitCenter
@@ -239,6 +240,7 @@ func hit(type: HIT_TYPE):
 func start() -> bool:
 	assert(tim)
 	assert(model)
+	model.start_song();
 	
 	return true
 
