@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://boit6xug1wpm4"]
+[gd_scene load_steps=6 format=3 uid="uid://boit6xug1wpm4"]
 
 [ext_resource type="Script" path="res://SubViewScale.gd" id="1_5n7o5"]
 [ext_resource type="Script" path="res://Scenes/Screens/MainScreen.gd" id="1_pyol8"]
 [ext_resource type="Texture2D" uid="uid://daxe2mb8ywsvx" path="res://Assets/Textures/fullscreen-svgrepo-com.svg" id="4_hjjw2"]
+[ext_resource type="AudioStream" uid="uid://c23sjrh5mpv1k" path="res://Assets/Audio/Music/walkingTheme.mp3" id="5_0nccv"]
 [ext_resource type="Texture2D" uid="uid://ddajpt0ew2bm" path="res://Assets/Textures/volume-min-svgrepo-com.svg" id="5_nr1bp"]
 
 [node name="MainScreen" type="Control"]
@@ -24,6 +25,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_0nccv")
+volume_db = -25.0
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 1

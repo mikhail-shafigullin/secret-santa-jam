@@ -18,6 +18,9 @@ var starter = null
 @export var balance_acceleration = 200.0;
 @export var movement_acceleration_on_press = 10.0;
 
+var snowboardTheme = preload("res://Assets/Audio/Music/snowboardTheme.mp3")
+var walkingTheme = preload("res://Assets/Audio/Music/walkingTheme.mp3")
+
 var is_active: bool = true;
 var is_race_started: bool = false;
 
@@ -202,9 +205,12 @@ func end() -> void:
 	queue_free()
 
 func startCountdown():
+	Global.audioStreamPlayer.stop();
 	animationPlayer.play("ThreeCountdown");
 
 func startRace():
+	Global.audioStreamPlayer.stream = snowboardTheme;
+	Global.audioStreamPlayer.play();
 	is_race_started = true;
 
 func _on_exit_button_pressed():
@@ -232,6 +238,8 @@ func game_over():
 	#speedText.text = "[center]You lose the race";
 	failTexture.visible = true;
 	exitButton.visible = true;
+	Global.audioStreamPlayer.stream = walkingTheme;
+	Global.audioStreamPlayer.play();
 	
 func victory():
 	is_active = false;
@@ -239,3 +247,5 @@ func victory():
 	#speedText.text = "[center]You win!";
 	winTexture.visible = true;
 	exitButton.visible = true;
+	Global.audioStreamPlayer.stream = walkingTheme;
+	Global.audioStreamPlayer.play();

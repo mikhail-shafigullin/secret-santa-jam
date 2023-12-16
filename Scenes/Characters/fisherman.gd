@@ -11,6 +11,8 @@ const dialogue = preload("res://Scenes/Characters/fisherman.dialogue")
 @onready var camera: Camera3D = %MiniGameCamera;
 @onready var reactionBubble: Sprite3D = %ReactionBubble;
 
+var walkingTheme = preload("res://Assets/Audio/Music/walkingTheme.mp3")
+
 func set_animation_talking():
 	fishermanAnimationPlayer.play("Speak");
 	
@@ -47,12 +49,17 @@ func mini_game_fish_end():
 	timAnimationPlayer.play("fishing_catch_finish");
 
 func mini_game_stop():
+	Global.audioStreamPlayer.stream = walkingTheme;
+	Global.audioStreamPlayer.play();
 	timModel.visible = false;
 	camera.current = false;
 	Global.player.camera.current = true;
 	reactionBubble.visible = false;
 	
+	
 func start_victory_dialogue():
+	Global.audioStreamPlayer.stream = walkingTheme;
+	Global.audioStreamPlayer.play()
 	Global.player.visible = false;
 	timModel.visible = false;
 	var balloon: Node = Balloon.instantiate()
