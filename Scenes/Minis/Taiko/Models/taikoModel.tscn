@@ -30,19 +30,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0239868, -0.183107, 0.46680
 [node name="Pon" type="AudioStreamPlayer3D" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00568, 0.352965)
 stream = ExtResource("4_tfhxg")
-volume_db = -22.0
+volume_db = -9.0
 max_distance = 14.0
 
 [node name="Kat" type="AudioStreamPlayer3D" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23225, 1.21525, 0.261229)
 stream = ExtResource("5_yav7p")
-volume_db = -19.0
+volume_db = 9.0
 max_distance = 10.0
 
 [node name="baseMusic" type="AudioStreamPlayer3D" parent="." index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.948597, 0.390074, -0.85343)
 stream = ExtResource("6_obuu0")
-volume_db = -15.0
+volume_db = -20.0
 max_distance = 50.0
 
 [node name="TimDoppelganger" parent="." index="6" instance=ExtResource("6_w7w5x")]

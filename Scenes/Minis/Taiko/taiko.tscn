@@ -8,22 +8,6 @@ bg_color = Color(0, 0, 0, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pr2hx"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wxt0v"]
-atlas = ExtResource("1_73q0b")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uths4"]
-atlas = ExtResource("1_73q0b")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u7tfb"]
-atlas = ExtResource("1_73q0b")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_penf1"]
-atlas = ExtResource("1_73q0b")
-region = Rect2(0, 0, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_wum5v"]
 atlas = ExtResource("1_73q0b")
 region = Rect2(0, 64, 32, 32)
@@ -92,14 +76,31 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxt0v"]
+atlas = ExtResource("1_73q0b")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uths4"]
+atlas = ExtResource("1_73q0b")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7tfb"]
+atlas = ExtResource("1_73q0b")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_penf1"]
+atlas = ExtResource("1_73q0b")
+region = Rect2(0, 0, 32, 32)
+
 [node name="Taiko" type="CanvasLayer"]
 layer = 128
 script = ExtResource("1_ei6s2")
 visible_time = 32.0
-speed = 240.0
+speed = 180.0
 time_window = 0.6
 
 [node name="TaikoScreen" type="Control" parent="."]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -139,6 +140,21 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pr2hx")
+
+[node name="hitHint" type="Node2D" parent="TaikoScreen/TaikoLine/Panel/Panel"]
+modulate = Color(0.792157, 0.792157, 0.792157, 0.313726)
+position = Vector2(48, 0.5)
+
+[node name="hintKat" type="AnimatedSprite2D" parent="TaikoScreen/TaikoLine/Panel/Panel/hitHint"]
+unique_name_in_owner = true
+visible = false
+sprite_frames = SubResource("SpriteFrames_i5ho6")
+
+[node name="hintDon" type="AnimatedSprite2D" parent="TaikoScreen/TaikoLine/Panel/Panel/hitHint"]
+unique_name_in_owner = true
+visible = false
+sprite_frames = SubResource("SpriteFrames_0j8uu")
+frame = 1
 
 [node name="HitGold" type="Sprite2D" parent="TaikoScreen/TaikoLine/Panel/Panel"]
 visible = false
@@ -238,14 +254,12 @@ position = Vector2(48, 62)
 [node name="hint" type="Control" parent="TaikoScreen"]
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -40.0
+offset_left = 32.0
 offset_top = -51.0
-grow_horizontal = 0
+offset_right = 80.0
 grow_vertical = 0
 metadata/_edit_group_ = true
 

@@ -603,6 +603,23 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_8bevs")
 
+[node name="Timer" type="Label" parent="MainUI/BalanceSection"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -89.0
+offset_top = -91.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "00:00.00"
+horizontal_alignment = 1
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MainUI"]
 unique_name_in_owner = true
 libraries = {

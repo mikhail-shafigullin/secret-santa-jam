@@ -11,6 +11,7 @@ var starter = null
 @onready var speedArrowTexture: Control = %SpeedArrowTexture;
 @onready var winTexture: Control = %WinTexture;
 @onready var failTexture: Control = %FailTexture;
+@onready var timer: Label = %Timer
 
 
 @onready var animationPlayer: AnimationPlayer = %AnimationPlayer; 
@@ -68,6 +69,7 @@ var current_rival_path_progress: float = 0.0;
 var visual_speed_koeff: float = 0.2;
 var max_angle: float = PI/4;
 var currentAngle: float = 0.0;
+var time: float = 0
 	
 # Called when the node enters the scene tree for the first time.
 #func _ready():
@@ -93,7 +95,7 @@ func process_balance(delta):
 	balance_velocity += current_railed_balance_acceleration * delta;
 	balance_value += balance_velocity * delta;
 	balance_value = clampf(balance_value, 0.0, 100.0);
-	var anim_bal = remap(balance_value, 0, 80, -1, 1)
+	var anim_bal = remap(balance_value, 0, 100, 1, -1)*2
 	snowboardModel.set_snowboard_tilt(anim_bal)
 	
 func process_speed(delta):
@@ -118,7 +120,7 @@ func process_visual(delta):
 		current_path_progress += delta * speed * visual_speed_koeff;
 		racePathFollow.progress = current_path_progress;
 		currentAngle = lerpf(-max_angle, max_angle, balance_value / max_balance_value);
-		snowboardModel.rotation.x = currentAngle;
+		snowboardModel.rotation.x = -currentAngle;
 		
 		current_rival_path_progress += delta * rival_speed * visual_speed_koeff;
 		rivalPathFollow.progress = current_rival_path_progress;
@@ -136,12 +138,15 @@ func process_visual(delta):
 			victory();
 		if rivalPathFollow.progress_ratio >= 1:
 			game_over();
+		
+		write_timer(time)
 	elif !is_race_started:
 		snowboardModel.visible = true;
 	else :
 		snowboardModel.visible = false;
 	
 func process_status(delta):
+	time += delta
 	if(balance_value <= min_balance_value or balance_value >= max_balance_value):
 		game_over();
 	pass;
@@ -189,7 +194,7 @@ func start() -> bool:
 	racePathFollow.progress = 0;
 	rivalPathFollow.progress = 0;
 	currentAngle = lerpf(-max_angle, max_angle, balance_value / max_balance_value);
-	snowboardModel.rotation.x = currentAngle;
+	snowboardModel.rotation.x = -currentAngle;
 	
 	snowboardModel.snowboarding()
 	snowboardModel.set_snowboard_tilt(0)
@@ -249,3 +254,12 @@ func victory():
 	exitButton.visible = true;
 	Global.audioStreamPlayer.stream = walkingTheme;
 	Global.audioStreamPlayer.play();
+
+func write_timer(seconds: float):
+	timer.text = "%s:%s"%[duble_didget(int(floor(seconds)/60)), duble_didget(fmod(seconds,60)).pad_decimals(2)]
+
+func duble_didget(num :float) -> String:
+	if num < 10:
+		return "0" + str(num)
+	else:
+		return str(num)

@@ -9,6 +9,9 @@ extends MiniGame
 @onready var combo_lable = %Combo
 @onready var max_combo_lable = %MaxCombo
 @onready var score_lable = %Score
+@onready var hint_kat = %hintKat
+@onready var hint_don = %hintDon
+var last_hit: String =  ""
 
 var hit_timer = Timer.new()
 var model = null
@@ -176,10 +179,12 @@ func score_dist(dist: float) -> HIT_EFFECT:
 	return HIT_EFFECT.empty
 
 func on_kat():
+	last_hit = "K"
 	model.kat.play()
 	on_hit(NoteType.KAT)
 
 func on_pon():
+	last_hit = "D"
 	model.pon.play()
 	on_hit(NoteType.DON)
 
@@ -271,6 +276,8 @@ func _on_exit_pressed():
 	end()
 
 func hit_anim(type: HIT_EFFECT=HIT_EFFECT.empty):
+	hint_kat.visible = false
+	hint_don.visible = false
 	match type:
 		HIT_EFFECT.gold:
 			hit_gold.visible=true
@@ -280,6 +287,11 @@ func hit_anim(type: HIT_EFFECT=HIT_EFFECT.empty):
 			hit_fail.visible=true
 		_:
 			pass
+	
+	if (last_hit == "K"):
+		hint_kat.visible = true
+	else:
+		hint_don.visible = true
 	hit_marker.modulate=Color.WHITE
 	hit_timer.start()
 
@@ -288,6 +300,8 @@ func hit_timeout():
 	hit_gold.visible=false
 	hit_ok.visible=false
 	hit_fail.visible=false
+	hint_kat.visible = false
+	hint_don.visible = false
 	
 func play_blend(name: String):
 	tim.taiko_tree["parameters/%s/request" %name]=AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE
