@@ -125,21 +125,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.950715, 0.00845355, -0.097
 visible = false
 inHands = 1
 
-[node name="Skeleton3D" parent="TimDoppelganger/tim/TimMixemoRig" index="0"]
-bones/7/rotation = Quaternion(0.239407, -0.0480943, 0.0787501, 0.966525)
-bones/8/rotation = Quaternion(0.0355502, -0.0816328, 0.239457, 0.966816)
-bones/9/rotation = Quaternion(-0.288035, -0.0233717, 0.208161, 0.93443)
-bones/10/rotation = Quaternion(0.306528, -0.0646983, 0.228438, 0.921776)
-bones/11/rotation = Quaternion(0.0366914, 0.0382304, 0.051213, 0.997281)
-bones/15/rotation = Quaternion(-0.299116, -0.105191, -0.145101, 0.937235)
-bones/16/rotation = Quaternion(0.188569, 0.0451043, -0.392444, 0.899108)
-bones/17/rotation = Quaternion(0.0400388, 0.00165335, 0.00863665, 0.99916)
-
 [node name="LeftHandAtt" parent="TimDoppelganger/tim/TimMixemoRig/Skeleton3D" index="1"]
-transform = Transform3D(0.87715, 0.198732, -0.437165, -0.418597, -0.129716, -0.898861, -0.23534, 0.971431, -0.0305919, 28.7589, 49.2799, 31.3884)
+transform = Transform3D(0.879003, 0.446826, -0.166433, 0.129558, -0.559735, -0.818481, -0.458877, 0.697885, -0.549899, 33.1147, 46.1416, 27.5515)
 
 [node name="RightHandAtt" parent="TimDoppelganger/tim/TimMixemoRig/Skeleton3D" index="2"]
-transform = Transform3D(-0.57025, -0.814878, 0.103866, -0.28222, 0.075596, -0.956367, 0.77147, -0.574681, -0.273084, -21.5378, 65.9283, -42.0975)
+transform = Transform3D(-0.31928, -0.927836, 0.192822, -0.680797, 0.0830302, -0.727751, 0.659223, -0.363629, -0.658178, -33.0433, 75.7566, -23.6145)
 
 [node name="ReactionBubble" type="Sprite3D" parent="." index="5"]
 unique_name_in_owner = true

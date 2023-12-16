@@ -1,0 +1,31 @@
+~ this_is_a_node_title
+do Global.cutscener.start("babushka_dialogue")
+do Global.player.visible = false
+Anneliese: Merry Christmas, Tim!
+Anneliese: Have you seen the beautiful Christmas tree they planted on the other side of the river?
+Anneliese: And on our side, nothing is decorated.
+Anneliese: Tim, can you help decorate our area?
+Anneliese: Hang these garlands on the roofs of the houses, and I'll decorate everything down here.
+Anneliese: Do you help me?
+- Try to catch a fish
+	do Global.cutscener.start("babushka_wait")
+	do Global.main_screen.play_mini_by_name("babushka")
+	=> END
+- End the conversation => end_script
+
+~ victory
+do Global.cutscener.start("babushka_dialogue")
+Anneliese: Thank you, Tim!
+Anneliese: Take this fish and bring it to your mother.
+Anneliese: I'm sure she'll cook something delicious
+...
+[Fish] received
+=> end_script
+
+~ end_script
+do Global.cutscener.start("babushka_reset")
+do Global.cutscener.start("RESET")
+do Global.player.visible = true
+do Global.cutscener.end()
+do Global.player.set_busy(false)
+=> END
