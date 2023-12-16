@@ -628,5 +628,6 @@ libraries = {
 autoplay = "RESET"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
 
 [connection signal="pressed" from="MainUI/BalanceSection/ExitButton" to="." method="_on_exit_button_pressed"]

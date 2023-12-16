@@ -488,7 +488,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -34.18
 curve = SubResource("Curve3D_1n04d")
 
 [node name="SnowboardRacePathFollow" type="PathFollow3D" parent="RaceTrack"]
-transform = Transform3D(0.0259545, 2.28978e-06, 0.999656, 0, 0.999999, -2.29054e-06, -0.999655, 5.94507e-08, 0.0259546, 0, 0, 0)
+transform = Transform3D(0.0259545, 2.28978e-06, 0.999656, 0, 0.999999, -2.29054e-06, -0.999655, 5.94508e-08, 0.0259546, 0, 0, 0)
 loop = false
 
 [node name="Node3D" type="Node3D" parent="RaceTrack/SnowboardRacePathFollow"]
@@ -502,7 +502,7 @@ transform = Transform3D(-0.276119, -0.00814784, -0.96109, -0.0565473, 0.99837, 0
 
 [node name="SnowboardRivalRacePathFollow" type="PathFollow3D" parent="RaceTrack"]
 unique_name_in_owner = true
-transform = Transform3D(0.0259545, 2.28978e-06, 0.999656, 0, 0.999999, -2.29054e-06, -0.999655, 5.94507e-08, 0.0259546, 0, 0, 0)
+transform = Transform3D(0.0259545, 2.28978e-06, 0.999656, 0, 0.999999, -2.29054e-06, -0.999655, 5.94508e-08, 0.0259546, 0, 0, 0)
 loop = false
 
 [node name="fisherman2" parent="RaceTrack/SnowboardRivalRacePathFollow" instance=ExtResource("19_6jklo")]
