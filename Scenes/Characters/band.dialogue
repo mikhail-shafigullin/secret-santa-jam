@@ -16,9 +16,9 @@ Milan: It would be really cool if you play with us... What do you say?
 ~ victory 
 do Global.cutscener.start("band_dialogue")
 do Global.player.visible = false
-Anneliese: Thank you, Tim!
-Anneliese: Take this fish and bring it to your mother.
-Anneliese: I'm sure she'll cook something delicious
+Finn: Thank you, Tim!
+Finn: Take this fish and bring it to your mother.
+Finn: I'm sure she'll cook something delicious
 ...
 [Fish] received
 => end_script

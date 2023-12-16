@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var taiko_model = $taikoModel
+@onready var taiko_model: TaikoModel = $taikoModel
 
 const Balloon = preload("res://Scenes/Screens/my_balloon/my_balloon.tscn")
 const dialogue = preload("res://Scenes/Characters/band.dialogue")
@@ -25,14 +25,18 @@ func on_taiko_started():
 
 func on_taiko_ended():
 	print("end")
-	taiko_model.music.stop()
 	
+	taiko_model.music.stop()
 	Global.audioStreamPlayer.play();
-
 	Global.player.visible=true
 	Global.player.set_busy(false)
 	Global.cutscener.end()
 	camera.current = false
+		
+	if(taiko_model.is_taiko_victory): 
+		var balloon: Node = Balloon.instantiate()
+		Global.player.add_child(balloon)
+		balloon.start(dialogue, "victory")
 
 func _on_usable_object_on_object_use():
 	assert(dialogue)

@@ -4,6 +4,7 @@ signal mini_started
 signal mini_ended
 
 const taiko_mini = preload ("res://Scenes/Minis/Taiko/taiko.tscn")
+var is_taiko_victory: bool = false;
 
 @onready var pon = $Pon
 @onready var kat = $Kat
@@ -48,3 +49,7 @@ func start_song():
 	music.play()
 
 	mini_started.emit()
+	
+func victory():
+	is_taiko_victory = true;
+	pass;
