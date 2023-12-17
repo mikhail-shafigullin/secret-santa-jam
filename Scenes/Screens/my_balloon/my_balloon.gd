@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var character_label: RichTextLabel = %CharacterLabel
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
+@onready var click_area: Control = %ClickArea
 
 ## The dialogue resource
 var resource: DialogueResource
@@ -126,3 +127,11 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
+
+func display(state: bool):
+	if state:
+		click_area.modulate = Color.WHITE
+	else:
+		click_area.modulate = Color(Color.WHITE, 0)
+	balloon.visible = state
+	print("balloon visible ", state)

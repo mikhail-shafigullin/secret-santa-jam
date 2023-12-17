@@ -1,0 +1,12 @@
+~ this_is_a_node_title
+
+noname: helo
+do Global.projector.slide("res://icon.svg")
+do Global.projector.balloon.display(false)
+do wait(1)
+do Global.projector.balloon.display(true)
+do Global.projector.slide("")
+is this work?
+good
+
+=> END

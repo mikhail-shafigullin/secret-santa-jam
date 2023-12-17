@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var taiko_model: TaikoModel = $taikoModel
 
-const Balloon = preload("res://Scenes/Screens/my_balloon/my_balloon.tscn")
+const balloon_res = preload("res://Scenes/Screens/my_balloon/my_balloon.tscn")
 const dialogue = preload("res://Scenes/Characters/band.dialogue")
 
 @onready var animationPlayer = %AnimationPlayer;
@@ -41,7 +41,7 @@ func on_taiko_ended():
 	thin.set_play(false)
 		
 	if(taiko_model.is_taiko_victory): 
-		var balloon: Node = Balloon.instantiate()
+		var balloon: Node = balloon_res.instantiate()
 		Global.player.add_child(balloon)
 		balloon.start(dialogue, "victory")
 
@@ -50,7 +50,7 @@ func _on_usable_object_on_object_use():
 	Global.player.visible = false;
 	if Global.player.busy:
 		return
-	var balloon: Node = Balloon.instantiate()
+	var balloon: Node = balloon_res.instantiate()
 	Global.player.add_child(balloon)
 	balloon.start(dialogue, "")
 

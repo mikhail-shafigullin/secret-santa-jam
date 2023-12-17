@@ -52,10 +52,20 @@ RichTextLabel/font_sizes/normal_font_size = 14
 layer = 100
 script = ExtResource("1_miau0")
 
-[node name="Balloon" type="Panel" parent="."]
+[node name="ClickArea" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Balloon" type="Panel" parent="ClickArea"]
 unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -64,7 +74,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_qq3yp")
 
-[node name="Dialogue" type="MarginContainer" parent="Balloon"]
+[node name="Dialogue" type="MarginContainer" parent="ClickArea/Balloon"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -76,10 +86,10 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/Dialogue"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ClickArea/Balloon/Dialogue"]
 layout_mode = 2
 
-[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Dialogue/VBoxContainer"]
+[node name="CharacterLabel" type="RichTextLabel" parent="ClickArea/Balloon/Dialogue/VBoxContainer"]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
@@ -91,13 +101,13 @@ text = "Character"
 fit_content = true
 scroll_active = false
 
-[node name="DialogueLabel" parent="Balloon/Dialogue/VBoxContainer" instance=ExtResource("2_y1xwa")]
+[node name="DialogueLabel" parent="ClickArea/Balloon/Dialogue/VBoxContainer" instance=ExtResource("2_y1xwa")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "Dialogue..."
 
-[node name="Responses" type="MarginContainer" parent="Balloon"]
+[node name="Responses" type="MarginContainer" parent="ClickArea/Balloon"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -111,7 +121,7 @@ offset_bottom = -68.27
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="ResponsesMenu" type="VBoxContainer" parent="Balloon/Responses" node_paths=PackedStringArray("response_template")]
+[node name="ResponsesMenu" type="VBoxContainer" parent="ClickArea/Balloon/Responses" node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
@@ -119,9 +129,10 @@ theme_override_constants/separation = 2
 script = ExtResource("3_pppis")
 response_template = NodePath("ResponseExample")
 
-[node name="ResponseExample" type="Button" parent="Balloon/Responses/ResponsesMenu"]
+[node name="ResponseExample" type="Button" parent="ClickArea/Balloon/Responses/ResponsesMenu"]
 layout_mode = 2
 text = "Response example"
 
-[connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
-[connection signal="response_selected" from="Balloon/Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
+[connection signal="gui_input" from="ClickArea" to="." method="_on_balloon_gui_input"]
+[connection signal="gui_input" from="ClickArea/Balloon" to="." method="_on_balloon_gui_input"]
+[connection signal="response_selected" from="ClickArea/Balloon/Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

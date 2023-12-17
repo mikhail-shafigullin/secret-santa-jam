@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bb5xu332j1qdx"
+path="res://.godot/imported/projector_test.dialogue-0f8a07def904e363a111212afea70c0e.tres"
+
+[deps]
+
+source_file="res://Scenes/UI/projector_test.dialogue"
+dest_files=["res://.godot/imported/projector_test.dialogue-0f8a07def904e363a111212afea70c0e.tres"]
+
+[params]
+
+defaults=true

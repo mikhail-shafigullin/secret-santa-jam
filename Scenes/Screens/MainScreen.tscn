@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://boit6xug1wpm4"]
+[gd_scene load_steps=9 format=3 uid="uid://boit6xug1wpm4"]
 
 [ext_resource type="Script" path="res://SubViewScale.gd" id="1_5n7o5"]
 [ext_resource type="Script" path="res://Scenes/Screens/MainScreen.gd" id="1_pyol8"]
+[ext_resource type="PackedScene" uid="uid://cnk16jkvek0dy" path="res://Scenes/UI/projector.tscn" id="4_fa7ws"]
 [ext_resource type="Texture2D" uid="uid://daxe2mb8ywsvx" path="res://Assets/Textures/fullscreen-svgrepo-com.svg" id="4_hjjw2"]
 [ext_resource type="AudioStream" uid="uid://c23sjrh5mpv1k" path="res://Assets/Audio/Music/walkingTheme.mp3" id="5_0nccv"]
 [ext_resource type="Texture2D" uid="uid://ddajpt0ew2bm" path="res://Assets/Textures/volume-min-svgrepo-com.svg" id="5_nr1bp"]
@@ -87,6 +88,7 @@ size = Vector2i(320, 240)
 render_target_update_mode = 4
 
 [node name="Label" type="Label" parent="Control/SubViewScale/SubViewport"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -96,6 +98,8 @@ theme_override_font_sizes/font_size = 96
 text = "game"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Projector" parent="Control/SubViewScale/SubViewport" instance=ExtResource("4_fa7ws")]
 
 [node name="MouseBlock" type="Control" parent="Control"]
 layout_mode = 3

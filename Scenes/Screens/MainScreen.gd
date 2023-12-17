@@ -35,8 +35,8 @@ func _ready():
 	Global.main_screen = self;
 	volume_slider.visible = false;
 
-	for node: Node in root.get_children():
-		node.queue_free()
+	# for node: Node in root.get_children():
+	# 	node.queue_free()
 	
 	primary_screen = world_res.instantiate()
 	root.add_child(primary_screen)
