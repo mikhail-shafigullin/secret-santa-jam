@@ -1,10 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://boit6xug1wpm4"]
+[gd_scene load_steps=8 format=3 uid="uid://boit6xug1wpm4"]
 
 [ext_resource type="Script" path="res://SubViewScale.gd" id="1_5n7o5"]
 [ext_resource type="Script" path="res://Scenes/Screens/MainScreen.gd" id="1_pyol8"]
 [ext_resource type="Texture2D" uid="uid://daxe2mb8ywsvx" path="res://Assets/Textures/fullscreen-svgrepo-com.svg" id="4_hjjw2"]
 [ext_resource type="AudioStream" uid="uid://c23sjrh5mpv1k" path="res://Assets/Audio/Music/walkingTheme.mp3" id="5_0nccv"]
 [ext_resource type="Texture2D" uid="uid://ddajpt0ew2bm" path="res://Assets/Textures/volume-min-svgrepo-com.svg" id="5_nr1bp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fxpqe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewsjh"]
+bg_color = Color(0.168627, 0.168627, 0.168627, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 
 [node name="MainScreen" type="Control"]
 layout_mode = 3
@@ -120,6 +129,7 @@ offset_right = 80.0
 offset_bottom = 48.0
 tooltip_text = "fullscreen"
 focus_mode = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fxpqe")
 toggle_mode = true
 icon = ExtResource("5_nr1bp")
 flat = true
@@ -132,9 +142,10 @@ offset_left = 8.0
 offset_top = 37.0
 offset_right = 24.0
 offset_bottom = 165.0
+theme_override_styles/slider = SubResource("StyleBoxFlat_ewsjh")
 max_value = 1.0
 step = 0.01
-value = 0.7
+value = 0.9
 
 [connection signal="gui_input" from="Control/SubViewScale" to="Control/SubViewScale" method="_on_gui_input"]
 [connection signal="pressed" from="Control/MouseBlock/FullScreen" to="." method="_on_full_screen_pressed"]

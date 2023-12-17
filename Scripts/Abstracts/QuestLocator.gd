@@ -10,8 +10,11 @@ func _ready():
 	#cylinderMesh.global_transform.origin = Vector3(0, 10, 0)
 	cylinderMesh.set_scale(Vector3(1, scale_y, 1))
 	cylinderMesh.set_position(Vector3(0, scale_y/2 + free_space, 0))
-	pass # Replace with function body.
+	
+	Global.quest_list_show.connect(change_visibility)
 
+func change_visibility(show):
+	visible = show
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

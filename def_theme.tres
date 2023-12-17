@@ -50,9 +50,13 @@ anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hiwwp"]
 bg_color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.501961, 0.501961, 0.501961, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xecmm"]
-bg_color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i4jel"]
 
 [resource]
 default_font = ExtResource("1_b7onc")
@@ -70,4 +74,4 @@ RichTextLabel/constants/outline_size = 4
 RichTextLabel/font_sizes/normal_font_size = 8
 VScrollBar/styles/scroll = SubResource("StyleBoxFlat_hiwwp")
 VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_hiwwp")
-VSlider/styles/slider = SubResource("StyleBoxFlat_xecmm")
+VSlider/styles/slider = SubResource("StyleBoxEmpty_i4jel")

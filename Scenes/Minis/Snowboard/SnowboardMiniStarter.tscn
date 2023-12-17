@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8o5gcv555lhn"]
+[gd_scene load_steps=9 format=3 uid="uid://b8o5gcv555lhn"]
 
 [ext_resource type="Script" path="res://Scripts/Minis/SnowboardMiniStarter.gd" id="1_jrshm"]
 [ext_resource type="PackedScene" uid="uid://bo1tr0fadvf6l" path="res://Scenes/UsableObject.tscn" id="1_pkkgt"]
 [ext_resource type="ArrayMesh" uid="uid://cmdw4mvg3jmvj" path="res://Assets/Models/Objects/other/snowboard_Plane_002.res" id="3_ex0tu"]
 [ext_resource type="PackedScene" uid="uid://yvsmajcny0ql" path="res://Assets/Models/Characters/bob.glb" id="3_hyiim"]
 [ext_resource type="PackedScene" uid="uid://2gq0j2u71tdk" path="res://Scenes/Abstracts/QuestLocator.tscn" id="3_mj1k8"]
+[ext_resource type="Material" uid="uid://blj0yewyl7s6o" path="res://Assets/Models/Characters/Material.001.tres" id="4_wyvdd"]
+[ext_resource type="Material" uid="uid://bbhu7akj8jfvr" path="res://Assets/Models/Objects/other/snowbord.tres" id="5_lsrdp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cm3vq"]
 size = Vector3(0.732674, 1.47278, 0.395905)
@@ -15,36 +17,6 @@ script = ExtResource("1_jrshm")
 [node name="UsableObject" parent="." instance=ExtResource("1_pkkgt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0381658, 0.103749, 0.015603)
 useObjectMessage = "Talk with Bob"
-
-[node name="bob" parent="." instance=ExtResource("3_hyiim")]
-
-[node name="Skeleton3D" parent="bob/BobRig" index="0"]
-bones/1/position = Vector3(-0.0193642, 0.015457, 0.638013)
-bones/1/rotation = Quaternion(0.63629, 0.00479992, -0.00444668, 0.771422)
-bones/2/position = Vector3(-0.000808206, 0.289175, 0.00357797)
-bones/2/rotation = Quaternion(0.0972719, 0.00136407, -0.045897, 0.994198)
-bones/3/position = Vector3(-0.00204867, 0.271208, -0.000903146)
-bones/3/rotation = Quaternion(0.0878986, -0.0867418, 0.0868709, 0.988536)
-bones/4/rotation = Quaternion(0.81274, 0.189482, 0.535766, -0.128475)
-bones/5/rotation = Quaternion(-0.207478, -0.0197555, -0.132727, 0.968992)
-bones/6/rotation = Quaternion(-0.0220388, -0.0907322, -0.0468603, 0.994528)
-bones/7/position = Vector3(-0.1409, 0.183341, -0.0242681)
-bones/7/rotation = Quaternion(0.837021, -0.523814, -0.158121, 0.00367951)
-bones/8/rotation = Quaternion(-0.446547, -0.108679, 0.642638, 0.613026)
-bones/9/rotation = Quaternion(-0.547502, -0.0140134, -0.0882583, 0.832019)
-bones/10/position = Vector3(-0.240238, -0.253155, 0.175078)
-bones/10/rotation = Quaternion(0.656669, 0.130511, 0.144798, 0.728551)
-bones/10/scale = Vector3(0.873373, 0.873373, 0.873373)
-bones/11/position = Vector3(0.0994746, 0.0297738, 0.624807)
-bones/11/rotation = Quaternion(-0.73045, -0.114301, 0.0717486, 0.6695)
-bones/12/rotation = Quaternion(0.120378, 0.000574934, 0.0399138, 0.991925)
-bones/13/rotation = Quaternion(-0.705115, 0.0507419, -0.0136852, 0.707143)
-bones/14/rotation = Quaternion(-0.727928, 0.0495921, -0.0553784, 0.681612)
-bones/15/rotation = Quaternion(0.117568, 0.00149555, -0.000277886, 0.993064)
-bones/16/rotation = Quaternion(-0.716143, -0.0312258, -0.0136296, 0.697122)
-
-[node name="AnimationPlayer" parent="bob" index="1"]
-autoplay = "bob_idle"
 
 [node name="snowboardMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.948669, 0, 0, 0, 0.30312, -0.898939, 0, 0.898939, 0.30312, 0, 0.32924, 0)
@@ -58,6 +30,40 @@ mesh = ExtResource("3_ex0tu")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0109978, 0.724321, 0.0201263)
 shape = SubResource("BoxShape3D_cm3vq")
+
+[node name="bob" parent="." instance=ExtResource("3_hyiim")]
+
+[node name="Skeleton3D" parent="bob/BobRig" index="0"]
+bones/0/rotation = Quaternion(-0.707107, 7.85046e-17, 7.85046e-17, 0.707107)
+bones/1/rotation = Quaternion(0.696806, 8.55041e-08, 8.30657e-08, 0.71726)
+bones/2/rotation = Quaternion(0.0515427, -1.19051e-07, 6.14436e-09, 0.998671)
+bones/3/rotation = Quaternion(-0.0524486, 1.19045e-07, -6.25236e-09, 0.998624)
+bones/4/rotation = Quaternion(0.714774, 0.490101, 0.39167, -0.30902)
+bones/5/rotation = Quaternion(-0.0935874, -0.0550926, -0.171493, 0.979181)
+bones/6/rotation = Quaternion(0.00194526, -0.077182, 0.0404515, 0.996194)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/rotation = Quaternion(0.714774, -0.490101, -0.39167, -0.30902)
+bones/8/rotation = Quaternion(-0.0935874, 0.0550926, 0.171493, 0.979181)
+bones/9/rotation = Quaternion(0.00194526, 0.077182, -0.0404515, 0.996194)
+bones/9/scale = Vector3(1, 1, 1)
+bones/10/rotation = Quaternion(1, -1.59252e-07, -1.94707e-07, 7.96262e-08)
+bones/11/rotation = Quaternion(-0.729288, -0.0218312, 0.0293773, 0.683227)
+bones/11/scale = Vector3(1, 1, 1)
+bones/12/rotation = Quaternion(0.117568, -0.00149555, 0.000277886, 0.993064)
+bones/13/rotation = Quaternion(-0.716143, 0.0312258, 0.0136296, 0.697122)
+bones/13/scale = Vector3(1, 1, 1)
+bones/14/rotation = Quaternion(-0.729288, 0.0218312, -0.0293773, 0.683227)
+bones/14/scale = Vector3(1, 1, 1)
+bones/15/rotation = Quaternion(0.117568, 0.00149555, -0.000277886, 0.993064)
+bones/16/rotation = Quaternion(-0.716143, -0.0312258, -0.0136296, 0.697122)
+bones/16/scale = Vector3(1, 1, 1)
+
+[node name="Bob" parent="bob/BobRig/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("4_wyvdd")
+surface_material_override/1 = ExtResource("5_lsrdp")
+
+[node name="AnimationPlayer" parent="bob" index="1"]
+autoplay = "bob_idle"
 
 [connection signal="on_object_use" from="UsableObject" to="." method="_on_usable_object_on_object_use"]
 

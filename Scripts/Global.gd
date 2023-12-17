@@ -1,5 +1,7 @@
 extends Node
 
+signal quest_list_show(state: bool)
+
 var useObjectController: UseObjectController;
 var playerLayout: PlayerLayout;
 var player: CharacterBody3D

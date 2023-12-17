@@ -22,7 +22,7 @@ func _input(event):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	Global.quest_list_show.emit(is_opened)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -40,6 +40,8 @@ func toggleQuests():
 	else:
 		animationPlayer.play("open_quests");
 		is_opened = true;
+	
+	Global.quest_list_show.emit(is_opened)
 
 
 func finishFishermanQuest():

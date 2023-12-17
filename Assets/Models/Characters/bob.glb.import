@@ -3631,8 +3631,12 @@ _subresources={
 }
 },
 "materials": {
-"snowbord.001": {
+"Material.001": {
 "use_external/enabled": true,
+"use_external/path": "res://Assets/Models/Characters/Material.001.tres"
+},
+"snowbord.001": {
+"use_external/enabled": false,
 "use_external/path": "res://Assets/Models/Objects/other/snowbord.tres"
 }
 }
