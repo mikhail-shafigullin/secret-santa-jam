@@ -107,8 +107,12 @@ func _on_mutated(_mutation: Dictionary) -> void:
 
 
 func _on_balloon_gui_input(event: InputEvent) -> void:
+
 	# If the user clicks on the balloon while it's typing then skip typing
 	if dialogue_label.is_typing and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+		if Global.projector:
+			if Global.projector.working and not Global.projector.allow_skip:
+				return
 		get_viewport().set_input_as_handled()
 		dialogue_label.skip_typing()
 		return

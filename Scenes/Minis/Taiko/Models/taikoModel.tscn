@@ -15,35 +15,29 @@ points = PackedVector3Array(0.141318, 0.973149, -0.397343, 0.142206, 0.746844, 0
 script = ExtResource("2_jq7ti")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+[node name="baseMusic" type="AudioStreamPlayer" parent="." index="0"]
+stream = ExtResource("6_obuu0")
+volume_db = -25.0
+
+[node name="Pon" type="AudioStreamPlayer" parent="." index="1"]
+stream = ExtResource("4_tfhxg")
+volume_db = -20.0
+
+[node name="Kat" type="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("5_yav7p")
+volume_db = -10.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="4"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 shape = SubResource("ConvexPolygonShape3D_eqn74")
 
-[node name="UsableObject" parent="." index="2" instance=ExtResource("3_1kuij")]
+[node name="UsableObject" parent="." index="5" instance=ExtResource("3_1kuij")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.296126, 0)
 is_active = false
 
 [node name="CollisionShape3D" parent="UsableObject/E_UseAreaEvent" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0239868, -0.183107, 0.466805)
-
-[node name="Pon" type="AudioStreamPlayer3D" parent="." index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00568, 0.352965)
-stream = ExtResource("4_tfhxg")
-volume_db = -20.0
-max_distance = 14.0
-
-[node name="Kat" type="AudioStreamPlayer3D" parent="." index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23225, 1.21525, 0.261229)
-stream = ExtResource("5_yav7p")
-volume_db = 5.0
-max_distance = 10.0
-
-[node name="baseMusic" type="AudioStreamPlayer3D" parent="." index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.19752, 1.1498, 0.532296)
-stream = ExtResource("6_obuu0")
-volume_db = -25.0
-max_distance = 50.0
 
 [node name="TimDoppelganger" parent="." index="6" instance=ExtResource("6_w7w5x")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.0159613, 2.38419e-07, 0.833602)

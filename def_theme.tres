@@ -11,7 +11,7 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0, 0.164706, 0.290196, 1)
+border_color = Color(0.211765, 0.207843, 0.239216, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_73ora"]
 bg_color = Color(0.129412, 0.129412, 0.129412, 1)

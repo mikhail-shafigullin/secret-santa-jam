@@ -1,12 +1,13 @@
 ~ this_is_a_node_title
 
-noname: helo
+do Global.projector.set_allow_skip(false)
+noname: [wait=3] helo
 do Global.projector.slide("res://icon.svg")
 do Global.projector.balloon.display(false)
 do wait(1)
 do Global.projector.balloon.display(true)
 do Global.projector.slide("")
-is this work?
+is this working?
 do Global.projector.sound("res://Scenes/Minis/Taiko/Sound/203344__klemmy__123-taiko-open.wav")
 do Global.projector.slide("res://icon.svg")
 good

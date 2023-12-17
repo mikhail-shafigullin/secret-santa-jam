@@ -30,24 +30,6 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
-"materials": {
-"Snow": {
-"use_external/enabled": true,
-"use_external/path": "res://Assets/Models/Objects/Road/tilesMaterial.tres"
-},
-"car": {
-"use_external/enabled": true,
-"use_external/path": "res://Assets/Models/Objects/Rvier/ice.tres"
-},
-"road": {
-"use_external/enabled": true,
-"use_external/path": "res://Assets/Models/Objects/Road/roadMaterial.tres"
-},
-"water": {
-"use_external/enabled": true,
-"use_external/path": "res://Assets/Models/Objects/Rvier/waterAnimated.tres"
-}
-},
 "meshes": {
 "lvl_v2_Cube_042": {
 "generate/lightmap_uv": 0,
@@ -82,4 +64,4 @@ _subresources={
 }
 }
 gltf/naming_version=1
-gltf/embedded_image_handling=0
+gltf/embedded_image_handling=1

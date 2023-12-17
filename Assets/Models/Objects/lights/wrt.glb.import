@@ -1,0 +1,45 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bfgabjgb0wg0m"
+path="res://.godot/imported/wrt.glb-796a0016c8f71ad8cebc65d49b5169bd.scn"
+
+[deps]
+
+source_file="res://Assets/Models/Objects/lights/wrt.glb"
+dest_files=["res://.godot/imported/wrt.glb-796a0016c8f71ad8cebc65d49b5169bd.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"Material.001": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/Objects/lights/Material.001.tres"
+},
+"lights": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/Objects/Buildings/Lights/Lights.tres"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=0
