@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://7kpmk14keqwy"]
+[gd_scene load_steps=15 format=3 uid="uid://7kpmk14keqwy"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/other/Band/band.gd" id="1_fddwu"]
 [ext_resource type="PackedScene" uid="uid://47kkejhagjmj" path="res://Scenes/Characters/fat_musician.tscn" id="1_q2s67"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://degfp10g6rn1y" path="res://Scenes/Minis/Taiko/Models/taikoModel.tscn" id="3_3jm85"]
 [ext_resource type="PackedScene" uid="uid://bo1tr0fadvf6l" path="res://Scenes/UsableObject.tscn" id="5_3xha4"]
 [ext_resource type="PackedScene" uid="uid://2gq0j2u71tdk" path="res://Scenes/Abstracts/QuestLocator.tscn" id="6_wsxal"]
+[ext_resource type="PackedScene" uid="uid://cuhldd5rqu02s" path="res://Scenes/Characters/tim_doppelganger.tscn" id="7_sb4gl"]
 
 [sub_resource type="Animation" id="Animation_5dj42"]
 length = 0.001
@@ -32,6 +33,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(-3.11252, 1.26429, -0.629545)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../TimDoppelganger:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_uyjg5"]
@@ -146,13 +159,39 @@ tracks/1/keys = {
 "values": [Vector3(-0.436332, -2.61766, 1.61858e-08), Vector3(0.0872665, -2.67035, 0), Vector3(0.0872665, -2.42887, -6.34772e-11)]
 }
 
+[sub_resource type="Animation" id="Animation_vfw07"]
+resource_name = "band_talking"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../TimDoppelganger:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "animation"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../TimDoppelganger/tim/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": PackedStringArray("Idle"),
+"times": PackedFloat32Array(0)
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hs3mk"]
 _data = {
 "RESET": SubResource("Animation_5dj42"),
 "band_playing_01": SubResource("Animation_uyjg5"),
 "band_playing_02": SubResource("Animation_giges"),
 "band_playing_03": SubResource("Animation_o4e0l"),
-"band_playing_04": SubResource("Animation_1behg")
+"band_playing_04": SubResource("Animation_1behg"),
+"band_talking": SubResource("Animation_vfw07")
 }
 
 [node name="Band" type="Node3D"]
@@ -185,6 +224,62 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.171036, 0.00979453, 0.0413
 
 [node name="QuestLocator" parent="." instance=ExtResource("6_wsxal")]
 
+[node name="TimDoppelganger" parent="." instance=ExtResource("7_sb4gl")]
+transform = Transform3D(0.848381, 0, -0.529386, 0, 1, 0, 0.529386, 0, 0.848381, 0.919189, 0, -1.39554)
+visible = false
+
+[node name="Skeleton3D" parent="TimDoppelganger/tim/TimMixemoRig" index="0"]
+bones/0/position = Vector3(-0.73311, 42.219, 2.58113)
+bones/0/rotation = Quaternion(-0.0332134, -0.366155, -0.0142209, 0.929852)
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/rotation = Quaternion(-0.0333616, 0.0406816, -0.00317517, 0.99861)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/rotation = Quaternion(0.0934015, 0.0819978, -0.00469564, 0.992235)
+bones/3/rotation = Quaternion(0.10618, 0.0819305, -0.00575183, 0.990949)
+bones/4/rotation = Quaternion(0.0395112, -0.0107255, -0.000216166, 0.999162)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(-0.0963695, 0.176928, 0.0164447, 0.979356)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(-0.520774, -0.510267, 0.586854, -0.352171)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/position = Vector3(-3.8381e-06, 11.0439, -3.00375e-06)
+bones/7/rotation = Quaternion(0.586884, 0.102261, 0.0603382, 0.800918)
+bones/8/position = Vector3(-4.1978e-07, 15.879, 3.76767e-06)
+bones/8/rotation = Quaternion(-0.0571709, 0.00327573, 0.457655, 0.887284)
+bones/9/rotation = Quaternion(-0.0971694, 0.121566, 0.0464495, 0.986723)
+bones/10/rotation = Quaternion(0.31528, -0.00134032, 0.241149, 0.917847)
+bones/11/rotation = Quaternion(0.0700622, -0.00451048, 0.0647829, 0.995427)
+bones/12/rotation = Quaternion(0.582185, -0.474233, 0.538991, 0.381644)
+bones/12/scale = Vector3(1, 1, 1)
+bones/13/position = Vector3(-1.7847e-06, 12.638, -4.81428e-06)
+bones/13/rotation = Quaternion(0.523771, -0.129033, 0.168307, 0.825038)
+bones/14/rotation = Quaternion(-0.00244673, 0.149286, -0.416307, 0.896881)
+bones/15/position = Vector3(-0.0794082, 16.6516, 0.212)
+bones/15/rotation = Quaternion(0.132066, -0.148731, -0.115977, 0.973132)
+bones/16/position = Vector3(4.31366, 3.72637, -0.686604)
+bones/16/rotation = Quaternion(0.195, 0.0283188, -0.35005, 0.915772)
+bones/17/position = Vector3(0.00597358, 8.17948, 0.13427)
+bones/17/rotation = Quaternion(0.0416309, 0.010359, 0.00669279, 0.999057)
+bones/18/rotation = Quaternion(0.0770534, 0.183782, 0.97471, -0.101128)
+bones/19/rotation = Quaternion(-0.289741, 0.120469, -0.0298891, 0.949023)
+bones/20/rotation = Quaternion(0.443696, -0.0301051, -0.0520577, 0.894157)
+bones/20/scale = Vector3(1, 1, 1)
+bones/21/rotation = Quaternion(0.385407, 0.0174089, -0.0235104, 0.922283)
+bones/21/scale = Vector3(1, 1, 1)
+bones/23/rotation = Quaternion(-0.122232, -0.00781273, 0.984146, 0.128278)
+bones/24/rotation = Quaternion(-0.267335, 0.0786522, -0.019633, 0.960188)
+bones/25/rotation = Quaternion(0.544309, 0.0738498, 0.127218, 0.825887)
+bones/25/scale = Vector3(1, 1, 1)
+bones/26/rotation = Quaternion(0.381348, 0.0044289, -0.00205015, 0.924419)
+bones/26/scale = Vector3(1, 1, 1)
+
+[node name="LeftHandAtt" parent="TimDoppelganger/tim/TimMixemoRig/Skeleton3D" index="1"]
+transform = Transform3D(0.591449, 0.0361052, -0.805534, -0.509145, -0.757937, -0.407802, -0.625268, 0.651327, -0.429898, 20.3534, 55.029, 15.2786)
+
+[node name="RightHandAtt" parent="TimDoppelganger/tim/TimMixemoRig/Skeleton3D" index="2"]
+transform = Transform3D(-0.183634, -0.117688, 0.975925, 0.254445, -0.964662, -0.068452, 0.949493, 0.235749, 0.20709, -22.7997, 56.4643, -13.4271)
+
 [connection signal="on_object_use" from="UsableObject" to="." method="_on_usable_object_on_object_use"]
 
 [editable path="UsableObject"]
+[editable path="TimDoppelganger"]

@@ -52,4 +52,4 @@ func set_allow_skip(allow: bool):
 func _ready():
 	Global.projector = self
 	slide()
-	start_dialogue("res://Scenes/UI/projector_test.dialogue")
+	#start_dialogue("res://Scenes/UI/projector_test.dialogue")

@@ -1,5 +1,6 @@
 ~ this_is_a_node_title
 do Global.cutscener.start("snowboard_dialogue")
+do Global.player.visible = false
 Bob: Hey, Tim!
 Bob: You'll never beat me on these wires
 Bob: Bet I can overtake you?
@@ -8,8 +9,17 @@ Bob: Bet I can overtake you?
 	=> END
 - No, I don't have time for this! => end
 
+~ victory
+do Global.cutscener.start("snowboard_dialogue")
+do Global.player.visible = false
+Bob: Hey, Tim!
+Bob: You'll never beat me on these wires
+Bob: Bet I can overtake you?
+=> end
 
 ~ end
+do Global.cutscener.start("RESET")
+do Global.player.visible = true
 do Global.cutscener.end()
 do Global.player.set_busy(false)
 => END
