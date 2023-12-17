@@ -9,9 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://degfp10g6rn1y" path="res://Scenes/Minis/Taiko/Models/taikoModel.tscn" id="7_wp63y"]
 [ext_resource type="PackedScene" uid="uid://7kpmk14keqwy" path="res://Scenes/Objects/other/Band/band.tscn" id="11_uu46n"]
 [ext_resource type="PackedScene" uid="uid://c333qtrvl8ea7" path="res://Scenes/Characters/BabushkaQuestPoint.tscn" id="12_ab8p2"]
+[ext_resource type="PackedScene" uid="uid://ce5mnsixd4wh1" path="res://Scenes/Characters/bob_doppelganger.tscn" id="12_vphxp"]
 [ext_resource type="PackedScene" uid="uid://b8o5gcv555lhn" path="res://Scenes/Minis/Snowboard/SnowboardMiniStarter.tscn" id="18_svub7"]
 [ext_resource type="PackedScene" uid="uid://cuhldd5rqu02s" path="res://Scenes/Characters/tim_doppelganger.tscn" id="18_wud7l"]
-[ext_resource type="PackedScene" uid="uid://5u7qxg6184ef" path="res://Assets/Models/Characters/fisherman.glb" id="19_6jklo"]
 
 [sub_resource type="Environment" id="Environment_aex3l"]
 background_mode = 1
@@ -541,7 +541,7 @@ visible = false
 transform = Transform3D(-0.282375, 0, 0.959304, 0, 1, 0, -0.959304, 0, -0.282375, 27.8634, -2.3717, 3.51447)
 
 [node name="SnowboardMiniStarter" parent="Objects" instance=ExtResource("18_svub7")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -34.7798, 2.42665, -24.9532)
+transform = Transform3D(0.859647, 0, 0.510888, 0, 1, 0, -0.510888, 0, 0.859647, -34.7798, 1.7189, -25.5334)
 
 [node name="TimDoppelganger" parent="Objects" instance=ExtResource("18_wud7l")]
 visible = false
@@ -569,13 +569,16 @@ far = 45.0
 
 [node name="SnowboardModel" parent="RaceTrack/SnowboardRacePathFollow/Node3D" instance=ExtResource("18_wud7l")]
 transform = Transform3D(-0.276119, -0.00814784, -0.96109, -0.0565473, 0.99837, 0.00778203, 0.95946, 0.0564957, -0.27613, 0, 0, 0)
+visible = false
 
 [node name="SnowboardRivalRacePathFollow" type="PathFollow3D" parent="RaceTrack"]
 unique_name_in_owner = true
 transform = Transform3D(0.0259545, 2.28978e-06, 0.999656, 0, 0.999999, -2.29054e-06, -0.999655, 5.94508e-08, 0.0259546, 0, 0, 0)
 loop = false
 
-[node name="fisherman2" parent="RaceTrack/SnowboardRivalRacePathFollow" instance=ExtResource("19_6jklo")]
-transform = Transform3D(-1.00001, 0, -8.56817e-08, -3.55271e-15, 1, 4.54747e-13, 8.56817e-08, 0, -1.00001, 1.04292, 0, -0.0270767)
+[node name="RivalBobSnowboard" parent="RaceTrack/SnowboardRivalRacePathFollow" instance=ExtResource("12_vphxp")]
+transform = Transform3D(-1, 0, -8.75443e-08, 0, 1, 0, 8.75443e-08, 0, -1, 1.03082, 0, -0.0267639)
+visible = false
+state = 1
 
 [editable path="Cutscener"]
