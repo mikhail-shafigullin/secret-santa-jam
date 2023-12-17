@@ -72,7 +72,7 @@ func finishTaikoQuest():
 	checkAllQuestsFinished();
 	
 func checkAllQuestsFinished():
-	if(!isFishermanQuestFinished and isBabushkaQuestFinished and !isSnowboardQuestFinished and !isTaikoQuestFinished):
+	if(isFishermanQuestFinished and isBabushkaQuestFinished and isSnowboardQuestFinished and isTaikoQuestFinished):
 		startReturnToHomeQuest();
 		
 func startReturnToHomeQuest():

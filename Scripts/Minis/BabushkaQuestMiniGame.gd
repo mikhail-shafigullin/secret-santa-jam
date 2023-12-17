@@ -44,6 +44,7 @@ func resolveQuestPoint():
 		victory();
 
 func victory():
-	get_tree().create_timer(0.1).connect("timeout", queue_free)
+	Global.levelModify.allHomeDecorationVisible(true);
 	Global.questListUI.finishBabushkaQuest();
+	get_tree().create_timer(0.1).connect("timeout", queue_free)
 	babushka.victory_quest();

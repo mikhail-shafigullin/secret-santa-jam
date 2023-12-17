@@ -11,6 +11,7 @@ var cutscener: Cutscener;
 var main_screen: MainScreen;
 var currentTimDoppelganger: TimDoppelganger;
 var audioStreamPlayer: AudioStreamPlayer; 
+var levelModify: LevelModify;
 
 var babushkaMiniGame: BabushkaQuestMiniGame;
 var band = null

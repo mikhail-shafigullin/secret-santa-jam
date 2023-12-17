@@ -666,14 +666,17 @@ visible = false
 [node name="BabushkaQuestPoints2" parent="Objects" instance=ExtResource("12_ab8p2")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29.6441, 6.75284, -5.22975)
 visible = false
+index = 1
 
 [node name="BabushkaQuestPoints3" parent="Objects" instance=ExtResource("12_ab8p2")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.46544, 5.51564, 4.67073)
 visible = false
+index = 2
 
 [node name="BabushkaQuestPoints4" parent="Objects" instance=ExtResource("12_ab8p2")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.47321, 1.9518, -14.6214)
 visible = false
+index = 3
 
 [node name="Babushka" parent="Objects" instance=ExtResource("6_8n7hx")]
 transform = Transform3D(-0.282375, 0, 0.959304, 0, 1, 0, -0.959304, 0, -0.282375, 27.8634, -2.3717, 3.51447)

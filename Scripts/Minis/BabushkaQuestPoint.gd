@@ -1,5 +1,7 @@
 extends Node3D
 
+@export var index: int = 0;
+
 @onready var usableObject = %UsableObject;
 @onready var mesh = %MeshInstance3D;
 
@@ -32,6 +34,7 @@ func victory_quest_point():
 func _on_usable_object_on_object_use():
 	visible = false;
 	usableObject.is_active = false;
+	Global.levelModify.visibleRoofUpgrade(index, true);
 	babushkaMiniGame.resolveQuestPoint();
 	
 	pass;

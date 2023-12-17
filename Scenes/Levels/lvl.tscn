@@ -1,6 +1,7 @@
-[gd_scene load_steps=87 format=3 uid="uid://dwa64ft0y4d4h"]
+[gd_scene load_steps=88 format=3 uid="uid://dwa64ft0y4d4h"]
 
 [ext_resource type="PackedScene" uid="uid://c84x7fri03vfo" path="res://Assets/Models/Objects/lights/baton_pinus_lights.glb" id="1_0tvq4"]
+[ext_resource type="Script" path="res://Scenes/Levels/LevelModify.gd" id="1_3o04y"]
 [ext_resource type="PackedScene" uid="uid://7nir4w6ooi2" path="res://Scenes/Objects/Buildings/instaBuild.tscn" id="1_wpxet"]
 [ext_resource type="PackedScene" uid="uid://f1ddvfdqlv8k" path="res://Scenes/Objects/Road/roadSignSwim.tscn" id="2_jbn5v"]
 [ext_resource type="PackedScene" uid="uid://bc8oy15gk7jy2" path="res://Scenes/Objects/Buildings/IluB3.tscn" id="3_211bd"]
@@ -44,12 +45,12 @@
 [ext_resource type="PackedScene" uid="uid://butf8peo1nlax" path="res://Scenes/Objects/Ice/ice_3.tscn" id="41_abuvj"]
 [ext_resource type="PackedScene" uid="uid://cyiaijxb80qht" path="res://Scenes/Objects/other/bike.tscn" id="42_l5lf8"]
 [ext_resource type="PackedScene" uid="uid://beaqf64ckpnsl" path="res://Scenes/Objects/Road/roadSignNoFish.tscn" id="43_awt6p"]
-[ext_resource type="PackedScene" uid="uid://b0x41pifyeve0" path="res://Scenes/Objects/other/snowman.tscn" id="44_0vgtf"]
-[ext_resource type="PackedScene" uid="uid://yys4y2yisvr1" path="res://Scenes/Objects/other/lvl_race_track.tscn" id="45_oradb"]
-[ext_resource type="PackedScene" uid="uid://ckoneyg61sm2h" path="res://Scenes/Objects/other/race_pol_V.tscn" id="46_afbln"]
-[ext_resource type="PackedScene" uid="uid://coi62x18sgv68" path="res://Scenes/Objects/other/race_pol_h.tscn" id="47_m52l7"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/other/snowman.tscn" id="44_0vgtf"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/other/lvl_race_track.tscn" id="45_oradb"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/other/race_pol_V.tscn" id="46_afbln"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/other/race_pol_h.tscn" id="47_m52l7"]
 [ext_resource type="PackedScene" uid="uid://btpm4f0x60xgc" path="res://Scenes/Objects/Fancy/micro_house.tscn" id="48_rkhi6"]
-[ext_resource type="PackedScene" uid="uid://1dl4cqx26jse" path="res://Scenes/Objects/teleporter.tscn" id="49_t7t4i"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/teleporter.tscn" id="49_t7t4i"]
 [ext_resource type="PackedScene" uid="uid://bfgabjgb0wg0m" path="res://Assets/Models/Objects/lights/wrt.glb" id="50_4hehc"]
 [ext_resource type="Material" uid="uid://c1b8gx18o2deo" path="res://Assets/Models/Objects/Rvier/waterAnimated.tres" id="51_j5wfs"]
 [ext_resource type="Material" uid="uid://bdrmmik56j3x4" path="res://Assets/Models/Objects/Road/roadMaterial.tres" id="52_o6036"]
@@ -482,9 +483,118 @@ data = PackedVector3Array(-8.021, 0.7504, 21.8487, -23.8814, 0.7504, 24.4706, -2
 data = PackedVector3Array(-1.0845, 2.0349, 17.6223, -0.2645, 1.7195, 15.4247, -1.0067, 1.102, 17.3984, -1.0845, 2.0349, 17.6223, -0.4754, 2.3906, 15.9644, -0.2645, 1.7195, 15.4247, 5.5885, 1.66, -2.5245, -3.2449, 1.981, -0.8085, -3.0789, 1.66, -2.5245, 5.5885, 1.66, -2.5245, 5.4225, 1.981, -0.8085, -3.2449, 1.981, -0.8085, 0.8787, 2.8644, 12.6475, -8.4821, 2.6655, 14.3062, -7.7889, 2.8644, 12.6475, 0.8787, 2.8644, 12.6475, 0.1853, 2.6655, 14.3062, -8.4821, 2.6655, 14.3062, 5.6321, 1.3442, -4.2413, -3.0789, 1.66, -2.5245, -3.0355, 1.3442, -4.2413, 5.6321, 1.3442, -4.2413, 5.5885, 1.66, -2.5245, -3.0789, 1.66, -2.5245, -2.071, 1.0647, 20.9315, -11.0989, 0.46, 22.5783, -10.7384, 1.0647, 20.9315, -2.071, 1.0647, 20.9315, -2.4315, 0.46, 22.5783, -11.0989, 0.46, 22.5783, 5.1233, 2.2871, 0.9017, -3.9579, 2.5624, 2.6042, -3.5441, 2.2871, 0.9017, 5.1233, 2.2871, 0.9017, 4.7097, 2.5624, 2.6042, -3.9579, 2.5624, 2.6042, -1.6227, 1.5942, 19.2785, -10.7384, 1.0647, 20.9315, -10.2904, 1.5942, 19.2785, -1.6227, 1.5942, 19.2785, -2.071, 1.0647, 20.9315, -10.7384, 1.0647, 20.9315, -1.6227, 1.5942, 19.2785, -1.0067, 1.102, 17.3984, -1.6219, 0.1385, 19.2757, -1.6227, 1.5942, 19.2785, -1.0845, 2.0349, 17.6223, -1.0067, 1.102, 17.3984, -10.7374, -3.8506, 20.9274, -11.0989, -9.9247, 22.5783, -10.7374, -9.9247, 20.9274, -10.7374, -3.8506, 20.9274, -11.0989, -3.8506, 22.5783, -11.0989, -9.9247, 22.5783, 5.5882, -4.0697, -2.5183, 5.2668, -9.9376, -4.2413, 5.2229, -9.9354, -2.5183, 5.5882, -4.0697, -2.5183, 5.6321, -4.0808, -4.2413, 5.2668, -9.9376, -4.2413, -1.0845, 2.0349, 17.6223, -10.2904, 1.5942, 19.2785, -9.7519, 2.0349, 17.6223, -1.0845, 2.0349, 17.6223, -1.6227, 1.5942, 19.2785, -10.2904, 1.5942, 19.2785, -2.4315, 0.46, 22.5783, -2.07, -3.8506, 20.9274, -2.4315, -3.8506, 22.5783, -2.4315, 0.46, 22.5783, -2.071, 1.0647, 20.9315, -2.07, -3.8506, 20.9274, -5.0521, 2.9595, 5.9805, -6.2183, 0.8835, 8.9033, -5.4315, 1.999, 6.9692, -5.0521, 2.9595, 5.9805, -5.695, 3.0503, 7.6559, -6.2183, 0.8835, 8.9033, -4.467, 2.7918, 4.2972, -5.4315, 1.999, 6.9692, -4.7093, 2.2256, 5.022, -4.467, 2.7918, 4.2972, -5.0521, 2.9595, 5.9805, -5.4315, 1.999, 6.9692, 0.8787, 2.8644, 12.6475, 1.5862, 2.9924, 10.9872, 1.4003, 0.7879, 11.4038, 1.4003, 0.7879, 11.4038, 1.5862, 2.9924, 10.9872, 1.5844, -3.8506, 10.9913, -3.9579, 2.5624, 2.6042, -4.7093, 2.2256, 5.022, -4.0828, 2.0631, 3.0462, -3.9579, 2.5624, 2.6042, -4.467, 2.7918, 4.2972, -4.7093, 2.2256, 5.022, -7.7889, 2.8644, 12.6475, -8.1106, 1.7601, 13.4058, -7.2671, 0.7879, 11.4038, -7.7889, 2.8644, 12.6475, -8.4821, 2.6655, 14.3062, -8.1106, 1.7601, 13.4058, -3.0789, 1.66, -2.5245, -3.2456, 0.5276, -0.8032, -3.0794, -4.0697, -2.5183, -3.0789, 1.66, -2.5245, -3.2449, 1.981, -0.8085, -3.2456, 0.5276, -0.8032, -3.0355, 1.3442, -4.2413, -3.0794, -4.0697, -2.5183, -3.0355, -4.0808, -4.2413, -3.0355, 1.3442, -4.2413, -3.0789, 1.66, -2.5245, -3.0794, -4.0697, -2.5183, 5.1233, 2.2871, 0.9017, 5.4218, 0.5276, -0.8032, 5.0822, 1.4239, 1.0982, 5.1233, 2.2871, 0.9017, 5.4225, 1.981, -0.8085, 5.4218, 0.5276, -0.8032, 2.9724, 3.0503, 7.6559, 3.2362, 1.999, 6.9692, 2.4493, 0.8835, 8.9033, 2.9724, 3.0503, 7.6559, 3.6153, 2.9595, 5.9805, 3.2362, 1.999, 6.9692, -3.5441, 2.2871, 0.9017, -4.0828, 2.0631, 3.0462, -3.5854, 1.4239, 1.0982, -3.5441, 2.2871, 0.9017, -3.9579, 2.5624, 2.6042, -4.0828, 2.0631, 3.0462, 3.6153, 2.9595, 5.9805, 3.9584, 2.2256, 5.022, 3.2362, 1.999, 6.9692, 3.6153, 2.9595, 5.9805, 4.2007, 2.7918, 4.2972, 3.9584, 2.2256, 5.022, -10.2904, 1.5942, 19.2785, -10.7374, -3.8506, 20.9274, -10.2893, 0.1385, 19.2757, -10.2904, 1.5942, 19.2785, -10.7384, 1.0647, 20.9315, -10.7374, -3.8506, 20.9274, 2.29, 3.0545, 9.324, 2.4493, 0.8835, 8.9033, 2.29, -3.8506, 9.3244, 2.29, 3.0545, 9.324, 2.9724, 3.0503, 7.6559, 2.4493, 0.8835, 8.9033, -0.4754, 2.3906, 15.9644, 0.557, 1.7601, 13.4058, -0.2645, 1.7195, 15.4247, -0.4754, 2.3906, 15.9644, 0.1853, 2.6655, 14.3062, 0.557, 1.7601, 13.4058, 4.7097, 2.5624, 2.6042, -4.467, 2.7918, 4.2972, -3.9579, 2.5624, 2.6042, 4.7097, 2.5624, 2.6042, 4.2007, 2.7918, 4.2972, -4.467, 2.7918, 4.2972, 4.2007, 2.7918, 4.2972, -5.0521, 2.9595, 5.9805, -4.467, 2.7918, 4.2972, 4.2007, 2.7918, 4.2972, 3.6153, 2.9595, 5.9805, -5.0521, 2.9595, 5.9805, 5.4225, 1.981, -0.8085, -3.5441, 2.2871, 0.9017, -3.2449, 1.981, -0.8085, 5.4225, 1.981, -0.8085, 5.1233, 2.2871, 0.9017, -3.5441, 2.2871, 0.9017, 3.6153, 2.9595, 5.9805, -5.695, 3.0503, 7.6559, -5.0521, 2.9595, 5.9805, 3.6153, 2.9595, 5.9805, 2.9724, 3.0503, 7.6559, -5.695, 3.0503, 7.6559, 2.9724, 3.0503, 7.6559, -6.3774, 3.0545, 9.324, -5.695, 3.0503, 7.6559, 2.9724, 3.0503, 7.6559, 2.29, 3.0545, 9.324, -6.3774, 3.0545, 9.324, 2.29, 3.0545, 9.324, -7.0813, 2.9924, 10.9872, -6.3774, 3.0545, 9.324, 2.29, 3.0545, 9.324, 1.5862, 2.9924, 10.9872, -7.0813, 2.9924, 10.9872, 1.5862, 2.9924, 10.9872, -7.7889, 2.8644, 12.6475, -7.0813, 2.9924, 10.9872, 1.5862, 2.9924, 10.9872, 0.8787, 2.8644, 12.6475, -7.7889, 2.8644, 12.6475, 0.1853, 2.6655, 14.3062, -9.1428, 2.3906, 15.9644, -8.4821, 2.6655, 14.3062, 0.1853, 2.6655, 14.3062, -0.4754, 2.3906, 15.9644, -9.1428, 2.3906, 15.9644, -0.4754, 2.3906, 15.9644, -9.7519, 2.0349, 17.6223, -9.1428, 2.3906, 15.9644, -0.4754, 2.3906, 15.9644, -1.0845, 2.0349, 17.6223, -9.7519, 2.0349, 17.6223, -10.7384, 1.0647, 20.9315, -11.0989, -3.8506, 22.5783, -10.7374, -3.8506, 20.9274, -10.7384, 1.0647, 20.9315, -11.0989, 0.46, 22.5783, -11.0989, -3.8506, 22.5783, 5.5885, 1.66, -2.5245, 5.6321, -4.0808, -4.2413, 5.5882, -4.0697, -2.5183, 5.5885, 1.66, -2.5245, 5.6321, 1.3442, -4.2413, 5.6321, -4.0808, -4.2413, -5.695, 3.0503, 7.6559, -6.3774, 3.0545, 9.324, -6.2183, 0.8835, 8.9033, -6.2183, 0.8835, 8.9033, -6.3774, 3.0545, 9.324, -6.3776, -3.8506, 9.3244, -9.7519, 2.0349, 17.6223, -10.2893, 0.1385, 19.2757, -9.6741, 1.102, 17.3984, -9.7519, 2.0349, 17.6223, -10.2904, 1.5942, 19.2785, -10.2893, 0.1385, 19.2757, 5.4225, 1.981, -0.8085, 5.5882, -4.0697, -2.5183, 5.4218, 0.5276, -0.8032, 5.4225, 1.981, -0.8085, 5.5885, 1.66, -2.5245, 5.5882, -4.0697, -2.5183, -9.1428, 2.3906, 15.9644, -9.6741, 1.102, 17.3984, -8.9322, 1.7195, 15.4247, -9.1428, 2.3906, 15.9644, -9.7519, 2.0349, 17.6223, -9.6741, 1.102, 17.3984, 0.1853, 2.6655, 14.3062, 1.4003, 0.7879, 11.4038, 0.557, 1.7601, 13.4058, 0.1853, 2.6655, 14.3062, 0.8787, 2.8644, 12.6475, 1.4003, 0.7879, 11.4038, -8.4821, 2.6655, 14.3062, -8.9322, 1.7195, 15.4247, -8.1106, 1.7601, 13.4058, -8.4821, 2.6655, 14.3062, -9.1428, 2.3906, 15.9644, -8.9322, 1.7195, 15.4247, -7.0813, 2.9924, 10.9872, -7.2671, 0.7879, 11.4038, -7.083, -3.8506, 10.9913, -7.0813, 2.9924, 10.9872, -7.7889, 2.8644, 12.6475, -7.2671, 0.7879, 11.4038, -6.3774, 3.0545, 9.324, -7.083, -3.8506, 10.9913, -6.3776, -3.8506, 9.3244, -6.3774, 3.0545, 9.324, -7.0813, 2.9924, 10.9872, -7.083, -3.8506, 10.9913, 4.7097, 2.5624, 2.6042, 5.0822, 1.4239, 1.0982, 4.5849, 2.0631, 3.0462, 4.7097, 2.5624, 2.6042, 5.1233, 2.2871, 0.9017, 5.0822, 1.4239, 1.0982, -2.071, 1.0647, 20.9315, -1.6219, 0.1385, 19.2757, -2.07, -3.8506, 20.9274, -2.071, 1.0647, 20.9315, -1.6227, 1.5942, 19.2785, -1.6219, 0.1385, 19.2757, 1.5862, 2.9924, 10.9872, 2.29, -3.8506, 9.3244, 1.5844, -3.8506, 10.9913, 1.5862, 2.9924, 10.9872, 2.29, 3.0545, 9.324, 2.29, -3.8506, 9.3244, -3.2449, 1.981, -0.8085, -3.5854, 1.4239, 1.0982, -3.2456, 0.5276, -0.8032, -3.2449, 1.981, -0.8085, -3.5441, 2.2871, 0.9017, -3.5854, 1.4239, 1.0982, 4.2007, 2.7918, 4.2972, 4.5849, 2.0631, 3.0462, 3.9584, 2.2256, 5.022, 4.2007, 2.7918, 4.2972, 4.7097, 2.5624, 2.6042, 4.5849, 2.0631, 3.0462, -6.3776, -3.8506, 9.3244, -7.083, -9.9247, 10.9913, -6.3776, -9.9247, 9.3244, -6.3776, -3.8506, 9.3244, -7.083, -3.8506, 10.9913, -7.083, -9.9247, 10.9913, 1.5844, -3.8506, 10.9913, 1.9247, -9.9247, 9.3244, 1.2193, -9.9247, 10.9913, 1.5844, -3.8506, 10.9913, 2.29, -3.8506, 9.3244, 1.9247, -9.9247, 9.3244, -3.0355, -4.0808, -4.2413, -3.0794, -9.9356, -2.5183, -3.0355, -9.9376, -4.2413, -3.0355, -4.0808, -4.2413, -3.0794, -4.0697, -2.5183, -3.0794, -9.9356, -2.5183, -2.4315, -3.8506, 22.5783, -2.4351, -9.9247, 20.9274, -2.7968, -9.9247, 22.5783, -2.4315, -3.8506, 22.5783, -2.07, -3.8506, 20.9274, -2.4351, -9.9247, 20.9274, -7.2671, 0.7879, 11.4038, 1.5844, -3.8506, 10.9913, -7.083, -3.8506, 10.9913, -7.2671, 0.7879, 11.4038, 1.4003, 0.7879, 11.4038, 1.5844, -3.8506, 10.9913, -8.1106, 1.7601, 13.4058, 1.4003, 0.7879, 11.4038, -7.2671, 0.7879, 11.4038, -8.1106, 1.7601, 13.4058, 0.557, 1.7601, 13.4058, 1.4003, 0.7879, 11.4038, -8.9322, 1.7195, 15.4247, 0.557, 1.7601, 13.4058, -8.1106, 1.7601, 13.4058, -8.9322, 1.7195, 15.4247, -0.2645, 1.7195, 15.4247, 0.557, 1.7601, 13.4058, -9.6741, 1.102, 17.3984, -0.2645, 1.7195, 15.4247, -8.9322, 1.7195, 15.4247, -9.6741, 1.102, 17.3984, -1.0067, 1.102, 17.3984, -0.2645, 1.7195, 15.4247, -1.6219, 0.1385, 19.2757, -9.6741, 1.102, 17.3984, -10.2893, 0.1385, 19.2757, -1.6219, 0.1385, 19.2757, -1.0067, 1.102, 17.3984, -9.6741, 1.102, 17.3984, -10.7374, -3.8506, 20.9274, -1.6219, 0.1385, 19.2757, -10.2893, 0.1385, 19.2757, -10.7374, -3.8506, 20.9274, -2.07, -3.8506, 20.9274, -1.6219, 0.1385, 19.2757, -2.07, -3.8506, 20.9274, -10.7374, -9.9247, 20.9274, -2.4351, -9.9247, 20.9274, -2.07, -3.8506, 20.9274, -10.7374, -3.8506, 20.9274, -10.7374, -9.9247, 20.9274, -7.083, -3.8506, 10.9913, 1.2193, -9.9247, 10.9913, -7.083, -9.9247, 10.9913, -7.083, -3.8506, 10.9913, 1.5844, -3.8506, 10.9913, 1.2193, -9.9247, 10.9913, -6.3776, -9.9247, 9.3244, 2.29, -3.8506, 9.3244, -6.3776, -3.8506, 9.3244, -6.3776, -9.9247, 9.3244, 1.9247, -9.9247, 9.3244, 2.29, -3.8506, 9.3244, 2.29, -3.8506, 9.3244, -6.2183, 0.8835, 8.9033, -6.3776, -3.8506, 9.3244, 2.29, -3.8506, 9.3244, 2.4493, 0.8835, 8.9033, -6.2183, 0.8835, 8.9033, -6.2183, 0.8835, 8.9033, 3.2362, 1.999, 6.9692, -5.4315, 1.999, 6.9692, -6.2183, 0.8835, 8.9033, 2.4493, 0.8835, 8.9033, 3.2362, 1.999, 6.9692, 3.2362, 1.999, 6.9692, -4.7093, 2.2256, 5.022, -5.4315, 1.999, 6.9692, 3.2362, 1.999, 6.9692, 3.9584, 2.2256, 5.022, -4.7093, 2.2256, 5.022, -4.7093, 2.2256, 5.022, 4.5849, 2.0631, 3.0462, -4.0828, 2.0631, 3.0462, -4.7093, 2.2256, 5.022, 3.9584, 2.2256, 5.022, 4.5849, 2.0631, 3.0462, 4.5849, 2.0631, 3.0462, -3.5854, 1.4239, 1.0982, -4.0828, 2.0631, 3.0462, 4.5849, 2.0631, 3.0462, 5.0822, 1.4239, 1.0982, -3.5854, 1.4239, 1.0982, -3.5854, 1.4239, 1.0982, 5.4218, 0.5276, -0.8032, -3.2456, 0.5276, -0.8032, -3.5854, 1.4239, 1.0982, 5.0822, 1.4239, 1.0982, 5.4218, 0.5276, -0.8032, 5.4218, 0.5276, -0.8032, -3.0794, -4.0697, -2.5183, -3.2456, 0.5276, -0.8032, 5.4218, 0.5276, -0.8032, 5.5882, -4.0697, -2.5183, -3.0794, -4.0697, -2.5183, 5.2229, -9.9354, -2.5183, -3.0794, -4.0697, -2.5183, 5.5882, -4.0697, -2.5183, 5.2229, -9.9354, -2.5183, -3.0794, -9.9356, -2.5183, -3.0794, -4.0697, -2.5183)
 
 [node name="LVL" type="Node3D"]
+script = ExtResource("1_3o04y")
+
+[node name="HomeRoofsUpgrade" type="Node3D" parent="."]
+
+[node name="RoofUpgrade4" type="Node3D" parent="HomeRoofsUpgrade"]
+visible = false
+
+[node name="lightsLine25" parent="HomeRoofsUpgrade/RoofUpgrade4" instance=ExtResource("34_svu4h")]
+transform = Transform3D(-0.104143, 0, 0.82069, 0, 0.827272, 0, -0.82069, 0, -0.104143, -6.95936, 4.8152, 91.7504)
+
+[node name="lightsLine28" parent="HomeRoofsUpgrade/RoofUpgrade4" instance=ExtResource("34_svu4h")]
+transform = Transform3D(0.0189355, 0, -0.99982, 0, 1, 0, 0.99982, 0, 0.0189355, -7.9149, 2.93498, 81.3549)
+
+[node name="lightsLine29" parent="HomeRoofsUpgrade/RoofUpgrade4" instance=ExtResource("34_svu4h")]
+transform = Transform3D(0.00806585, 0, 1.56123, 0, 1.56125, 0, -1.56123, 0, 0.00806585, -21.9264, 10.3939, -8.09923)
+
+[node name="lightsLine30" parent="HomeRoofsUpgrade/RoofUpgrade4" instance=ExtResource("34_svu4h")]
+transform = Transform3D(0.0550909, -0.0132678, 1.38371, 0.000733782, 1.38481, 0.0132491, -1.38377, 0.000206109, 0.0550954, -25.9522, 5.10929, -8.45726)
+
+[node name="lightsLine31" parent="HomeRoofsUpgrade/RoofUpgrade4" instance=ExtResource("34_svu4h")]
+transform = Transform3D(-0.0656694, 0, 1.59884, 0, 1.60019, 0, -1.59884, 0, -0.0656694, -17.7361, 4.91752, -8.48212)
+
+[node name="lightsLine32" parent="HomeRoofsUpgrade/RoofUpgrade4" instance=ExtResource("34_svu4h")]
+transform = Transform3D(1.44927, 0, -0.00748746, 0, 1.44929, 0, 0.00748746, 0, 1.44927, -17.0816, 10.447, -13.115)
+
+[node name="lightsLine33" parent="HomeRoofsUpgrade/RoofUpgrade4" instance=ExtResource("34_svu4h")]
+transform = Transform3D(1.44927, 0, -0.00748746, 0, 1.44929, 0, 0.00748746, 0, 1.44927, -26.6404, 10.447, -13.1644)
+
+[node name="lightsLine34" parent="HomeRoofsUpgrade/RoofUpgrade4" instance=ExtResource("34_svu4h")]
+transform = Transform3D(-0.0140106, 0.957955, 0.743236, 0.0416967, 0.743227, -0.957157, -1.21175, 0.0144985, -0.0415296, -16.5659, 9.35195, -8.17552)
+
+[node name="lightsLine35" parent="HomeRoofsUpgrade/RoofUpgrade4" instance=ExtResource("34_svu4h")]
+transform = Transform3D(-0.0140106, 0.957955, 0.743236, 0.0416967, 0.743227, -0.957157, -1.21175, 0.0144985, -0.0415296, -16.5177, 9.35195, -17.4912)
+
+[node name="lightsLine36" parent="HomeRoofsUpgrade/RoofUpgrade4" instance=ExtResource("34_svu4h")]
+transform = Transform3D(0.0456026, -0.988229, 0.558342, 0.0409503, 0.559862, 0.987574, -1.13431, -0.0195178, 0.0580998, -27.3017, 9.02992, -8.4069)
+
+[node name="lightsLine37" parent="HomeRoofsUpgrade/RoofUpgrade4" instance=ExtResource("34_svu4h")]
+transform = Transform3D(0.0456026, -0.988229, 0.558342, 0.0409503, 0.559862, 0.987574, -1.13431, -0.0195178, 0.0580998, -27.2548, 9.02992, -17.466)
+
+[node name="lightsLine38" parent="HomeRoofsUpgrade/RoofUpgrade4" instance=ExtResource("34_svu4h")]
+transform = Transform3D(0.0111858, 0.263486, 0.671592, -0.000344221, 0.671675, -0.263513, -0.721429, 0.00376489, 0.0105388, -20.2426, 13.3643, -8.0572)
+
+[node name="lightsLine39" parent="HomeRoofsUpgrade/RoofUpgrade4" instance=ExtResource("34_svu4h")]
+transform = Transform3D(-0.00949856, -0.390689, 0.817713, -0.0116832, 0.817743, 0.390567, -0.906177, -0.00644782, -0.0136068, -24.0633, 12.8151, -8.0812)
+
+[node name="RoofUpgrade3" type="Node3D" parent="HomeRoofsUpgrade"]
+visible = false
+
+[node name="lightsLine18" parent="HomeRoofsUpgrade/RoofUpgrade3" instance=ExtResource("34_svu4h")]
+transform = Transform3D(0.999801, 0, 0.0199476, 0, 1, 0, -0.0199476, 0, 0.999801, 0.553391, 5.92694, -23.8986)
+
+[node name="lightsLine19" parent="HomeRoofsUpgrade/RoofUpgrade3" instance=ExtResource("34_svu4h")]
+transform = Transform3D(0.0349519, 0, 0.999389, 0, 1, 0, -0.999389, 0, 0.0349519, 5.54012, 7.86121, -8.27098)
+
+[node name="lightsLine43" parent="HomeRoofsUpgrade/RoofUpgrade3" instance=ExtResource("34_svu4h")]
+transform = Transform3D(0.0349519, 0, 0.999389, 0, 1, 0, -0.999389, 0, 0.0349519, 5.76279, 2.98794, -8.68156)
+
+[node name="lightsLine44" parent="HomeRoofsUpgrade/RoofUpgrade3" instance=ExtResource("34_svu4h")]
+transform = Transform3D(0.0311361, 0, 0.890283, 0, 0.890827, 0, -0.890283, 0, 0.0311361, 11.1086, 2.92199, -8.65395)
+
+[node name="lightsLine45" parent="HomeRoofsUpgrade/RoofUpgrade3" instance=ExtResource("34_svu4h")]
+transform = Transform3D(0.00810155, 0, 0.484993, 0, 0.485061, 0, -0.484993, 0, 0.00810155, 19.4181, 3.47097, -8.72552)
+
+[node name="lightsLine20" parent="HomeRoofsUpgrade/RoofUpgrade3" instance=ExtResource("34_svu4h")]
+transform = Transform3D(0.00516626, 0, 0.999986, 0, 1, 0, -0.999986, 0, 0.00516626, 11.0277, 7.41656, -8.47649)
+
+[node name="lightsLine21" parent="HomeRoofsUpgrade/RoofUpgrade3" instance=ExtResource("34_svu4h")]
+transform = Transform3D(-0.189044, 0, 0.981968, 0, 1, 0, -0.981968, 0, -0.189044, 17.036, 7.41656, -9.0115)
+
+[node name="lightsLine22" parent="HomeRoofsUpgrade/RoofUpgrade3" instance=ExtResource("34_svu4h")]
+transform = Transform3D(0.062674, -0.104235, 0.992575, -0.00276863, 0.994509, 0.104613, -0.99803, -0.00930461, 0.0620413, 22.1203, 7.72963, -9.15525)
+
+[node name="lightsLine23" parent="HomeRoofsUpgrade/RoofUpgrade3" instance=ExtResource("34_svu4h")]
+transform = Transform3D(-0.0176539, -0.154771, 0.802831, 0.00525862, 0.802981, 0.154915, -0.817597, 0.00850649, -0.0163387, 27.3639, 8.6555, -9.12909)
+
+[node name="lightsLine24" parent="HomeRoofsUpgrade/RoofUpgrade3" instance=ExtResource("34_svu4h")]
+transform = Transform3D(-0.0832205, 0.00198304, 0.996529, -0.000687006, 0.999998, -0.0020473, -0.996531, -0.000855002, -0.0832189, 32.6541, 8.92389, -9.44032)
+
+[node name="RoofUpgrade2" type="Node3D" parent="HomeRoofsUpgrade"]
+visible = false
+
+[node name="lightsLine4" parent="HomeRoofsUpgrade/RoofUpgrade2" instance=ExtResource("34_svu4h")]
+transform = Transform3D(-0.296353, 0.0430363, -0.954108, 0.108459, 0.994038, 0.0111493, 0.9489, -0.100177, -0.299254, -1.2867, 8.5531, -34.7812)
+
+[node name="lightsLine5" parent="HomeRoofsUpgrade/RoofUpgrade2" instance=ExtResource("34_svu4h")]
+transform = Transform3D(0.999986, 0, -0.00516631, 0, 1, 0, 0.00516631, 0, 0.999986, -3.68595, 8.13393, -44.5328)
+
+[node name="lightsLine6" parent="HomeRoofsUpgrade/RoofUpgrade2" instance=ExtResource("34_svu4h")]
+transform = Transform3D(0.999986, 0, -0.00516631, 0, 1, 0, 0.00516631, 0, 0.999986, -3.71791, 8.13393, -38.3471)
+
+[node name="lightsLine17" parent="HomeRoofsUpgrade/RoofUpgrade2" instance=ExtResource("34_svu4h")]
+transform = Transform3D(0.999433, 0, 0.0336609, 0, 1, 0, -0.0336609, 0, 0.999433, -3.46769, 8.0262, -32.2306)
+
+[node name="saw_lights" parent="HomeRoofsUpgrade/RoofUpgrade2" instance=ExtResource("54_01ncj")]
+transform = Transform3D(1.19321, 0, 0.0237647, 0, 1.19344, 0, -0.0237647, 0, 1.19321, -2.71796, 6.50619, -31.2105)
+
+[node name="RoofUpgrade1" type="Node3D" parent="HomeRoofsUpgrade"]
+visible = false
+
+[node name="lightsLine12" parent="HomeRoofsUpgrade/RoofUpgrade1" instance=ExtResource("34_svu4h")]
+transform = Transform3D(0.999986, 0, -0.00516631, 0, 1, 0, 0.00516631, 0, 0.999986, 6.73415, 7.56554, -26.2734)
+
+[node name="lightsLine13" parent="HomeRoofsUpgrade/RoofUpgrade1" instance=ExtResource("34_svu4h")]
+transform = Transform3D(0.00496612, 0, 0.822339, 0, 0.822354, 0, -0.822339, 0, 0.00496612, 9.23116, 7.77059, -29.3877)
+
+[node name="lightsLine14" parent="HomeRoofsUpgrade/RoofUpgrade1" instance=ExtResource("34_svu4h")]
+transform = Transform3D(0.0954113, 0, 0.891606, 0, 0.896697, 0, -0.891606, 0, 0.0954113, 2.63771, 8.59277, -32.124)
 
 [node name="HomeUpgrade" type="Node3D" parent="."]
 transform = Transform3D(0.999987, 0, 0.00516631, 0, 1, 0, -0.00516631, 0, 0.999987, 0, 0, 0)
+visible = false
 
 [node name="baton_pinus_lights" parent="HomeUpgrade" instance=ExtResource("1_0tvq4")]
 transform = Transform3D(1.11465, 0, -1.39698e-09, 0, 1.11464, 0, 1.39698e-09, 0, 1.11465, 0.557421, 2.15776, -11.3399)
@@ -522,23 +632,11 @@ transform = Transform3D(0.999986, 0, -0.00516631, 0, 1, 0, 0.00516631, 0, 0.9999
 [node name="lightsLine" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
 transform = Transform3D(-0.0931243, -0.117506, 1.42833, 0.00682518, 1.43129, 0.118195, -1.43314, 0.0144518, -0.092249, -1.52288, 7.02764, -8.24819)
 
-[node name="saw_lights" parent="HomeUpgrade" instance=ExtResource("54_01ncj")]
-transform = Transform3D(1.19321, 0, 0.0237647, 0, 1.19344, 0, -0.0237647, 0, 1.19321, -2.71796, 6.50619, -31.2105)
-
 [node name="lightsLine2" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
 transform = Transform3D(0.288264, -0.152208, -0.945376, 0.0451543, 0.988348, -0.145358, 0.956485, -0.000786362, 0.291778, -0.852339, 6.50585, -15.3259)
 
 [node name="lightsLine3" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
 transform = Transform3D(-0.371677, 0.0509503, -0.926963, 0.108459, 0.994038, 0.0111493, 0.922005, -0.0963932, -0.374987, -1.36914, 8.75949, -18.8249)
-
-[node name="lightsLine4" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(-0.296353, 0.0430363, -0.954108, 0.108459, 0.994038, 0.0111493, 0.9489, -0.100177, -0.299254, -1.2867, 8.5531, -34.7812)
-
-[node name="lightsLine5" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(0.999986, 0, -0.00516631, 0, 1, 0, 0.00516631, 0, 0.999986, -3.68595, 8.13393, -44.5328)
-
-[node name="lightsLine6" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(0.999986, 0, -0.00516631, 0, 1, 0, 0.00516631, 0, 0.999986, -3.71791, 8.13393, -38.3471)
 
 [node name="lightsLine7" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
 transform = Transform3D(0.999986, 0, -0.00516631, 0, 1, 0, 0.00516631, 0, 0.999986, -3.31185, 7.90076, -25.3193)
@@ -555,53 +653,11 @@ transform = Transform3D(1.4759, 0, -0.00762503, 0, 1.47592, 0, 0.00762503, 0, 1.
 [node name="lightsLine11" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
 transform = Transform3D(0.565394, -0.33496, 0.753744, 0.174627, 0.941725, 0.287507, -0.806123, -0.0309305, 0.590938, 6.65896, 7.59508, -14.6602)
 
-[node name="lightsLine12" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(0.999986, 0, -0.00516631, 0, 1, 0, 0.00516631, 0, 0.999986, 6.73415, 7.56554, -26.2734)
-
-[node name="lightsLine13" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(0.00496612, 0, 0.822339, 0, 0.822354, 0, -0.822339, 0, 0.00496612, 9.23116, 7.77059, -29.3877)
-
-[node name="lightsLine14" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(0.0954113, 0, 0.891606, 0, 0.896697, 0, -0.891606, 0, 0.0954113, 2.63771, 8.59277, -32.124)
-
 [node name="lightsLine15" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
 transform = Transform3D(0.891606, 0, -0.0954113, 0, 0.896697, 0, 0.0954113, 0, 0.891606, 0.0728078, 8.59277, -35.3836)
 
 [node name="lightsLine16" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
 transform = Transform3D(0.998746, 0, 0.0500524, 0, 1, 0, -0.0500524, 0, 0.998746, -0.00101557, 7.93806, -41.378)
-
-[node name="lightsLine17" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(0.999433, 0, 0.0336609, 0, 1, 0, -0.0336609, 0, 0.999433, -3.46769, 8.0262, -32.2306)
-
-[node name="lightsLine18" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(0.999801, 0, 0.0199476, 0, 1, 0, -0.0199476, 0, 0.999801, 0.553391, 5.92694, -23.8986)
-
-[node name="lightsLine19" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(0.0349519, 0, 0.999389, 0, 1, 0, -0.999389, 0, 0.0349519, 5.54012, 7.86121, -8.27098)
-
-[node name="lightsLine43" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(0.0349519, 0, 0.999389, 0, 1, 0, -0.999389, 0, 0.0349519, 5.76279, 2.98794, -8.68156)
-
-[node name="lightsLine44" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(0.0311361, 0, 0.890283, 0, 0.890827, 0, -0.890283, 0, 0.0311361, 11.1086, 2.92199, -8.65395)
-
-[node name="lightsLine45" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(0.00810155, 0, 0.484993, 0, 0.485061, 0, -0.484993, 0, 0.00810155, 19.4181, 3.47097, -8.72552)
-
-[node name="lightsLine20" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(0.00516626, 0, 0.999986, 0, 1, 0, -0.999986, 0, 0.00516626, 11.0277, 7.41656, -8.47649)
-
-[node name="lightsLine21" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(-0.189044, 0, 0.981968, 0, 1, 0, -0.981968, 0, -0.189044, 17.036, 7.41656, -9.0115)
-
-[node name="lightsLine22" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(0.062674, -0.104235, 0.992575, -0.00276863, 0.994509, 0.104613, -0.99803, -0.00930461, 0.0620413, 22.1203, 7.72963, -9.15525)
-
-[node name="lightsLine23" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(-0.0176539, -0.154771, 0.802831, 0.00525862, 0.802981, 0.154915, -0.817597, 0.00850649, -0.0163387, 27.3639, 8.6555, -9.12909)
-
-[node name="lightsLine24" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(-0.0832205, 0.00198304, 0.996529, -0.000687006, 0.999998, -0.0020473, -0.996531, -0.000855002, -0.0832189, 32.6541, 8.92389, -9.44032)
 
 [node name="wrt10" parent="HomeUpgrade" instance=ExtResource("55_wgeja")]
 transform = Transform3D(0.23184, 0, -1.50437, 0, 1.52213, 0, 1.50437, 0, 0.23184, -5.00706, 3.58758, -52.9042)
@@ -638,45 +694,6 @@ transform = Transform3D(0.999986, 0, -0.00516631, 0, 1, 0, 0.00516631, 0, 0.9999
 
 [node name="gift10" parent="HomeUpgrade" instance=ExtResource("58_l2j83")]
 transform = Transform3D(0.910337, 0, -0.413867, 0, 1, 0, 0.413867, 0, 0.910337, 0.88839, 2.30485, -12.3757)
-
-[node name="lightsLine25" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(-0.104143, 0, 0.82069, 0, 0.827272, 0, -0.82069, 0, -0.104143, -6.95936, 4.8152, 91.7504)
-
-[node name="lightsLine28" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(0.0189355, 0, -0.99982, 0, 1, 0, 0.99982, 0, 0.0189355, -7.9149, 2.93498, 81.3549)
-
-[node name="lightsLine29" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(0.00806585, 0, 1.56123, 0, 1.56125, 0, -1.56123, 0, 0.00806585, -21.9264, 10.3939, -8.09923)
-
-[node name="lightsLine30" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(0.0550909, -0.0132678, 1.38371, 0.000733782, 1.38481, 0.0132491, -1.38377, 0.000206109, 0.0550954, -25.9522, 5.10929, -8.45726)
-
-[node name="lightsLine31" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(-0.0656694, 0, 1.59884, 0, 1.60019, 0, -1.59884, 0, -0.0656694, -17.7361, 4.91752, -8.48212)
-
-[node name="lightsLine32" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(1.44927, 0, -0.00748746, 0, 1.44929, 0, 0.00748746, 0, 1.44927, -17.0816, 10.447, -13.115)
-
-[node name="lightsLine33" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(1.44927, 0, -0.00748746, 0, 1.44929, 0, 0.00748746, 0, 1.44927, -26.6404, 10.447, -13.1644)
-
-[node name="lightsLine34" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(-0.0140106, 0.957955, 0.743236, 0.0416967, 0.743227, -0.957157, -1.21175, 0.0144985, -0.0415296, -16.5659, 9.35195, -8.17552)
-
-[node name="lightsLine35" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(-0.0140106, 0.957955, 0.743236, 0.0416967, 0.743227, -0.957157, -1.21175, 0.0144985, -0.0415296, -16.5177, 9.35195, -17.4912)
-
-[node name="lightsLine36" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(0.0456026, -0.988229, 0.558342, 0.0409503, 0.559862, 0.987574, -1.13431, -0.0195178, 0.0580998, -27.3017, 9.02992, -8.4069)
-
-[node name="lightsLine37" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(0.0456026, -0.988229, 0.558342, 0.0409503, 0.559862, 0.987574, -1.13431, -0.0195178, 0.0580998, -27.2548, 9.02992, -17.466)
-
-[node name="lightsLine38" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(0.0111858, 0.263486, 0.671592, -0.000344221, 0.671675, -0.263513, -0.721429, 0.00376489, 0.0105388, -20.2426, 13.3643, -8.0572)
-
-[node name="lightsLine39" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
-transform = Transform3D(-0.00949856, -0.390689, 0.817713, -0.0116832, 0.817743, 0.390567, -0.906177, -0.00644782, -0.0136068, -24.0633, 12.8151, -8.0812)
 
 [node name="lightsLine40" parent="HomeUpgrade" instance=ExtResource("34_svu4h")]
 transform = Transform3D(0.0889958, -0.247222, 1.19086, -1.08353e-08, 1.19404, 0.247883, -1.21625, -0.0180898, 0.0871379, -9.38568, 6.14339, -8.23621)
