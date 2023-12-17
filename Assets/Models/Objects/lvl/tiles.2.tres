@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://0ehoe5kmwlrg"]
+
+[ext_resource type="Texture2D" uid="uid://bm6lu5yi0ch87" path="res://Assets/Models/Objects/lvl/lvl_v2_road_tiles.png" id="1_pcf0k"]
+
+[resource]
+resource_name = "tiles.2"
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_pcf0k")
+texture_filter = 2

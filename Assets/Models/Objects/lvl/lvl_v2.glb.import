@@ -30,6 +30,28 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
+"materials": {
+"Bridge": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/Objects/lvl/Bridge.tres"
+},
+"Snow.2": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/Objects/lvl/Snow.2.tres"
+},
+"road2": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/Objects/lvl/road2.tres"
+},
+"tiles.2": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/Objects/lvl/tiles.2.tres"
+},
+"water2": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/Objects/lvl/water2.tres"
+}
+},
 "meshes": {
 "lvl_v2_Cube_042": {
 "generate/lightmap_uv": 0,

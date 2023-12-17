@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://iadkuxqyo554"]
+
+[ext_resource type="Texture2D" uid="uid://c8lrkjtbftsyq" path="res://Assets/Models/Objects/lvl/lvl_v2_water.png" id="1_pmc4u"]
+
+[resource]
+resource_name = "water2"
+cull_mode = 2
+albedo_texture = ExtResource("1_pmc4u")
+roughness = 0.5
+texture_filter = 2
