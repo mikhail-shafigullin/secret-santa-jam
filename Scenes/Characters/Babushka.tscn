@@ -166,6 +166,10 @@ transform = Transform3D(0.598423, 0.146212, -0.787727, -0.464903, -0.737374, -0.
 [node name="RightHandAtt" parent="TimDoppelganger/tim/TimMixemoRig/Skeleton3D" index="2"]
 transform = Transform3D(-0.156162, -0.182689, 0.97069, 0.239783, -0.960361, -0.142169, 0.958185, 0.210553, 0.193778, -24.0638, 55.1829, -14.0438)
 
+[node name="MarkerInFrontOfBabushka" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.17366, 2.00105)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_cwkym")
