@@ -1,0 +1,73 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://dkt2w1qwdwbr3"]
+
+[ext_resource type="FontFile" uid="uid://c8rloqucmw2d8" path="res://Assets/UI/Silkscreen-Regular.ttf" id="1_b7onc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0p1gk"]
+bg_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3rqj"]
+bg_color = Color(0.109804, 0.109804, 0.109804, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.164706, 0.290196, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_73ora"]
+bg_color = Color(0.129412, 0.129412, 0.129412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ef7kf"]
+bg_color = Color(0, 0, 0, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqbj0"]
+bg_color = Color(0.172549, 0.172549, 0.172549, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hiwwp"]
+bg_color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xecmm"]
+bg_color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+
+[resource]
+default_font = ExtResource("1_b7onc")
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 4
+Button/font_sizes/font_size = 8
+Button/styles/disabled = SubResource("StyleBoxFlat_0p1gk")
+Button/styles/focus = SubResource("StyleBoxFlat_t3rqj")
+Button/styles/hover = SubResource("StyleBoxFlat_73ora")
+Button/styles/normal = SubResource("StyleBoxFlat_ef7kf")
+Button/styles/pressed = SubResource("StyleBoxFlat_dqbj0")
+Label/font_sizes/font_size = 8
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/outline_size = 4
+RichTextLabel/font_sizes/normal_font_size = 8
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_hiwwp")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_hiwwp")
+VSlider/styles/slider = SubResource("StyleBoxFlat_xecmm")
