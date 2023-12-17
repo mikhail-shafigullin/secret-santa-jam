@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bol1cydsne1yd"]
+
+[ext_resource type="PackedScene" uid="uid://c84x7fri03vfo" path="res://Assets/Models/Objects/lights/baton_pinus_lights.glb" id="1_e2bce"]
+
+[node name="microTreeLights" type="Node3D"]
+
+[node name="baton_pinus_lights" parent="." instance=ExtResource("1_e2bce")]

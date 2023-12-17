@@ -1,7 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6q1clvoumakh"]
+[gd_scene load_steps=3 format=3 uid="uid://c6q1clvoumakh"]
 
 [ext_resource type="PackedScene" uid="uid://ca4ftm1hislhw" path="res://Assets/Models/Objects/lights/line.glb" id="1_ga7j1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xp6xu"]
+size = Vector3(0.176758, 0.175781, 6.0719)
 
 [node name="lightsLine" type="Node3D"]
 
 [node name="line" parent="." instance=ExtResource("1_ga7j1")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="line"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="line/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00502, -0.024353)
+shape = SubResource("BoxShape3D_xp6xu")

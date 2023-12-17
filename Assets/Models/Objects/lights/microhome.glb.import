@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ca4ftm1hislhw"
-path="res://.godot/imported/line.glb-0f3161f3e28504c3fe466fec2cfdbb06.scn"
+uid="uid://dkjtkmb1csk6n"
+path="res://.godot/imported/microhome.glb-9b9352e72b14dd0ed1a0a96add88c716.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Objects/lights/line.glb"
-dest_files=["res://.godot/imported/line.glb-0f3161f3e28504c3fe466fec2cfdbb06.scn"]
+source_file="res://Assets/Models/Objects/lights/microhome.glb"
+dest_files=["res://.godot/imported/microhome.glb-9b9352e72b14dd0ed1a0a96add88c716.scn"]
 
 [params]
 
@@ -31,18 +31,17 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "materials": {
+"camp": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/Objects/other/ilubat1/camp.tres"
+},
+"camp-light": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/Objects/other/ilubat1/camp-light.tres"
+},
 "lights": {
 "use_external/enabled": true,
 "use_external/path": "res://Assets/Models/Objects/Buildings/Lights/Lights.tres"
-},
-"wire": {
-"use_external/enabled": true,
-"use_external/path": "res://Assets/Models/Objects/Buildings/Lights/Wire.tres"
-}
-},
-"nodes": {
-"PATH:BezierCurve_001": {
-"physics/shape_type": 1
 }
 }
 }

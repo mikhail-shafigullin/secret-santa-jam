@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ca4ftm1hislhw"
-path="res://.godot/imported/line.glb-0f3161f3e28504c3fe466fec2cfdbb06.scn"
+uid="uid://c84x7fri03vfo"
+path="res://.godot/imported/baton_pinus_lights.glb-1cba26996044f2a2f7cf353eb4a707e0.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Objects/lights/line.glb"
-dest_files=["res://.godot/imported/line.glb-0f3161f3e28504c3fe466fec2cfdbb06.scn"]
+source_file="res://Assets/Models/Objects/lights/baton_pinus_lights.glb"
+dest_files=["res://.godot/imported/baton_pinus_lights.glb-1cba26996044f2a2f7cf353eb4a707e0.scn"]
 
 [params]
 
@@ -31,18 +31,18 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "materials": {
+"XtreeSmall": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/Objects/other/ilubat1/XtreeSmall.tres"
+},
 "lights": {
 "use_external/enabled": true,
 "use_external/path": "res://Assets/Models/Objects/Buildings/Lights/Lights.tres"
-},
-"wire": {
-"use_external/enabled": true,
-"use_external/path": "res://Assets/Models/Objects/Buildings/Lights/Wire.tres"
 }
 },
 "nodes": {
-"PATH:BezierCurve_001": {
-"physics/shape_type": 1
+"PATH:Cylinder": {
+"generate/physics": true
 }
 }
 }

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://fg2pak3lclhy"]
+
+[ext_resource type="PackedScene" uid="uid://b7vb1vvggulvb" path="res://Assets/Models/Objects/lights/saw_wave.glb" id="1_tu07r"]
+
+[node name="saw_lights" type="Node3D"]
+
+[node name="saw_wave" parent="." instance=ExtResource("1_tu07r")]
+
+[node name="Cube" parent="saw_wave" index="1"]
+visible = false
+
+[editable path="saw_wave"]

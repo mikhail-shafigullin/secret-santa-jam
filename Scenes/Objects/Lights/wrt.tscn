@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://co6akrymri8n"]
+
+[ext_resource type="PackedScene" uid="uid://bfgabjgb0wg0m" path="res://Assets/Models/Objects/lights/wrt.glb" id="1_wi2en"]
+
+[node name="wrt" type="Node3D"]
+
+[node name="wrt" parent="." instance=ExtResource("1_wi2en")]

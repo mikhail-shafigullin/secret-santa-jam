@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ca4ftm1hislhw"
-path="res://.godot/imported/line.glb-0f3161f3e28504c3fe466fec2cfdbb06.scn"
+uid="uid://b7vb1vvggulvb"
+path="res://.godot/imported/saw_wave.glb-3a36e06ef15f1ab4923ed74d8365e6be.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Objects/lights/line.glb"
-dest_files=["res://.godot/imported/line.glb-0f3161f3e28504c3fe466fec2cfdbb06.scn"]
+source_file="res://Assets/Models/Objects/lights/saw_wave.glb"
+dest_files=["res://.godot/imported/saw_wave.glb-3a36e06ef15f1ab4923ed74d8365e6be.scn"]
 
 [params]
 
@@ -41,8 +41,8 @@ _subresources={
 }
 },
 "nodes": {
-"PATH:BezierCurve_001": {
-"physics/shape_type": 1
+"PATH:Cube-coll": {
+"mesh_instance/cast_shadow": 0
 }
 }
 }

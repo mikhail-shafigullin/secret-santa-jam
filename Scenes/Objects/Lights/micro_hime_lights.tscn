@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://74d57ke2vt7j"]
+
+[ext_resource type="PackedScene" uid="uid://dkjtkmb1csk6n" path="res://Assets/Models/Objects/lights/microhome.glb" id="1_l51mu"]
+
+[node name="MicroHimeLights" type="Node3D"]
+
+[node name="microhome" parent="." instance=ExtResource("1_l51mu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.722906, 1.19209e-07, 0.93772)
