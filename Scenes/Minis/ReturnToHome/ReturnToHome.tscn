@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnxnh5v06uybg"]
+
+[ext_resource type="Script" path="res://Scenes/Minis/ReturnToHome/ReturnToHome.gd" id="1_l6lce"]
+
+[node name="ReturnToHome" type="CanvasLayer"]
+script = ExtResource("1_l6lce")

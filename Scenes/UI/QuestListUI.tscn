@@ -220,6 +220,17 @@ bbcode_enabled = true
 text = "[right]Help a band"
 fit_content = true
 
+[node name="ReturnToHomeQuest" type="RichTextLabel" parent="Control/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+theme = ExtResource("2_2c72x")
+bbcode_enabled = true
+text = "[right]Return to home"
+fit_content = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {

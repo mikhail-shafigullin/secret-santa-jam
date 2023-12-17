@@ -6,6 +6,7 @@ const fishing_mini = preload ("res://Scenes/Minis/Fishing/FishingMini.tscn")
 const snowboard_mini = preload ("res://Scenes/Minis/Snowboard/SnowboardMini.tscn")
 const babushka_mini = preload ("res://Scenes/Minis/Babushka/BabushkaQuestMiniGame.tscn")
 const taiko_mini = preload ( "res://Scenes/Minis/Taiko/taiko.tscn" )
+const return_to_home_mini = preload ( "res://Scenes/Minis/ReturnToHome/ReturnToHome.tscn" )
 
 const questListUI = preload ("res://Scenes/UI/QuestListUI.tscn")
 
@@ -13,7 +14,8 @@ const minis = {
 	"fishing": fishing_mini,
 	"snowboard": snowboard_mini,
 	"babushka": babushka_mini,
-	"taiko": taiko_mini
+	"taiko": taiko_mini,
+	"returnToHome": return_to_home_mini
 }
 
 var primary_screen: Node
@@ -60,7 +62,6 @@ func play_mini(mini: MiniGame) -> bool:
 func play_mini_by_name(miniName: String) -> bool:
 	if mini_game != null:
 		mini_game.end()
-	assert(mini_game == null)
 	
 	mini_game = minis.get(miniName).instantiate();
 	root.add_child(mini_game)

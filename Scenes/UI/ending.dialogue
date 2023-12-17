@@ -1,0 +1,7 @@
+~ this_is_a_node_title
+
+do Global.projector.set_allow_skip(false)
+do Global.projector.slide("res://Assets/Sprites/Credits.png")
+do Global.projector.balloon.display(false)
+noname: [wait=300] helo
+=> END

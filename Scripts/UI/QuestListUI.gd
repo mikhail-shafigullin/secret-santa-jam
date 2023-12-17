@@ -5,6 +5,7 @@ extends Control
 @onready var babushkaQuest: RichTextLabel = %BabushkaQuest;
 @onready var showboardQuest: RichTextLabel = %SnowboardQuest;
 @onready var taikoQuest: RichTextLabel = %TaikoQuest;
+@onready var returnToHomeQuest: RichTextLabel = %ReturnToHomeQuest;
 
 @onready var animationPlayer: AnimationPlayer = %AnimationPlayer;
 
@@ -71,8 +72,17 @@ func finishTaikoQuest():
 	checkAllQuestsFinished();
 	
 func checkAllQuestsFinished():
-	if(isFishermanQuestFinished and isBabushkaQuestFinished and isSnowboardQuestFinished and isTaikoQuestFinished):
-		end_game();
+	if(!isFishermanQuestFinished and isBabushkaQuestFinished and !isSnowboardQuestFinished and !isTaikoQuestFinished):
+		startReturnToHomeQuest();
+		
+func startReturnToHomeQuest():
+	fishermanQuest.visible = false;
+	babushkaQuest.visible = false;
+	taikoQuest.visible = false;
+	showboardQuest.visible = false;
+	returnToHomeQuest.visible = true;
+	Global.main_screen.play_mini_by_name("returnToHome");
+	pass;
 
 func end_game():
 	pass;

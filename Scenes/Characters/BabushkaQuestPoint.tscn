@@ -1,56 +1,31 @@
-[gd_scene load_steps=10 format=3 uid="uid://c333qtrvl8ea7"]
+[gd_scene load_steps=8 format=3 uid="uid://c333qtrvl8ea7"]
 
 [ext_resource type="Script" path="res://Scripts/Minis/BabushkaQuestPoint.gd" id="1_c3phu"]
 [ext_resource type="PackedScene" uid="uid://2gq0j2u71tdk" path="res://Scenes/Abstracts/QuestLocator.tscn" id="1_jopmv"]
-[ext_resource type="Texture2D" uid="uid://dtvv0wlgtf82t" path="res://Assets/Models/Objects/Road/road_lamps.png" id="2_wo81j"]
-[ext_resource type="PackedScene" uid="uid://bcafbsa8qrk4" path="res://Assets/Models/Objects/other/fire_lights.glb" id="3_urqco"]
 [ext_resource type="PackedScene" uid="uid://bo1tr0fadvf6l" path="res://Scenes/UsableObject.tscn" id="5_pkctg"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ih3be"]
-resource_name = "lamp"
-cull_mode = 2
-shading_mode = 0
+[sub_resource type="CylinderMesh" id="CylinderMesh_rsxj0"]
+lightmap_size_hint = Vector2i(17, 19)
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="Gradient" id="Gradient_1pfa5"]
+colors = PackedColorArray(0, 1, 0, 1, 0, 1, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cugh8"]
+gradient = SubResource("Gradient_1pfa5")
+width = 3
+height = 3
+fill_from = Vector2(1, 1)
+fill_to = Vector2(1, 0.836158)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vwykt"]
+transparency = 1
 disable_fog = true
-albedo_color = Color(1, 0.290196, 0.290196, 1)
-albedo_texture = ExtResource("2_wo81j")
-
-[sub_resource type="Animation" id="Animation_w1eag"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("fire_lights:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, -0.907571)]
-}
-
-[sub_resource type="Animation" id="Animation_cymke"]
-resource_name = "quest item"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("fire_lights:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, -0.907571), Vector3(0, 3.14159, -0.907571), Vector3(0, 6.28319, -0.907571)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_wsmlp"]
-_data = {
-"RESET": SubResource("Animation_w1eag"),
-"quest item": SubResource("Animation_cymke")
-}
+albedo_color = Color(0, 1, 0, 1)
+albedo_texture = SubResource("GradientTexture2D_cugh8")
+heightmap_enabled = true
+uv1_scale = Vector3(0.5, 0.5, 0.5)
 
 [node name="BabushkaQuestPoints" type="Node3D"]
 script = ExtResource("1_c3phu")
@@ -58,20 +33,14 @@ script = ExtResource("1_c3phu")
 [node name="QuestLocator" parent="." instance=ExtResource("1_jopmv")]
 free_space = 2
 
-[node name="LightCylinderMesh" parent="QuestLocator" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_ih3be")
-
-[node name="fire_lights" parent="." instance=ExtResource("3_urqco")]
-transform = Transform3D(0.461746, 0.591008, 0, -0.591008, 0.461746, 0, 0, 0, 0.75, 0, 0.842, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-unique_name_in_owner = true
-libraries = {
-"": SubResource("AnimationLibrary_wsmlp")
-}
-
 [node name="UsableObject" parent="." instance=ExtResource("5_pkctg")]
 unique_name_in_owner = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-1, 3.01992e-07, 0, -1.50996e-07, -2, 0, 0, 0, 1, 0, 1.96473, 0)
+mesh = SubResource("CylinderMesh_rsxj0")
+surface_material_override/0 = SubResource("StandardMaterial3D_vwykt")
 
 [connection signal="on_object_use" from="UsableObject" to="." method="_on_usable_object_on_object_use"]
 

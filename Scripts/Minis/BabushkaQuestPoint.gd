@@ -1,7 +1,7 @@
 extends Node3D
 
-@onready var animationPlayer = %AnimationPlayer;
 @onready var usableObject = %UsableObject;
+@onready var mesh = %MeshInstance3D;
 
 @onready var mainScreen = Global.main_screen;
 var babushkaMiniGame;
@@ -10,7 +10,7 @@ var babushkaNodeName: String = "Babushka";
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	animationPlayer.play("quest item");
+	mesh.visible = true;
 	babushka = mainScreen.find_child(babushkaNodeName, true, false)
 	babushka.on_start_quest.connect(start_quest_point)
 	babushka.on_victory_quest.connect(victory_quest_point)
