@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://41nn4gfo4rd8"]
+
+[ext_resource type="ArrayMesh" uid="uid://dr0605p1kakdc" path="res://Assets/Models/Objects/other/ilubat1/ilu-bat_Plane_003.res" id="1_3x5ig"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_doacs"]
+size = Vector3(0.414063, 0.279785, 0.413086)
+
+[node name="gift1" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.131592, 0)
+shape = SubResource("BoxShape3D_doacs")
+
+[node name="Ilu-batPlane003" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_3x5ig")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkna1f0fjshm2"]
+
+[ext_resource type="ArrayMesh" uid="uid://dg6g188ta4jgt" path="res://Assets/Models/Objects/other/ilubat1/ilu-bat_Plane_002.res" id="1_u8c4u"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_redex"]
+points = PackedVector3Array(0.392442, 1.63958, 1.05734, -0.533285, 0.0128788, -1.19912, -0.508226, 0.302299, -1.14184, 0.524138, 0, -1.21785, -0.533285, 0.0128788, 1.19912, -0.387171, 1.6701, -1.09755, 0.524138, 0, 1.21785, -0.387171, 1.6701, 1.09755, 0.392442, 1.63958, -1.05734, 0.403508, 1.51177, -1.12384, 0.403508, 1.51177, 1.12384, -0.497906, 0.348243, 1.20431, -0.497906, 0.348243, -1.20431, 0.503043, 0.362165, -1.16963, 0.503043, 0.362165, 1.16963, -0.402944, 1.51829, 1.0393, 0.405264, 0.348243, -1.20431, 0.405264, 0.348243, 1.20431, -0.402944, 1.51829, -1.0393)
+
+[node name="smallFance" type="StaticBody3D"]
+
+[node name="Ilu-batPlane002" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_u8c4u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_redex")

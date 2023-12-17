@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://1dl4cqx26jse"]
+
+[ext_resource type="Script" path="res://Scenes/Objects/teleporter.gd" id="1_cs2hv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1kj5a"]
+size = Vector3(12.6752, 1, 42.8856)
+
+[node name="Teleporter" type="Area3D"]
+script = ExtResource("1_cs2hv")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+gizmo_extents = 0.47
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_1kj5a")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

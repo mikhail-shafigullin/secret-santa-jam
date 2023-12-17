@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bgy7oo11pd0ct"]
+
+[ext_resource type="Texture2D" uid="uid://bs6n4wnc7mbvd" path="res://Assets/Models/Objects/other/ilu-bat_Venok.png" id="1_wqutv"]
+
+[resource]
+resource_name = "Material.001"
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_wqutv")
+texture_filter = 2

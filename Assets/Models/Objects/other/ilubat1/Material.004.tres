@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ome7iclmsxyv"]
+
+[ext_resource type="Texture2D" uid="uid://d3prn1uqlinan" path="res://Assets/Models/Objects/other/ilu-bat_Korobka.png" id="1_b5osr"]
+
+[resource]
+resource_name = "Material.004"
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_b5osr")
+texture_filter = 2

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b4ebq73y2odcx"]
+
+[ext_resource type="Texture2D" uid="uid://b5c48i5uru6hy" path="res://Assets/Models/Objects/other/ilu-bat_Palatka.png" id="1_fefbf"]
+
+[resource]
+resource_name = "camp"
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_fefbf")
+texture_filter = 2

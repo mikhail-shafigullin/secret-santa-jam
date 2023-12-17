@@ -49,6 +49,7 @@ radius = 0.196978
 height = 1.67826
 
 [node name="RandomTolik" type="CharacterBody3D"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 script = ExtResource("1_358yh")
 
 [node name="tolik" parent="." instance=ExtResource("1_by7bn")]
