@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://7kpmk14keqwy"]
+[gd_scene load_steps=13 format=3 uid="uid://7kpmk14keqwy"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/other/Band/band.gd" id="1_fddwu"]
 [ext_resource type="PackedScene" uid="uid://47kkejhagjmj" path="res://Scenes/Characters/fat_musician.tscn" id="1_q2s67"]
 [ext_resource type="PackedScene" uid="uid://djm71uriiefox" path="res://Scenes/Characters/thin_musician.tscn" id="2_1gy2h"]
 [ext_resource type="PackedScene" uid="uid://degfp10g6rn1y" path="res://Scenes/Minis/Taiko/Models/taikoModel.tscn" id="3_3jm85"]
 [ext_resource type="PackedScene" uid="uid://bo1tr0fadvf6l" path="res://Scenes/UsableObject.tscn" id="5_3xha4"]
+[ext_resource type="PackedScene" uid="uid://2gq0j2u71tdk" path="res://Scenes/Abstracts/QuestLocator.tscn" id="6_wsxal"]
 
 [sub_resource type="Animation" id="Animation_5dj42"]
 length = 0.001
@@ -181,6 +182,8 @@ libraries = {
 
 [node name="CollisionShape3D" parent="UsableObject/E_UseAreaEvent" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.171036, 0.00979453, 0.041325)
+
+[node name="QuestLocator" parent="." instance=ExtResource("6_wsxal")]
 
 [connection signal="on_object_use" from="UsableObject" to="." method="_on_usable_object_on_object_use"]
 

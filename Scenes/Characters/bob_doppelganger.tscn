@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce5mnsixd4wh1"]
+
+[ext_resource type="Script" path="res://Scenes/Characters/bob_doppelganger.gd" id="1_hedym"]
+[ext_resource type="PackedScene" uid="uid://yvsmajcny0ql" path="res://Assets/Models/Characters/bob.glb" id="2_otlkm"]
+
+[node name="BobDoppelganger" type="Node3D"]
+script = ExtResource("1_hedym")
+
+[node name="bob" parent="." instance=ExtResource("2_otlkm")]
+
+[node name="Skeleton3D" parent="bob/BobRig" index="0"]
+bones/1/position = Vector3(-0.0193642, 0.015457, 0.638013)
+bones/1/rotation = Quaternion(0.63629, 0.00479992, -0.00444668, 0.771422)
+bones/2/position = Vector3(-0.000808206, 0.289175, 0.00357797)
+bones/2/rotation = Quaternion(0.0972719, 0.00136407, -0.045897, 0.994198)
+bones/3/position = Vector3(-0.00204867, 0.271208, -0.000903146)
+bones/3/rotation = Quaternion(0.0878986, -0.0867418, 0.0868709, 0.988536)
+bones/4/rotation = Quaternion(0.81274, 0.189482, 0.535766, -0.128475)
+bones/5/rotation = Quaternion(-0.207478, -0.0197555, -0.132727, 0.968992)
+bones/6/rotation = Quaternion(-0.0220388, -0.0907322, -0.0468603, 0.994528)
+bones/7/position = Vector3(-0.1409, 0.183341, -0.0242681)
+bones/7/rotation = Quaternion(0.837021, -0.523814, -0.158121, 0.00367951)
+bones/8/rotation = Quaternion(-0.446547, -0.108679, 0.642638, 0.613026)
+bones/9/rotation = Quaternion(-0.547502, -0.0140134, -0.0882583, 0.832019)
+bones/10/position = Vector3(-0.240238, -0.253155, 0.175078)
+bones/10/rotation = Quaternion(0.656669, 0.130511, 0.144798, 0.728551)
+bones/10/scale = Vector3(0.873373, 0.873373, 0.873373)
+bones/11/position = Vector3(0.0994746, 0.0297738, 0.624807)
+bones/11/rotation = Quaternion(-0.73045, -0.114301, 0.0717486, 0.6695)
+bones/12/rotation = Quaternion(0.120378, 0.000574934, 0.0399138, 0.991925)
+bones/13/rotation = Quaternion(-0.705115, 0.0507419, -0.0136852, 0.707143)
+bones/14/rotation = Quaternion(-0.727928, 0.0495921, -0.0553784, 0.681612)
+bones/15/rotation = Quaternion(0.117568, 0.00149555, -0.000277886, 0.993064)
+bones/16/rotation = Quaternion(-0.716143, -0.0312258, -0.0136296, 0.697122)
+
+[editable path="bob"]

@@ -58,11 +58,13 @@ var speed_down = false;
 @export var raceRivalPathFollowStr = "SnowboardRivalRacePathFollow"
 @export var snowboardCameraStr = "SnowboardCamera"
 @export var snowboardModelStr = "SnowboardModel"
+@export var rivalModelStr = "RivalBobSnowboard"
 
 var racePathFollow: PathFollow3D;
 var rivalPathFollow: PathFollow3D;
 var snowboardCamera: Camera3D;
 var snowboardModel: Node3D;
+var rivalModel: Node3D;
 
 var current_path_progress: float = 0.0;
 var current_rival_path_progress: float = 0.0;
@@ -188,7 +190,9 @@ func start() -> bool:
 	rivalPathFollow = mainScreen.find_child(raceRivalPathFollowStr, true, false)
 	snowboardCamera = mainScreen.find_child(snowboardCameraStr,true, false);
 	snowboardModel = mainScreen.find_child(snowboardModelStr,true, false);
+	rivalModel = mainScreen.find_child(rivalModelStr,true, false);
 	snowboardModel.visible = true;
+	rivalModel.visible = true;
 	Global.player.camera.current = false
 	snowboardCamera.current = true;
 	racePathFollow.progress = 0;
