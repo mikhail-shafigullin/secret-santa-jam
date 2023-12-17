@@ -546,12 +546,12 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -34.77
 [node name="TimDoppelganger" parent="Objects" instance=ExtResource("18_wud7l")]
 visible = false
 
-[node name="LVL" parent="." instance=ExtResource("4_qd3xv")]
-
-[node name="Band" parent="." instance=ExtResource("11_uu46n")]
+[node name="Band" parent="Objects" instance=ExtResource("11_uu46n")]
 process_priority = 1
 process_physics_priority = 1
-transform = Transform3D(-0.2013, 0, 0.97953, 0, 1, 0, -0.97953, 0, -0.2013, -1.71633, 2.86129, 10.12)
+transform = Transform3D(0.97953, 0, 0.2013, 0, 1, 0, -0.2013, 0, 0.97953, -83.154, -2.21118, -0.367071)
+
+[node name="LVL" parent="." instance=ExtResource("4_qd3xv")]
 
 [node name="RaceTrack" type="Path3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -34.1853, 7.90075, 33.1288)
