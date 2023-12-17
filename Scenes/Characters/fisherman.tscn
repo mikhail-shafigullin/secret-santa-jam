@@ -125,12 +125,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.950715, 0.00845355, -0.097
 visible = false
 inHands = 1
 
-[node name="LeftHandAtt" parent="TimDoppelganger/tim/TimMixemoRig/Skeleton3D" index="1"]
-transform = Transform3D(0.879003, 0.446826, -0.166433, 0.129558, -0.559735, -0.818481, -0.458877, 0.697885, -0.549899, 33.1147, 46.1416, 27.5515)
-
-[node name="RightHandAtt" parent="TimDoppelganger/tim/TimMixemoRig/Skeleton3D" index="2"]
-transform = Transform3D(-0.31928, -0.927836, 0.192822, -0.680797, 0.0830302, -0.727751, 0.659223, -0.363629, -0.658178, -33.0433, 75.7566, -23.6145)
-
 [node name="ReactionBubble" type="Sprite3D" parent="." index="5"]
 unique_name_in_owner = true
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.16164, 1.51637, 0)

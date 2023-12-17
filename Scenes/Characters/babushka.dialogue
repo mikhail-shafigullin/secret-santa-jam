@@ -8,7 +8,6 @@ Anneliese: Tim, can you help decorate our area?
 Anneliese: Hang these garlands on the roofs of the houses, and I'll decorate everything down here.
 Anneliese: Do you help me?
 - Help with decoration
-	do Global.cutscener.start("babushka_wait")
 	do Global.main_screen.play_mini_by_name("babushka")
 	=> END
 - End the conversation => end_script
@@ -25,7 +24,6 @@ Anneliese: I hope it will be great in your house!
 => end_script
 
 ~ end_script
-do Global.cutscener.start("babushka_reset")
 do Global.cutscener.start("RESET")
 do Global.player.visible = true
 do Global.cutscener.end()

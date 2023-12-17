@@ -1,13 +1,83 @@
-[gd_scene load_steps=6 format=3 uid="uid://bd1j2j6wn1nv"]
+[gd_scene load_steps=10 format=3 uid="uid://bd1j2j6wn1nv"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Babushka.gd" id="1_21q8b"]
 [ext_resource type="PackedScene" uid="uid://bo1tr0fadvf6l" path="res://Scenes/UsableObject.tscn" id="2_ibi6t"]
 [ext_resource type="PackedScene" uid="uid://2gq0j2u71tdk" path="res://Scenes/Abstracts/QuestLocator.tscn" id="4_ujslx"]
 [ext_resource type="PackedScene" uid="uid://bnhy0eypqecj2" path="res://Assets/Models/Characters/babushka.glb" id="4_x21x1"]
+[ext_resource type="PackedScene" uid="uid://cuhldd5rqu02s" path="res://Scenes/Characters/tim_doppelganger.tscn" id="5_xb66w"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_chp56"]
 radius = 0.498039
 height = 2.32152
+
+[sub_resource type="Animation" id="Animation_fqi2q"]
+resource_name = "talking"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TimDoppelganger:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "animation"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("babushka/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": PackedStringArray("babuska_idle"),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "animation"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TimDoppelganger/tim/AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": PackedStringArray("Idle"),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_mx0l8"]
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TimDoppelganger:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "animation"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("babushka/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": PackedStringArray("babuska_idle"),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cwkym"]
+_data = {
+"RESET": SubResource("Animation_mx0l8"),
+"talking": SubResource("Animation_fqi2q")
+}
 
 [node name="Babushka" type="Node3D"]
 script = ExtResource("1_21q8b")
@@ -50,6 +120,62 @@ autoplay = "babuska_idle"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.622029, 0.0566443)
 shape = SubResource("CapsuleShape3D_chp56")
 
+[node name="TimDoppelganger" parent="." instance=ExtResource("5_xb66w")]
+unique_name_in_owner = true
+transform = Transform3D(-0.997666, 0, -0.0682766, 0, 1, 0, 0.0682766, 0, -0.997666, 0, 0, 1.64338)
+visible = false
+
+[node name="Skeleton3D" parent="TimDoppelganger/tim/TimMixemoRig" index="0"]
+bones/0/position = Vector3(-0.794828, 41.7559, 1.62611)
+bones/0/rotation = Quaternion(-0.0302517, -0.367547, -0.0124054, 0.92943)
+bones/1/rotation = Quaternion(-0.0300122, 0.0411379, -0.00436091, 0.998693)
+bones/2/rotation = Quaternion(0.100358, 0.0827101, -0.00634974, 0.991487)
+bones/3/rotation = Quaternion(0.113085, 0.0825696, -0.00739861, 0.990121)
+bones/4/rotation = Quaternion(0.0196407, -0.0112872, 4.69398e-05, 0.999743)
+bones/5/rotation = Quaternion(-0.0786808, 0.176966, 0.00441041, 0.981057)
+bones/6/rotation = Quaternion(-0.543841, -0.486023, 0.590496, -0.345446)
+bones/7/position = Vector3(-3.8381e-06, 11.0439, -3.00375e-06)
+bones/7/rotation = Quaternion(0.573453, 0.0909127, 0.0631931, 0.811722)
+bones/8/position = Vector3(-4.1978e-07, 15.879, 3.76767e-06)
+bones/8/rotation = Quaternion(-0.0627077, -0.00566128, 0.443243, 0.894187)
+bones/9/rotation = Quaternion(-0.159643, 0.12358, 0.0493002, 0.978168)
+bones/10/rotation = Quaternion(0.3193, -0.00294995, 0.250207, 0.914022)
+bones/11/rotation = Quaternion(0.0336702, -0.00586315, 0.060982, 0.997554)
+bones/12/rotation = Quaternion(0.606278, -0.448847, 0.541007, 0.371853)
+bones/13/position = Vector3(-1.7847e-06, 12.638, -4.81428e-06)
+bones/13/rotation = Quaternion(0.499183, -0.105337, 0.16584, 0.84393)
+bones/14/rotation = Quaternion(-0.0185861, 0.18091, -0.408199, 0.894595)
+bones/15/position = Vector3(-0.0794082, 16.6516, 0.212)
+bones/15/rotation = Quaternion(0.122107, -0.165389, -0.125106, 0.970611)
+bones/16/position = Vector3(4.31366, 3.72637, -0.686604)
+bones/16/rotation = Quaternion(0.192248, 0.0310915, -0.346686, 0.917542)
+bones/17/position = Vector3(0.00597358, 8.17948, 0.13427)
+bones/17/rotation = Quaternion(0.0381881, 0.00960711, 0.0100558, 0.999174)
+bones/18/rotation = Quaternion(0.0756321, 0.194353, 0.972441, -0.10424)
+bones/19/rotation = Quaternion(-0.295182, 0.118926, -0.0300024, 0.947536)
+bones/20/rotation = Quaternion(0.44336, -0.0318883, -0.0550993, 0.89408)
+bones/21/rotation = Quaternion(0.38509, 0.0177392, -0.0230263, 0.922421)
+bones/23/rotation = Quaternion(-0.121289, 0.0104421, 0.984521, 0.126093)
+bones/24/rotation = Quaternion(-0.291611, 0.0768366, -0.0215529, 0.953202)
+bones/25/rotation = Quaternion(0.553112, 0.0724991, 0.124863, 0.8205)
+bones/26/rotation = Quaternion(0.381051, 0.00390357, -0.00184998, 0.924544)
+
+[node name="LeftHandAtt" parent="TimDoppelganger/tim/TimMixemoRig/Skeleton3D" index="1"]
+transform = Transform3D(0.598423, 0.146212, -0.787727, -0.464903, -0.737374, -0.490045, -0.6525, 0.65947, -0.373287, 19.5989, 53.4183, 14.2699)
+
+[node name="RightHandAtt" parent="TimDoppelganger/tim/TimMixemoRig/Skeleton3D" index="2"]
+transform = Transform3D(-0.156162, -0.182689, 0.97069, 0.239783, -0.960361, -0.142169, 0.958185, 0.210553, 0.193778, -24.0638, 55.1829, -14.0438)
+
+[node name="MarkerInFrontOfBabushka" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.17366, 2.00105)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cwkym")
+}
+
 [connection signal="on_object_use" from="UsableObject" to="." method="_on_usable_object_on_object_use"]
 
 [editable path="babushka"]
+[editable path="TimDoppelganger"]

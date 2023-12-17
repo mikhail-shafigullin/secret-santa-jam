@@ -55,3 +55,4 @@ func snowboarding():
 # left: -1 | middle: 0 | right: 1
 func set_snowboard_tilt(val: float):
 	snowboarding_tree["parameters/blend_position"] = val
+	
