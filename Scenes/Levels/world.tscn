@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cogc0jr2nft03"]
+[gd_scene load_steps=24 format=3 uid="uid://cogc0jr2nft03"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="2_3okkh"]
 [ext_resource type="PackedScene" uid="uid://hd06iu5g1ddy" path="res://Scenes/Characters/fisherman.tscn" id="4_nf8l7"]
@@ -152,6 +152,20 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/10/type = "method"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Objects/Babushka")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"remove_animation_talking"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_oawwq"]
@@ -386,9 +400,65 @@ tracks/3/keys = {
 "values": [Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_10ieu"]
+resource_name = "babushka_dialogue"
+length = 30.0
+loop_mode = 2
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Objects/Babushka")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"set_animation_talking"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cutscener/Camera:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 15, 30),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.278616, 4.07481, -31.7449), Vector3(-0.278616, 4.07481, -29.9636), Vector3(-0.278616, 4.3703, -30.9732)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cutscener/Camera:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 15, 30),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.294961, -1.81209, -6.08605e-09), Vector3(-0.333358, -1.21824, 0), Vector3(-0.382227, -1.69821, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cutscener/Camera:fov")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [40.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qummu"]
 _data = {
 "RESET": SubResource("Animation_07u4m"),
+"babushka_dialogue": SubResource("Animation_10ieu"),
 "fisherman_dialogue": SubResource("Animation_oawwq"),
 "fisherman_reset": SubResource("Animation_oxi7l"),
 "fisherman_wait": SubResource("Animation_ltkj3"),
@@ -417,7 +487,7 @@ libraries = {
 autoplay = "RESET"
 
 [node name="Camera" parent="Cutscener" index="0"]
-transform = Transform3D(0.866025, 0.0895812, -0.49191, 0, 0.983819, 0.179162, 0.5, -0.155159, 0.852013, 2.27489, 3.69539, 5.82178)
+transform = Transform3D(0.866025, 0.0895812, -0.49191, 0, 0.98382, 0.179162, 0.5, -0.155159, 0.852013, 2.27489, 3.69539, 5.82178)
 fov = 27.6855
 far = 45.0
 

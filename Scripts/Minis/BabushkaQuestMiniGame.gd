@@ -22,11 +22,11 @@ func _process(delta):
 
 func start() -> bool:
 	babushka.start_quest();
-	Global.cutscener.start("babushka_reset")
 	Global.cutscener.start("RESET")
 	Global.player.visible = true
 	Global.cutscener.end()
 	Global.player.set_busy(false)
+	babushka.tim.visible = false;
 	return true;
 
 func end() -> void:

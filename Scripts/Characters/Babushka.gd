@@ -5,6 +5,10 @@ const Balloon = preload("res://Scenes/Screens/my_balloon/my_balloon.tscn")
 
 const dialogue = preload("res://Scenes/Characters/babushka.dialogue")
 
+@onready var animationPlayer = $AnimationPlayer;
+
+@onready var tim = %TimDoppelganger;
+
 signal on_start_quest;
 signal on_victory_quest;
 signal on_failure_quest;
@@ -19,12 +23,20 @@ func _process(delta):
 
 func start_quest():
 	on_start_quest.emit();
+	remove_animation_talking();
+	tim.visible = false;
 
 func victory_quest():
 	on_victory_quest.emit();
 	var balloon: Node = Balloon.instantiate()
 	Global.player.add_child(balloon)
 	balloon.start(dialogue, "victory")
+	
+func set_animation_talking():
+	animationPlayer.play("talking");
+	
+func remove_animation_talking():
+	animationPlayer.play("RESET")
 
 func _on_usable_object_on_object_use():
 	assert(dialogue)
