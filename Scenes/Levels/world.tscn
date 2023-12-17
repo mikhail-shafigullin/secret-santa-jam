@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cogc0jr2nft03"]
+[gd_scene load_steps=24 format=3 uid="uid://cogc0jr2nft03"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="2_3okkh"]
 [ext_resource type="PackedScene" uid="uid://hd06iu5g1ddy" path="res://Scenes/Characters/fisherman.tscn" id="4_nf8l7"]
@@ -164,6 +164,20 @@ tracks/10/keys = {
 "values": [{
 "args": [],
 "method": &"remove_animation_talking"
+}]
+}
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Objects/SnowboardMiniStarter")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"animation_talking_remove"
 }]
 }
 
@@ -454,6 +468,61 @@ tracks/3/keys = {
 "values": [Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_neyi7"]
+resource_name = "snowboard_dialogue"
+length = 20.0
+loop_mode = 2
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Objects/SnowboardMiniStarter")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"animation_talking_start"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cutscener/Camera:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-25.6361, 8.67278, 29.9878), Vector3(-25.8976, 8.03086, 30.5476), Vector3(-25.428, 7.79114, 30.2613)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cutscener/Camera:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 10, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.495674, -3.05782, 0), Vector3(-0.272271, -2.91819, 0), Vector3(-0.179769, -3.15905, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cutscener/Camera:fov")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [30.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qummu"]
 _data = {
 "RESET": SubResource("Animation_07u4m"),
@@ -461,6 +530,7 @@ _data = {
 "fisherman_dialogue": SubResource("Animation_oawwq"),
 "fisherman_reset": SubResource("Animation_oxi7l"),
 "fisherman_wait": SubResource("Animation_ltkj3"),
+"snowboard_dialogue": SubResource("Animation_neyi7"),
 "taiko_rest": SubResource("Animation_ta6nw"),
 "taiko_start": SubResource("Animation_d23ue"),
 "test": SubResource("Animation_vvllj")
@@ -486,7 +556,7 @@ libraries = {
 autoplay = "RESET"
 
 [node name="Camera" parent="Cutscener" index="0"]
-transform = Transform3D(0.866025, 0.0895813, -0.49191, 0, 0.98382, 0.179162, 0.5, -0.155159, 0.852013, 2.27489, 3.69539, 5.82178)
+transform = Transform3D(0.866025, 0.0895812, -0.49191, 0, 0.98382, 0.179162, 0.5, -0.155159, 0.852013, 2.27489, 3.69539, 5.82178)
 fov = 27.6855
 far = 45.0
 
@@ -555,7 +625,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -34.18
 curve = SubResource("Curve3D_1n04d")
 
 [node name="SnowboardRacePathFollow" type="PathFollow3D" parent="RaceTrack"]
-transform = Transform3D(0.0218381, -0.0169846, 0.99961, 1.86263e-09, 0.999855, 0.0169885, -0.999753, -0.000371001, 0.021835, -0.920425, -0.0213523, -0.0345268)
+transform = Transform3D(0.0218381, -0.0169846, 0.999611, 1.86263e-09, 0.999855, 0.0169885, -0.999753, -0.000371001, 0.021835, -0.920425, -0.0213523, -0.0345268)
 loop = false
 
 [node name="Node3D" type="Node3D" parent="RaceTrack/SnowboardRacePathFollow"]
@@ -570,7 +640,7 @@ visible = false
 
 [node name="SnowboardRivalRacePathFollow" type="PathFollow3D" parent="RaceTrack"]
 unique_name_in_owner = true
-transform = Transform3D(0.0218381, -0.0169846, 0.99961, 1.86263e-09, 0.999855, 0.0169885, -0.999753, -0.000371001, 0.021835, -0.920425, -0.0213523, -0.0345268)
+transform = Transform3D(0.0218381, -0.0169846, 0.999611, 1.86263e-09, 0.999855, 0.0169885, -0.999753, -0.000371001, 0.021835, -0.920425, -0.0213523, -0.0345268)
 loop = false
 
 [node name="RivalBobSnowboard" parent="RaceTrack/SnowboardRivalRacePathFollow" instance=ExtResource("12_vphxp")]

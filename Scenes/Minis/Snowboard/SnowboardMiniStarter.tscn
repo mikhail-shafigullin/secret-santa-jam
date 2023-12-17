@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8o5gcv555lhn"]
+[gd_scene load_steps=12 format=3 uid="uid://b8o5gcv555lhn"]
 
 [ext_resource type="Script" path="res://Scripts/Minis/SnowboardMiniStarter.gd" id="1_jrshm"]
 [ext_resource type="PackedScene" uid="uid://bo1tr0fadvf6l" path="res://Scenes/UsableObject.tscn" id="1_pkkgt"]
@@ -6,9 +6,77 @@
 [ext_resource type="PackedScene" uid="uid://yvsmajcny0ql" path="res://Assets/Models/Characters/bob.glb" id="3_hyiim"]
 [ext_resource type="PackedScene" uid="uid://2gq0j2u71tdk" path="res://Scenes/Abstracts/QuestLocator.tscn" id="3_mj1k8"]
 [ext_resource type="Material" uid="uid://blj0yewyl7s6o" path="res://Assets/Models/Characters/Material.001.tres" id="4_wyvdd"]
+[ext_resource type="PackedScene" uid="uid://cuhldd5rqu02s" path="res://Scenes/Characters/tim_doppelganger.tscn" id="7_v5p8g"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cm3vq"]
 size = Vector3(0.732674, 1.47278, 0.395905)
+
+[sub_resource type="Animation" id="Animation_5w05p"]
+resource_name = "talking"
+length = 4.0
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bob/AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("bob_idle"),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "animation"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TimDoppelganger/tim/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": PackedStringArray("Idle"),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TimDoppelganger:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_at5od"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TimDoppelganger:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "animation"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("bob/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": PackedStringArray("bob_idle"),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t468u"]
+_data = {
+"RESET": SubResource("Animation_at5od"),
+"talking": SubResource("Animation_5w05p")
+}
 
 [node name="SnowboardMiniStarter" type="Node3D"]
 script = ExtResource("1_jrshm")
@@ -33,25 +101,31 @@ shape = SubResource("BoxShape3D_cm3vq")
 [node name="bob" parent="." instance=ExtResource("3_hyiim")]
 
 [node name="Skeleton3D" parent="bob/BobRig" index="0"]
-bones/0/rotation = Quaternion(-0.707107, 7.85046e-17, 7.85046e-17, 0.707107)
-bones/1/rotation = Quaternion(0.696806, 8.55041e-08, 8.30657e-08, 0.71726)
-bones/2/rotation = Quaternion(0.0515427, -1.19051e-07, 6.14436e-09, 0.998671)
-bones/3/rotation = Quaternion(-0.0524486, 1.19045e-07, -6.25236e-09, 0.998624)
-bones/4/rotation = Quaternion(0.714774, 0.490101, 0.39167, -0.30902)
-bones/5/rotation = Quaternion(-0.0935874, -0.0550926, -0.171493, 0.979181)
-bones/6/rotation = Quaternion(0.00194526, -0.077182, 0.0404515, 0.996194)
+bones/1/position = Vector3(-0.019831, 0.015457, 0.637936)
+bones/1/rotation = Quaternion(0.634384, 0.00360135, -0.00340128, 0.773003)
+bones/2/position = Vector3(-7.47764e-05, 0.287662, 0.003489)
+bones/2/rotation = Quaternion(0.097456, 0.0013582, -0.0457395, 0.994187)
+bones/3/position = Vector3(-0.00203536, 0.271128, -0.000897293)
+bones/3/rotation = Quaternion(0.0900932, -0.0387795, 0.0860124, 0.991454)
+bones/4/rotation = Quaternion(0.811872, 0.194058, 0.534681, -0.131608)
+bones/5/rotation = Quaternion(-0.195725, -0.0163659, -0.101591, 0.975245)
+bones/6/rotation = Quaternion(-0.0482263, -0.0927399, -0.0966742, 0.989812)
 bones/6/scale = Vector3(1, 1, 1)
-bones/7/rotation = Quaternion(0.714774, -0.490101, -0.39167, -0.30902)
-bones/8/rotation = Quaternion(-0.0935874, 0.0550926, 0.171493, 0.979181)
-bones/9/rotation = Quaternion(0.00194526, 0.077182, -0.0404515, 0.996194)
+bones/7/position = Vector3(-0.141256, 0.182178, -0.0180285)
+bones/7/rotation = Quaternion(0.820896, -0.549272, -0.156281, -0.0023865)
+bones/8/rotation = Quaternion(-0.45355, -0.109451, 0.641035, 0.609415)
+bones/9/rotation = Quaternion(-0.547502, -0.0140134, -0.0882583, 0.832019)
 bones/9/scale = Vector3(1, 1, 1)
-bones/10/rotation = Quaternion(1, -1.59252e-07, -1.94707e-07, 7.96262e-08)
-bones/11/rotation = Quaternion(-0.729288, -0.0218312, 0.0293773, 0.683227)
+bones/10/position = Vector3(-0.240238, -0.253158, 0.175178)
+bones/10/rotation = Quaternion(0.652436, 0.150245, 0.166692, 0.723856)
+bones/10/scale = Vector3(0.873373, 0.873373, 0.873373)
+bones/11/position = Vector3(0.0994625, 0.0297738, 0.624928)
+bones/11/rotation = Quaternion(-0.730443, -0.114345, 0.0717885, 0.669496)
 bones/11/scale = Vector3(1, 1, 1)
-bones/12/rotation = Quaternion(0.117568, -0.00149555, 0.000277886, 0.993064)
-bones/13/rotation = Quaternion(-0.716143, 0.0312258, 0.0136296, 0.697122)
+bones/12/rotation = Quaternion(0.120378, 0.000574934, 0.0399138, 0.991925)
+bones/13/rotation = Quaternion(-0.705115, 0.0507419, -0.0136852, 0.707143)
 bones/13/scale = Vector3(1, 1, 1)
-bones/14/rotation = Quaternion(-0.729288, 0.0218312, -0.0293773, 0.683227)
+bones/14/rotation = Quaternion(-0.727845, 0.0507831, -0.0564935, 0.681521)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/rotation = Quaternion(0.117568, 0.00149555, -0.000277886, 0.993064)
 bones/16/rotation = Quaternion(-0.716143, -0.0312258, -0.0136296, 0.697122)
@@ -63,6 +137,67 @@ surface_material_override/0 = ExtResource("4_wyvdd")
 [node name="AnimationPlayer" parent="bob" index="1"]
 autoplay = "bob_idle"
 
+[node name="TimDoppelganger" parent="." instance=ExtResource("7_v5p8g")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.00603414, 0, 1.49906)
+visible = false
+
+[node name="Skeleton3D" parent="TimDoppelganger/tim/TimMixemoRig" index="0"]
+bones/0/position = Vector3(-0.776111, 41.7714, 1.62525)
+bones/0/rotation = Quaternion(-0.0304851, -0.367406, -0.0125678, 0.929476)
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/rotation = Quaternion(-0.0301795, 0.0410545, -0.00429479, 0.998692)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/rotation = Quaternion(0.10013, 0.0825831, -0.00627709, 0.991521)
+bones/3/rotation = Quaternion(0.112824, 0.0824012, -0.0073109, 0.990165)
+bones/4/rotation = Quaternion(0.0204618, -0.0112688, -6.06887e-05, 0.999727)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(-0.0773491, 0.176663, 0.00510189, 0.981214)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(-0.543603, -0.486335, 0.590305, -0.345708)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/position = Vector3(-3.8381e-06, 11.0439, -3.00375e-06)
+bones/7/rotation = Quaternion(0.573835, 0.0910658, 0.0632473, 0.811431)
+bones/8/position = Vector3(-4.1978e-07, 15.879, 3.76767e-06)
+bones/8/rotation = Quaternion(-0.0626758, -0.00575942, 0.443604, 0.89401)
+bones/9/rotation = Quaternion(-0.158919, 0.123391, 0.0491335, 0.978318)
+bones/10/rotation = Quaternion(0.319427, -0.00256152, 0.249523, 0.914165)
+bones/11/rotation = Quaternion(0.034078, -0.00582433, 0.0610345, 0.997537)
+bones/12/rotation = Quaternion(0.605437, -0.449777, 0.540838, 0.372345)
+bones/12/scale = Vector3(1, 1, 1)
+bones/13/position = Vector3(-1.7847e-06, 12.638, -4.81428e-06)
+bones/13/rotation = Quaternion(0.49973, -0.105769, 0.165448, 0.843629)
+bones/14/rotation = Quaternion(-0.0177675, 0.179542, -0.408662, 0.894676)
+bones/15/position = Vector3(-0.0794082, 16.6516, 0.212)
+bones/15/rotation = Quaternion(0.120733, -0.164405, -0.124542, 0.971022)
+bones/16/position = Vector3(4.31366, 3.72637, -0.686604)
+bones/16/rotation = Quaternion(0.191979, 0.0314926, -0.346189, 0.917772)
+bones/17/position = Vector3(0.00597358, 8.17948, 0.13427)
+bones/17/rotation = Quaternion(0.0370889, 0.0095426, 0.00998203, 0.999217)
+bones/18/rotation = Quaternion(0.0756375, 0.193952, 0.972527, -0.104179)
+bones/19/rotation = Quaternion(-0.294754, 0.118837, -0.0298077, 0.947686)
+bones/20/rotation = Quaternion(0.443212, -0.0318031, -0.0549745, 0.894164)
+bones/20/scale = Vector3(1, 1, 1)
+bones/21/rotation = Quaternion(0.384896, 0.0181113, -0.0228875, 0.922498)
+bones/21/scale = Vector3(1, 1, 1)
+bones/23/rotation = Quaternion(-0.121249, 0.010046, 0.984529, 0.126096)
+bones/24/rotation = Quaternion(-0.291119, 0.0768619, -0.0214469, 0.953353)
+bones/25/rotation = Quaternion(0.552824, 0.0724535, 0.124807, 0.820707)
+bones/25/scale = Vector3(1, 1, 1)
+bones/26/rotation = Quaternion(0.381065, 0.00392932, -0.00185979, 0.924538)
+bones/26/scale = Vector3(1, 1, 1)
+
+[node name="LeftHandAtt" parent="TimDoppelganger/tim/TimMixemoRig/Skeleton3D" index="1"]
+transform = Transform3D(0.597787, 0.143992, -0.788617, -0.467129, -0.736899, -0.488642, -0.651492, 0.660489, -0.373245, 19.612, 53.4554, 14.2971)
+
+[node name="RightHandAtt" parent="TimDoppelganger/tim/TimMixemoRig/Skeleton3D" index="2"]
+transform = Transform3D(-0.156722, -0.184444, 0.970268, 0.241218, -0.959805, -0.143492, 0.957733, 0.211557, 0.194913, -24.038, 55.2192, -14.0293)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_t468u")
+}
+
 [connection signal="on_object_use" from="UsableObject" to="." method="_on_usable_object_on_object_use"]
 
 [editable path="bob"]
+[editable path="TimDoppelganger"]

@@ -5,6 +5,8 @@ const dialogue = preload("res://Scenes/Characters/snowboard.dialogue")
 
 @onready var snowboardMesh = $snowboardMesh;
 
+@onready var animationPlayer = $AnimationPlayer;
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -15,6 +17,12 @@ func _process(delta):
 	if snowboardMesh:
 		snowboardMesh.rotate(Vector3.UP, PI * delta);
 	pass
+
+func animation_talking_start():
+	animationPlayer.play("talking")
+	
+func animation_talking_remove():
+	animationPlayer.play("RESET")
 
 func _on_usable_object_on_object_use():
 	assert(dialogue)

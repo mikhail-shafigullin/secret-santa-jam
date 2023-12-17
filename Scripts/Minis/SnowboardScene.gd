@@ -51,6 +51,9 @@ var current_railed_balance_acceleration: float = 0.0;
 var speed_up = false;
 var speed_down = false;
 
+const Balloon = preload("res://Scenes/Screens/my_balloon/my_balloon.tscn")
+const dialogue = preload("res://Scenes/Characters/snowboard.dialogue")
+
 # VISUAL
 @onready var mainScreen = Global.main_screen;
 
@@ -72,6 +75,8 @@ var visual_speed_koeff: float = 0.1;
 var max_angle: float = PI/4;
 var currentAngle: float = 0.0;
 var time: float = 0
+
+var is_victory:bool = false;
 	
 # Called when the node enters the scene tree for the first time.
 #func _ready():
@@ -211,6 +216,8 @@ func end() -> void:
 	Global.player.visible = true
 	Global.player.set_busy(false)
 	Global.cutscener.end();
+	if is_victory:
+		start_victory_dialogue();
 	queue_free()
 
 func startCountdown():
@@ -256,6 +263,7 @@ func victory():
 	#speedText.text = "[center]You win!";
 	winTexture.visible = true;
 	exitButton.visible = true;
+	is_victory = true;
 	Global.audioStreamPlayer.stream = walkingTheme;
 	Global.audioStreamPlayer.play();
 	Global.questListUI.finishSnowboardQuest();
@@ -268,3 +276,8 @@ func duble_didget(num :float) -> String:
 		return "0" + str(num)
 	else:
 		return str(num)
+		
+func start_victory_dialogue():
+	var balloon: Node = Balloon.instantiate()
+	Global.player.add_child(balloon)
+	balloon.start(dialogue, "victory")
