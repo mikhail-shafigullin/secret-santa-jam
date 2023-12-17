@@ -14,7 +14,7 @@ do Global.cutscener.start("snowboard_dialogue")
 do Global.player.visible = false
 Bob: Oh, Tim.. You are too good.
 Bob: Actually, I want to quit wireboarding.
-Bob: I'm sure my will help you to get better in this sport!
+Bob: I'm sure my board will help you to get better in this sport!
 Bob: I'll root for you
 ...
 [Bob's wireboard] received
