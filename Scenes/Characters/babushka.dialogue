@@ -2,10 +2,10 @@
 do Global.cutscener.start("babushka_dialogue")
 do Global.player.visible = false
 Anneliese: Merry Christmas, Tim!
-Anneliese: Have you seen the beautiful Christmas tree they planted on the other side of the river?
-Anneliese: And on our side, nothing is decorated.
-Anneliese: Tim, can you help decorate our area?
-Anneliese: Hang these garlands on the roofs of the houses, and I'll decorate everything down here.
+Anneliese: Have you seen the beautiful Christmas tree they mounted on the other side of the river?
+Anneliese: But nothing is decorated on our side.
+Anneliese: Tim, can you help me to decorate our area?
+Anneliese: Hang these lights on the roofs of the houses, and I'll decorate everything down here.
 Anneliese: Do you help me?
 - Help with decoration
 	do Global.main_screen.play_mini_by_name("babushka")
@@ -17,10 +17,10 @@ do Global.cutscener.start("babushka_dialogue")
 do Global.player.visible = false
 Anneliese: Thank you, Tim!
 Anneliese: Do you have a christmas tree in your home?
-Anneliese: Here, take this Christmas accessory!
+Anneliese: Here, take this Christmas crystalball!
 Anneliese: I hope it will be great in your house! 
-...
-[Christmas accessory] received
+...	
+[Christmas crystalball] received
 => end_script
 
 ~ end_script

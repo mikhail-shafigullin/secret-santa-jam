@@ -12,9 +12,12 @@ Bob: Bet I can overtake you?
 ~ victory
 do Global.cutscener.start("snowboard_dialogue")
 do Global.player.visible = false
-Bob: Hey, Tim!
-Bob: You'll never beat me on these wires
-Bob: Bet I can overtake you?
+Bob: Oh, Tim.. You are too good.
+Bob: Actually, I want to quit wireboarding.
+Bob: I'm sure my will help you to get better in this sport!
+Bob: I'll root for you
+...
+[Bob's wireboard] received
 => end
 
 ~ end
