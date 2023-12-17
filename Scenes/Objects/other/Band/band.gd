@@ -8,6 +8,7 @@ const dialogue = preload("res://Scenes/Characters/band.dialogue")
 @onready var animationPlayer = %AnimationPlayer;
 @onready var fat = $FatMusician
 @onready var thin = $ThinMisician
+@onready var tim = $TimDoppelganger;
 
 @onready var camera = %Camera;
 
@@ -27,10 +28,11 @@ func on_taiko_started():
 	animation_play();
 	thin.set_play(true)
 	fat.set_play(true)
+	tim.visible = false;
 
 func on_taiko_ended():
 	print("end")
-	
+	animationPlayer.disconnect("animation_finished",animation_play)
 	taiko_model.music.stop()
 	Global.audioStreamPlayer.play();
 	Global.player.visible=true
@@ -53,6 +55,12 @@ func _on_usable_object_on_object_use():
 	var balloon: Node = balloon_res.instantiate()
 	Global.player.add_child(balloon)
 	balloon.start(dialogue, "")
+	
+func animation_dialogue_start():
+	animationPlayer.play("band_talking");
+
+func animation_dialogue_stop():
+	animationPlayer.play("RESET");
 
 func animation_play(_name: String=""):
 	animationPlayer.play(nextAnimation);
