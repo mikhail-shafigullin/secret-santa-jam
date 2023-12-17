@@ -6,6 +6,8 @@ const Balloon = preload("res://Scenes/Screens/my_balloon/my_balloon.tscn")
 const dialogue = preload("res://Scenes/Characters/band.dialogue")
 
 @onready var animationPlayer = %AnimationPlayer;
+@onready var fat = $FatMusician
+@onready var thin = $ThinMisician
 
 @onready var camera = %Camera;
 
@@ -16,12 +18,15 @@ var nextIndex = 0;
 func _ready():	
 	taiko_model.connect("mini_started", on_taiko_started)
 	taiko_model.connect("mini_ended", on_taiko_ended)
+	Global.band = self
 
 func on_taiko_started():
 	print("start")
 	camera.current = true
 	animationPlayer.connect("animation_finished",animation_play);
 	animation_play();
+	thin.set_play(true)
+	fat.set_play(true)
 
 func on_taiko_ended():
 	print("end")
@@ -32,6 +37,8 @@ func on_taiko_ended():
 	Global.player.set_busy(false)
 	Global.cutscener.end()
 	camera.current = false
+	fat.set_play(false)
+	thin.set_play(false)
 		
 	if(taiko_model.is_taiko_victory): 
 		var balloon: Node = Balloon.instantiate()

@@ -30,11 +30,6 @@ func _on_usable_object_on_object_use():
 
 	mini_started.emit()
 	
-func _ready():
-	var _mini = taiko_mini.instantiate()
-	_mini.model = self
-	_mini.tim = tim
-	Global.taikoMiniGame = _mini;
 
 
 func start_song():

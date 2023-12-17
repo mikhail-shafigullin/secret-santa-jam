@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8o5gcv555lhn"]
+[gd_scene load_steps=8 format=3 uid="uid://b8o5gcv555lhn"]
 
 [ext_resource type="Script" path="res://Scripts/Minis/SnowboardMiniStarter.gd" id="1_jrshm"]
 [ext_resource type="PackedScene" uid="uid://bo1tr0fadvf6l" path="res://Scenes/UsableObject.tscn" id="1_pkkgt"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://yvsmajcny0ql" path="res://Assets/Models/Characters/bob.glb" id="3_hyiim"]
 [ext_resource type="PackedScene" uid="uid://2gq0j2u71tdk" path="res://Scenes/Abstracts/QuestLocator.tscn" id="3_mj1k8"]
 [ext_resource type="Material" uid="uid://blj0yewyl7s6o" path="res://Assets/Models/Characters/Material.001.tres" id="4_wyvdd"]
-[ext_resource type="Material" uid="uid://bbhu7akj8jfvr" path="res://Assets/Models/Objects/other/snowbord.tres" id="5_lsrdp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cm3vq"]
 size = Vector3(0.732674, 1.47278, 0.395905)
@@ -60,7 +59,6 @@ bones/16/scale = Vector3(1, 1, 1)
 
 [node name="Bob" parent="bob/BobRig/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("4_wyvdd")
-surface_material_override/1 = ExtResource("5_lsrdp")
 
 [node name="AnimationPlayer" parent="bob" index="1"]
 autoplay = "bob_idle"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cogc0jr2nft03"]
+[gd_scene load_steps=23 format=3 uid="uid://cogc0jr2nft03"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="2_3okkh"]
 [ext_resource type="PackedScene" uid="uid://hd06iu5g1ddy" path="res://Scenes/Characters/fisherman.tscn" id="4_nf8l7"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bmo3dnmo8nkx1" path="res://Scenes/Controller/Cutscener.tscn" id="5_6em04"]
 [ext_resource type="PackedScene" uid="uid://do6hbchvfi3xr" path="res://Scenes/Objects/randomTolik.tscn" id="5_vg0pf"]
 [ext_resource type="PackedScene" uid="uid://bd1j2j6wn1nv" path="res://Scenes/Characters/Babushka.tscn" id="6_8n7hx"]
-[ext_resource type="PackedScene" uid="uid://degfp10g6rn1y" path="res://Scenes/Minis/Taiko/Models/taikoModel.tscn" id="7_wp63y"]
 [ext_resource type="PackedScene" uid="uid://7kpmk14keqwy" path="res://Scenes/Objects/other/Band/band.tscn" id="11_uu46n"]
 [ext_resource type="PackedScene" uid="uid://c333qtrvl8ea7" path="res://Scenes/Characters/BabushkaQuestPoint.tscn" id="12_ab8p2"]
 [ext_resource type="PackedScene" uid="uid://ce5mnsixd4wh1" path="res://Scenes/Characters/bob_doppelganger.tscn" id="12_vphxp"]
@@ -519,8 +518,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.543
 unique_name_in_owner = true
 transform = Transform3D(-3.61999e-06, 0, -1, 0, 1, 0, 1, 0, -3.61999e-06, -5.17221, -3.65656, -21.6982)
 
-[node name="taiko" parent="Objects" instance=ExtResource("7_wp63y")]
-
 [node name="BabushkaQuestPoints" parent="Objects" instance=ExtResource("12_ab8p2")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 28.2124, -2.3717, 6.64093)
 visible = false
@@ -558,7 +555,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -34.18
 curve = SubResource("Curve3D_1n04d")
 
 [node name="SnowboardRacePathFollow" type="PathFollow3D" parent="RaceTrack"]
-transform = Transform3D(0.0259545, 2.28978e-06, 0.999656, 0, 0.999999, -2.29054e-06, -0.999655, 5.94508e-08, 0.0259546, 0, 0, 0)
+transform = Transform3D(0.0218381, -0.0169846, 0.99961, 1.86263e-09, 0.999855, 0.0169885, -0.999753, -0.000371001, 0.021835, -0.920425, -0.0213523, -0.0345268)
 loop = false
 
 [node name="Node3D" type="Node3D" parent="RaceTrack/SnowboardRacePathFollow"]
@@ -573,7 +570,7 @@ visible = false
 
 [node name="SnowboardRivalRacePathFollow" type="PathFollow3D" parent="RaceTrack"]
 unique_name_in_owner = true
-transform = Transform3D(0.0259545, 2.28978e-06, 0.999656, 0, 0.999999, -2.29054e-06, -0.999655, 5.94508e-08, 0.0259546, 0, 0, 0)
+transform = Transform3D(0.0218381, -0.0169846, 0.99961, 1.86263e-09, 0.999855, 0.0169885, -0.999753, -0.000371001, 0.021835, -0.920425, -0.0213523, -0.0345268)
 loop = false
 
 [node name="RivalBobSnowboard" parent="RaceTrack/SnowboardRivalRacePathFollow" instance=ExtResource("12_vphxp")]

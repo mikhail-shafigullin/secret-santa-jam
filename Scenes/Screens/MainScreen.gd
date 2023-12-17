@@ -5,13 +5,15 @@ const world_res = preload ("res://Scenes/Levels/world.tscn");
 const fishing_mini = preload ("res://Scenes/Minis/Fishing/FishingMini.tscn")
 const snowboard_mini = preload ("res://Scenes/Minis/Snowboard/SnowboardMini.tscn")
 const babushka_mini = preload ("res://Scenes/Minis/Babushka/BabushkaQuestMiniGame.tscn")
+const taiko_mini = preload ( "res://Scenes/Minis/Taiko/taiko.tscn" )
 
 const questListUI = preload ("res://Scenes/UI/QuestListUI.tscn")
 
 const minis = {
 	"fishing": fishing_mini,
 	"snowboard": snowboard_mini,
-	"babushka": babushka_mini
+	"babushka": babushka_mini,
+	"taiko": taiko_mini
 }
 
 var primary_screen: Node
@@ -48,7 +50,8 @@ func _ready():
 	
 func play_mini(mini: MiniGame) -> bool:
 	if mini_game != null:
-		mini_game.queue_free()
+		mini_game.end()
+	assert(mini_game == null)
 	
 	mini_game = mini
 	root.add_child(mini)
@@ -56,7 +59,8 @@ func play_mini(mini: MiniGame) -> bool:
 	
 func play_mini_by_name(miniName: String) -> bool:
 	if mini_game != null:
-		mini_game.queue_free()
+		mini_game.end()
+	assert(mini_game == null)
 	
 	mini_game = minis.get(miniName).instantiate();
 	root.add_child(mini_game)
@@ -67,7 +71,7 @@ func _on_volume_toggled(toggled_on: bool):
 
 func _on_v_slider_value_changed(value: float):
 	AudioServer.set_bus_volume_db(0, lerp(-80, 16, value))
-
+ 
 func _on_v_slider_focus_exited():
 	volume_button.button_pressed = false
 	volume_slider.visible = false

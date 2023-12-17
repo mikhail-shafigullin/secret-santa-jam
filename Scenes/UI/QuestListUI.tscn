@@ -185,6 +185,7 @@ layout_mode = 2
 mouse_filter = 2
 mouse_force_pass_scroll_events = false
 theme = ExtResource("2_2c72x")
+theme_override_constants/shadow_offset_x = 1
 bbcode_enabled = true
 text = "[right]Help fisherman"
 fit_content = true

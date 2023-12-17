@@ -2306,7 +2306,10 @@ occluder = SubResource("BoxOccluder3D_i6cd5")
 transform = Transform3D(1, 0, 0, 0, 0.992152, -0.125039, 0, 0.125039, 0.992152, 38.0236, 3.43244, -6.24445)
 
 [node name="Dumpster1" parent="." instance=ExtResource("6_2h0ah")]
-transform = Transform3D(1.66921, 0.599372, 0, -0.599372, 1.66921, 0, 0, 0, 1.77355, 3.6931, 4.60386, -23.3115)
+transform = Transform3D(-0.146925, 1.76746, 0, -1.76746, -0.146925, 0, 0, 0, 2.55734, 3.46704, 5.13127, -23.0311)
+
+[node name="Dumpster2" parent="." instance=ExtResource("6_2h0ah")]
+transform = Transform3D(-8.27355e-08, -2.97083e-08, -3.83722, -2.01055, 0.0466456, 1.56505e-07, 0.0466456, 2.01055, -6.03305e-08, 3.879, 6.58352, -16.8348)
 
 [node name="racePolH" parent="." instance=ExtResource("47_m52l7")]
 transform = Transform3D(-0.99543, -0.0954983, 8.70232e-08, -0.0954983, 0.99543, 8.34873e-09, -8.74228e-08, -6.49219e-16, -1, -2.24145, 6.22111, -8.70491)
@@ -2429,6 +2432,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.935088, 3.28586, -15.0803)
 
 [node name="CollisionShape3D" parent="River_TP/Teleporter4" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.83929, 0, -11.0778)
+
+[node name="Dumpster3" parent="." instance=ExtResource("6_2h0ah")]
+transform = Transform3D(1.36348, 0, 0, 0, 1.36348, 0, 0, 0, 1.36348, 9.07671, 10.1807, -12.0635)
 
 [editable path="lvl_v2"]
 [editable path="River_TP/Teleporter"]

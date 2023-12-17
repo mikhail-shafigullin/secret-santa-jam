@@ -240,6 +240,9 @@ func hit(type: HIT_TYPE):
 			pass
 	
 func start() -> bool:
+	if tim == null or model == null:
+		model = Global.band.taiko_model
+		tim = model.tim
 	assert(tim)
 	assert(model)
 	model.start_song();

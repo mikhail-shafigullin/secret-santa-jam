@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://47kkejhagjmj"]
+[gd_scene load_steps=6 format=3 uid="uid://47kkejhagjmj"]
 
 [ext_resource type="ArrayMesh" uid="uid://d1es1bci3klow" path="res://Assets/Models/Objects/other/musicInstruments_Cube.res" id="1_f5s4k"]
+[ext_resource type="Script" path="res://Scenes/Characters/fat_musician.gd" id="1_wk73c"]
 [ext_resource type="PackedScene" uid="uid://ctucm06eivq86" path="res://Assets/Models/Characters/band/fat_mu.glb" id="2_atipg"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_b02h6"]
@@ -9,6 +10,7 @@ points = PackedVector3Array(-0.831175, 0.547688, -0.337248, 0.867139, 1.38132, 0
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wop21"]
 
 [node name="FatMusician" type="Node3D"]
+script = ExtResource("1_wk73c")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0181444, 0, 0.576041)

@@ -8,6 +8,8 @@ extends Control
 
 @onready var animationPlayer: AnimationPlayer = %AnimationPlayer;
 
+const dim := Color(Color.WHEAT, 0.35)
+
 var isFishermanQuestFinished = false;
 var isBabushkaQuestFinished = false;
 var isSnowboardQuestFinished = false;
@@ -46,21 +48,25 @@ func toggleQuests():
 
 func finishFishermanQuest():
 	fishermanQuest.text = "[right][s]Help fisherman";
+	fishermanQuest.modulate = dim
 	isFishermanQuestFinished = true;
 	checkAllQuestsFinished();
 	
 func finishBabushkaQuest():
 	babushkaQuest.text = "[right][s]Help your neighbour";
+	babushkaQuest.modulate = dim
 	isBabushkaQuestFinished = true;
 	checkAllQuestsFinished();
 
 func finishSnowboardQuest():
 	showboardQuest.text = "[right][s]Challenge with Bob";
+	showboardQuest.modulate = dim
 	isSnowboardQuestFinished = true;
 	checkAllQuestsFinished();
 	
 func finishTaikoQuest():
 	taikoQuest.text = "[right][s]Help a band";
+	taikoQuest.modulate = dim
 	isTaikoQuestFinished = true;
 	checkAllQuestsFinished();
 	

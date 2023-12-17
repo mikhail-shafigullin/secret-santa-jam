@@ -11,7 +11,7 @@ var currentTimDoppelganger: TimDoppelganger;
 var audioStreamPlayer: AudioStreamPlayer; 
 
 var babushkaMiniGame: BabushkaQuestMiniGame;
-var taikoMiniGame: TaikoMiniGame;
+var band = null
 
 var questListUI: QuestListUI;
 

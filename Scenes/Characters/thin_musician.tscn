@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://djm71uriiefox"]
+[gd_scene load_steps=6 format=3 uid="uid://djm71uriiefox"]
 
+[ext_resource type="Script" path="res://Scenes/Characters/thin_musician.gd" id="1_jgeci"]
 [ext_resource type="PackedScene" uid="uid://coe1g1e47umsl" path="res://Assets/Models/Characters/band/thin_mu.glb" id="1_r3d58"]
 [ext_resource type="ArrayMesh" uid="uid://cl75aohkx2fe0" path="res://Assets/Models/Objects/other/musicInstruments_Cube_001.res" id="2_00fev"]
 
@@ -10,6 +11,7 @@ points = PackedVector3Array(-0.524898, 0.813227, -0.142556, 0.389809, 0.873735, 
 radius = 0.413626
 
 [node name="ThinMisician" type="Node3D"]
+script = ExtResource("1_jgeci")
 
 [node name="thin_mu" parent="." instance=ExtResource("1_r3d58")]
 

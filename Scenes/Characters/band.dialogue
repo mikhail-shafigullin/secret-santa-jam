@@ -9,7 +9,7 @@ Finn: I remember you're a good player! I'm sure you can handle it.
 Milan: It would be really cool if you play with us... What do you say?
 - Help them with song
 	do Global.cutscener.start("band_wait")
-	do Global.main_screen.play_mini(Global.taikoMiniGame)
+	do Global.main_screen.play_mini_by_name("taiko")
 	=> END
 - End the conversation => end_script
 
