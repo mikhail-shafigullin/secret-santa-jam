@@ -25,8 +25,8 @@ var slider_value: float = 0;
 @export var success_slider_speed = 20;
 @export var success_failure_slider_speed = -10;
 
-@export var min_fishing_time = 3.0
-@export var max_fishing_time = 5.0
+@export var min_fishing_time = 7.0
+@export var max_fishing_time = 12.0
 @export var failure_fishing_time = 2.0
 
 var currentPart = 1;
@@ -206,11 +206,11 @@ func start_bubbles_reaction_part():
 	fisherman.mini_game_fish_founded();
 	add_child(failureFirstPartTimer)
 	failureFirstPartTimer.start()
-	Global.audioStreamPlayer.stream = fishingTheme_02;
-	Global.audioStreamPlayer.play();
 	
 func start_third_part():
 	currentPart = 3;
+	Global.audioStreamPlayer.stream = fishingTheme_02;
+	Global.audioStreamPlayer.play();
 	fisherman.turn_off_reaction_bubble();
 	failureFirstPartTimer.stop();
 	firstPartSection.visible = false;
