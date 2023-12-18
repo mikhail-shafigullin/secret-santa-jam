@@ -101,45 +101,55 @@ vertical_alignment = 1
 
 [node name="Projector" parent="Control/SubViewScale/SubViewport" instance=ExtResource("4_fa7ws")]
 
-[node name="MouseBlock" type="Control" parent="Control"]
+[node name="UI" type="CanvasLayer" parent="Control"]
+layer = 128
+
+[node name="end" type="Control" parent="Control/UI"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MouseBlock" type="Control" parent="Control/UI"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 104.0
 offset_bottom = 186.0
 
-[node name="FullScreen" type="Button" parent="Control/MouseBlock"]
+[node name="FullScreen" type="Button" parent="Control/UI/MouseBlock"]
 top_level = true
 z_as_relative = false
 custom_minimum_size = Vector2(32, 32)
-layout_mode = 1
+layout_mode = 0
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 48.0
 offset_bottom = 48.0
 tooltip_text = "fullscreen"
-focus_mode = 1
+focus_mode = 0
 icon = ExtResource("4_hjjw2")
 flat = true
 icon_alignment = 1
 
-[node name="Volume" type="Button" parent="Control/MouseBlock"]
+[node name="Volume" type="Button" parent="Control/UI/MouseBlock"]
 top_level = true
 z_as_relative = false
 custom_minimum_size = Vector2(32, 32)
-layout_mode = 1
+layout_mode = 0
 offset_left = 48.0
 offset_top = 16.0
 offset_right = 80.0
 offset_bottom = 48.0
 tooltip_text = "volume"
-focus_mode = 1
+focus_mode = 0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_fxpqe")
 toggle_mode = true
 icon = ExtResource("5_nr1bp")
 flat = true
 icon_alignment = 1
 
-[node name="VSlider" type="VSlider" parent="Control/MouseBlock/Volume"]
+[node name="VSlider" type="VSlider" parent="Control/UI/MouseBlock/Volume"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 8.0
@@ -152,8 +162,8 @@ step = 0.01
 value = 0.9
 
 [connection signal="gui_input" from="Control/SubViewScale" to="Control/SubViewScale" method="_on_gui_input"]
-[connection signal="pressed" from="Control/MouseBlock/FullScreen" to="." method="_on_full_screen_pressed"]
-[connection signal="focus_exited" from="Control/MouseBlock/Volume" to="." method="_on_volume_focus_exited"]
-[connection signal="toggled" from="Control/MouseBlock/Volume" to="." method="_on_volume_toggled"]
-[connection signal="focus_exited" from="Control/MouseBlock/Volume/VSlider" to="." method="_on_v_slider_focus_exited"]
-[connection signal="value_changed" from="Control/MouseBlock/Volume/VSlider" to="." method="_on_v_slider_value_changed"]
+[connection signal="pressed" from="Control/UI/MouseBlock/FullScreen" to="." method="_on_full_screen_pressed"]
+[connection signal="focus_exited" from="Control/UI/MouseBlock/Volume" to="." method="_on_volume_focus_exited"]
+[connection signal="toggled" from="Control/UI/MouseBlock/Volume" to="." method="_on_volume_toggled"]
+[connection signal="focus_exited" from="Control/UI/MouseBlock/Volume/VSlider" to="." method="_on_v_slider_focus_exited"]
+[connection signal="value_changed" from="Control/UI/MouseBlock/Volume/VSlider" to="." method="_on_v_slider_value_changed"]

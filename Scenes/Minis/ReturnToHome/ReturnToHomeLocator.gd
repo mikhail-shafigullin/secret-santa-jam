@@ -22,4 +22,5 @@ func turn_off_locator():
 
 
 func _on_usable_object_on_object_use():
-	Global.projector.start_dialogue("res://Scenes/UI/ending.dialogue");
+#	Global.projector.start_dialogue("res://Scenes/UI/ending.dialogue");
+	Global.main_screen.win()

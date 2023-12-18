@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://biya6s83nsgch"]
+
+[ext_resource type="Texture2D" uid="uid://b2558d73is72u" path="res://Assets/Sprites/Credits.png" id="1_46g3e"]
+[ext_resource type="PackedScene" uid="uid://dblj48i6xbmj1" path="res://Scenes/Minis/Loop/loop.tscn" id="1_746kr"]
+[ext_resource type="Script" path="res://Scenes/Screens/EndScreen.gd" id="1_x6n7c"]
+
+[node name="EndScreen" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x6n7c")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_46g3e")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -426.0
+offset_right = 384.0
+offset_bottom = 29.0
+grow_vertical = 0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(376, 455)
+render_target_update_mode = 4
+
+[node name="loop-mini" parent="CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("1_746kr")]

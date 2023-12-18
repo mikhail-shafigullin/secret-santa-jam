@@ -30,11 +30,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(Global.player and !Global.player.busy):
-		visible = true;
-	else:
-		visible = false;
-	pass
+	if(Global.player != null): 
+		if (!Global.player.busy):
+			visible = true;
+		else:
+			visible = false;
 	
 func toggleQuests():
 	if is_opened:

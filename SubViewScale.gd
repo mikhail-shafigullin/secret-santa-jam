@@ -19,7 +19,7 @@ func fit():
 func _on_gui_input(event):
 	if event is InputEventMouseButton:
 		if not event.pressed:
-			if Global.player:
+			if Global.player != null:
 				if not Global.player.busy:
 					Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 

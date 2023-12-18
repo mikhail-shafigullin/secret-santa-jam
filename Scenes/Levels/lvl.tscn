@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://dwa64ft0y4d4h"]
+[gd_scene load_steps=90 format=3 uid="uid://dwa64ft0y4d4h"]
 
 [ext_resource type="PackedScene" uid="uid://c84x7fri03vfo" path="res://Assets/Models/Objects/lights/baton_pinus_lights.glb" id="1_0tvq4"]
 [ext_resource type="Script" path="res://Scenes/Levels/LevelModify.gd" id="1_3o04y"]
@@ -64,6 +64,7 @@
 [ext_resource type="PackedScene" uid="uid://cotiht8unmggl" path="res://Scenes/Objects/Fancy/wreath.tscn" id="61_ae0d2"]
 [ext_resource type="Material" uid="uid://dklen2voa5hvf" path="res://Assets/Models/Objects/Rvier/ice.tres" id="61_tpp1r"]
 [ext_resource type="PackedScene" uid="uid://bjmb0abxtckif" path="res://Assets/Models/Objects/other/finish.glb" id="64_psn3d"]
+[ext_resource type="PackedScene" uid="uid://cxlfbh0nijpuo" path="res://Assets/Models/Objects/other/umbrela_table.glb" id="65_an6xe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1vx7i"]
 size = Vector3(2.12, 32.7849, 23.84)
@@ -1009,28 +1010,28 @@ transform = Transform3D(0.999986, 0, -0.00516631, 0, 1, 0, 0.00516631, 0, 0.9999
 transform = Transform3D(0.00496677, 0, 0.961372, 0, 0.961385, 0, -0.961372, 0, 0.00496677, 25.6477, 1.19499, -11.9156)
 
 [node name="Bench" parent="HomeSqueare" instance=ExtResource("30_o7v35")]
-transform = Transform3D(0.332111, 0, 0.438417, 0, 1, 0, -0.162003, 0, 0.898771, 3.47807, -0.07599, 10.4644)
+transform = Transform3D(0.332111, 0, 0.438417, 0, 1, 0, -0.162003, 0, 0.898771, 3.27827, -0.07599, 10.2253)
 
 [node name="Bench2" parent="HomeSqueare" instance=ExtResource("30_o7v35")]
-transform = Transform3D(0.283021, 0, -0.642934, 0, 1, 0, 0.237575, 0, 0.76592, 4.4418, -0.07599, 11.1682)
+transform = Transform3D(0.283021, 0, -0.642934, 0, 1, 0, 0.237575, 0, 0.76592, 4.87919, -0.0759903, 10.6222)
 
 [node name="Bench7" parent="HomeSqueare" instance=ExtResource("30_o7v35")]
-transform = Transform3D(-0.0549115, 0, 0.988897, 0, 1, 0, -0.365414, 0, -0.148603, 2.98585, -0.07599, 11.3247)
+transform = Transform3D(-0.0549115, 0, 0.988897, 0, 1, 0, -0.365414, 0, -0.148603, 2.77234, -0.07599, 11.5368)
 
 [node name="Bench8" parent="HomeSqueare" instance=ExtResource("30_o7v35")]
-transform = Transform3D(-0.297736, 0, -0.592266, 0, 1, 0, 0.218853, 0, -0.805742, 3.69149, -0.07599, 12.1703)
+transform = Transform3D(-0.297736, 0, -0.592266, 0, 1, 0, 0.218853, 0, -0.805742, 4.11572, -0.07599, 12.4083)
 
 [node name="Bench3" parent="HomeSqueare" instance=ExtResource("30_o7v35")]
-transform = Transform3D(-0.367012, 0, -0.116254, 0, 1, 0, 0.0429581, 0, -0.993219, -4.27311, -0.0456899, 12.4349)
+transform = Transform3D(-0.367012, 0, -0.116254, 0, 1, 0, 0.0429581, 0, -0.993219, -4.16199, -0.0456899, 12.3734)
 
 [node name="Bench4" parent="HomeSqueare" instance=ExtResource("30_o7v35")]
-transform = Transform3D(0.268689, 0, 0.428777, 0, 1, 0, -0.127526, 0, 0.903409, -4.27892, -0.07599, 10.9115)
+transform = Transform3D(0.268689, 0, 0.428777, 0, 1, 0, -0.127526, 0, 0.903409, -4.50274, -0.07599, 10.188)
 
 [node name="Bench5" parent="HomeSqueare" instance=ExtResource("30_o7v35")]
-transform = Transform3D(-0.00190906, 0, -0.999986, 0, 1, 0, 0.369513, 0, -0.00516635, -3.56171, -0.07599, 11.7679)
+transform = Transform3D(-0.00190906, 0, -0.999986, 0, 1, 0, 0.369513, 0, -0.00516635, -3.17598, -0.07599, 10.917)
 
 [node name="Bench6" parent="HomeSqueare" instance=ExtResource("30_o7v35")]
-transform = Transform3D(0.0755144, 0, 0.978896, 0, 1, 0, -0.36172, 0, 0.204359, -5.2275, -0.07599, 11.6347)
+transform = Transform3D(0.0755144, 0, 0.978896, 0, 1, 0, -0.36172, 0, 0.204359, -5.28608, -0.0759902, 11.4875)
 
 [node name="snow2" parent="HomeSqueare" instance=ExtResource("26_oy12c")]
 transform = Transform3D(0.658108, 0.177787, 1.12023, -9.20048e-09, 1.29513, -0.205546, -1.13424, 0.103155, 0.649973, 13.2353, 8.44314, -22.2056)
@@ -2805,11 +2806,11 @@ visible = false
 [node name="finish" parent="." instance=ExtResource("64_psn3d")]
 transform = Transform3D(2.13357, 0, 0, 0, 2.11672, 0, 0, 0, 1.56838, -34.6926, 8.05278, 32.7216)
 
-[node name="Dumpster1" parent="." instance=ExtResource("6_2h0ah")]
-transform = Transform3D(2.20505, 0, 0, 0, 2.20505, 0, 0, 0, 2.20505, -25.4582, 0.500142, -1.01499)
+[node name="umbrela_table" parent="." instance=ExtResource("65_an6xe")]
+transform = Transform3D(2.47825, 0, 0.904902, 0, 2.63829, 0, -0.904902, 0, 2.47825, -17.2873, 2.10167, -1.63902)
 
-[node name="Dumpster2" parent="." instance=ExtResource("6_2h0ah")]
-transform = Transform3D(2.25655, 0, 0, 0, 2.25655, 0, 0, 0, 2.25655, -17.4971, 0.551778, -1.45445)
+[node name="umbrela_table2" parent="." instance=ExtResource("65_an6xe")]
+transform = Transform3D(2.47825, 0, 0.904902, 0, 2.63829, 0, -0.904902, 0, 2.47825, -25.3442, 2.09868, -1.63198)
 
 [editable path="River_TP/Teleporter"]
 [editable path="River_TP/Teleporter2"]

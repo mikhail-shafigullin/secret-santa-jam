@@ -1,7 +1,6 @@
 extends MiniGame
 
 var returnToHomeStr = "ReturnToHomeLocator";
-
 var returnToHomeLocator : ReturnToHomeLocator;
 
 

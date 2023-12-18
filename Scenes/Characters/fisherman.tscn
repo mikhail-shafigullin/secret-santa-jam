@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://hd06iu5g1ddy"]
+[gd_scene load_steps=12 format=3 uid="uid://hd06iu5g1ddy"]
 
 [ext_resource type="PackedScene" uid="uid://5u7qxg6184ef" path="res://Assets/Models/Characters/fisherman.glb" id="1_mvymt"]
 [ext_resource type="Script" path="res://Scenes/Characters/fisherman.gd" id="2_jedh1"]
@@ -69,6 +69,9 @@ _data = {
 "RESET": SubResource("Animation_np6df"),
 "camera_mv": SubResource("Animation_yid1t")
 }
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fa0e6"]
+height = 2.82444
 
 [node name="fisherman2" instance=ExtResource("1_mvymt")]
 script = ExtResource("2_jedh1")
@@ -153,6 +156,12 @@ unique_name_in_owner = true
 transform = Transform3D(0.835213, 0.141126, -0.53151, -9.87532e-09, 0.96651, 0.256627, 0.549927, -0.214338, 0.807242, -3.65737, 1.53809, 1.63222)
 fov = 40.0
 far = 45.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.652324, 0.110235)
+shape = SubResource("CapsuleShape3D_fa0e6")
 
 [connection signal="on_object_use" from="UsableObject" to="." method="_on_usable_object_on_object_use"]
 

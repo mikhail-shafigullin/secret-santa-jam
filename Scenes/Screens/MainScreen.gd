@@ -22,9 +22,11 @@ var primary_screen: Node
 var mini_game: MiniGame
 
 @onready var root = $Control/SubViewScale/SubViewport
-@onready var volume_slider = $Control/MouseBlock/Volume/VSlider
-@onready var volume_button = $Control/MouseBlock/Volume
+@onready var volume_slider = $Control/UI/MouseBlock/Volume/VSlider
+@onready var volume_button = $Control/UI/MouseBlock/Volume
 @onready var audioStreamPlayer = %AudioStreamPlayer;
+
+const end_screen_res = preload("res://Scenes/Screens/EndScreen.tscn")
 
 func _on_full_screen_pressed():
 	var vpw = get_viewport().get_window()
@@ -49,6 +51,11 @@ func _ready():
 	root.add_child(quest_list_instance);
 	Global.questListUI = quest_list_instance;
 	
+func win():
+	primary_screen.queue_free()
+	primary_screen = end_screen_res.instantiate()
+	%end.add_child(primary_screen)
+	audioStreamPlayer.stop()
 	
 func play_mini(mini: MiniGame) -> bool:
 	if mini_game != null:
