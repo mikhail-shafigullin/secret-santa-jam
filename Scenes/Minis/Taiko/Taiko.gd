@@ -27,7 +27,7 @@ var combo: int = 0;
 var max_combo: int = 0;
 var score: int = 0;
 
-var targetedScore = 5000;
+var targetedScore = 3000;
 
 const KatSpriteRes = preload ("res://Scenes/Minis/Taiko/BlueSprite.tscn")
 const DonSpriteRes = preload ("res://Scenes/Minis/Taiko/OrangeSprite.tscn")

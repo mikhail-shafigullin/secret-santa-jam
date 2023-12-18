@@ -35,11 +35,11 @@ func start() -> bool:
 	return true;
 
 func end() -> void:
+	gate.set_collision_layer_value(1,0)
+	gate.set_collision_mask_value(1,0)
 	Global.player.visible = true
 	Global.player.set_busy(false)
 	Global.cutscener.end();
-	gate.set_collision_layer_value(1,0)
-	gate.set_collision_mask_value(1,0)
 	print("babushka end")
 	queue_free();
 

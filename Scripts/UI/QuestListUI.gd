@@ -81,8 +81,10 @@ func startReturnToHomeQuest():
 	taikoQuest.visible = false;
 	showboardQuest.visible = false;
 	returnToHomeQuest.visible = true;
+	get_tree().create_timer(2, true).connect("timeout", play_return_mini)
+
+func play_return_mini():
 	Global.main_screen.play_mini_by_name("returnToHome");
-	pass;
 
 func end_game():
 	pass;

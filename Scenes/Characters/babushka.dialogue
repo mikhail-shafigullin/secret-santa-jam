@@ -24,6 +24,6 @@ Anneliese: I hope it will be great in your house!
 => end_script
 
 ~ end_script
-do Global.main_screen.stop_mini()
 do Global.player.set_busy(false)
+do Global.main_screen.stop_mini()
 => END
