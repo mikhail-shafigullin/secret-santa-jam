@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://74d57ke2vt7j"]
+[gd_scene load_steps=3 format=3 uid="uid://74d57ke2vt7j"]
 
 [ext_resource type="PackedScene" uid="uid://dkjtkmb1csk6n" path="res://Assets/Models/Objects/lights/microhome.glb" id="1_l51mu"]
 
-[node name="MicroHimeLights" type="Node3D"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f1dfm"]
+points = PackedVector3Array(1.17058, 0.258676, 1.50312, 1.19472, 0, 1.52931, -1.65012, 0.414006, -1.4591, -1.48757, 1.84773, 1.29563, 1.19472, 0, -1.52931, -1.5091, 0.0208055, 1.50595, -1.48757, 1.84773, -1.29563, -1.5525, 2.69966, 0.0937943, 1.15008, 1.84773, 1.29563, 1.15008, 1.84773, -1.29563, -1.5091, 0.0208055, -1.50595, 1.1512, 2.68204, 0.138693, -1.65012, 2.11602, 0.729552, -1.55153, 2.55791, -0.328189, -1.50488, 1.52614, -1.36028, -1.50488, 1.52614, 1.36028, -1.65012, 0.365152, -0.923978, 1.1512, 2.68204, -0.138693, 1.16866, 1.52614, -1.36028, 1.16866, 1.52614, 1.36028, -1.60124, 1.53222, 1.26468, -1.50667, 0.258676, -1.50312, -1.50667, 0.258676, 1.50312, -1.4886, 2.68204, -0.138693, -1.4886, 2.68204, 0.138693, -1.65012, 2.16461, 0.680794, 1.17058, 0.258676, -1.50312, -1.60124, 1.62938, 1.26468, -1.5091, 1.83863, -1.18061)
+
+[node name="MicroHimeLights" type="StaticBody3D"]
 
 [node name="microhome" parent="." instance=ExtResource("1_l51mu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.722906, 1.19209e-07, 0.93772)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.722906, 1.19209e-07, 0.93772)
+shape = SubResource("ConvexPolygonShape3D_f1dfm")

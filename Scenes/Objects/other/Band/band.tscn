@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://7kpmk14keqwy"]
+[gd_scene load_steps=17 format=3 uid="uid://7kpmk14keqwy"]
 
 [ext_resource type="Script" path="res://Scenes/Objects/other/Band/band.gd" id="1_fddwu"]
 [ext_resource type="PackedScene" uid="uid://47kkejhagjmj" path="res://Scenes/Characters/fat_musician.tscn" id="1_q2s67"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bo1tr0fadvf6l" path="res://Scenes/UsableObject.tscn" id="5_3xha4"]
 [ext_resource type="PackedScene" uid="uid://2gq0j2u71tdk" path="res://Scenes/Abstracts/QuestLocator.tscn" id="6_wsxal"]
 [ext_resource type="PackedScene" uid="uid://cuhldd5rqu02s" path="res://Scenes/Characters/tim_doppelganger.tscn" id="7_sb4gl"]
+[ext_resource type="Texture2D" uid="uid://bm6lu5yi0ch87" path="res://Assets/Models/Objects/lvl/lvl_v2_road_tiles.png" id="8_ouf6v"]
 
 [sub_resource type="Animation" id="Animation_5dj42"]
 length = 0.001
@@ -194,6 +195,14 @@ _data = {
 "band_talking": SubResource("Animation_vfw07")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3cdxi"]
+resource_name = "tiles.2"
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0.270588, 0.270588, 0.270588, 1)
+albedo_texture = ExtResource("8_ouf6v")
+texture_filter = 2
+
 [node name="Band" type="Node3D"]
 script = ExtResource("1_fddwu")
 
@@ -268,6 +277,12 @@ transform = Transform3D(0.591448, 0.0361058, -0.805534, -0.509144, -0.757937, -0
 
 [node name="RightHandAtt" parent="TimDoppelganger/tim/TimMixemoRig/Skeleton3D" index="2"]
 transform = Transform3D(-0.183635, -0.117688, 0.975924, 0.254445, -0.964662, -0.0684526, 0.949492, 0.235749, 0.207091, -22.7997, 56.4644, -13.4272)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.12681, 0.252441)
+use_collision = true
+size = Vector3(6.20117, 4.28662, 3.90723)
+material = SubResource("StandardMaterial3D_3cdxi")
 
 [connection signal="on_object_use" from="UsableObject" to="." method="_on_usable_object_on_object_use"]
 

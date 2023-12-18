@@ -17,7 +17,7 @@ metadata/_edit_group_ = true
 
 [node name="baseMusic" type="AudioStreamPlayer" parent="." index="0"]
 stream = ExtResource("6_obuu0")
-volume_db = -25.0
+volume_db = -22.0
 
 [node name="Pon" type="AudioStreamPlayer" parent="." index="1"]
 stream = ExtResource("4_tfhxg")
@@ -25,7 +25,7 @@ volume_db = -20.0
 
 [node name="Kat" type="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource("5_yav7p")
-volume_db = -10.0
+volume_db = -18.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="4"]
 
