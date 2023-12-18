@@ -4,9 +4,11 @@ extends MiniGame
 @onready var loop = %Loop
 var time: float = 0
 
+@onready var mat: Material = load("res://Scenes/Minis/Loop/loop.tres")
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	mat.set("albedo_texture", %win.get_viewport().get_texture())
+	poi.set_surface_override_material(1, mat)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
