@@ -58,6 +58,11 @@ func play_mini(mini: MiniGame) -> bool:
 	mini_game = mini
 	root.add_child(mini)
 	return mini.start()
+
+func stop_mini():
+	if mini_game != null:
+		mini_game.end()
+		assert(mini_game.is_queued_for_deletion())
 	
 func play_mini_by_name(miniName: String) -> bool:
 	if mini_game != null:

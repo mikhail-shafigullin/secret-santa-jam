@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cogc0jr2nft03"]
+[gd_scene load_steps=27 format=3 uid="uid://cogc0jr2nft03"]
 
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://Scenes/Characters/player.tscn" id="2_3okkh"]
 [ext_resource type="PackedScene" uid="uid://hd06iu5g1ddy" path="res://Scenes/Characters/fisherman.tscn" id="4_nf8l7"]
@@ -614,6 +614,9 @@ _data = {
 }
 point_count = 104
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_8puml"]
+size = Vector3(102.649, 23.0164, 1)
+
 [node name="World" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -859,5 +862,14 @@ state = 1
 
 [node name="ReturnToHomeLocator" parent="." instance=ExtResource("12_034sm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.125586, 2.39677, -35.5823)
+
+[node name="BabushkaGate" type="StaticBody3D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 0
+
+[node name="BGcol" type="CollisionShape3D" parent="BabushkaGate"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.25331, 11.0082, -0.721014)
+shape = SubResource("BoxShape3D_8puml")
 
 [editable path="Cutscener"]
