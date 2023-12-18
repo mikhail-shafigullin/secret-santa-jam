@@ -10,6 +10,32 @@
 radius = 0.498039
 height = 2.32152
 
+[sub_resource type="Animation" id="Animation_mx0l8"]
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TimDoppelganger:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "animation"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("babushka/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": PackedStringArray("babuska_idle"),
+"times": PackedFloat32Array(0)
+}
+
 [sub_resource type="Animation" id="Animation_fqi2q"]
 resource_name = "talking"
 length = 2.0
@@ -47,32 +73,6 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0)
 }
 
-[sub_resource type="Animation" id="Animation_mx0l8"]
-length = 6.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TimDoppelganger:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "animation"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("babushka/AnimationPlayer")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"clips": PackedStringArray("babuska_idle"),
-"times": PackedFloat32Array(0)
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cwkym"]
 _data = {
 "RESET": SubResource("Animation_mx0l8"),
@@ -83,7 +83,6 @@ _data = {
 script = ExtResource("1_21q8b")
 
 [node name="UsableObject" parent="." instance=ExtResource("2_ibi6t")]
-useObjectMessage = "Kick a Robot"
 
 [node name="QuestLocator" parent="." instance=ExtResource("4_ujslx")]
 
@@ -161,10 +160,10 @@ bones/25/rotation = Quaternion(0.553112, 0.0724991, 0.124863, 0.8205)
 bones/26/rotation = Quaternion(0.381051, 0.00390357, -0.00184998, 0.924544)
 
 [node name="LeftHandAtt" parent="TimDoppelganger/tim/TimMixemoRig/Skeleton3D" index="1"]
-transform = Transform3D(0.598423, 0.146212, -0.787727, -0.464903, -0.737374, -0.490045, -0.6525, 0.65947, -0.373287, 19.5989, 53.4183, 14.2699)
+transform = Transform3D(0.598422, 0.146213, -0.787727, -0.464902, -0.737376, -0.490045, -0.652501, 0.659469, -0.373287, 19.5989, 53.4182, 14.2699)
 
 [node name="RightHandAtt" parent="TimDoppelganger/tim/TimMixemoRig/Skeleton3D" index="2"]
-transform = Transform3D(-0.156162, -0.182689, 0.97069, 0.239783, -0.960361, -0.142169, 0.958185, 0.210553, 0.193778, -24.0638, 55.1829, -14.0438)
+transform = Transform3D(-0.156163, -0.182686, 0.97069, 0.239779, -0.960362, -0.142167, 0.958185, 0.21055, 0.193777, -24.0638, 55.1828, -14.0438)
 
 [node name="MarkerInFrontOfBabushka" type="Marker3D" parent="."]
 unique_name_in_owner = true

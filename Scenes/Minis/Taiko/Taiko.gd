@@ -19,6 +19,7 @@ var tim = null
 var notes: Array[Note] = []
 @onready var hit_center: Node2D = %HitCenter
 var time: float = 0
+var start_time: float
 @export var visible_time := 15.0
 @export var speed := 100.0
 @export var time_window = 0.5
@@ -27,7 +28,7 @@ var combo: int = 0;
 var max_combo: int = 0;
 var score: int = 0;
 
-var targetedScore = 3000;
+var targetedScore = 1337;
 
 const KatSpriteRes = preload ("res://Scenes/Minis/Taiko/BlueSprite.tscn")
 const DonSpriteRes = preload ("res://Scenes/Minis/Taiko/OrangeSprite.tscn")
@@ -98,12 +99,13 @@ func spawn_next_note():
 			music_spawned = true
 		
 
-	
+var last_time: float = 0
 func _process(delta):
-	time += delta
-	spawn_next_note()
+	time = (Time.get_ticks_usec() - start_time)/1000000.0
 	for note in notes:
-		note.sprite.global_position.x -= speed*delta
+		note.sprite.global_position.x -= speed*(time - last_time)
+	spawn_next_note()
+	last_time = time
 	
 	check_miss()
 
@@ -245,6 +247,7 @@ func start() -> bool:
 		tim = model.tim
 	assert(tim)
 	assert(model)
+	start_time = Time.get_ticks_usec()
 	model.start_song();
 	
 	return true
