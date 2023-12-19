@@ -1,6 +1,7 @@
 extends Node
 
 signal quest_list_show(state: bool)
+signal quest_marker_update(marker: QuestLocator)
 
 var projector: Projector = null
 

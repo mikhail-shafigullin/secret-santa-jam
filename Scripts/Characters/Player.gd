@@ -209,3 +209,8 @@ func set_busy(state: bool) -> void:
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		
+
+func get_camera_ang_rad() -> float:
+	var player_pos = Vector2(global_position.x, global_position.z)
+	var camera_pos = Vector2(camera.global_position.x, camera.global_position.z)
+	return camera_pos.angle_to_point(player_pos)

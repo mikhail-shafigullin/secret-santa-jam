@@ -1,6 +1,8 @@
+class_name QuestLocator
 extends Node3D
 
 @onready var cylinderMesh: MeshInstance3D = %LightCylinderMesh;
+@export var compased = true
 
 var scale_y = 50;
 @export var free_space = 5;
@@ -15,6 +17,8 @@ func _ready():
 
 func change_visibility(show):
 	visible = show
+	if compased:
+		Global.quest_marker_update.emit(self)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
