@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bo3tgaftutho"
+path="res://.godot/imported/startScene.dialogue-eafa31409b5482812fcc9ed3cebdf7d5.tres"
+
+[deps]
+
+source_file="res://Assets/UI/startScene.dialogue"
+dest_files=["res://.godot/imported/startScene.dialogue-eafa31409b5482812fcc9ed3cebdf7d5.tres"]
+
+[params]
+
+defaults=true

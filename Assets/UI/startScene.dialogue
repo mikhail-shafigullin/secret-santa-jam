@@ -1,0 +1,12 @@
+~ this_is_a_node_title
+
+do Global.projector.set_allow_skip(false)
+do Global.projector.slide("res://Assets/Sprites/black.png")
+do Global.projector.sound("res://Assets/Audio/Music/fishingTheme_01.mp3")
+noname: helo
+
+
+noname: [wait=1] 123
+do Global.projector.balloon.display(true)
+
+=> END

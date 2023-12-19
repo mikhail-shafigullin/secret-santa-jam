@@ -39,7 +39,7 @@ color = Color(0, 0, 0, 1)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("5_0nccv")
-volume_db = -25.0
+volume_db = -5.0
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 1

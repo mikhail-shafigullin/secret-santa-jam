@@ -25,6 +25,7 @@ func _input(event):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.questListUI = self;
 	Global.quest_list_show.emit(is_opened)
 
 
