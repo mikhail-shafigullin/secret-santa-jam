@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bm6lu5yi0ch87" path="res://Assets/Models/Objects/lvl/lvl_v2_road_tiles.png" id="8_ouf6v"]
 
 [sub_resource type="Animation" id="Animation_5dj42"]
-length = 0.001
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -75,6 +75,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(-3.11252, 1.26429, -0.629545), Vector3(-2.18953, 1.26429, -2.94129), Vector3(-0.326539, 1.26429, -2.94129)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../TimDoppelganger:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_giges"]
 resource_name = "band_playing_02"
@@ -102,6 +114,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, -0.542064, 0), Vector3(0, -0.0402474, 0), Vector3(0, 0.820148, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../TimDoppelganger:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_o4e0l"]
@@ -131,6 +155,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 2.11115, 0), Vector3(-0.436332, 2.65465, 0), Vector3(-0.698132, 3.71755, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../TimDoppelganger:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_1behg"]
 resource_name = "band_playing_04"
@@ -158,6 +194,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.436332, -2.61766, 1.61858e-08), Vector3(0.0872665, -2.67035, 0), Vector3(0.0872665, -2.42887, -6.34772e-11)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../TimDoppelganger:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_vfw07"]

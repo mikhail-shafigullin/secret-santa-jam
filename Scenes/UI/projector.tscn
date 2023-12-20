@@ -26,7 +26,9 @@ texture = ExtResource("2_ip5qw")
 expand_mode = 2
 stretch_mode = 6
 
-[node name="Audio" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("3_ltax4")
-volume_db = 2.06
+
+[node name="Sounds" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true

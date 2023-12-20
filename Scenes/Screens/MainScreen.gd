@@ -27,6 +27,7 @@ var mini_game: MiniGame
 @onready var audioStreamPlayer = %AudioStreamPlayer;
 
 const end_screen_res = preload("res://Scenes/Screens/EndScreen.tscn")
+var introTheme = preload("res://Assets/Audio/Music/introTheme.mp3")
 
 func _on_full_screen_pressed():
 	var vpw = get_viewport().get_window()
@@ -45,7 +46,7 @@ func _ready():
 	primary_screen = world_res.instantiate()
 	root.add_child(primary_screen)
 	Global.audioStreamPlayer = audioStreamPlayer;
-	Global.audioStreamPlayer.play()
+	#Global.audioStreamPlayer.play()
 	
 	var quest_list_instance = questListUI.instantiate();
 	root.add_child(quest_list_instance);
@@ -55,7 +56,8 @@ func win():
 	primary_screen.queue_free()
 	primary_screen = end_screen_res.instantiate()
 	%end.add_child(primary_screen)
-	audioStreamPlayer.stop()
+	audioStreamPlayer.stream = introTheme;
+	audioStreamPlayer.play()
 	
 func play_mini(mini: MiniGame) -> bool:
 	if mini_game != null:

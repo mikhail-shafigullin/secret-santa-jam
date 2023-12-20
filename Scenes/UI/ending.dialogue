@@ -3,7 +3,7 @@
 do Global.projector.set_allow_skip(false)
 do Global.projector.slide("res://Assets/Sprites/Credits.png")
 do Global.audioStreamPlayer.stop()
-do Global.projector.sound("res://Assets/Audio/Music/fishingTheme_01.mp3")
+do Global.projector.music("res://Assets/Audio/Music/introTheme.mp3")
 do Global.projector.balloon.display(false)
 noname: [wait=300] helo
 => END

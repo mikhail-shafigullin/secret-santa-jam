@@ -8,6 +8,7 @@ Finn: Our drummer is sick and we can't play the song.
 Finn: I remember you're a good player! I'm sure you can handle it.
 Milan: It would be really cool if you play with us... What do you say?
 - Help them with song
+	do Global.player.visible = false
 	do Global.main_screen.play_mini_by_name("taiko")
 	=> END
 - End the conversation => end_script
@@ -16,7 +17,7 @@ Milan: It would be really cool if you play with us... What do you say?
 do Global.cutscener.start("band_dialogue")
 do Global.player.visible = false
 Finn: Thank you, Tim!
-Finn: You are so good.
+Finn: You helped us a lot.
 Finn: Take those drumsticks!
 ...
 [Drumsticks] received

@@ -8,7 +8,7 @@ do wait(1)
 do Global.projector.balloon.display(true)
 do Global.projector.slide("")
 is this working?
-do Global.projector.sound("res://Scenes/Minis/Taiko/Sound/203344__klemmy__123-taiko-open.wav")
+do Global.projector.music("res://Scenes/Minis/Taiko/Sound/203344__klemmy__123-taiko-open.wav")
 do Global.projector.slide("res://icon.svg")
 good
 => END

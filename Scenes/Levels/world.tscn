@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://hd06iu5g1ddy" path="res://Scenes/Characters/fisherman.tscn" id="4_nf8l7"]
 [ext_resource type="PackedScene" uid="uid://dwa64ft0y4d4h" path="res://Scenes/Levels/lvl.tscn" id="4_qd3xv"]
 [ext_resource type="PackedScene" uid="uid://bmo3dnmo8nkx1" path="res://Scenes/Controller/Cutscener.tscn" id="5_6em04"]
-[ext_resource type="PackedScene" uid="uid://do6hbchvfi3xr" path="res://Scenes/Objects/randomTolik.tscn" id="5_vg0pf"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/randomTolik.tscn" id="5_vg0pf"]
 [ext_resource type="PackedScene" uid="uid://bd1j2j6wn1nv" path="res://Scenes/Characters/Babushka.tscn" id="6_8n7hx"]
 [ext_resource type="PackedScene" uid="uid://7kpmk14keqwy" path="res://Scenes/Objects/other/Band/band.tscn" id="11_uu46n"]
 [ext_resource type="PackedScene" uid="uid://d1gxd1clf2qg6" path="res://Scenes/Minis/ReturnToHome/ReturnToHomeLocator.tscn" id="12_034sm"]

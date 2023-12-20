@@ -2,11 +2,20 @@
 
 do Global.projector.set_allow_skip(false)
 do Global.projector.slide("res://Assets/Sprites/black.png")
-do Global.projector.sound("res://Assets/Audio/Music/fishingTheme_01.mp3")
-noname: helo
+do Global.projector.music("res://Assets/Audio/Music/introTheme.mp3")
+[wait=1] ...
+Tim: Wow!
+Tim: Mom, it's snowing outside!
+Tim: I'm going out for a walk!
+Mom: Please be careful, Tim.
+Mom: I heard our neighbors need help. 
+Mom: Please help them if you see anyone
+Tim: Yes, Mom!
+Mom: And put on your hat!
+Tim: Yes, Mom!
+do Global.projector.music("res://Assets/Audio/Sound/684536__pnmcarrierailfan__door-squeak-open-and-close-mix_2.mp3")
 
-
-noname: [wait=1] 123
+[wait=2] ...
+do Global.audioStreamPlayer.play()
 do Global.projector.balloon.display(true)
-
 => END

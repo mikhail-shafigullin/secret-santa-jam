@@ -2,7 +2,8 @@ class_name Projector
 extends Control
 
 @onready var image: TextureRect = %Slide
-@onready var audio: AudioStreamPlayer = %Audio
+@onready var musicPlayer: AudioStreamPlayer = %Music
+@onready var soundPlayer: AudioStreamPlayer = %Sounds;
 
 var allow_skip: bool = false
 var working: bool = false
@@ -39,12 +40,20 @@ func slide(path: String = ""):
 	mouse_filter = Control.MOUSE_FILTER_STOP
 
 func sound(path: String = ""):
-	audio.stop()
+	soundPlayer.stop()
 	if path == "":
 		return
 	var _sound = load(path)
-	audio.stream = _sound
-	audio.play()
+	soundPlayer.stream = _sound
+	soundPlayer.play()
+	
+func music(path: String = ""):
+	musicPlayer.stop()
+	if path == "":
+		return
+	var _sound = load(path)
+	musicPlayer.stream = _sound
+	musicPlayer.play()
 	
 func set_allow_skip(allow: bool):
 	allow_skip = allow
@@ -52,4 +61,4 @@ func set_allow_skip(allow: bool):
 func _ready():
 	Global.projector = self
 	slide()
-	#start_dialogue("res://Scenes/UI/ending.dialogue")
+	Global.projector.start_dialogue("res://Assets/UI/startScene.dialogue");

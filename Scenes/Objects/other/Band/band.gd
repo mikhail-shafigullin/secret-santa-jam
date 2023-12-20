@@ -52,11 +52,13 @@ func _on_usable_object_on_object_use():
 	Global.player.visible = false;
 	if Global.player.busy:
 		return
+	tim.visible = true;
 	var balloon: Node = balloon_res.instantiate()
 	Global.player.add_child(balloon)
 	balloon.start(dialogue, "")
 	
 func animation_dialogue_start():
+	tim.visible = true;
 	animationPlayer.play("band_talking");
 
 func animation_dialogue_stop():
