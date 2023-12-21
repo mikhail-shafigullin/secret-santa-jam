@@ -18,4 +18,5 @@ do Global.projector.music("res://Assets/Audio/Sound/684536__pnmcarrierailfan__do
 [wait=2] ...
 do Global.audioStreamPlayer.play()
 do Global.projector.balloon.display(true)
+do Global.player.set_busy(false)
 => END

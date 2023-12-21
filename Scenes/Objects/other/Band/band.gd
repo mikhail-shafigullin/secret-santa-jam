@@ -65,10 +65,12 @@ func animation_dialogue_stop():
 	animationPlayer.play("RESET");
 
 func animation_play(_name: String=""):
+	tim.visible = false
 	animationPlayer.play(nextAnimation);
 	nextIndex = nextIndex + 1;
 	if(nextIndex >= animationNames.size()):
 		nextIndex = 0;
 	nextAnimation = animationNames[nextIndex];
+	tim.visible = false
 	#animationPlayer.disconnect("animation_finished", animation_play);
 	

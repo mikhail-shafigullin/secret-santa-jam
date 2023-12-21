@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bm6lu5yi0ch87" path="res://Assets/Models/Objects/lvl/lvl_v2_road_tiles.png" id="8_ouf6v"]
 
 [sub_resource type="Animation" id="Animation_5dj42"]
-length = 2.0
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -75,18 +75,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(-3.11252, 1.26429, -0.629545), Vector3(-2.18953, 1.26429, -2.94129), Vector3(-0.326539, 1.26429, -2.94129)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../TimDoppelganger:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_giges"]
 resource_name = "band_playing_02"
@@ -114,18 +102,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, -0.542064, 0), Vector3(0, -0.0402474, 0), Vector3(0, 0.820148, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../TimDoppelganger:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_o4e0l"]
@@ -155,18 +131,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 2.11115, 0), Vector3(-0.436332, 2.65465, 0), Vector3(-0.698132, 3.71755, 0)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../TimDoppelganger:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_1behg"]
 resource_name = "band_playing_04"
@@ -195,42 +159,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(-0.436332, -2.61766, 1.61858e-08), Vector3(0.0872665, -2.67035, 0), Vector3(0.0872665, -2.42887, -6.34772e-11)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../TimDoppelganger:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_vfw07"]
 resource_name = "band_talking"
-tracks/0/type = "value"
+tracks/0/type = "animation"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../TimDoppelganger:visible")
+tracks/0/path = NodePath("../TimDoppelganger/tim/AnimationPlayer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"clips": PackedStringArray("Idle"),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../TimDoppelganger:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
-}
-tracks/1/type = "animation"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../TimDoppelganger/tim/AnimationPlayer")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"clips": PackedStringArray("Idle"),
-"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hs3mk"]
@@ -282,49 +234,59 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.171036, 0.00979453, 0.0413
 [node name="QuestLocator" parent="." instance=ExtResource("6_wsxal")]
 
 [node name="TimDoppelganger" parent="." instance=ExtResource("7_sb4gl")]
-transform = Transform3D(0.848381, 0, -0.529386, 0, 1, 0, 0.529386, 0, 0.848381, 0.919189, 0, -1.39554)
+transform = Transform3D(0.946227, 0, -0.323504, 0, 1, 0, 0.323504, 0, 0.946227, -0.0740964, 0, -0.470489)
 visible = false
 
 [node name="Skeleton3D" parent="TimDoppelganger/tim/TimMixemoRig" index="0"]
-bones/0/position = Vector3(-0.73311, 42.219, 2.58113)
-bones/0/rotation = Quaternion(-0.0332134, -0.366155, -0.0142209, 0.929852)
-bones/1/rotation = Quaternion(-0.0333616, 0.0406816, -0.00317517, 0.99861)
-bones/2/rotation = Quaternion(0.0934015, 0.0819978, -0.00469564, 0.992235)
-bones/3/rotation = Quaternion(0.10618, 0.0819305, -0.00575183, 0.990949)
-bones/4/rotation = Quaternion(0.0395112, -0.0107255, -0.000216166, 0.999162)
-bones/5/rotation = Quaternion(-0.0963695, 0.176928, 0.0164447, 0.979356)
-bones/6/rotation = Quaternion(-0.520774, -0.510267, 0.586854, -0.352171)
+bones/0/position = Vector3(-0.764499, 42.1134, 2.34466)
+bones/0/rotation = Quaternion(-0.0326338, -0.366316, -0.0140407, 0.929812)
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/rotation = Quaternion(-0.03248, 0.0407558, -0.00341549, 0.998635)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/rotation = Quaternion(0.095334, 0.0820905, -0.00509999, 0.992042)
+bones/3/rotation = Quaternion(0.108085, 0.0819978, -0.00616018, 0.990735)
+bones/4/rotation = Quaternion(0.0349574, -0.0106972, -9.33655e-05, 0.999332)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(-0.0960258, 0.17741, 0.0142474, 0.979337)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(-0.528985, -0.501935, 0.588246, -0.349575)
+bones/6/scale = Vector3(1, 1, 1)
 bones/7/position = Vector3(-3.8381e-06, 11.0439, -3.00375e-06)
-bones/7/rotation = Quaternion(0.586884, 0.102261, 0.0603382, 0.800918)
+bones/7/rotation = Quaternion(0.583786, 0.100138, 0.0622374, 0.803301)
 bones/8/position = Vector3(-4.1978e-07, 15.879, 3.76767e-06)
-bones/8/rotation = Quaternion(-0.0571709, 0.00327573, 0.457655, 0.887284)
-bones/9/rotation = Quaternion(-0.0971694, 0.121566, 0.0464495, 0.986723)
-bones/10/rotation = Quaternion(0.31528, -0.00134032, 0.241149, 0.917847)
-bones/11/rotation = Quaternion(0.0700622, -0.00451048, 0.0647829, 0.995427)
-bones/12/rotation = Quaternion(0.582185, -0.474233, 0.538991, 0.381644)
+bones/8/rotation = Quaternion(-0.0582703, 0.00172395, 0.455899, 0.88812)
+bones/9/rotation = Quaternion(-0.107015, 0.121602, 0.0474028, 0.985654)
+bones/10/rotation = Quaternion(0.314654, -0.00330978, 0.246986, 0.916504)
+bones/11/rotation = Quaternion(0.0703689, -0.00390202, 0.065215, 0.995379)
+bones/12/rotation = Quaternion(0.589969, -0.466316, 0.53985, 0.378216)
+bones/12/scale = Vector3(1, 1, 1)
 bones/13/position = Vector3(-1.7847e-06, 12.638, -4.81428e-06)
-bones/13/rotation = Quaternion(0.523771, -0.129033, 0.168307, 0.825038)
-bones/14/rotation = Quaternion(-0.00244673, 0.149286, -0.416307, 0.896881)
+bones/13/rotation = Quaternion(0.518726, -0.12448, 0.168512, 0.828874)
+bones/14/rotation = Quaternion(-0.00657324, 0.1554, -0.415442, 0.896223)
 bones/15/position = Vector3(-0.0794082, 16.6516, 0.212)
-bones/15/rotation = Quaternion(0.132066, -0.148731, -0.115977, 0.973132)
+bones/15/rotation = Quaternion(0.132342, -0.152907, -0.119995, 0.97196)
 bones/16/position = Vector3(4.31366, 3.72637, -0.686604)
-bones/16/rotation = Quaternion(0.195, 0.0283188, -0.35005, 0.915772)
+bones/16/rotation = Quaternion(0.195418, 0.02756, -0.350341, 0.915595)
 bones/17/position = Vector3(0.00597358, 8.17948, 0.13427)
-bones/17/rotation = Quaternion(0.0416309, 0.010359, 0.00669279, 0.999057)
-bones/18/rotation = Quaternion(0.0770534, 0.183782, 0.97471, -0.101128)
-bones/19/rotation = Quaternion(-0.289741, 0.120469, -0.0298891, 0.949023)
-bones/20/rotation = Quaternion(0.443696, -0.0301051, -0.0520577, 0.894157)
-bones/21/rotation = Quaternion(0.385407, 0.0174089, -0.0235104, 0.922283)
-bones/23/rotation = Quaternion(-0.122232, -0.00781273, 0.984146, 0.128278)
-bones/24/rotation = Quaternion(-0.267335, 0.0786522, -0.019633, 0.960188)
-bones/25/rotation = Quaternion(0.544309, 0.0738498, 0.127218, 0.825887)
-bones/26/rotation = Quaternion(0.381348, 0.0044289, -0.00205015, 0.924419)
+bones/17/rotation = Quaternion(0.0414633, 0.0102451, 0.00734617, 0.999061)
+bones/18/rotation = Quaternion(0.0768404, 0.185977, 0.974214, -0.102051)
+bones/19/rotation = Quaternion(-0.291021, 0.120281, -0.0298422, 0.948657)
+bones/20/rotation = Quaternion(0.443692, -0.0303827, -0.0525854, 0.894119)
+bones/20/scale = Vector3(1, 1, 1)
+bones/21/rotation = Quaternion(0.385396, 0.0173747, -0.0234262, 0.92229)
+bones/21/scale = Vector3(1, 1, 1)
+bones/23/rotation = Quaternion(-0.121989, -0.00467459, 0.984296, 0.127512)
+bones/24/rotation = Quaternion(-0.27299, 0.0786144, -0.0198086, 0.958595)
+bones/25/rotation = Quaternion(0.546166, 0.073496, 0.126571, 0.824791)
+bones/25/scale = Vector3(1, 1, 1)
+bones/26/rotation = Quaternion(0.381424, 0.00456284, -0.00210118, 0.924387)
+bones/26/scale = Vector3(1, 1, 1)
 
 [node name="LeftHandAtt" parent="TimDoppelganger/tim/TimMixemoRig/Skeleton3D" index="1"]
-transform = Transform3D(0.591448, 0.0361058, -0.805534, -0.509144, -0.757937, -0.407802, -0.625269, 0.651327, -0.429898, 20.3534, 55.029, 15.2786)
+transform = Transform3D(0.589779, 0.0421543, -0.806465, -0.507634, -0.757318, -0.410825, -0.628068, 0.651685, -0.425251, 19.8508, 54.5747, 15.0482)
 
 [node name="RightHandAtt" parent="TimDoppelganger/tim/TimMixemoRig/Skeleton3D" index="2"]
-transform = Transform3D(-0.183635, -0.117688, 0.975924, 0.254445, -0.964662, -0.0684526, 0.949492, 0.235749, 0.207091, -22.7997, 56.4644, -13.4272)
+transform = Transform3D(-0.175379, -0.120301, 0.977124, 0.254127, -0.964403, -0.0731222, 0.951137, 0.23549, 0.199708, -22.873, 56.0811, -13.5534)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.12681, 0.252441)

@@ -61,6 +61,8 @@ func _ready():
 	add_child(mouse_moved_timer)
 	mouse_moved_timer.one_shot = true
 	mouse_moved_timer.wait_time = mouse_moved_wait_time;
+	
+	set_busy(true)
 
 func _physics_process(delta):
 	physics_process_new(delta);

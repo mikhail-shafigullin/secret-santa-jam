@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cuhldd5rqu02s"]
+[gd_scene load_steps=44 format=3 uid="uid://cuhldd5rqu02s"]
 
 [ext_resource type="Script" path="res://Assets/Models/Characters/TimDoppelganger.gd" id="1_yh5hk"]
 [ext_resource type="Material" uid="uid://cbbtjnwpyd5m" path="res://Assets/Models/Characters/timMaterial.tres" id="2_gux75"]
@@ -124,6 +124,14 @@ bind/27/pose = Transform3D(-99.9718, 2.37367, 0.000190518, 1.7619e-05, -0.007275
 
 [sub_resource type="BoxMesh" id="BoxMesh_cca03"]
 size = Vector3(0.05, 0.29, 0.03)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c0nn2"]
+shading_mode = 0
+albedo_color = Color(0.109804, 0.109804, 0.109804, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wwmpn"]
+shading_mode = 0
+albedo_color = Color(0.133333, 0.0705882, 0.0823529, 1)
 
 [sub_resource type="Animation" id="Animation_ouf6j"]
 resource_name = "Air"
@@ -3479,7 +3487,7 @@ mesh = SubResource("ArrayMesh_mh0qi")
 skin = SubResource("Skin_ss60q")
 
 [node name="LeftHandAtt" type="BoneAttachment3D" parent="tim/TimMixemoRig/Skeleton3D"]
-transform = Transform3D(0.879003, 0.446827, -0.166433, 0.129559, -0.559735, -0.818481, -0.458878, 0.697884, -0.549899, 33.1147, 46.1416, 27.5515)
+transform = Transform3D(0.879003, 0.446827, -0.166432, 0.129559, -0.559735, -0.818481, -0.458878, 0.697884, -0.549899, 33.1147, 46.1416, 27.5515)
 bone_name = "mixamorig_LeftHand"
 bone_idx = 9
 
@@ -3492,6 +3500,7 @@ unique_name_in_owner = true
 transform = Transform3D(1, -1.19209e-07, 2.6077e-08, 1.19209e-07, 1, -7.82311e-08, -6.33299e-08, 5.02914e-08, 1, 1.49012e-08, 0.133784, 0)
 mesh = SubResource("BoxMesh_cca03")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_c0nn2")
 
 [node name="Rod" type="MeshInstance3D" parent="tim/TimMixemoRig/Skeleton3D/LeftHandAtt/LeftHand"]
 unique_name_in_owner = true
@@ -3500,7 +3509,7 @@ mesh = ExtResource("3_ia5t3")
 skeleton = NodePath("../..")
 
 [node name="RightHandAtt" type="BoneAttachment3D" parent="tim/TimMixemoRig/Skeleton3D"]
-transform = Transform3D(-0.319281, -0.927836, 0.192823, -0.680798, 0.0830316, -0.727751, 0.659223, -0.36363, -0.658178, -33.0433, 75.7566, -23.6145)
+transform = Transform3D(-0.319282, -0.927835, 0.192823, -0.680797, 0.0830311, -0.727751, 0.659222, -0.363631, -0.658178, -33.0433, 75.7566, -23.6145)
 bone_name = "mixamorig_RightHand"
 bone_idx = 15
 
@@ -3513,6 +3522,7 @@ unique_name_in_owner = true
 transform = Transform3D(1, -1.19209e-07, 2.6077e-08, 1.19209e-07, 1, -7.82311e-08, -6.33299e-08, 5.02914e-08, 1, 1.49012e-08, 0.133784, 0)
 mesh = SubResource("BoxMesh_cca03")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_wwmpn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="tim"]
 libraries = {
