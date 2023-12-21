@@ -27,10 +27,14 @@ func update_deg():
 		var half_width = view_width * 0.5
 		ruler.position.x = fmod(pixels, 180)
 		for locator in markers.keys():
-			var sprite = markers[locator]
-			var _deg = get_deg(locator.global_position)
-			var _pixels = _deg*pix_in_deg
-			sprite.position.x = _pixels
+			if locator.compased:
+				var sprite = markers[locator]
+				var _deg = get_deg(locator.global_position)
+				var _pixels = _deg*pix_in_deg
+				sprite.position.x = _pixels
+			else:
+				remove_marker(locator)
+
 	else:
 		visible = false
 

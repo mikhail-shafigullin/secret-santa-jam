@@ -267,6 +267,8 @@ func victory():
 	Global.audioStreamPlayer.stream = walkingTheme;
 	Global.audioStreamPlayer.play();
 	Global.questListUI.finishSnowboardQuest();
+	
+	Global.main_screen.find_child("SnowboardMiniStarter", true, false).locator.compased = false
 
 func write_timer(seconds: float):
 	timer.text = "%s:%s"%[duble_didget(int(floor(seconds)/60)), duble_didget(fmod(seconds,60)).pad_decimals(2)]

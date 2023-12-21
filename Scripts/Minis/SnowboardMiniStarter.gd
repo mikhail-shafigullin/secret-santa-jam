@@ -4,7 +4,7 @@ const Balloon = preload("res://Scenes/Screens/my_balloon/my_balloon.tscn")
 const dialogue = preload("res://Scenes/Characters/snowboard.dialogue")
 
 @onready var snowboardMesh = $snowboardMesh;
-
+@onready var locator = $QuestLocator
 @onready var animationPlayer = $AnimationPlayer;
 
 # Called when the node enters the scene tree for the first time.

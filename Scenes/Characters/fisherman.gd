@@ -58,6 +58,7 @@ func mini_game_stop():
 	
 	
 func start_victory_dialogue():
+	$QuestLocator.compased = false
 	Global.audioStreamPlayer.stream = walkingTheme;
 	Global.audioStreamPlayer.play()
 	Global.player.visible = false;

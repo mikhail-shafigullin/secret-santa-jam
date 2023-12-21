@@ -28,6 +28,7 @@ func start_quest():
 	tim.visible = false;
 
 func victory_quest():
+	$QuestLocator.compased = false
 	on_victory_quest.emit();
 	Global.player.global_position = marker_in_front_of_babushka.global_position
 	var balloon: Node = Balloon.instantiate()

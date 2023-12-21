@@ -46,6 +46,7 @@ func on_taiko_ended():
 		var balloon: Node = balloon_res.instantiate()
 		Global.player.add_child(balloon)
 		balloon.start(dialogue, "victory")
+		$QuestLocator.compased = false
 
 func _on_usable_object_on_object_use():
 	assert(dialogue)
