@@ -24,5 +24,8 @@ Anneliese: I hope it will be great in your house!
 => end_script
 
 ~ end_script
+do Global.player.set_busy(false)
+do Global.cutscener.end()
+do Global.player.visible = true
 do Global.main_screen.stop_mini()
 => END

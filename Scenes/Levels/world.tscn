@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://hd06iu5g1ddy" path="res://Scenes/Characters/fisherman.tscn" id="4_nf8l7"]
 [ext_resource type="PackedScene" uid="uid://dwa64ft0y4d4h" path="res://Scenes/Levels/lvl.tscn" id="4_qd3xv"]
 [ext_resource type="PackedScene" uid="uid://bmo3dnmo8nkx1" path="res://Scenes/Controller/Cutscener.tscn" id="5_6em04"]
-[ext_resource type="PackedScene" path="res://Scenes/Objects/randomTolik.tscn" id="5_vg0pf"]
+[ext_resource type="PackedScene" uid="uid://do6hbchvfi3xr" path="res://Scenes/Objects/randomTolik.tscn" id="5_vg0pf"]
 [ext_resource type="PackedScene" uid="uid://bd1j2j6wn1nv" path="res://Scenes/Characters/Babushka.tscn" id="6_8n7hx"]
 [ext_resource type="PackedScene" uid="uid://7kpmk14keqwy" path="res://Scenes/Objects/other/Band/band.tscn" id="11_uu46n"]
 [ext_resource type="PackedScene" uid="uid://d1gxd1clf2qg6" path="res://Scenes/Minis/ReturnToHome/ReturnToHomeLocator.tscn" id="12_034sm"]
@@ -635,7 +635,7 @@ fov = 27.6855
 far = 45.0
 
 [node name="Player" parent="." instance=ExtResource("2_3okkh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15207, 2.60197, 1.84715)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2324, 2.60197, -35.3114)
 metadata/_edit_group_ = true
 
 [node name="tNPC" type="Node3D" parent="."]

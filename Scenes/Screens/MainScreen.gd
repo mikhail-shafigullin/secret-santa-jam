@@ -90,3 +90,7 @@ func _on_v_slider_value_changed(value: float):
 func _on_v_slider_focus_exited():
 	volume_button.button_pressed = false
 	volume_slider.visible = false
+
+func _on_volume_mouse_entered():
+	volume_button.button_pressed = true
+	volume_slider.visible = volume_button.button_pressed
